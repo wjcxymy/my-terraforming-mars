@@ -601,6 +601,16 @@ abstract class Builder<T> {
     this._appendToRow(new CardRenderItem(CardRenderItemType.ADJACENCY_BONUS));
     return this;
   }
+
+  /*
+   * MYDIY Card Assets
+   */
+  public myAsteroid(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_ASTEROID));
+  }
+  public myLoopArrow(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_LOOP_ARROW));
+  }
 }
 
 class RootBuilder extends Builder<CardRenderRoot> {

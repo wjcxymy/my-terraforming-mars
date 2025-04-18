@@ -21,6 +21,7 @@ import {TradeAdvance} from './TradeAdvance';
 import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {ValuableGases} from './ValuableGases';
 import {ProjectReorganization} from './ProjectReorganization';
+import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -47,6 +48,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   },
   projectCards: {
     [CardName.PROJECT_REORGANIZATION]: {Factory: ProjectReorganization},
+    [CardName.ASTEROID_MATERIAL_RESEARCH_CENTER]: {Factory: AsteroidMaterialResearchCenter},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {

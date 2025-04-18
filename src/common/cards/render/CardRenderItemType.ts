@@ -77,4 +77,9 @@ export enum CardRenderItemType {
   CORRUPTION_SHIELD = 'corruptive-block',
   GEOSCAN_ICON = 'geoscan-icon',
   UNDERGROUND_SHELTERS = 'underground-shelters',
+
+  // MYDIY
+  MY_ASTEROID = 'my_asteroid',
+  MY_LOOP_ARROW = 'my_loop_arrow',
+
 }
