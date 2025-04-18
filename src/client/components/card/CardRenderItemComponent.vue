@@ -289,6 +289,13 @@ export default Vue.extend({
       case CardRenderItemType.UNDERGROUND_SHELTERS:
         classes.push('card-underground-shelters');
         break;
+      // MYDIY:
+      case CardRenderItemType.MY_ASTEROID:
+        classes.push(this.cardResource, 'card-icon-name-contains-asteroid');
+        break;
+      case CardRenderItemType.MY_LOOP_ARROW:
+        classes.push(this.cardResource, 'card-icon-loop-arrow');
+        break;
       }
 
       if (this.item.secondaryTag === AltSecondaryTag.NO_PLANETARY_TAG) {
