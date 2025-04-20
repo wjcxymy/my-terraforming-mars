@@ -164,6 +164,9 @@ abstract class Builder<T> {
   public cards(amount: number, options?: ItemOptions): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.CARDS, amount, options));
   }
+  public one_set(options?: ItemOptions): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.ONE_SET, -1, options));
+  }
 
   public trade(options?: ItemOptions): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.TRADE, -1, options));

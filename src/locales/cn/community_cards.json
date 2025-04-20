@@ -29,6 +29,10 @@
 
   "Asteroid Material Research Center":"小行星物质研究中心",
   "(Effect: When your blue card gains an asteroid resource, refresh its action (max 2 times per generation per card))":"（效果：当你的蓝卡获得小行星资源后，刷新其行动次数（每时代每卡最多2次））",
-  "(Effect: When you play an event card with \"asteroid\" in its name, add 1 asteroid resource to any card)":"（效果：当你打出名字带有“小行星（asteroid）”的事件牌时，向任意卡牌添加1个小行星资源）"
+  "(Effect: When you play an event card with \"asteroid\" in its name, add 1 asteroid resource to any card)":"（效果：当你打出名字带有“小行星（asteroid）”的事件牌时，向任意卡牌添加1个小行星资源）",
+
+  "You start with 48 M€.":"起始获得48M€。",
+  "(Effect: After you play a project card, if this completes a new set of red, green, and blue project cards, draw 1 card.)":"（效果：当你打出项目卡后，若因此新凑齐一套红/绿/蓝项目卡，抽1张牌。）",
+  "(Action: Reveal and discard 2 cards to draw 1 card of a color not among the discarded ones.)":"（行动：展示并弃置2张牌，抽1张未被弃置颜色的牌。）"
 
   }

@@ -104,6 +104,9 @@ export default Vue.extend({
       case CardRenderItemType.CARDS:
         classes.push(this.cardResource, 'card-card');
         break;
+      case CardRenderItemType.ONE_SET:
+        classes.push(this.cardResource, 'card-one-set');
+        break;
       case CardRenderItemType.WILD:
         classes.push(this.cardResource, 'card-resource-wild');
         if (this.item.cancelled === true) {

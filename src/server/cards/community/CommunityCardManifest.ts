@@ -22,6 +22,7 @@ import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {ValuableGases} from './ValuableGases';
 import {ProjectReorganization} from './ProjectReorganization';
 import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
+import {TrisynInstitute} from './TrisynInstitute';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -36,6 +37,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.JUNK_VENTURES]: {Factory: JunkVentures},
     [CardName.ERIS]: {Factory: Eris, compatibility: 'ares'},
     [CardName.ATHENA]: {Factory: Athena, compatibility: 'ares'},
+    [CardName.TRISYN_INSTITUTE]: {Factory: TrisynInstitute},
   },
   preludeCards: {
     [CardName.RESEARCH_GRANT]: {Factory: ResearchGrant},
