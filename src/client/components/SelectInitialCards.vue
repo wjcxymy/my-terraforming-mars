@@ -64,6 +64,7 @@ type DataModel = {
   selectedPreludes: Array<CardName>,
   valid: boolean,
   warning: string | undefined,
+  isDoubleCorpSelected: boolean,
 }
 
 export default (Vue as WithRefs<Refs>).extend({
@@ -103,6 +104,7 @@ export default (Vue as WithRefs<Refs>).extend({
       selectedPreludes: [],
       valid: false,
       warning: undefined,
+      isDoubleCorpSelected: false,
     };
   },
   methods: {
@@ -191,6 +193,25 @@ export default (Vue as WithRefs<Refs>).extend({
       }
     },
     getStartingMegacredits() {
+      if (this.isDoubleCorpSelected) {
+        if (this.selectedCorporations.length !== 2) {
+          return NaN;
+        }
+        const corpName1 = this.selectedCorporations[0];
+        const corpName2 = this.selectedCorporations[1];
+        const corporation1 = getCardOrThrow(corpName1);
+        const corporation2 = getCardOrThrow(corpName2);
+
+        // 双公司还需要再减去42
+        let starting = (corporation1.startingMegaCredits ?? 0) + (corporation2.startingMegaCredits ?? 0) - 42;
+
+        // 减去留牌费用
+        const cardCost1 = corporation1.cardCost === undefined ? constants.CARD_COST : corporation1.cardCost;
+        const cardCost2 = corporation2.cardCost === undefined ? constants.CARD_COST : corporation2.cardCost;
+        const cardCost = cardCost1 + cardCost2 - constants.CARD_COST;
+        starting -= this.selectedCards.length * cardCost;
+        return starting;
+      }
       if (this.selectedCorporations.length !== 1) {
         return NaN;
       }
@@ -254,6 +275,8 @@ export default (Vue as WithRefs<Refs>).extend({
     },
     corporationChanged(cards: Array<CardName>) {
       this.selectedCorporations = cards;
+      // 判断是否选择了第二个公司
+      this.isDoubleCorpSelected = this.selectedCorporations.length > 1;
       this.validate();
     },
     preludesChanged(cards: Array<CardName>) {

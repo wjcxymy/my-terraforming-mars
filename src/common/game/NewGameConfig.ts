@@ -70,6 +70,7 @@ export interface NewGameConfig {
   escapeVelocityPeriod: number | undefined;
   escapeVelocityPenalty: number | undefined;
   twoCorpsVariant: boolean;
+  doubleCorpVariant: boolean;
   customCeos: Array<CardName>;
   startingCeos: number;
   startingPreludes: number;
