@@ -72,6 +72,13 @@
 
                             <div class="create-game-subsection-label" v-i18n>Fan-made</div>
 
+                            <!-- Double Corp -->
+                            <input type="checkbox" id="double-corp-checkbox" v-model="doubleCorpVariant">
+                            <label for="double-corp-checkbox" class="expansion-button">
+                              <div class="create-game-expansion-icon expansion-icon-doubleCorp"></div>
+                              <span>Double Corp</span>
+                            </label>
+
                             <input type="checkbox" name="ares" id="ares-checkbox" v-model="expansions.ares">
                             <label for="ares-checkbox" class="expansion-button">
                                 <div class="create-game-expansion-icon expansion-icon-ares"></div>
@@ -639,6 +646,7 @@ export default (Vue as WithRefs<Refs>).extend({
       escapeVelocityPeriod: constants.DEFAULT_ESCAPE_VELOCITY_PERIOD,
       escapeVelocityPenalty: constants.DEFAULT_ESCAPE_VELOCITY_PENALTY,
       twoCorpsVariant: false,
+      doubleCorpVariant: false,
       customCeos: [],
       startingCeos: 3,
       startingPreludes: 4,
@@ -1229,6 +1237,7 @@ export default (Vue as WithRefs<Refs>).extend({
         escapeVelocityPeriod,
         escapeVelocityPenalty,
         twoCorpsVariant,
+        doubleCorpVariant: this.doubleCorpVariant,
         customCeos,
         startingCeos,
         startingPreludes,
