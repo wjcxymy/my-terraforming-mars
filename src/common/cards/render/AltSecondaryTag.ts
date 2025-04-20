@@ -7,6 +7,8 @@ export enum AltSecondaryTag {
   // 'turmoil' => used in Political Uprising community prelude
   TURMOIL = 'turmoil',
   FLOATER = 'floater',
+  RED = 'red',
+  GREEN = 'green',
   BLUE = 'blue',
   NO_TAGS = 'no_tags',
 
