@@ -87,6 +87,11 @@ export class AsteroidMaterialResearchCenter extends Card implements IProjectCard
 
     const asteroidCards = thisCardOwner.getResourceCards(CardResource.ASTEROID);
 
+    // 没有任何蓝卡可以放置小行星资源，直接跳过
+    if (asteroidCards.length === 0) {
+      return undefined;
+    }
+
     // 如果只有一张卡可以添加资源，则直接添加
     if (asteroidCards.length === 1) {
       thisCardOwner.addResourceTo(asteroidCards[0], { qty: 1, log: true });
