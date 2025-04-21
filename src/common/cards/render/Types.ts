@@ -115,6 +115,7 @@ export interface ICardRenderItem extends CardComponent {
   resource?: CardResource;
   /** Has a value when type is CardRenderItemType.TAG. Renders a tag */
   tag?: Tag;
+  isTextOnly?: boolean;
 }
 
 export function isICardRenderItem(item: ItemType): item is ICardRenderItem {

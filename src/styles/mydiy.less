@@ -12,3 +12,31 @@
     background-repeat: no-repeat;
     background-position: 0px;
 }
+
+.card-container {
+    position: relative; /* 为父容器设置相对定位 */
+}
+
+.card-luna-chain-logo {
+    background-image: url(./assets/MYDIY/corp-logo-luna-chain.png);
+    height: 48px;
+    width: 132px;
+    background-size: 132px 48px;
+    margin-top: 10px;
+    position: relative; /* 保证 logo 元素处于合适的位置 */
+    z-index: 1; /* 使 logo 在下层 */
+}
+
+.card-lastpay-counter {
+    position: absolute; /* 绝对定位，允许它脱离文档流 */
+    top: 11%; /* 使其竖直居中于 .card-luna-chain-logo */
+    left: 40%; /* 根据需要调整水平位置，使其更靠左 */
+    transform: translateY(-50%); /* 使 .card-lastpay-counter 相对其自身竖直居中 */
+    z-index: 2; /* 确保它在 logo 上层 */
+}
+
+.card-lastpay-counter-number {
+    font-size: 16px; /* 调整字体大小 */
+    color: #a56387; /* 调整颜色，以便在背景上清晰显示 */
+    font-weight: bold; /* 强调字体 */
+}

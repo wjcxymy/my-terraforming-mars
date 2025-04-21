@@ -840,6 +840,8 @@ export class Player implements IPlayer {
   public playCard(selectedCard: IProjectCard, payment?: Payment, cardAction: CardAction = 'add'): void {
     if (payment !== undefined) {
       this.pay(payment);
+      // 记录实际支付M€
+      selectedCard.paidMegaCredits = payment.megaCredits;
     }
 
     ColoniesHandler.maybeActivateColonies(this.game, selectedCard);
