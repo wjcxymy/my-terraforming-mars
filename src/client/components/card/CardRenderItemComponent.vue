@@ -1,6 +1,6 @@
 <template>
   <div class="card-item-container">
-    <div class="card-res-amount" v-if="item.showDigit">{{ amountAbs }}</div>
+    <div class="card-res-amount" v-if="item.showDigit && !item.isTextOnly">{{ amountAbs }}</div>
     <div :class="componentClasses" v-for="index in itemsToShow" v-html="itemHtmlContent" :key="index"/>
     <div class="card-over" v-if="item.over !== undefined">over {{item.over}}</div>
   </div>
@@ -97,6 +97,12 @@ export default Vue.extend({
         break;
       case CardRenderItemType.MEGACREDITS:
         classes.push(this.cardResource, 'card-resource-money');
+        if (this.item.size !== undefined && this.item.size !== Size.MEDIUM) {
+          classes.push(`card-money--${this.item.size}`);
+        }
+        break;
+      case CardRenderItemType.MEGACREDITSTEXT:
+        classes.push(this.cardResource, 'card-resource-money-text');
         if (this.item.size !== undefined && this.item.size !== Size.MEDIUM) {
           classes.push(`card-money--${this.item.size}`);
         }
@@ -326,7 +332,7 @@ export default Vue.extend({
       }
 
       // size and text
-      if (this.item.text !== undefined) {
+      if (this.item.text !== undefined && this.item.type !== CardRenderItemType.MEGACREDITSTEXT) {
         classes.push(`card-text-size--${this.item.size}`);
         if (this.item.isUppercase) {
           classes.push('card-text-uppercase');

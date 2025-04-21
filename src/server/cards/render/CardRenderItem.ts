@@ -46,6 +46,7 @@ export class CardRenderItem implements ICardRenderItem {
   public over?: number;
   public resource?: CardResource | undefined;
   public tag?: Tag | undefined;
+  public isTextOnly?: boolean;
 
   constructor(public type: CardRenderItemType, public amount: number = -1, options?: ItemOptions) {
     switch (options?.digit) {

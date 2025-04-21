@@ -10,6 +10,7 @@ export enum CardRenderItemType {
   TITANIUM = 'titanium',
   STEEL = 'steel',
   MEGACREDITS = 'megacredits',
+  MEGACREDITSTEXT = 'megacredits_text',
   CARDS = 'cards',
   ONE_SET = 'one_set', 
   TAG = 'tag',

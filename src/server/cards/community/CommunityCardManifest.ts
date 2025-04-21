@@ -23,6 +23,7 @@ import {ValuableGases} from './ValuableGases';
 import {ProjectReorganization} from './ProjectReorganization';
 import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
 import {TrisynInstitute} from './TrisynInstitute';
+import {LunaChain} from './LunaChain';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -38,6 +39,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.ERIS]: {Factory: Eris, compatibility: 'ares'},
     [CardName.ATHENA]: {Factory: Athena, compatibility: 'ares'},
     [CardName.TRISYN_INSTITUTE]: {Factory: TrisynInstitute},
+    [CardName.LUNA_CHAIN]: {Factory: LunaChain},
   },
   preludeCards: {
     [CardName.RESEARCH_GRANT]: {Factory: ResearchGrant},
