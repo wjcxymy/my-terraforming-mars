@@ -25,6 +25,7 @@ import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
 import {TrisynInstitute} from './TrisynInstitute';
 import {LunaChain} from './LunaChain';
 import { Tithes } from './Tithes';
+import { ResourcePlanningBureau } from './ResourcePlanningBureau';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -55,6 +56,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   projectCards: {
     [CardName.PROJECT_REORGANIZATION]: {Factory: ProjectReorganization},
     [CardName.ASTEROID_MATERIAL_RESEARCH_CENTER]: {Factory: AsteroidMaterialResearchCenter},
+    [CardName.RESOURCE_PLANNING_BUREAU]: {Factory: ResourcePlanningBureau},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {

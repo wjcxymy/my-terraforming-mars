@@ -577,7 +577,8 @@ export enum CardName {
   // Community cards
   PROJECT_REORGANIZATION = 'Project Reorganization',
   ASTEROID_MATERIAL_RESEARCH_CENTER = 'Asteroid Material Research Center',
-  
+  RESOURCE_PLANNING_BUREAU = 'Resource Planning Bureau',
+
   // Community corps
   AGRICOLA_INC = 'Agricola Inc',
   CURIOSITY_II = 'Curiosity II',
