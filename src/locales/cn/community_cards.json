@@ -42,5 +42,17 @@
   "${0} has accumulated ${1} M€, averaging ${2} M€ per project card (LunaChain Baker 🍰)": "${0} 累计获得了 ${1} M€，平均每张项目卡获得 ${2} M€ (连月糕手 🍰)",
   "${0} has accumulated ${1} M€, averaging ${2} M€ per project card (LunaChain Champion 💪)": "${0} 累计获得了 ${1} M€，平均每张项目卡获得 ${2} M€ (连月强者 💪)",
   "${0} has accumulated ${1} M€, averaging ${2} M€ per project card (LunaChain Newbie 🥬)": "${0} 累计获得了 ${1} M€，平均每张项目卡获得 ${2} M€ (连月菜鸡 🥬)",
-  "The next card costs ${0} M€ to maximize the LunaChain skill": "下张牌需要支付 ${0} M€ 以最大触发连月技能"
+  "The next card costs ${0} M€ to maximize the LunaChain skill": "下张牌需要支付 ${0} M€ 以最大触发连月技能",
+
+  "Tithes": "什一税",
+  "(Action: Each other player loses 10% (rounded down) of their M€. You gain the total amount lost.)": "（行动：每个其他玩家失去其10%(向下取整)的M€，你获得这些失去的M€。）",
+  "(Each other player who loses 3 M€ or more due to this action draws 1 card.)":"（每个因这一行动损失3 M€或更多的其他玩家将抽1张牌。)",
+  "${0} paid ${1} M€ in ${2} and draws 1 card.": "${0} 在 ${2} 中支付了 ${1} M€ 并抽了1张牌。",
+  "${0} paid ${1} M€ in ${2}.": "${0} 在 ${2} 中支付了 ${1} M€。",
+  "${0} collected a total of ${1} M€ via ${2}.": "${0} 通过 ${2} 共计获得了 ${1} M€。",
+
+  "Resource Planning Bureau": "资源规划局",
+  "pay": "支付",
+  "(Effect: Each time you play a project card, if you pay 0 M€ and at least 1 other resource, gain 2 M€.)": "（效果：每当你打出项目卡，若你未支付任何M€，且支付了至少1个其他资源，获得2M€。）"
+
 }

@@ -226,6 +226,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.TERACTOR, 'card-teractor-logo'],
   [CardName.MIDAS, 'card-midas-logo'],
   [CardName.MARS_MATHS, 'card-mars-maths-logo'],
+  [CardName.TITHES, 'card-tithes-logo'],
 ]);
 
 export default Vue.extend({
