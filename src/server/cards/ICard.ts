@@ -21,6 +21,7 @@ import {IStandardProjectCard} from './IStandardProjectCard';
 import {Warning} from '../../common/cards/Warning';
 import {Resource} from '../../common/Resource';
 import {Units} from '../../common/Units';
+import {Payment} from '../../common/inputs/Payment';
 
 /*
  * Represents a card which has an action that itself allows a player
@@ -80,6 +81,7 @@ export interface ICard {
   /** Called when cards are played. However, if this is a corp, it'll be called when opponents play cards, too. */
   onCardPlayed?(player: IPlayer, card: ICard): PlayerInput | undefined | void;
   onCardPlayedFromAnyPlayer?(thisCardOwner: IPlayer, playedCardOwner: IPlayer, card: IProjectCard): PlayerInput | undefined;
+  onCardPlayedWithPayment?(player: IPlayer, card: ICard, payment: Payment): PlayerInput | undefined | void;
   onStandardProject?(player: IPlayer, project: IStandardProjectCard): void;
   onTilePlaced?(cardOwner: IPlayer, activePlayer: IPlayer, space: Space, boardType: BoardType): void;
   onDiscard?(player: IPlayer): void;

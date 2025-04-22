@@ -908,6 +908,9 @@ export class Player implements IPlayer {
     // See DeclareCloneTag for why this skips cards with clone tags.
     if (!selectedCard.tags.includes(Tag.CLONE) && cardAction !== 'double-down') {
       this.onCardPlayed(selectedCard);
+      if(payment!==undefined){
+        this.onCardPlayedWithPayment(selectedCard, payment);
+      }
     }
 
     return undefined;
@@ -953,6 +956,26 @@ export class Player implements IPlayer {
     }
 
     PathfindersExpansion.onCardPlayed(this, card);
+  }
+
+  public onCardPlayedWithPayment(card: IProjectCard, payment: Payment) {
+    // 如果卡牌是 Proxy 类型，直接返回
+    if (card.type === CardType.PROXY) {
+      return;
+    }
+
+    // 处理玩家自己已打出卡牌的反应
+    for (const playedCard of this.playedCards) {
+      /* A player responding to their own cards played. */
+      const actionFromPlayedCard = playedCard.onCardPlayedWithPayment?.(this, card, payment);
+      this.defer(actionFromPlayedCard);
+    }
+
+    // 处理玩家自己公司卡牌的反应
+    for (const corporationCard of this.corporations) {
+      const actionFromPlayedCard = corporationCard.onCardPlayedWithPayment?.(this, card, payment);
+      this.defer(actionFromPlayedCard);
+    }
   }
 
   /* Visible for testing */
