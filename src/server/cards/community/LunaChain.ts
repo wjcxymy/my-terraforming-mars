@@ -5,7 +5,7 @@ import {CardRenderer} from '../render/CardRenderer';
 import {CardType} from '../../../common/cards/CardType';
 import {ICard} from '../ICard';
 import {IPlayer} from '../../IPlayer';
-import {IProjectCard} from '../IProjectCard';
+import {Payment} from '../../../common/inputs/Payment';
 
 export class LunaChain extends CorporationCard {
   private lastProjectCardMegacreditCost: number | undefined;
@@ -36,11 +36,11 @@ export class LunaChain extends CorporationCard {
     });
   }
 
-  public onCardPlayed(player: IPlayer, card: ICard): void {
+  public onCardPlayedWithPayment(player: IPlayer, card: ICard, payment: Payment): void {
     if (!player.isCorporation(this.name)) return;
     if (![CardType.AUTOMATED, CardType.ACTIVE, CardType.EVENT].includes(card.type)) return;
 
-    const actualCost = (card as IProjectCard).paidMegaCredits ?? 0;
+    const actualCost = payment.megaCredits ?? 0;
     this.lunaChainProjectCardCount += 1;
 
     if (this.lastProjectCardMegacreditCost !== undefined) {
