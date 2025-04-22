@@ -451,6 +451,12 @@ abstract class Builder<T> {
     return this._appendToRow(builder);
   }
 
+  public plainEffect(description: string | undefined, eb: (builder: EffectBuilder) => void): this {
+    const builder = CardRenderEffect.builder(eb);
+    builder.description = description !== undefined ? description : undefined;
+    return this._appendToRow(builder);
+  }
+
   public corpBox(type: 'action' | 'effect', eb: (builder: CorpEffectBuilderEffect | CorpEffectBuilderAction) => void): this {
     this.br;
     if (type === 'action') {
