@@ -23,7 +23,7 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
       cost: 12,
       tags: [Tag.ANIMAL],
       type: CardType.ACTIVE,
-      resourceType: CardResource.ANIMAL,
+      resourceType: CardResource.MONKEY,
       victoryPoints:1,
       metadata: {
         cardNumber: 'MY05',
@@ -33,13 +33,13 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
             (eb) => {
               eb.empty().startAction.cards(1).asterix()
                 .nbsp
-                .diverseTag().slash().resource(CardResource.ANIMAL).asterix();
+                .diverseTag().slash().resource(CardResource.MONKEY).asterix();
             }).br;
           b.plainEffect(
             'Then gain 1M€ per animal here.',
             (eb) => {
               eb.empty().startEffect
-                .resource(CardResource.ANIMAL).slash().megacredits(1);
+                .resource(CardResource.MONKEY).slash().megacredits(1);
             }).br;
           b.text('Cannot gain animals by other means.', Size.SMALL, true);
         }),
@@ -80,10 +80,5 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
     player.stock.add(Resource.MEGACREDITS, this.resourceCount, { log: true });
 
     return undefined;
-  }
-
-  // 禁止其他方式向该卡添加动物资源
-  public canAddResource(_resource: Resource): boolean {
-    return false;
   }
 }

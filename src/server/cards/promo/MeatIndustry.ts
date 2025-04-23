@@ -29,7 +29,7 @@ export class MeatIndustry extends Card implements IProjectCard {
   }
 
   public onResourceAdded(player: IPlayer, card: ICard, count: number) {
-    if (card.resourceType === CardResource.ANIMAL) {
+    if (card.resourceType === CardResource.ANIMAL || card.resourceType === CardResource.MONKEY) {
       player.stock.add(Resource.MEGACREDITS, count * 2, {log: true});
     }
   }
