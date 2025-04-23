@@ -29,6 +29,14 @@
                 </div>
             </div>
         </div>
+        <div v-if="player.infiniteMonkeyTheoremCards.length > 0" class="player_home_block">
+          <span v-i18n>Infinite Monkey Theorem cards</span>
+          <div>
+            <div v-for="card in player.infiniteMonkeyTheoremCards" :key="card.name" class="cardbox">
+              <Card :card="card" />
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </template>

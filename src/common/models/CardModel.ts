@@ -11,6 +11,7 @@ export interface CardModel {
     resources: number | undefined;
     calculatedCost?: number;
     isSelfReplicatingRobotsCard?: boolean,
+    isInfiniteMonkeyTheoremCard?: boolean,
     discount?: Array<CardDiscount>,
     isDisabled?: boolean; // Used with Pharmacy Union
     warning?: string | Message;

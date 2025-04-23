@@ -27,6 +27,7 @@ import {LunaChain} from './LunaChain';
 import { Tithes } from './Tithes';
 import { ResourcePlanningBureau } from './ResourcePlanningBureau';
 import { SpaceWedding } from './SpaceWedding';
+import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -59,6 +60,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.ASTEROID_MATERIAL_RESEARCH_CENTER]: {Factory: AsteroidMaterialResearchCenter},
     [CardName.RESOURCE_PLANNING_BUREAU]: {Factory: ResourcePlanningBureau},
     [CardName.SPACE_WEDDING]: {Factory: SpaceWedding},
+    [CardName.INFINITE_MONKEY_THEOREM]: {Factory: InfiniteMonkeyTheorem},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {

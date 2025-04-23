@@ -186,6 +186,7 @@ export interface IPlayer {
   increaseTitaniumValue(): void;
   decreaseTitaniumValue(): void;
   getSelfReplicatingRobotsTargetCards(): Array<IProjectCard>;
+  getInfiniteMonkeyTheoremTargetCards(): Array<IProjectCard>;
   getSteelValue(): number;
   increaseSteelValue(): void;
   decreaseSteelValue(): void;

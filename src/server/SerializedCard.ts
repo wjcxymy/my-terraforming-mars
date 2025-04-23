@@ -13,11 +13,17 @@ export type SerializedCard = {
   opgActionIsActive?: boolean; // For CEO Cards.
   generationUsed?: number; // For CEO and Underworld Cards.
   resourceCount?: number;
-  targetCards?: Array<SerializedRobotCard>;
+  targetCards?: Array<SerializedRobotCard>; // 用于自复制机器人
+  targetCardsWithMonkey?: Array<SerializedMonkeyCard>; // 用于无限猴子定理
   data?: JSONValue;
 }
 
 export type SerializedRobotCard = {
+  card: SerializedCard;
+  resourceCount: number;
+}
+
+export type SerializedMonkeyCard = {
   card: SerializedCard;
   resourceCount: number;
 }

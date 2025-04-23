@@ -65,6 +65,7 @@ export type PublicPlayerModel = {
   protectedProduction: Record<Resource, Protection>;
   tableau: ReadonlyArray<CardModel>;
   selfReplicatingRobotsCards: Array<CardModel>;
+  infiniteMonkeyTheoremCards: Array<CardModel>;
   steel: number;
   steelProduction: number;
   steelValue: number;
