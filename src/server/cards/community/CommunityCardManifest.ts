@@ -28,6 +28,7 @@ import { Tithes } from './Tithes';
 import { ResourcePlanningBureau } from './ResourcePlanningBureau';
 import { SpaceWedding } from './SpaceWedding';
 import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
+import { TestUnlimitedCorp } from './TestUnlimitedCorp';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -45,6 +46,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.TRISYN_INSTITUTE]: {Factory: TrisynInstitute},
     [CardName.LUNA_CHAIN]: {Factory: LunaChain},
     [CardName.TITHES]: {Factory: Tithes},
+    [CardName.TEST_UNLIMITED_CORP]: {Factory: TestUnlimitedCorp},
   },
   preludeCards: {
     [CardName.RESEARCH_GRANT]: {Factory: ResearchGrant},

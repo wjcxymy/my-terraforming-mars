@@ -595,6 +595,7 @@ export enum CardName {
   TRISYN_INSTITUTE = 'TrisynInstitute',
   LUNA_CHAIN = 'LunaChain',
   TITHES = 'Tithes',
+  TEST_UNLIMITED_CORP = 'Test Unlimited Corp',
 
   // Community preludes
   VALUABLE_GASES = 'Valuable Gases',
