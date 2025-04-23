@@ -47,4 +47,7 @@ export enum CardResource {
   JOURNALISM = 'Journalism',
   ACTIVIST = 'Activist',
   SUPPLY_CHAIN = 'Supply Chain',
+
+  // MYDIY
+  MONKEY = 'Monkey',
 }
