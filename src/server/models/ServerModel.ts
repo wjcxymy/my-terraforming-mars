@@ -137,6 +137,18 @@ export class Server {
     });
   }
 
+  public static getInfiniteMonkeyTheoremTargetCards(player: IPlayer): Array<CardModel> {
+    return player.getInfiniteMonkeyTheoremTargetCards().map((targetCard) => {
+      const model: CardModel = {
+        resources: targetCard.resourceCount,
+        name: targetCard.name,
+        calculatedCost: player.getCardCost(targetCard),
+        isInfiniteMonkeyTheoremCard: true,
+      };
+      return model;
+    });
+  }
+
   public static getMilestones(game: IGame): Array<ClaimedMilestoneModel> {
     const allMilestones = game.milestones;
     const claimedMilestones = game.claimedMilestones;
@@ -241,6 +253,7 @@ export class Server {
       protectedProduction: Server.getProductionProtections(player),
       tableau: cardsToModel(player, player.tableau, {showResources: true}),
       selfReplicatingRobotsCards: Server.getSelfReplicatingRobotsTargetCards(player),
+      infiniteMonkeyTheoremCards: Server.getInfiniteMonkeyTheoremTargetCards(player),
       steel: player.steel,
       steelProduction: player.production.steel,
       steelValue: player.getSteelValue(),

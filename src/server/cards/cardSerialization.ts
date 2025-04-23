@@ -4,6 +4,7 @@ import {isCeoCard} from './ceos/ICeoCard';
 import {IProjectCard} from './IProjectCard';
 import {isICloneTagCard} from './pathfinders/ICloneTagCard';
 import {SelfReplicatingRobots} from './promo/SelfReplicatingRobots';
+import {InfiniteMonkeyTheorem} from './community/InfiniteMonkeyTheorem';
 import {CardType} from '../../common/cards/CardType';
 import {asArray} from '../../common/utils/utils';
 
@@ -23,7 +24,7 @@ export function serializeProjectCard(card: IProjectCard): SerializedCard {
   if (card.generationUsed !== undefined) {
     serialized.generationUsed = card.generationUsed;
   }
-  if (card instanceof SelfReplicatingRobots) {
+  if (card instanceof SelfReplicatingRobots || card instanceof InfiniteMonkeyTheorem) {
     serialized.targetCards = card.targetCards.map((t) => {
       return {
         card: {name: t.name},
@@ -63,7 +64,7 @@ export function deserializeProjectCard(element: SerializedCard): IProjectCard {
   if (isICloneTagCard(card) && element.cloneTag !== undefined) {
     card.cloneTag = element.cloneTag;
   }
-  if (card instanceof SelfReplicatingRobots && element.targetCards !== undefined) {
+  if ((card instanceof SelfReplicatingRobots || card instanceof InfiniteMonkeyTheorem) && element.targetCards !== undefined) {
     card.targetCards = [];
     element.targetCards.forEach((targetCard) => {
       const foundTargetCard = newProjectCard(targetCard.card.name);
@@ -71,11 +72,11 @@ export function deserializeProjectCard(element: SerializedCard): IProjectCard {
         foundTargetCard.resourceCount = targetCard.resourceCount;
         card.targetCards.push(foundTargetCard);
       } else {
-        console.warn('did not find card for SelfReplicatingRobots', targetCard);
+        console.warn('did not find card for SelfReplicatingRobots or InfiniteMonkeyTheorem', targetCard);
       }
     });
   }
-  if (!(card instanceof SelfReplicatingRobots)) {
+  if (!(card instanceof SelfReplicatingRobots || card instanceof InfiniteMonkeyTheorem)) {
     if (element.bonusResource !== undefined) {
       card.bonusResource = asArray(element.bonusResource);
     }

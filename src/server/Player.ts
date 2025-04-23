@@ -30,6 +30,7 @@ import {SelectProjectCardToPlay} from './inputs/SelectProjectCardToPlay';
 import {SelectOption} from './inputs/SelectOption';
 import {SelectSpace} from './inputs/SelectSpace';
 import {SelfReplicatingRobots} from './cards/promo/SelfReplicatingRobots';
+import {InfiniteMonkeyTheorem} from './cards/community/InfiniteMonkeyTheorem';
 import {SerializedCard} from './SerializedCard';
 import {SerializedPlayer} from './SerializedPlayer';
 import {StormCraftIncorporated} from './cards/colonies/StormCraftIncorporated';
@@ -326,6 +327,14 @@ export class Player implements IPlayer {
     const selfReplicatingRobots = this.getPlayedCard(CardName.SELF_REPLICATING_ROBOTS);
     if (selfReplicatingRobots instanceof SelfReplicatingRobots) {
       return selfReplicatingRobots.targetCards;
+    }
+    return [];
+  }
+
+  public getInfiniteMonkeyTheoremTargetCards(): Array<IProjectCard> {
+    const infiniteMonkeyTheorem = this.getPlayedCard(CardName.INFINITE_MONKEY_THEOREM);
+    if (infiniteMonkeyTheorem instanceof InfiniteMonkeyTheorem) {
+      return infiniteMonkeyTheorem.targetCards;
     }
     return [];
   }
