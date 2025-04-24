@@ -16,9 +16,25 @@
     <SelectCard v-if="hasPrelude" :playerView="playerView" :playerinput="preludeCardOption" :onsave="noop" :showtitle="true" v-on:cardschanged="preludesChanged" />
     <SelectCard v-if="hasCeo" :playerView="playerView" :playerinput="ceoCardOption" :onsave="noop" :showtitle="true" v-on:cardschanged="ceosChanged" />
     <SelectCard :playerView="playerView" :playerinput="projectCardOption" :onsave="noop" :showtitle="true" v-on:cardschanged="cardsChanged" />
-    <template v-if="this.selectedCorporations.length === 1">
-      <div><span v-i18n>Starting Megacredits:</span> <div class="megacredits">{{getStartingMegacredits()}}</div></div>
-      <div v-if="hasPrelude"><span v-i18n>After Preludes:</span> <div class="megacredits">{{getStartingMegacredits() + getAfterPreludes()}}</div></div>
+    <template v-if="selectedCorporations.length === 1">
+      <div>
+        <span v-i18n>Starting Megacredits:</span>
+        <div class="megacredits">{{ getStartingMegacredits() }}</div>
+      </div>
+      <div v-if="hasPrelude">
+        <span v-i18n>After Preludes:</span>
+        <div class="megacredits">{{ getStartingMegacredits() + getAfterPreludes() }}</div>
+      </div>
+    </template>
+    <template v-if="selectedCorporations.length === 2">
+      <div>
+        <span v-i18n>Starting Megacredits (doubleCorp-42):</span>
+        <div class="megacredits">{{ getStartingMegacreditsDoubleCorp() }}</div>
+      </div>
+      <div v-if="hasPrelude">
+        <span v-i18n>After Preludes:</span>
+        <div class="megacredits">{{ getStartingMegacreditsDoubleCorp() + getAfterPreludes() }}</div>
+      </div>
     </template>
     <div v-if="warning !== undefined" class="tm-warning">
       <label class="label label-error">{{ $t(warning) }}</label>
@@ -64,7 +80,6 @@ type DataModel = {
   selectedPreludes: Array<CardName>,
   valid: boolean,
   warning: string | undefined,
-  isDoubleCorpSelected: boolean,
 }
 
 export default (Vue as WithRefs<Refs>).extend({
@@ -104,7 +119,6 @@ export default (Vue as WithRefs<Refs>).extend({
       selectedPreludes: [],
       valid: false,
       warning: undefined,
-      isDoubleCorpSelected: false,
     };
   },
   methods: {
@@ -193,25 +207,6 @@ export default (Vue as WithRefs<Refs>).extend({
       }
     },
     getStartingMegacredits() {
-      if (this.isDoubleCorpSelected) {
-        if (this.selectedCorporations.length !== 2) {
-          return NaN;
-        }
-        const corpName1 = this.selectedCorporations[0];
-        const corpName2 = this.selectedCorporations[1];
-        const corporation1 = getCardOrThrow(corpName1);
-        const corporation2 = getCardOrThrow(corpName2);
-
-        // 双公司还需要再减去42
-        let starting = (corporation1.startingMegaCredits ?? 0) + (corporation2.startingMegaCredits ?? 0) - 42;
-
-        // 减去留牌费用
-        const cardCost1 = corporation1.cardCost === undefined ? constants.CARD_COST : corporation1.cardCost;
-        const cardCost2 = corporation2.cardCost === undefined ? constants.CARD_COST : corporation2.cardCost;
-        const cardCost = cardCost1 + cardCost2 - constants.CARD_COST;
-        starting -= this.selectedCards.length * cardCost;
-        return starting;
-      }
       if (this.selectedCorporations.length !== 1) {
         return NaN;
       }
@@ -223,6 +218,31 @@ export default (Vue as WithRefs<Refs>).extend({
       const cardCost = corporation.cardCost === undefined ? constants.CARD_COST : corporation.cardCost;
       starting -= this.selectedCards.length * cardCost;
       return starting;
+    },
+    getStartingMegacreditsDoubleCorp() {
+      // 检查是否选择了两家公司
+      if (this.selectedCorporations.length !== 2) {
+        return NaN;
+      }
+
+      const [corpName1, corpName2] = this.selectedCorporations;
+      const corporation1 = getCardOrThrow(corpName1);
+      const corporation2 = getCardOrThrow(corpName2);
+
+      // 计算初始MC，并减去42（针对双公司的特殊调整）
+      let startingMegaCredits = 
+        ((corporation1.startingMegaCredits ?? 0) + 
+        (corporation2.startingMegaCredits ?? 0) - 42);
+
+      // 计算并减去留牌费用
+      const cardCost = 
+        (((corporation1.cardCost ?? constants.CARD_COST) + 
+          (corporation2.cardCost ?? constants.CARD_COST)) - 
+        constants.CARD_COST);
+      
+      startingMegaCredits -= this.selectedCards.length * cardCost;
+
+      return startingMegaCredits;
     },
     saveIfConfirmed() {
       const projectCards = this.selectedCards.filter((name) => getCard(name)?.type !== CardType.PRELUDE);
@@ -240,11 +260,26 @@ export default (Vue as WithRefs<Refs>).extend({
         responses: [],
       };
 
-      if (this.selectedCorporations.length === 1) {
-        result.responses.push({
-          type: 'card',
-          cards: [this.selectedCorporations[0]],
-        });
+      // 如果启用了 doubleCorp 选项
+      if (this.isDoubleCorpVariantEnabled) {
+        if (this.selectedCorporations.length === 2) {
+          result.responses.push({
+            type: 'card',
+            cards: this.selectedCorporations,  // 选择2张公司卡
+          });
+        } else {
+          this.warning = 'You need to select exactly 2 corporations';
+        }
+      } else {
+        // 如果未启用 doubleCorp 选项
+        if (this.selectedCorporations.length === 1) {
+          result.responses.push({
+            type: 'card',
+            cards: [this.selectedCorporations[0]],  // 选择1张公司卡
+          });
+        } else if (this.selectedCorporations.length > 1) {
+          this.warning = 'You selected too many corporations';
+        }
       }
       if (this.hasPrelude) {
         result.responses.push({
@@ -275,8 +310,6 @@ export default (Vue as WithRefs<Refs>).extend({
     },
     corporationChanged(cards: Array<CardName>) {
       this.selectedCorporations = cards;
-      // 判断是否选择了第二个公司
-      this.isDoubleCorpSelected = this.selectedCorporations.length > 1;
       this.validate();
     },
     preludesChanged(cards: Array<CardName>) {
@@ -287,13 +320,28 @@ export default (Vue as WithRefs<Refs>).extend({
     calcuateWarning(): boolean {
       // Start with warning being empty.
       this.warning = undefined;
-      if (this.selectedCorporations.length === 0) {
-        this.warning = 'Select a corporation';
-        return false;
-      }
-      if (this.selectedCorporations.length > 1) {
-        this.warning = 'You selected too many corporations';
-        return false;
+      if (this.isDoubleCorpVariantEnabled) {
+        if (this.selectedCorporations.length === 0) {
+          this.warning = 'Select at least one corporation';
+          return false;
+        }
+        if (this.selectedCorporations.length === 1) {
+          this.warning = 'You must select 2 corporations';
+          return false;
+        }
+        if (this.selectedCorporations.length > 2) {
+          this.warning = 'You selected too many corporations';
+          return false;
+        }
+      } else {
+        if (this.selectedCorporations.length === 0) {
+          this.warning = 'Select a corporation';
+          return false;
+        }
+        if (this.selectedCorporations.length > 1) {
+          this.warning = 'You selected too many corporations';
+          return false;
+        }
       }
       if (this.hasPrelude) {
         if (this.selectedPreludes.length < 2) {
@@ -348,12 +396,17 @@ export default (Vue as WithRefs<Refs>).extend({
     hasCeo() {
       return hasOption(this.playerinput.options, titles.SELECT_CEO_TITLE);
     },
+    isDoubleCorpVariantEnabled() {
+      return hasOption(this.playerinput.options, titles.SELECT_TWO_CORPORATIONS_TITLE);
+    },
     corpCardOption() {
-      const option = getOption(this.playerinput.options, titles.SELECT_CORPORATION_TITLE);
-      if (getPreferences().experimental_ui) {
-        option.min = 1;
-        option.max = option.cards.length;
-      }
+      const title = this.isDoubleCorpVariantEnabled
+        ? titles.SELECT_TWO_CORPORATIONS_TITLE
+        : titles.SELECT_CORPORATION_TITLE;
+
+      const option = getOption(this.playerinput.options, title);
+      option.min = this.isDoubleCorpVariantEnabled ? 2 : 1;
+      option.max = this.isDoubleCorpVariantEnabled ? 2 : option.cards.length;
       return option;
     },
     preludeCardOption() {

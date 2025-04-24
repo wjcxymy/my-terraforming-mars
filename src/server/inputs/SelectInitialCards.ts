@@ -17,17 +17,31 @@ export class SelectInitialCards extends OptionsInput<undefined> {
     this.title = ' ';
     this.buttonLabel = 'Start';
 
-    this.options.push(
-      new SelectCard<ICorporationCard>(
-        titles.SELECT_CORPORATION_TITLE, undefined, player.dealtCorporationCards, {min: 1, max: 1}).andThen(
-        (cards) => {
-          if (cards.length !== 1) {
-            throw new InputError('Only select 1 corporation card');
-          }
-          corporation = cards[0];
-          return undefined;
-        }),
-    );
+    if (game.gameOptions.doubleCorpVariant) {
+      this.options.push(
+        new SelectCard<ICorporationCard>(
+          titles.SELECT_TWO_CORPORATIONS_TITLE, undefined, player.dealtCorporationCards, {min: 2, max: 2}).andThen(
+          (cards) => {
+            if (cards.length !== 2) {
+              throw new InputError('Only select 2 corporation card');
+            }
+            corporation = cards[0];
+            return undefined;
+          }),
+      );
+    } else {
+      this.options.push(
+        new SelectCard<ICorporationCard>(
+          titles.SELECT_CORPORATION_TITLE, undefined, player.dealtCorporationCards, {min: 1, max: 1}).andThen(
+          (cards) => {
+            if (cards.length !== 1) {
+              throw new InputError('Only select 1 corporation card');
+            }
+            corporation = cards[0];
+            return undefined;
+          }),
+      );
+    }
 
     // Give each player Merger in this variant
     if (game.gameOptions.twoCorpsVariant) {
