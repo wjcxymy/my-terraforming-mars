@@ -580,6 +580,7 @@ export enum CardName {
   RESOURCE_PLANNING_BUREAU = 'Resource Planning Bureau',
   SPACE_WEDDING = 'Space Wedding',
   INFINITE_MONKEY_THEOREM = 'Infinite Monkey Theorem',
+  FLORAL_BLOOM_SURGE = 'Floral Bloom Surge',
 
   // Community corps
   AGRICOLA_INC = 'Agricola Inc',
