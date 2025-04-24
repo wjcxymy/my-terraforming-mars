@@ -1,6 +1,6 @@
 import * as constants from '../common/constants';
 import {PlayerId} from '../common/Types';
-import {MILESTONE_COST, REDS_RULING_POLICY_COST} from '../common/constants';
+import {getHeatForTemperature, MILESTONE_COST, REDS_RULING_POLICY_COST} from '../common/constants';
 import {cardsFromJSON, ceosFromJSON, corporationCardsFromJSON, newCorporationCard, preludesFromJSON} from './createCard';
 import {CardName} from '../common/cards/CardName';
 import {CardType} from '../common/cards/CardType';
@@ -1676,8 +1676,9 @@ export class Player implements IPlayer {
 
     // Convert Heat
     const convertHeat = new ConvertHeat();
+    const heatRequired = getHeatForTemperature(this.game);
     if (convertHeat.canAct(this)) {
-      const option = new SelectOption('Convert 8 heat into temperature', 'Convert heat').andThen(() => {
+      const option = new SelectOption(`Convert ${heatRequired} heat into temperature`, 'Convert heat').andThen(() => {
         return convertHeat.action(this);
       });
       if (convertHeat.warnings.size > 0) {

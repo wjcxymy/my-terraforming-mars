@@ -1,3 +1,5 @@
+import { IGame } from "../server/IGame";
+
 // Base constants
 export const CARD_COST = 3;
 export const MILESTONE_COST = 8;
@@ -12,7 +14,10 @@ export const OCEAN_BONUS = 2;
 export const CORPORATION_CARDS_DEALT_PER_PLAYER = 2;
 
 // Global parameters
-export const HEAT_FOR_TEMPERATURE = 8;
+// export const HEAT_FOR_TEMPERATURE = 8;
+export function getHeatForTemperature(game: IGame): number {
+  return game.gameOptions.sevenHeatVariant ? 7 : 8;
+}
 export const MAX_OCEAN_TILES = 9;
 export const MAX_TEMPERATURE = 8;
 export const MAX_OXYGEN_LEVEL = 14;

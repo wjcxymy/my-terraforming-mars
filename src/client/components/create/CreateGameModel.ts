@@ -60,5 +60,6 @@ export type CreateGameModel = {
   startingPreludes: number;
   twoCorpsVariant: boolean;
   doubleCorpVariant: boolean;
+  sevenHeatVariant: boolean;
   undoOption: boolean;
 }

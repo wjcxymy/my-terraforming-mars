@@ -2,7 +2,7 @@ import {StandardActionCard} from '../../StandardActionCard';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardRenderer} from '../../render/CardRenderer';
 import {IPlayer} from '../../../IPlayer';
-import {HEAT_FOR_TEMPERATURE, MAX_TEMPERATURE} from '../../../../common/constants';
+import {getHeatForTemperature, MAX_TEMPERATURE} from '../../../../common/constants';
 import {Units} from '../../../../common/Units';
 
 
@@ -22,24 +22,26 @@ export class ConvertHeat extends StandardActionCard {
   }
 
   public canAct(player: IPlayer): boolean {
+    const heatRequired = getHeatForTemperature(player.game);
     if (player.game.getTemperature() === MAX_TEMPERATURE) {
       this.warnings.add('maxtemp');
     }
 
     // Strictly speaking, this conditional is not necessary, because canAfford manages reserveUnits.
-    if (player.availableHeat() < HEAT_FOR_TEMPERATURE) {
+    if (player.availableHeat() < heatRequired) {
       return false;
     }
 
     return player.canAfford({
       cost: 0,
       tr: {temperature: 1},
-      reserveUnits: Units.of({heat: 8}),
+      reserveUnits: Units.of({heat: heatRequired}),
     });
   }
 
   public action(player: IPlayer) {
-    return player.spendHeat(HEAT_FOR_TEMPERATURE, () => {
+    const heatRequired = getHeatForTemperature(player.game);
+    return player.spendHeat(heatRequired, () => {
       this.actionUsed(player);
       player.game.increaseTemperature(player, 1);
       return undefined;

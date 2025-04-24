@@ -72,6 +72,13 @@
 
                             <div class="create-game-subsection-label" v-i18n>Fan-made</div>
 
+                            <!-- 7 Heat Variant -->
+                            <input type="checkbox" id="seven-heat-checkbox" v-model="sevenHeatVariant">
+                            <label for="seven-heat-checkbox" class="expansion-button">
+                              <div class="create-game-expansion-icon expansion-icon-sevenHeat"></div>
+                              <span>7热升温</span>
+                            </label>
+
                             <!-- Double Corp -->
                             <input type="checkbox" id="double-corp-checkbox" v-model="doubleCorpVariant">
                             <label for="double-corp-checkbox" class="expansion-button">
@@ -647,6 +654,7 @@ export default (Vue as WithRefs<Refs>).extend({
       escapeVelocityPenalty: constants.DEFAULT_ESCAPE_VELOCITY_PENALTY,
       twoCorpsVariant: false,
       doubleCorpVariant: false,
+      sevenHeatVariant: false,
       customCeos: [],
       startingCeos: 3,
       startingPreludes: 4,
@@ -1074,6 +1082,7 @@ export default (Vue as WithRefs<Refs>).extend({
       const escapeVelocityPeriod = this.escapeVelocityMode ? this.escapeVelocityPeriod : undefined;
       const escapeVelocityPenalty = this.escapeVelocityMode ? this.escapeVelocityPenalty : undefined;
       const twoCorpsVariant = this.twoCorpsVariant;
+      const sevenHeatVariant = this.sevenHeatVariant;
       const customCeos = this.customCeos;
       const startingCeos = this.startingCeos;
       const startingPreludes = this.startingPreludes;
@@ -1236,6 +1245,7 @@ export default (Vue as WithRefs<Refs>).extend({
         escapeVelocityBonusSeconds,
         escapeVelocityPeriod,
         escapeVelocityPenalty,
+        sevenHeatVariant,
         twoCorpsVariant,
         doubleCorpVariant: this.doubleCorpVariant,
         customCeos,

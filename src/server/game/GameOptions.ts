@@ -73,6 +73,7 @@ export type GameOptions = {
   escapeVelocityPenalty?: number;
   twoCorpsVariant: boolean;
   doubleCorpVariant: boolean;
+  sevenHeatVariant: boolean;
 }
 
 export const DEFAULT_GAME_OPTIONS: GameOptions = {
@@ -130,4 +131,5 @@ export const DEFAULT_GAME_OPTIONS: GameOptions = {
   venusNextExtension: false,
   twoCorpsVariant: false,
   doubleCorpVariant: false,
+  sevenHeatVariant: false,
 };

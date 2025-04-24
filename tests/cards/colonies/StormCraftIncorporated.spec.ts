@@ -1,10 +1,10 @@
 import {expect} from 'chai';
 import {StormCraftIncorporated} from '../../../src/server/cards/colonies/StormCraftIncorporated';
-import * as constants from '../../../src/common/constants';
 import {testGame} from '../../TestGame';
 import {SelectAmount} from '../../../src/server/inputs/SelectAmount';
 import {TestPlayer} from '../../TestPlayer';
 import {cast, churn} from '../../TestingUtils';
+import {getHeatForTemperature} from '../../../src/common/constants';
 
 describe('StormCraftIncorporated', () => {
   let card: StormCraftIncorporated;
@@ -25,33 +25,36 @@ describe('StormCraftIncorporated', () => {
   });
 
   it('Restricts amounts when converting heat', () => {
+    const heatRequired = getHeatForTemperature(player.game);
     player.heat = 10;
     card.resourceCount = 10;
-    const options = card.spendHeat(player, constants.HEAT_FOR_TEMPERATURE);
+    const options = card.spendHeat(player, heatRequired);
     expect(options.options).has.length(2);
     const heatOption = cast(options.options[0], SelectAmount);
-    expect(heatOption.max).to.eq(constants.HEAT_FOR_TEMPERATURE);
+    expect(heatOption.max).to.eq(heatRequired);
     const floaterOption = cast(options.options[1], SelectAmount);
-    expect(floaterOption.max).to.eq(constants.HEAT_FOR_TEMPERATURE / 2);
+    expect(floaterOption.max).to.eq(heatRequired / 2);
   });
 
   it('Validates inputs', () => {
+    const heatRequired = getHeatForTemperature(player.game);
     player.heat = 10;
     card.resourceCount = 10;
-    const options = card.spendHeat(player, constants.HEAT_FOR_TEMPERATURE);
+    const options = card.spendHeat(player, heatRequired);
     const heatOption = cast(options.options[0], SelectAmount);
     const floaterOption = cast(options.options[1], SelectAmount);
     heatOption.cb(4);
     floaterOption.cb(0);
     expect(() => {
       options.cb(undefined);
-    }).to.throw(`Need to pay ${constants.HEAT_FOR_TEMPERATURE} heat`);
+    }).to.throw(`Need to pay ${heatRequired} heat`);
   });
 
   it('Converts heat with floaters and heat', () => {
+    const heatRequired = getHeatForTemperature(player.game);
     player.heat = 10;
     card.resourceCount = 10;
-    const options = card.spendHeat(player, constants.HEAT_FOR_TEMPERATURE);
+    const options = card.spendHeat(player, heatRequired);
     const heatOption = cast(options.options[0], SelectAmount);
     const floaterOption = cast(options.options[1], SelectAmount);
     heatOption.cb(2);

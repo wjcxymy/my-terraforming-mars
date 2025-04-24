@@ -162,6 +162,7 @@ export class ApiCreateGame extends Handler {
             turmoilExtension: gameReq.expansions.turmoil,
             twoCorpsVariant: gameReq.twoCorpsVariant,
             doubleCorpVariant: gameReq.doubleCorpVariant,
+            sevenHeatVariant: gameReq.sevenHeatVariant,
             underworldExpansion: gameReq.expansions.underworld,
             undoOption: gameReq.undoOption,
             venusNextExtension: gameReq.expansions.venus,
