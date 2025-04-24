@@ -21,7 +21,7 @@ export class GoldenFinger extends CorporationCard {
           cardNumber: 'MY-CORP-04',
           description: '可无限执行公司行动，内含测试工具。',
           renderData: CardRenderer.builder((b) => {
-            b.megacredits(999, { size: Size.SMALL });
+            b.megacredits(999, { size: Size.LARGE });
           }),
         },
       });
