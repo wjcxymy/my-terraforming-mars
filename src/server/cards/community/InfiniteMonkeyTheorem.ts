@@ -14,9 +14,6 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
   // 存储所有曾经展示的牌
   public targetCards: IProjectCard[] = [];
 
-  // 存储所有曾经展示牌中出现过的、并触发过奖励的标签
-  private gainedTags: Set<Tag> = new Set();
-
   constructor() {
     super({
       name: CardName.INFINITE_MONKEY_THEOREM,
@@ -24,23 +21,25 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
       tags: [Tag.ANIMAL],
       type: CardType.ACTIVE,
       resourceType: CardResource.MONKEY,
-      victoryPoints:1,
+      victoryPoints: 1,
       metadata: {
         cardNumber: 'MY05',
         renderData: CardRenderer.builder((b) => {
           b.action(
             'Reveal the top card of the deck and place it sideways on this card. For each new tag gained this way, place 1 animal here.',
             (eb) => {
-              eb.empty().startAction.cards(1).asterix()
-                .nbsp
-                .diverseTag().slash().resource(CardResource.MONKEY).asterix();
-            }).br;
+              eb.empty()
+                .startAction.cards(1).asterix()
+                .nbsp.diverseTag().slash().resource(CardResource.MONKEY).asterix();
+            }
+          ).br;
           b.plainEffect(
             'Then gain 1M€ per animal here.',
             (eb) => {
               eb.empty().startEffect
                 .resource(CardResource.MONKEY).slash().megacredits(1);
-            }).br;
+            }
+          ).br;
           b.text('Cannot gain animals by other means.', Size.SMALL, true);
         }),
       },
@@ -56,19 +55,32 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
     if (!topCard) return;
 
     this.targetCards.push(topCard);
-    topCard.resourceCount = 2;
 
-    const newTags: Tag[] = [];
-
-    for (const tag of topCard.tags) {
-      if (!this.gainedTags.has(tag)) {
-        this.gainedTags.add(tag);
-        newTags.push(tag);
+    // 从所有 targetCards 中重新统计已有标签
+    const ownedTags = new Set<Tag>();
+    for (const card of this.targetCards) {
+      for (const tag of card.tags) {
+        ownedTags.add(tag);
       }
     }
 
-    const gainedAnimalCount = newTags.length;
+    // 统计 topCard 中哪些标签是“新出现的”
+    const newTags: Tag[] = [];
+    for (const tag of topCard.tags) {
+      // 如果之前未出现该标签
+      const countInPrevious = this.targetCards
+        .slice(0, this.targetCards.length - 1) // 排除刚展示的 topCard
+        .some((card) => card.tags.includes(tag));
+      if (!countInPrevious) {
+        newTags.push(tag);
+        // console.log(`新获得的标签: ${tag}`);
+      }
+    }
 
+    // console.log(`当前存储的牌数量: ${this.targetCards.length}`);
+    // console.log(`已获得的标签种类数: ${ownedTags.size}`);
+
+    const gainedAnimalCount = newTags.length;
     if (gainedAnimalCount > 0) {
       player.addResourceTo(this, gainedAnimalCount);
     }
