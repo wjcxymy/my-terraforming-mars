@@ -81,7 +81,7 @@ import {AlliedParty} from './turmoil/AlliedParty';
 import {newStandardDraft} from './Draft';
 import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
-import { TestUnlimitedCorp } from './cards/community/TestUnlimitedCorp';
+import {GoldenFinger} from './cards/community/GoldenFinger';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -999,8 +999,8 @@ export class Player implements IPlayer {
         this.game.log('${0} used ${1} action', (b) => b.player(this).card(card));
         const action = card.action(this);
         this.defer(action);
-        // 过滤掉 TestUnlimitedCorp 不加入 actionsThisGeneration
-        if (!(card instanceof TestUnlimitedCorp)) {
+        // 过滤掉 GoldenFinger 不加入 actionsThisGeneration
+        if (!(card instanceof GoldenFinger)) {
           this.actionsThisGeneration.add(card.name);
         }
         return undefined;
