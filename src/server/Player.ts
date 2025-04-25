@@ -1053,15 +1053,17 @@ export class Player implements IPlayer {
     this.corporations.push(corporationCard);
 
     // There is a simpler way to deal with this block, but I'd rather not deal with the fallout of getting it wrong.
-    // 双公司模式下打出附加公司卡
+    // 打出附加公司卡
     if (additionalCorp) {
-      if (this.game.gameOptions.doubleCorpVariant) {
-        // 双公司变体规则：初始资金为两家公司总和减去 42 M€
-        this.megaCredits += corporationCard.startingMegaCredits - 42;
-      } else {
-        this.megaCredits += corporationCard.startingMegaCredits;
+      this.megaCredits += corporationCard.startingMegaCredits;
+      if (corporationCard.cardCost !== undefined) {
+        this.cardCost = Merger.setCardCost(this);
       }
-      this.cardCost = Merger.setCardCost(this);
+      // 如果是双公司模式且当前是第二家公司，则扣除合并费用 42 M€
+      // merge需要支付的42mc由merge自身管理，不在此处扣除
+      if (this.game.gameOptions.doubleCorpVariant && this.corporations.length === 2) {
+        this.megaCredits -= 42;
+      }
     } else {
       // 主公司卡：设置初始 M€ 与 cardCost（如有）
       this.megaCredits = corporationCard.startingMegaCredits;
