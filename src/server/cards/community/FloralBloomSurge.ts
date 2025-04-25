@@ -14,8 +14,7 @@ export class FloralBloomSurge extends Card implements IProjectCard {
       name: CardName.FLORAL_BLOOM_SURGE,
       tags: [Tag.PLANT],
       cost: 10,
-
-      requirements: [{ tag: Tag.PLANT }, { tag: Tag.PLANT }], // 2个植物标记前置
+      requirements: {tag: Tag.PLANT, count: 2}, // 2个植物标记前置
       metadata: {
         cardNumber: 'MY06',
         renderData: CardRenderer.builder((b) => {
