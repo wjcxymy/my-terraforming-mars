@@ -11,6 +11,7 @@ import {IColony} from '../colonies/IColony';
 import {CardName} from '../../common/cards/CardName';
 import {Tag} from '../../common/cards/Tag';
 import {asArray} from '../../common/utils/utils';
+import { LunaChain } from '../cards/community/LunaChain';
 
 export function cardsToModel(
   player: IPlayer,
@@ -46,6 +47,13 @@ export function cardsToModel(
       }
     }
 
+    // LunaChain 专用：记录上一张项目牌的实际支付费用
+    let lastProjectCardCost: number | undefined = undefined;
+    if (card.name === CardName.LUNA_CHAIN) {
+      // 你需要 import LunaChain
+      lastProjectCardCost = (card as LunaChain).getLastProjectCardMegacreditCost();
+    }
+
     const model: CardModel = {
       resources: options.showResources ? card.resourceCount : undefined,
       name: card.name,
@@ -54,6 +62,7 @@ export function cardsToModel(
       bonusResource: isIProjectCard(card) ? card.bonusResource : undefined,
       discount: discount,
       cloneTag: isICloneTagCard(card) ? card.cloneTag : undefined,
+      lastProjectCardCost,
     };
     if (card.isDisabled) {
       model.isDisabled = true;

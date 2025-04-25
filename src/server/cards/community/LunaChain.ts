@@ -36,6 +36,10 @@ export class LunaChain extends CorporationCard {
     });
   }
 
+  getLastProjectCardMegacreditCost(): number | undefined {
+    return this.lastProjectCardMegacreditCost;
+  }
+
   public onCardPlayedWithPayment(player: IPlayer, card: ICard, payment: Payment): void {
     if (!player.isCorporation(this.name)) return;
     if (![CardType.AUTOMATED, CardType.ACTIVE, CardType.EVENT].includes(card.type)) return;

@@ -14,8 +14,7 @@
       <!-- 👇 仅对 LUNA_CHAIN 显示 -->
       <div v-if="cardInstance.name === 'LunaChain'" class="card-lastpay-counter">
         <div class="card-lastpay-counter-number">
-          <!-- {{ lastCardCost }} M€ -->
-          M€
+          {{ lastCardCost }}
         </div>
       </div>
       <CardResourceCounter v-if="hasResourceType" :amount="getResourceAmount()" :type="resourceType" />
@@ -186,12 +185,12 @@ export default Vue.extend({
     playerCubeClass(): string {
       return `board-cube board-cube--${this.cubeColor}`;
     },
-    // lastCardCost(): number | undefined {
-    //   if (this.cardInstance.name === CardName.LUNA_CHAIN) {
-    //     return this.cardInstance.lastProjectCardMegacreditCost;
-    //   }
-    //   return undefined;
-    // },
+    lastCardCost(): number | undefined {
+      if (this.card.name === 'LunaChain') {
+        return this.card.lastProjectCardCost;
+      }
+      return undefined;
+    }
   },
 });
 

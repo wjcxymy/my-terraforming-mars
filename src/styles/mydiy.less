@@ -30,16 +30,34 @@
 .card-lastpay-counter {
     position: absolute; /* 绝对定位，允许它脱离文档流 */
     top: 11%; /* 使其竖直居中于 .card-luna-chain-logo */
-    left: 40%; /* 根据需要调整水平位置，使其更靠左 */
+    left: 39%; /* 根据需要调整水平位置，使其更靠左 */
     transform: translateY(-50%); /* 使 .card-lastpay-counter 相对其自身竖直居中 */
     z-index: 2; /* 确保它在 logo 上层 */
+    width: 30px; /* 添加固定宽度用于对齐 */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
 }
 
 .card-lastpay-counter-number {
-    font-size: 16px; /* 调整字体大小 */
+    font-size: 20px; /* 调整字体大小 */
     color: #a56387; /* 调整颜色，以便在背景上清晰显示 */
     font-weight: bold; /* 强调字体 */
+    text-align: center;
+    width: 100%; /* 保证文字在容器内水平居中 */
+    line-height: 1;
 }
+
+  .card-lastpay-counter-number {
+    font-size: 20px;
+    color: #a56387;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* 保证文字在容器内水平居中 */
+    line-height: 1;
+  }
 
 .card-tithes-logo {
     background-image: url(./assets/MYDIY/corp-logo-tithes.png);
