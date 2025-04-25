@@ -10,10 +10,13 @@ import {OptionsInput} from './OptionsPlayerInput';
 import {InputResponse, isSelectInitialCardsResponse} from '../../common/inputs/InputResponse';
 
 export class SelectInitialCards extends OptionsInput<undefined> {
-  constructor(private player: IPlayer, cb: (corporation: ICorporationCard) => undefined) {
+  constructor(
+    private player: IPlayer,
+    cb: (corporations: ICorporationCard[]) => undefined
+  ) {
     super('initialCards', '', []);
     const game = player.game;
-    let corporation: ICorporationCard;
+    const corporations: ICorporationCard[] = [];
     this.title = ' ';
     this.buttonLabel = 'Start';
 
@@ -25,7 +28,7 @@ export class SelectInitialCards extends OptionsInput<undefined> {
             if (cards.length !== 2) {
               throw new InputError('Only select 2 corporation card');
             }
-            corporation = cards[0];
+            corporations.push(...cards);
             return undefined;
           }),
       );
@@ -37,7 +40,7 @@ export class SelectInitialCards extends OptionsInput<undefined> {
             if (cards.length !== 1) {
               throw new InputError('Only select 1 corporation card');
             }
-            corporation = cards[0];
+            corporations.push(...cards);
             return undefined;
           }),
       );
@@ -79,33 +82,44 @@ export class SelectInitialCards extends OptionsInput<undefined> {
         }),
     );
     this.andThen(() => {
-      this.completed(corporation);
+      this.completed(corporations);
       // TODO(kberg): This is probably broken. Stop subclassing AndOptions.
-      cb(corporation);
+      cb(corporations);
       return undefined;
     });
   }
 
-  private completed(corporation: ICorporationCard) {
+  private completed(corporations: ICorporationCard[]) {
     const player = this.player;
     const game = player.game;
-    // Check for negative M€
-    const cardCost = corporation.cardCost !== undefined ? corporation.cardCost : player.cardCost;
-    if (corporation.name !== CardName.BEGINNER_CORPORATION && player.cardsInHand.length * cardCost > corporation.startingMegaCredits) {
+
+    const [corporation1, corporation2] = corporations;
+
+    // 计算留牌费用（注意：若只有1个公司，只计算1个费用）
+    const cardCost = (corporation2 !== undefined)
+    ? (((corporation1.cardCost ?? player.cardCost) + (corporation2.cardCost ?? player.cardCost)) - player.cardCost)
+    : (corporation1.cardCost ?? player.cardCost);
+
+    const totalCardCost = player.cardsInHand.length * cardCost;
+    // 双公司变体规则，初始MC为: 两公司mc总和-42
+    const availableCredits = (corporation1.startingMegaCredits ?? 0) + (corporation2?.startingMegaCredits ?? 0) - 42;
+
+    if (corporation1.name !== CardName.BEGINNER_CORPORATION && totalCardCost > availableCredits) {
       player.cardsInHand = [];
       player.preludeCardsInHand = [];
       throw new InputError('Too many cards selected');
     }
 
-    for (const card of player.dealtProjectCards) {
-      if (player.cardsInHand.includes(card) === false) {
-        game.projectDeck.discard(card);
+    const selectedNames = corporations.map(c => c.name);
+    for (const card of player.dealtCorporationCards) {
+      if (!selectedNames.includes(card.name)) {
+        game.corporationDeck.discard(card);
       }
     }
 
-    for (const card of player.dealtCorporationCards) {
-      if (card.name !== corporation.name) {
-        game.corporationDeck.discard(card);
+    for (const card of player.dealtProjectCards) {
+      if (player.cardsInHand.includes(card) === false) {
+        game.projectDeck.discard(card);
       }
     }
 

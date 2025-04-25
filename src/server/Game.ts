@@ -388,7 +388,7 @@ export class Game implements IGame, Logger {
           player.dealtCeoCards.push(...ceoDeck.drawN(game, gameOptions.startingCeos));
         }
       } else {
-        game.playerHasPickedCorporationCard(player, new BeginnerCorporation());
+        game.playerHasPickedCorporationCard(player, [new BeginnerCorporation()]);
       }
     }
 
@@ -627,22 +627,37 @@ export class Game implements IGame, Logger {
     return this.claimedMilestones.length >= constants.MAX_MILESTONES;
   }
 
-  private playerHasPickedCorporationCard(player: IPlayer, corporationCard: ICorporationCard): void {
+  private playerHasPickedCorporationCard(player: IPlayer, corporations: ICorporationCard[]): void {
     // TODO(kberg): I think we can get rid of this weird validation at a later time.
-    player.pickedCorporationCard = corporationCard;
+    // 默认第一张为主公司
+    player.pickedCorporationCard = corporations[0];
+
+    // 如果是双公司模式且存在第二张，设为副公司
+    if (this.gameOptions.doubleCorpVariant && corporations.length > 1) {
+      player.secondaryCorporationCard = corporations[1];
+    }
+
+    // 所有玩家都已选好主公司后，开始游戏
     if (this.players.every((p) => p.pickedCorporationCard !== undefined)) {
       for (const somePlayer of this.getPlayersInGenerationOrder()) {
         if (somePlayer.pickedCorporationCard === undefined) {
           throw new Error(`pickedCorporationCard is not defined for ${somePlayer.id}`);
         }
+
+        // 打出主公司卡
         somePlayer.playCorporationCard(somePlayer.pickedCorporationCard);
+
+        // 如果有副公司卡，打出副公司卡
+        if (somePlayer.secondaryCorporationCard !== undefined) {
+          somePlayer.playCorporationCard(somePlayer.secondaryCorporationCard);
+        }
       }
     }
   }
 
   private selectInitialCards(player: IPlayer): PlayerInput {
-    return new SelectInitialCards(player, (corporation: ICorporationCard) => {
-      this.playerHasPickedCorporationCard(player, corporation);
+    return new SelectInitialCards(player, (corporations: ICorporationCard[]) => {
+      this.playerHasPickedCorporationCard(player, corporations);
       return undefined;
     });
   }

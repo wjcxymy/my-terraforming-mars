@@ -1030,9 +1030,22 @@ export class Player implements IPlayer {
   }
 
   public playCorporationCard(corporationCard: ICorporationCard): void {
-    if (this.corporations.length > 0) {
-      throw new Error('Cannot add additional corporation without specifying it explicitly.');
+    // 如果已经有一张公司卡且不是双公司模式，就抛出错误
+    if (this.corporations.length === 1 && !this.game.gameOptions.doubleCorpVariant) {
+      throw new Error('Cannot add more than one corporation card.');
     }
+
+    // 如果已经有两张公司卡，就抛出错误
+    if (this.corporations.length >= 2) {
+      throw new Error('Cannot add more than two corporation cards.');
+    }
+
+    // 如果允许双公司模式，且只有一张公司卡时，允许继续添加第二张
+    if (this.corporations.length === 1 && this.game.gameOptions.doubleCorpVariant) {
+      return this._playCorporationCard(corporationCard, true); // 传入 `true` 标记这是第二张公司卡
+    }
+
+    // 否则正常添加第一张公司卡
     return this._playCorporationCard(corporationCard, false);
   }
 
@@ -1040,10 +1053,17 @@ export class Player implements IPlayer {
     this.corporations.push(corporationCard);
 
     // There is a simpler way to deal with this block, but I'd rather not deal with the fallout of getting it wrong.
+    // 双公司模式下打出附加公司卡
     if (additionalCorp) {
-      this.megaCredits += corporationCard.startingMegaCredits;
+      if (this.game.gameOptions.doubleCorpVariant) {
+        // 双公司变体规则：初始资金为两家公司总和减去 42 M€
+        this.megaCredits += corporationCard.startingMegaCredits - 42;
+      } else {
+        this.megaCredits += corporationCard.startingMegaCredits;
+      }
       this.cardCost = Merger.setCardCost(this);
     } else {
+      // 主公司卡：设置初始 M€ 与 cardCost（如有）
       this.megaCredits = corporationCard.startingMegaCredits;
       if (corporationCard.cardCost !== undefined) {
         this.cardCost = corporationCard.cardCost;
