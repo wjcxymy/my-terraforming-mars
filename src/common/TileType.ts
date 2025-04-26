@@ -57,6 +57,9 @@ export enum TileType {
 
     // Underworld
     MAN_MADE_VOLCANO, // 42
+
+    // MYDIY
+    GAMBLING_DISTRICT_LAS_VEGAS, //43
   }
 
 export const tileTypeToString: Record<TileType, string> = {
@@ -104,11 +107,12 @@ export const tileTypeToString: Record<TileType, string> = {
   [TileType.MARS_NOMADS]: CardName.MARS_NOMADS,
   [TileType.REY_SKYWALKER]: CardName.REY_SKYWALKER,
   [TileType.MAN_MADE_VOLCANO]: CardName.MAN_MADE_VOLCANO,
+  [TileType.GAMBLING_DISTRICT_LAS_VEGAS]: CardName.GAMBLING_DISTRICT_LAS_VEGAS,
 } as const;
 
 export const HAZARD_TILES = new Set([TileType.DUST_STORM_MILD, TileType.DUST_STORM_SEVERE, TileType.EROSION_MILD, TileType.EROSION_SEVERE]);
 export const OCEAN_UPGRADE_TILES = new Set([TileType.OCEAN_CITY, TileType.OCEAN_FARM, TileType.OCEAN_SANCTUARY]);
-export const CITY_TILES = new Set([TileType.CITY, TileType.CAPITAL, TileType.OCEAN_CITY, TileType.RED_CITY]);
+export const CITY_TILES = new Set([TileType.CITY, TileType.CAPITAL, TileType.OCEAN_CITY, TileType.RED_CITY, TileType.GAMBLING_DISTRICT_LAS_VEGAS]);
 export const OCEAN_TILES = new Set([TileType.OCEAN, TileType.OCEAN_CITY, TileType.OCEAN_FARM, TileType.OCEAN_SANCTUARY, TileType.WETLANDS]);
 export const BASE_OCEAN_TILES = new Set([TileType.OCEAN, TileType.WETLANDS]);
 export const GREENERY_TILES = new Set([TileType.GREENERY, TileType.WETLANDS]);

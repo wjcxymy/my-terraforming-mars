@@ -630,6 +630,15 @@ abstract class Builder<T> {
   public myLoopArrow(): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_LOOP_ARROW));
   }
+  public myXDian(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_X_DIAN));
+  }
+  public my5Dian(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_5_DIAN));
+  }
+  public my6Dian(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_6_DIAN));
+  }
 }
 
 class RootBuilder extends Builder<CardRenderRoot> {

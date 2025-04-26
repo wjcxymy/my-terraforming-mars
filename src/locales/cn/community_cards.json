@@ -71,6 +71,12 @@
   "(Effect: When you play a plant tag card (including this), increase your plant production by 1.)": "（效果：当你打出一张植物志牌时（包括此牌）时，提升1点植物产能。）",
 
   "Ecological Pavilion": "生态展馆",
-  "Requires a plant tag, a microbe tag, and an animal tag. Draw 2 cards.": "需要拥有植物、微生物和动物标志。抽2张牌。"
+  "Requires a plant tag, a microbe tag, and an animal tag. Draw 2 cards.": "需要拥有植物、微生物和动物标志。抽2张牌。",
 
+  "Gambling District Las Vegas": "赌城拉斯维加斯",
+  "Place this tile. It counts as a City.": "放置此板块，其视为一座城市。",
+  "When a tile is placed adjacent to it, the player must pay 3 M€ more, then roll 1d6 to gain that many M€.": "当有板块放置在其相邻位置时，该玩家需额外支付 3 M€，然后掷 1d6，获得等量 M€。",
+  "If the result is 5 or 6, they also draw a card.": "若结果为 5 或 6，该玩家额外抽 1 张牌。",
+  "${0} rolled ${1} and gained ${2} M€, then drew a card from ${3}.": "${0} 掷出 ${1}，获得了 ${2} M€，还额外抽了一张牌(来自 ${3})。",
+  "${0} rolled ${1} and gained ${2} M€ from ${3}.": "${0} 掷出 ${1}，获得了 ${2} M€(来自 ${3})。"
 }

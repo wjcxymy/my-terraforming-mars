@@ -31,6 +31,7 @@ import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
 import { GoldenFinger } from './GoldenFinger';
 import { FloralBloomSurge } from './FloralBloomSurge';
 import { EcologicalPavilion } from './EcologicalPavilion';
+import { GamblingDistrictLasVegas } from './GamblingDistrictLasVegas';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -67,6 +68,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.INFINITE_MONKEY_THEOREM]: {Factory: InfiniteMonkeyTheorem},
     [CardName.FLORAL_BLOOM_SURGE]: {Factory: FloralBloomSurge},
     [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
+    [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {

@@ -83,5 +83,8 @@ export enum CardRenderItemType {
   // MYDIY
   MY_ASTEROID = 'my_asteroid',
   MY_LOOP_ARROW = 'my_loop_arrow',
+  MY_X_DIAN = 'my_x_dian',
+  MY_5_DIAN = 'my_5_dian',
+  MY_6_DIAN = 'my_6_dian',
 
 }

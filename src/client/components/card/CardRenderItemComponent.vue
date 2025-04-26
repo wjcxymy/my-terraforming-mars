@@ -305,6 +305,15 @@ export default Vue.extend({
       case CardRenderItemType.MY_LOOP_ARROW:
         classes.push(this.cardResource, 'card-icon-loop-arrow');
         break;
+      case CardRenderItemType.MY_X_DIAN:
+        classes.push(this.cardResource, 'card-icon-x-dian');
+        break;
+      case CardRenderItemType.MY_5_DIAN:
+        classes.push(this.cardResource, 'card-icon-5-dian');
+        break;
+      case CardRenderItemType.MY_6_DIAN:
+        classes.push(this.cardResource, 'card-icon-6-dian');
+        break;
       }
 
       if (this.item.secondaryTag === AltSecondaryTag.NO_PLANETARY_TAG) {

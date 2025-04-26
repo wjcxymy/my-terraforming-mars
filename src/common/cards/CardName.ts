@@ -582,6 +582,7 @@ export enum CardName {
   INFINITE_MONKEY_THEOREM = 'Infinite Monkey Theorem',
   FLORAL_BLOOM_SURGE = 'Floral Bloom Surge',
   ECOLOGICAL_PAVILION = 'Ecological Pavilion',
+  GAMBLING_DISTRICT_LAS_VEGAS = 'Gambling District Las Vegas',
 
   // Community corps
   AGRICOLA_INC = 'Agricola Inc',
