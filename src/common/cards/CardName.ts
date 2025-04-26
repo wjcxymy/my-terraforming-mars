@@ -581,6 +581,7 @@ export enum CardName {
   SPACE_WEDDING = 'Space Wedding',
   INFINITE_MONKEY_THEOREM = 'Infinite Monkey Theorem',
   FLORAL_BLOOM_SURGE = 'Floral Bloom Surge',
+  ECOLOGICAL_PAVILION = 'Ecological Pavilion',
 
   // Community corps
   AGRICOLA_INC = 'Agricola Inc',

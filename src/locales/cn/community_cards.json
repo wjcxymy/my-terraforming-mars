@@ -68,6 +68,9 @@
   "GOLDEN FINGER": "金手指",
 
   "Floral Bloom Surge": "卉植繁茂",
-  "(Effect: When you play a plant tag card (including this), increase your plant production by 1.)": "（效果：当你打出一张植物志牌时（包括此牌）时，提升1点植物产能。）"
+  "(Effect: When you play a plant tag card (including this), increase your plant production by 1.)": "（效果：当你打出一张植物志牌时（包括此牌）时，提升1点植物产能。）",
+
+  "Ecological Pavilion": "生态展馆",
+  "Requires a plant tag, a microbe tag, and an animal tag. Draw 2 cards.": "需要拥有植物、微生物和动物标志。抽2张牌。"
 
 }

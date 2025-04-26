@@ -30,6 +30,7 @@ import { SpaceWedding } from './SpaceWedding';
 import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
 import { GoldenFinger } from './GoldenFinger';
 import { FloralBloomSurge } from './FloralBloomSurge';
+import { EcologicalPavilion } from './EcologicalPavilion';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -65,6 +66,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.SPACE_WEDDING]: {Factory: SpaceWedding},
     [CardName.INFINITE_MONKEY_THEOREM]: {Factory: InfiniteMonkeyTheorem},
     [CardName.FLORAL_BLOOM_SURGE]: {Factory: FloralBloomSurge},
+    [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {
