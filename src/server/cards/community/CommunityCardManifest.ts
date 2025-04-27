@@ -20,18 +20,6 @@ import {SpecialDesignProxy} from './SpecialDesignProxy';
 import {TradeAdvance} from './TradeAdvance';
 import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {ValuableGases} from './ValuableGases';
-import {ProjectReorganization} from './ProjectReorganization';
-import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
-import {TrisynInstitute} from './TrisynInstitute';
-import {LunaChain} from './LunaChain';
-import { Tithes } from './Tithes';
-import { ResourcePlanningBureau } from './ResourcePlanningBureau';
-import { SpaceWedding } from './SpaceWedding';
-import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
-import { GoldenFinger } from './GoldenFinger';
-import { FloralBloomSurge } from './FloralBloomSurge';
-import { EcologicalPavilion } from './EcologicalPavilion';
-import { GamblingDistrictLasVegas } from './GamblingDistrictLasVegas';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -46,10 +34,6 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.JUNK_VENTURES]: {Factory: JunkVentures},
     [CardName.ERIS]: {Factory: Eris, compatibility: 'ares'},
     [CardName.ATHENA]: {Factory: Athena, compatibility: 'ares'},
-    [CardName.TRISYN_INSTITUTE]: {Factory: TrisynInstitute},
-    [CardName.LUNA_CHAIN]: {Factory: LunaChain},
-    [CardName.TITHES]: {Factory: Tithes},
-    [CardName.GOLDEN_FINGER]: {Factory: GoldenFinger},
   },
   preludeCards: {
     [CardName.RESEARCH_GRANT]: {Factory: ResearchGrant},
@@ -61,14 +45,6 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.EXECUTIVE_ORDER]: {Factory: ExecutiveOrder, compatibility: 'turmoil'},
   },
   projectCards: {
-    [CardName.PROJECT_REORGANIZATION]: {Factory: ProjectReorganization},
-    [CardName.ASTEROID_MATERIAL_RESEARCH_CENTER]: {Factory: AsteroidMaterialResearchCenter},
-    [CardName.RESOURCE_PLANNING_BUREAU]: {Factory: ResourcePlanningBureau},
-    [CardName.SPACE_WEDDING]: {Factory: SpaceWedding},
-    [CardName.INFINITE_MONKEY_THEOREM]: {Factory: InfiniteMonkeyTheorem},
-    [CardName.FLORAL_BLOOM_SURGE]: {Factory: FloralBloomSurge},
-    [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
-    [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
     [CardName.SPECIAL_DESIGN_PROXY]: {Factory: SpecialDesignProxy, instantiate: false},
   },
   globalEvents: {

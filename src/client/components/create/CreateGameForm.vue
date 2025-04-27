@@ -86,6 +86,13 @@
                               <span>Double Corp</span>
                             </label>
 
+                            <!-- MingYue -->
+                            <input type="checkbox" name="mingyue" id="mingyue-checkbox" v-model="expansions.mingyue">
+                            <label for="mingyue-checkbox" class="expansion-button">
+                                <div class="create-game-expansion-icon expansion-icon-mingyue"></div>
+                                <span v-i18n>MingYue</span>&nbsp;<a href="https://github.com/wjcxymy/my-terraforming-mars/wiki" class="tooltip" target="_blank">&#9432;</a>
+                            </label>
+
                             <input type="checkbox" name="ares" id="ares-checkbox" v-model="expansions.ares">
                             <label for="ares-checkbox" class="expansion-button">
                                 <div class="create-game-expansion-icon expansion-icon-ares"></div>
@@ -801,6 +808,7 @@ export default (Vue as WithRefs<Refs>).extend({
               ceo: json_constants.CEOEXTENSION,
               starwars: json_constants.STARWARSEXPANSION,
               underworld: json_constants.UNDERWORLDEXPANSION,
+              mingyue: json_constants.MINGYUEEXPANSION,
             } as const;
             for (const expansion of Object.keys(oldFields)) {
               const x = oldFields[expansion as Expansion];
