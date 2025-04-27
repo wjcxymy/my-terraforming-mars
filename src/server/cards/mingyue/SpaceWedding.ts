@@ -12,14 +12,15 @@ import { SelectOption } from '../../inputs/SelectOption';
 import { message } from '../../logs/MessageBuilder';
 import { all } from '../Options';
 import { LogHelper } from '../../../server/LogHelper';
+import { Tag } from '../../../common/cards/Tag';
 
 export class SpaceWedding extends Card implements IProjectCard {
   constructor() {
     super({
       type: CardType.EVENT,
       name: CardName.SPACE_WEDDING,
-      tags: [],
-      cost: 10,
+      tags: [Tag.EARTH, Tag.SPACE],
+      cost: 12,
       victoryPoints: 2,
       metadata: {
         cardNumber: 'MY04',
