@@ -442,6 +442,7 @@ export class Server {
         ceo: options.ceoExtension,
         starwars: options.starWarsExpansion,
         underworld: options.underworldExpansion,
+        mingyue: options.mingyueExpansion,
       },
       fastModeOption: options.fastModeOption,
       includedCards: options.includedCards,

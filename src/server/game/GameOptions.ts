@@ -36,6 +36,7 @@ export type GameOptions = {
   ceoExtension: boolean;
   starWarsExpansion: boolean;
   underworldExpansion: boolean;
+  mingyueExpansion: boolean;
 
   // Variants
   draftVariant: boolean;
@@ -127,6 +128,7 @@ export const DEFAULT_GAME_OPTIONS: GameOptions = {
   starWarsExpansion: false,
   turmoilExtension: false,
   underworldExpansion: false,
+  mingyueExpansion: false,
   undoOption: false,
   venusNextExtension: false,
   twoCorpsVariant: false,

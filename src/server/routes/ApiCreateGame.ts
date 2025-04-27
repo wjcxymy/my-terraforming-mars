@@ -164,6 +164,7 @@ export class ApiCreateGame extends Handler {
             doubleCorpVariant: gameReq.doubleCorpVariant,
             sevenHeatVariant: gameReq.sevenHeatVariant,
             underworldExpansion: gameReq.expansions.underworld,
+            mingyueExpansion: gameReq.expansions.mingyue,
             undoOption: gameReq.undoOption,
             venusNextExtension: gameReq.expansions.venus,
           };

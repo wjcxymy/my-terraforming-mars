@@ -4,7 +4,7 @@ import {isCeoCard} from './ceos/ICeoCard';
 import {IProjectCard} from './IProjectCard';
 import {isICloneTagCard} from './pathfinders/ICloneTagCard';
 import {SelfReplicatingRobots} from './promo/SelfReplicatingRobots';
-import {InfiniteMonkeyTheorem} from './community/InfiniteMonkeyTheorem';
+import {InfiniteMonkeyTheorem} from './mingyue/InfiniteMonkeyTheorem';
 import {CardType} from '../../common/cards/CardType';
 import {asArray} from '../../common/utils/utils';
 

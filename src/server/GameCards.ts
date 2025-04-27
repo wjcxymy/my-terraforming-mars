@@ -23,6 +23,7 @@ import {ICeoCard} from './cards/ceos/ICeoCard';
 import {PRELUDE2_CARD_MANIFEST} from './cards/prelude2/Prelude2CardManifest';
 import {STAR_WARS_CARD_MANIFEST} from './cards/starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './cards/underworld/UnderworldCardManifest';
+import {MINGYUE_CARD_MANIFEST} from './cards/mingyue/MingYueCardManifest';
 
 /**
  * Returns the cards available to a game based on its `GameOptions`.
@@ -60,6 +61,7 @@ export class GameCards {
       [gameOptions.ceoExtension, CEO_CARD_MANIFEST],
       [gameOptions.starWarsExpansion, STAR_WARS_CARD_MANIFEST],
       [gameOptions.underworldExpansion, UNDERWORLD_CARD_MANIFEST],
+      [gameOptions.mingyueExpansion, MINGYUE_CARD_MANIFEST],
     ];
 
     this.moduleManifests = manifests

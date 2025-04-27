@@ -30,7 +30,7 @@ import {SelectProjectCardToPlay} from './inputs/SelectProjectCardToPlay';
 import {SelectOption} from './inputs/SelectOption';
 import {SelectSpace} from './inputs/SelectSpace';
 import {SelfReplicatingRobots} from './cards/promo/SelfReplicatingRobots';
-import {InfiniteMonkeyTheorem} from './cards/community/InfiniteMonkeyTheorem';
+import {InfiniteMonkeyTheorem} from './cards/mingyue/InfiniteMonkeyTheorem';
 import {SerializedCard} from './SerializedCard';
 import {SerializedPlayer} from './SerializedPlayer';
 import {StormCraftIncorporated} from './cards/colonies/StormCraftIncorporated';
@@ -81,7 +81,7 @@ import {AlliedParty} from './turmoil/AlliedParty';
 import {newStandardDraft} from './Draft';
 import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
-import {GoldenFinger} from './cards/community/GoldenFinger';
+import {GoldenFinger} from './cards/mingyue/GoldenFinger';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {

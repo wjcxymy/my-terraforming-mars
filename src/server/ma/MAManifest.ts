@@ -34,6 +34,7 @@ export function isCompatible<T extends string>(name: T, manifest: MAManifest<T, 
     ceo: 'ceoExtension',
     starwars: 'starWarsExpansion',
     underworld: 'underworldExpansion',
+    mingyue: 'mingyueExpansion',
   };
   for (const expansion of EXPANSIONS) {
     if (manifest.all[name].compatibility === expansion) {
