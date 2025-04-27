@@ -58,7 +58,7 @@ export enum TileType {
     // Underworld
     MAN_MADE_VOLCANO, // 42
 
-    // MYDIY
+    // MingYue
     GAMBLING_DISTRICT_LAS_VEGAS, //43
   }
 

@@ -48,6 +48,6 @@ export enum CardResource {
   ACTIVIST = 'Activist',
   SUPPLY_CHAIN = 'Supply Chain',
 
-  // MYDIY
+  // MingYue
   MONKEY = 'Monkey',
 }
