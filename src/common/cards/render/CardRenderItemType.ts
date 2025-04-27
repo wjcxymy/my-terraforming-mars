@@ -80,7 +80,7 @@ export enum CardRenderItemType {
   GEOSCAN_ICON = 'geoscan-icon',
   UNDERGROUND_SHELTERS = 'underground-shelters',
 
-  // MYDIY
+  // MingYue
   MY_ASTEROID = 'my_asteroid',
   MY_LOOP_ARROW = 'my_loop_arrow',
   MY_X_DIAN = 'my_x_dian',

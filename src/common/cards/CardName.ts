@@ -575,14 +575,6 @@ export enum CardName {
   // End of promo cards
 
   // Community cards
-  PROJECT_REORGANIZATION = 'Project Reorganization',
-  ASTEROID_MATERIAL_RESEARCH_CENTER = 'Asteroid Material Research Center',
-  RESOURCE_PLANNING_BUREAU = 'Resource Planning Bureau',
-  SPACE_WEDDING = 'Space Wedding',
-  INFINITE_MONKEY_THEOREM = 'Infinite Monkey Theorem',
-  FLORAL_BLOOM_SURGE = 'Floral Bloom Surge',
-  ECOLOGICAL_PAVILION = 'Ecological Pavilion',
-  GAMBLING_DISTRICT_LAS_VEGAS = 'Gambling District Las Vegas',
 
   // Community corps
   AGRICOLA_INC = 'Agricola Inc',
@@ -595,10 +587,6 @@ export enum CardName {
   JUNK_VENTURES = 'Junk Ventures',
   ERIS = 'Eris',
   ATHENA = 'Athena',
-  TRISYN_INSTITUTE = 'TrisynInstitute',
-  LUNA_CHAIN = 'LunaChain',
-  TITHES = 'Tithes',
-  GOLDEN_FINGER = 'Golden Finger',
 
   // Community preludes
   VALUABLE_GASES = 'Valuable Gases',
@@ -611,6 +599,28 @@ export enum CardName {
 
   // Community colonies
   SCIENCE_TAG_BLANK_CARD = '',
+
+  // MingYue cards
+  PROJECT_REORGANIZATION = 'Project Reorganization',
+  ASTEROID_MATERIAL_RESEARCH_CENTER = 'Asteroid Material Research Center',
+  RESOURCE_PLANNING_BUREAU = 'Resource Planning Bureau',
+  SPACE_WEDDING = 'Space Wedding',
+  INFINITE_MONKEY_THEOREM = 'Infinite Monkey Theorem',
+  FLORAL_BLOOM_SURGE = 'Floral Bloom Surge',
+  ECOLOGICAL_PAVILION = 'Ecological Pavilion',
+  GAMBLING_DISTRICT_LAS_VEGAS = 'Gambling District Las Vegas',
+
+  // MingYue corps
+  TRISYN_INSTITUTE = 'TrisynInstitute',
+  LUNA_CHAIN = 'LunaChain',
+  TITHES = 'Tithes',
+  GOLDEN_FINGER = 'Golden Finger',
+
+  // MingYue preludes
+
+  // MingYue colonies
+
+  // End of MingYue cards
 
   // For Playwright.
   SPECIAL_DESIGN_PROXY = 'Special Design:proxy',

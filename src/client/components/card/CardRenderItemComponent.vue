@@ -298,7 +298,7 @@ export default Vue.extend({
       case CardRenderItemType.UNDERGROUND_SHELTERS:
         classes.push('card-underground-shelters');
         break;
-      // MYDIY:
+      // MingYue:
       case CardRenderItemType.MY_ASTEROID:
         classes.push(this.cardResource, 'card-icon-name-contains-asteroid');
         break;

@@ -622,7 +622,7 @@ abstract class Builder<T> {
   }
 
   /*
-   * MYDIY Card Assets
+   * MingYue Card Assets
    */
   public myAsteroid(): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_ASTEROID));
