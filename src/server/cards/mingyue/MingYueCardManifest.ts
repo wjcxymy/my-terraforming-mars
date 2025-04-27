@@ -12,6 +12,7 @@ import { GoldenFinger } from './GoldenFinger';
 import { FloralBloomSurge } from './FloralBloomSurge';
 import { EcologicalPavilion } from './EcologicalPavilion';
 import { GamblingDistrictLasVegas } from './GamblingDistrictLasVegas';
+import { ArtifactHarvest } from './ArtifactHarvest';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -31,6 +32,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.INFINITE_MONKEY_THEOREM]: {Factory: InfiniteMonkeyTheorem},
     [CardName.FLORAL_BLOOM_SURGE]: {Factory: FloralBloomSurge},
     [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
+    [CardName.ARTIFACT_HARVEST]: {Factory: ArtifactHarvest},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
   },
   globalEvents: {
