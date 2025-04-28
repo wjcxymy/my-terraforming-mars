@@ -13,6 +13,7 @@ import { FloralBloomSurge } from './FloralBloomSurge';
 import { EcologicalPavilion } from './EcologicalPavilion';
 import { GamblingDistrictLasVegas } from './GamblingDistrictLasVegas';
 import { ArtifactHarvest } from './ArtifactHarvest';
+import { WorldLineVoyager } from './WorldLineVoyager';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -21,6 +22,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.LUNA_CHAIN]: {Factory: LunaChain},
     [CardName.TITHES]: {Factory: Tithes},
     [CardName.GOLDEN_FINGER]: {Factory: GoldenFinger},
+    [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager},
   },
   preludeCards: {
   },

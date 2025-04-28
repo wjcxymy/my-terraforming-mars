@@ -21,6 +21,17 @@
     "${0} collected a total of ${1} M€ via ${2}.": "${0} 通过 ${2} 共计获得了 ${1} M€。",
 
     "Golden Finger": "金手指",
-    "GOLDEN FINGER": "金手指"
+    "GOLDEN FINGER": "金手指",
+
+    "World Line Voyager": "世界线航行者",
+    "WORLD LINE VOYAGER": "世界线航行者",
+    "α World Line": "α世界线",
+    "β World Line": "β世界线",
+    "α World Line ⇄ β World Line": "α世界线 ⇄ β世界线",
+    "(Effect: At the end of each round, you jump to another World Line (in the first round, you start in the β World Line).)": "（效果：每回合结束时，你跳跃至另一条世界线（首回合你处于β世界线）。）",
+    "α World Line: Base actions per round are 1, project card costs are reduced by 3 M€.": "α世界线：基础行动次数为1，项目卡费用减少3 M€。",
+    "β World Line: Base actions per round are 3, project card costs are increased by 1 M€.": "β世界线：基础行动次数为3，项目卡费用增加1 M€。",
+    "${0}'s ${1} has jumped to the β World Line. You can take 3 actions next round.": "${0} 的 ${1} 已跳跃到 β 世界线，下回合可进行 3 次行动。",
+    "${0}'s ${1} has jumped to the α World Line. You can take 1 action next round.": "${0} 的 ${1} 已跳跃到 α 世界线，下回合可进行 1 次行动。"
 
 }
