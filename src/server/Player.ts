@@ -82,6 +82,7 @@ import {newStandardDraft} from './Draft';
 import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
 import {GoldenFinger} from './cards/mingyue/GoldenFinger';
+import { WorldLineVoyager } from './cards/mingyue/WorldLineVoyager';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -1597,9 +1598,41 @@ export class Player implements IPlayer {
         game.phase = Phase.ACTION;
       }
 
-      if (game.hasPassedThisActionPhase(this) || (this.allOtherPlayersHavePassed() === false && this.actionsTakenThisRound >= this.availableActionsThisRound)) {
+      // 如果玩家拥有世界线航行者公司，则首回合行动次数应为3次
+      const worldlinevoyager = this.getCorporation(CardName.WORLD_LINE_VOYAGER);
+      if (worldlinevoyager instanceof WorldLineVoyager && this.availableActionsThisRound === 2) {
+        this.availableActionsThisRound = 3;
+      }
+
+      if (game.hasPassedThisActionPhase(this) ||
+        (
+          this.allOtherPlayersHavePassed() === false &&
+          this.actionsTakenThisRound >= this.availableActionsThisRound
+        )
+      ) {
+        // 如果玩家拥有世界线航行者公司，则行动次数在1次、3次切换
+        if (worldlinevoyager instanceof WorldLineVoyager) {
+          // 反转 isOneActionThisRound 状态
+          worldlinevoyager.isOneActionThisRound = !worldlinevoyager.isOneActionThisRound;
+          // 根据 isOneActionThisRound 调整恢复的行动次数
+          if (worldlinevoyager.isOneActionThisRound) {
+            this.availableActionsThisRound = 1;  // 每回合只有一次行动
+            this.game.log(
+              '${0}\'s ${1} has jumped to the α World Line. You can take 1 action next round.',
+              (b) => b.player(this).card(worldlinevoyager)
+            );
+          } else {
+            this.availableActionsThisRound = 3;  // 每回合可以恢复三次行动
+            this.game.log(
+              '${0}\'s ${1} has jumped to the β World Line. You can take 3 actions next round.',
+              (b) => b.player(this).card(worldlinevoyager)
+            );
+          }
+        } else {
+          // 如果没有世界线航行者公司，恢复默认的行动次数
+          this.availableActionsThisRound = 2;  // 默认每回合2次行动
+        }
         this.actionsTakenThisRound = 0;
-        this.availableActionsThisRound = 2;
         game.resettable = true;
         game.playerIsFinishedTakingActions();
         return;
@@ -1790,6 +1823,10 @@ export class Player implements IPlayer {
 
   private allOtherPlayersHavePassed(): boolean {
     const game = this.game;
+    // 如果玩家拥有世界线航行者公司，则solo模式也需要进行回合切换，确保世界线能够切换
+    // MingYueTUDO: 暂未发现世界线航行者公司在solo模式下是否存在bug
+    const worldlinevoyager = this.getCorporation(CardName.WORLD_LINE_VOYAGER);
+    if (game.isSoloMode() && worldlinevoyager instanceof WorldLineVoyager) return false;
     if (game.isSoloMode()) return true;
     const players = game.getPlayers();
     const passedPlayers = game.getPassedPlayers();

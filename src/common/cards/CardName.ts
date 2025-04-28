@@ -616,6 +616,7 @@ export enum CardName {
   LUNA_CHAIN = 'LunaChain',
   TITHES = 'Tithes',
   GOLDEN_FINGER = 'Golden Finger',
+  WORLD_LINE_VOYAGER = 'World Line Voyager',
 
   // MingYue preludes
 
