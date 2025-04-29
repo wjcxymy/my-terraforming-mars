@@ -19,5 +19,6 @@ export interface CardModel {
     reserveUnits?: Readonly<Units>; // Written for The Moon, but useful in other contexts.
     bonusResource?: Array<Resource>; // Used with the Mining cards and Robotic Workforce
     cloneTag?: Tag; // Used with Pathfinders
-    lastProjectCardCost?: number;  // 专用于 LunaChain：记录上一张项目牌打出的实际支付 M€,会在前端渲染时显示在卡牌角落。
+    lastProjectCardCost?: number; // 专用于《LunaChain》: 记录上一张项目牌打出的实际支付 M€,会在前端渲染时显示在卡牌角落。
+    currentWorldline?: number; // 专用于《世界线航行者》: 记录当前所处世界线状态，用于控制前端渲染时的图片显示。
 }

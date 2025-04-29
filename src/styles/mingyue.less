@@ -118,12 +118,30 @@
 	background-repeat: no-repeat;
 }
 
-.card-world-line-voyager-logo {
-    background-image: url(./assets/mingyue/corp-logo-world-line-voyager.png);
+.card-worldline-state {
+    position: absolute; /* 绝对定位，允许它脱离文档流 */
+    top: 17%;
+    left: 12.7%;
+    transform: translateY(-50%); /* 使 .card-lastpay-counter 相对其自身竖直居中 */
+    width: 180px; /* 添加固定宽度用于对齐 */
     height: 90px;
-    width: 180px;
-    background-size: cover; /* 使背景图片完全覆盖容器 */
-    background-position: center; /* 确保图片居中显示 */
-    margin-top: 10px;
-    margin-left: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.worldline-image {
+    height: 90px;
+    width: 90px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px; /* 圆角效果 */
+    transition: opacity 0.3s ease; /* 透明度平滑过渡 */
+}
+
+.worldline-inactive {
+    opacity: 0.4;
+    filter: grayscale(30%);
 }

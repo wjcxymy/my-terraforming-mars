@@ -12,6 +12,7 @@ import {CardName} from '../../common/cards/CardName';
 import {Tag} from '../../common/cards/Tag';
 import {asArray} from '../../common/utils/utils';
 import { LunaChain } from '../cards/mingyue/LunaChain';
+import { WorldLineVoyager } from '../cards/mingyue/WorldLineVoyager';
 
 export function cardsToModel(
   player: IPlayer,
@@ -47,11 +48,16 @@ export function cardsToModel(
       }
     }
 
-    // LunaChain 专用：记录上一张项目牌的实际支付费用
+    // 《LunaChain》专用: 记录上一张项目牌的实际支付费用
     let lastProjectCardCost: number | undefined = undefined;
     if (card.name === CardName.LUNA_CHAIN) {
-      // 你需要 import LunaChain
       lastProjectCardCost = (card as LunaChain).getLastProjectCardMegacreditCost();
+    }
+
+    // 《世界线航行者》专用: 记录当前所处世界线状态
+    let currentWorldline: number | undefined = undefined;
+    if (card.name === CardName.WORLD_LINE_VOYAGER) {
+      currentWorldline = (card as WorldLineVoyager).getCurrentWorldline();
     }
 
     const model: CardModel = {
@@ -63,6 +69,7 @@ export function cardsToModel(
       discount: discount,
       cloneTag: isICloneTagCard(card) ? card.cloneTag : undefined,
       lastProjectCardCost,
+      currentWorldline,
     };
     if (card.isDisabled) {
       model.isDisabled = true;
