@@ -17,6 +17,19 @@
           {{ lastCardCost }}
         </div>
       </div>
+      <!-- 👇 仅对 WORLD_LINE_VOYAGER 显示 -->
+      <div v-if="cardInstance.name === 'World Line Voyager'" class="card-worldline-state">
+        <div
+          class="worldline-image"
+          :class="{ 'worldline-inactive': card.currentWorldline === 1 }"
+          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-2.png\')'}"
+        ></div>
+        <div
+          class="worldline-image"
+          :class="{ 'worldline-inactive': card.currentWorldline === 2 }"
+          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-1.png\')'}"
+        ></div>
+      </div>
       <CardResourceCounter v-if="hasResourceType" :amount="getResourceAmount()" :type="resourceType" />
       <CardExtraContent :card="card" />
       <slot/>
@@ -45,8 +58,6 @@ import {getCardOrThrow} from '@/client/cards/ClientCardManifest';
 import {Color} from '@/common/Color';
 import {CardRequirementDescriptor} from '@/common/cards/CardRequirementDescriptor';
 import {GameModule} from '@/common/cards/GameModule';
-// import {CardName} from '@/common/cards/CardName';
-// import {LunaChain} from '@/server/cards/community/LunaChain';
 
 export default Vue.extend({
   name: 'Card',

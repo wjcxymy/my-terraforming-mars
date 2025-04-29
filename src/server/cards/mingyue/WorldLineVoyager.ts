@@ -5,12 +5,9 @@ import {CardRenderer} from '../render/CardRenderer';
 import {IPlayer} from '../../IPlayer';
 import {Size} from '../../../common/cards/render/Size';
 
-// α世界线：1动（isOneActionThisRound == true）红莉栖
-// β世界线：3动（isOneActionThisRound == false）真由理
-// steins;Gate世界线：2动（未使用）
-
 export class WorldLineVoyager extends CorporationCard {
-  public isOneActionThisRound: boolean = false; // 初始为β世界线，3动
+  // 初始为 β 世界线（3 次行动）
+  public isOneActionThisRound: boolean = false;
 
   constructor() {
     super({
@@ -40,6 +37,19 @@ export class WorldLineVoyager extends CorporationCard {
     });
   }
 
+  /**
+   * 获取当前世界线编号：
+   * α 世界线：编号 1（1 次行动，isOneActionThisRound 为 true）
+   * β 世界线：编号 2（3 次行动，isOneActionThisRound 为 false）
+   * 注：Steins;Gate 世界线为设想中的第 3 条线（未使用）
+   */
+  public getCurrentWorldline(): number {
+    return this.isOneActionThisRound? 1 : 2;
+  }
+
+  /**
+   * 根据当前世界线状态获取项目卡的费用调整
+   */
   public override getCardDiscount(player: IPlayer) {
     if (!player.isCorporation(this.name)) return 0;
 
