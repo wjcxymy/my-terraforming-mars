@@ -1,16 +1,16 @@
 import {expect} from 'chai';
-import {ProjectReorganization} from '../../../src/server/cards/community/ProjectReorganization';
+import {ProjectReorganization} from '../../../src/server/cards/mingyue/ProjectReorganization';
 import {TestPlayer} from '../../TestPlayer';
 import {IGame} from '../../../src/server/IGame';
 import {testGame} from '../../TestGame';
 import {cast, runAllActions} from '../../TestingUtils';
-import {ChooseCards} from '../../../src/server/deferredActions/ChooseCards';
 import {Ants} from '../../../src/server/cards/base/Ants';
 import {Birds} from '../../../src/server/cards/base/Birds';
 import {Capital} from '../../../src/server/cards/base/Capital';
 import {Decomposers} from '../../../src/server/cards/base/Decomposers';
 import {EarthOffice} from '../../../src/server/cards/base/EarthOffice';
 import {Resource} from '../../../src/common/Resource';
+import {SelectCard} from '../../../src/server/inputs/SelectCard';
 
 describe('ProjectReorganization', () => {
   let card: ProjectReorganization;
@@ -67,7 +67,7 @@ describe('ProjectReorganization', () => {
     card.action(player);
     runAllActions(game);
 
-    const choose = cast(player.popWaitingFor(), ChooseCards);
+    const choose = cast(player.popWaitingFor(), SelectCard);
     // 顺序是后丢的先弹出，所以 top 4 应该是：birds, capital, decomposers, earthOffice
     expect(choose.cards).to.have.members([birds, capital, decomposers, earthOffice]);
     expect(game.projectDeck.discardPile).deep.eq([ants]);
@@ -88,7 +88,7 @@ describe('ProjectReorganization', () => {
     card.action(player);
     runAllActions(game);
 
-    const choose = cast(player.popWaitingFor(), ChooseCards);
+    const choose = cast(player.popWaitingFor(), SelectCard);
     expect(choose.cards).to.have.members([ants, birds, capital]);
     expect(game.projectDeck.discardPile).is.empty;
   });
