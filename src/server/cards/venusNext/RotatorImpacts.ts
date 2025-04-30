@@ -11,8 +11,9 @@ import {SelectPaymentDeferred} from '../../deferredActions/SelectPaymentDeferred
 import {CardRenderer} from '../render/CardRenderer';
 import {Card} from '../Card';
 import {max} from '../Options';
-import {TITLES} from '../../inputs/titles';
+import {LogHelper} from '../../../server/LogHelper';
 
+const ACTION_COST = 6;
 export class RotatorImpacts extends Card implements IActionCard {
   constructor() {
     super({
@@ -39,7 +40,7 @@ export class RotatorImpacts extends Card implements IActionCard {
   }
 
   private canAddResource(player: IPlayer) {
-    return player.canAfford({cost: 6, titanium: true});
+    return player.canAfford({cost: ACTION_COST, titanium: true});
   }
 
   private canSpendResource(player: IPlayer) {
@@ -54,35 +55,37 @@ export class RotatorImpacts extends Card implements IActionCard {
   }
 
   public action(player: IPlayer) {
-    const opts = [];
-
-    const addResource = new SelectOption('Pay 6 M€ to add 1 asteroid to this card', 'Pay').andThen(() => this.addResource(player));
-    const spendResource = new SelectOption('Remove 1 asteroid to raise Venus 1 step', 'Remove asteroid').andThen(() => this.spendResource(player));
+    const options = new OrOptions();
 
     if (this.canSpendResource(player)) {
-      opts.push(spendResource);
+      const increaseVenusOption = new SelectOption('Remove 1 asteroid to raise Venus 1 step').andThen(() => {
+        player.removeResourceFrom(this, 1, {log: false});
+        player.game.increaseVenusScaleLevel(player, 1);
+        LogHelper.logRemoveResource(player, this, 1, 'increase Venus scale 1 step');
+        return undefined;
+      });
+      if (player.game.getVenusScaleLevel() === MAX_VENUS_SCALE) {
+        increaseVenusOption.warnings = ['maxvenus'];
+      }
+      options.options.push(increaseVenusOption);
     }
 
     if (this.canAddResource(player)) {
-      opts.push(addResource);
+      options.options.push(
+        new SelectOption('Spend 6 M€ to add 1 asteroids here').andThen(() => {
+          player.game.defer(new SelectPaymentDeferred(player, ACTION_COST, {canUseTitanium: true})).andThen(() => {
+            player.addResourceTo(this, {qty: 1, log: true});
+          });
+          return undefined;
+        }));
     }
 
-    if (opts.length === 1) {
-      return opts[0].cb(undefined);
+    if (options.options.length === 0) {
+      return undefined;
     }
-    return new OrOptions(...opts);
-  }
-
-  private addResource(player: IPlayer) {
-    player.game.defer(new SelectPaymentDeferred(player, 6, {canUseTitanium: true, title: TITLES.payForCardAction(this.name)}));
-    player.addResourceTo(this, {log: true});
-    return undefined;
-  }
-
-  private spendResource(player: IPlayer) {
-    player.removeResourceFrom(this);
-    player.game.increaseVenusScaleLevel(player, 1);
-    player.game.log('${0} removed an asteroid resource to increase Venus scale 1 step', (b) => b.player(player));
-    return undefined;
+    if (options.options.length === 1) {
+      return options.options[0].cb();
+    }
+    return options;
   }
 }
