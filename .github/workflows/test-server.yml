@@ -1,0 +1,29 @@
+name: Server Tests
+
+on:
+  push:
+    branches: [ main ]  # 只在 main 分支的 push 上运行
+  pull_request:
+    branches: [ main ]  # 也会在向 main 的 PR 上运行
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # 项目支持 16~22，这里选了一个稳定的中间值
+
+      - name: Install dependencies
+        run: npm ci  # 使用 lock 文件快速安装依赖
+
+      - name: Build static files
+        run: npm run make:static  # 生成测试所需文件
+
+      - name: Run server tests
+        run: npm run test:server  # 调用测试脚本
