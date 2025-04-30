@@ -73,6 +73,6 @@ describe('AsteroidRights', () => {
     const action = cast(card.action(player), OrOptions);
     expect(action.options[0] instanceof SelectOption).is.true;
     expect(action.options[1] instanceof SelectOption).is.true;
-    expect(action.options[2] instanceof SelectCard).is.true;
+    expect(action.options[2] instanceof SelectOption).is.true;
   });
 });

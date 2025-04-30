@@ -7,6 +7,8 @@ import {IGame} from '../../../src/server/IGame';
 import {OrOptions} from '../../../src/server/inputs/OrOptions';
 import {TestPlayer} from '../../TestPlayer';
 import {testGame} from '../../TestGame';
+import {Payment} from '../../../src/common/inputs/Payment';
+import {SelectPayment} from '../../../src/server/inputs/SelectPayment';
 
 describe('RotatorImpacts', () => {
   let card: RotatorImpacts;
@@ -52,6 +54,12 @@ describe('RotatorImpacts', () => {
     expect(card.canAct(player)).is.true;
 
     card.action(player);
+    expect(game.deferredActions).has.lengthOf(1);
+    const selectPayment = cast(game.deferredActions.peek()!.execute(), SelectPayment);
+    selectPayment.cb({...Payment.EMPTY, titanium: 1, megaCredits: 3});
+
+    expect(player.megaCredits).to.eq(13);
+    expect(player.titanium).to.eq(1);
     expect(card.resourceCount).to.eq(1);
   });
 

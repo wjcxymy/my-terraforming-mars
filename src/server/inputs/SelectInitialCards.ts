@@ -94,15 +94,19 @@ export class SelectInitialCards extends OptionsInput<undefined> {
     const game = player.game;
 
     const [corporation1, corporation2] = corporations;
+    const isDoubleCorpVariant = corporation2 !== undefined;
 
-    // 计算留牌费用（注意：若只有1个公司，只计算1个费用）
-    const cardCost = (corporation2 !== undefined)
+    // 计算每张起始手牌的费用
+    const cardCost = isDoubleCorpVariant
     ? (((corporation1.cardCost ?? player.cardCost) + (corporation2.cardCost ?? player.cardCost)) - player.cardCost)
     : (corporation1.cardCost ?? player.cardCost);
 
     const totalCardCost = player.cardsInHand.length * cardCost;
-    // 双公司变体规则，初始MC为: 两公司mc总和-42
-    const availableCredits = (corporation1.startingMegaCredits ?? 0) + (corporation2?.startingMegaCredits ?? 0) - 42;
+
+    // 计算起始可用 M€
+    const availableCredits = isDoubleCorpVariant
+    ? ((corporation1.startingMegaCredits ?? 0) + (corporation2?.startingMegaCredits ?? 0) - 42)
+    : (corporation1.startingMegaCredits ?? 0);
 
     if (corporation1.name !== CardName.BEGINNER_CORPORATION && totalCardCost > availableCredits) {
       player.cardsInHand = [];
