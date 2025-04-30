@@ -69,6 +69,7 @@ describe('ApiCreateGame', () => {
           turmoil: false,
           community: false,
           ares: false,
+          mingyue: false,
           moon: false,
           pathfinders: false,
           ceo: false,
@@ -115,6 +116,8 @@ describe('ApiCreateGame', () => {
         customCeos: [],
         startingCeos: 0,
         startingPreludes: 0,
+        doubleCorpVariant: false,
+        sevenHeatVariant: false,
       };
       req.emitter.emit('data', JSON.stringify(newGameConfig));
       req.emitter.emit('end');

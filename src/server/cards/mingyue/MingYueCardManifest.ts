@@ -1,19 +1,19 @@
-import { CardName } from '../../../common/cards/CardName';
-import { ModuleManifest } from '../ModuleManifest';
-import { ProjectReorganization } from './ProjectReorganization';
-import { AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
-import { TrisynInstitute } from './TrisynInstitute';
-import { LunaChain } from './LunaChain';
-import { Tithes } from './Tithes';
-import { ResourcePlanningBureau } from './ResourcePlanningBureau';
-import { SpaceWedding } from './SpaceWedding';
-import { InfiniteMonkeyTheorem } from './InfiniteMonkeyTheorem';
-import { GoldenFinger } from './GoldenFinger';
-import { FloralBloomSurge } from './FloralBloomSurge';
-import { EcologicalPavilion } from './EcologicalPavilion';
-import { GamblingDistrictLasVegas } from './GamblingDistrictLasVegas';
-import { ArtifactHarvest } from './ArtifactHarvest';
-import { WorldLineVoyager } from './WorldLineVoyager';
+import {CardName} from '../../../common/cards/CardName';
+import {ModuleManifest} from '../ModuleManifest';
+import {ProjectReorganization} from './ProjectReorganization';
+import {AsteroidMaterialResearchCenter} from './AsteroidMaterialResearchCenter';
+import {TrisynInstitute} from './TrisynInstitute';
+import {LunaChain} from './LunaChain';
+import {Tithes} from './Tithes';
+import {ResourcePlanningBureau} from './ResourcePlanningBureau';
+import {SpaceWedding} from './SpaceWedding';
+import {InfiniteMonkeyTheorem} from './InfiniteMonkeyTheorem';
+import {GoldenFinger} from './GoldenFinger';
+import {FloralBloomSurge} from './FloralBloomSurge';
+import {EcologicalPavilion} from './EcologicalPavilion';
+import {GamblingDistrictLasVegas} from './GamblingDistrictLasVegas';
+import {ArtifactHarvest} from './ArtifactHarvest';
+import {WorldLineVoyager} from './WorldLineVoyager';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',

@@ -25,7 +25,7 @@ export class ProjectReorganization extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.action(
             'Spend 2 energy to look at the top 4 cards of the discard pile. Keep 1 and return the rest in order.',
-            (eb) => eb.energy(ProjectReorganization.ENERGY_COST, {digit}).startAction.text('4').cards(1).asterix()
+            (eb) => eb.energy(ProjectReorganization.ENERGY_COST, {digit}).startAction.text('4').cards(1).asterix(),
           );
         }),
       },
@@ -43,7 +43,10 @@ export class ProjectReorganization extends Card implements IProjectCard {
 
     const selectedCards = [];
     for (let idx = 0; idx < 4 && player.game.projectDeck.discardPile.length > 0; idx++) {
-      selectedCards.push(player.game.projectDeck.discardPile.pop()!);
+      const card = player.game.projectDeck.discardPile.pop();
+      if (card) {
+        selectedCards.push(card);
+      }
     }
 
     const keepCount = Math.min(1, selectedCards.length);

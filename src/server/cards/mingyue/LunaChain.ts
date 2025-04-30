@@ -28,7 +28,7 @@ export class LunaChain extends CorporationCard {
               'When the actual paid M€ of your current and previous project cards differ by X (X < 3), gain (3 - X) M€.',
               (eb) => {
                 eb.cards(1).megacreditsText('M').minus().megacreditsText('N').text('<3').startEffect.megacreditsText('3-X').asterix();
-              }
+              },
             );
           });
         }),
@@ -57,7 +57,7 @@ export class LunaChain extends CorporationCard {
 
         player.game.log(
           '${0} gained ${1} M€ due to ${2} effect.',
-          (b) => b.player(player).number(gain).card(this)
+          (b) => b.player(player).number(gain).card(this),
         );
 
         const avg = this.lunaChainTotalGain / this.lunaChainProjectCardCount;
@@ -75,7 +75,7 @@ export class LunaChain extends CorporationCard {
 
         player.game.log(
           '${0} has accumulated ${1} M€, averaging ${2} M€ per project card (' + title + ')',
-          (b) => b.player(player).number(this.lunaChainTotalGain).number(parseFloat(avg.toFixed(2)))
+          (b) => b.player(player).number(this.lunaChainTotalGain).number(parseFloat(avg.toFixed(2))),
         );
       }
     }
@@ -85,7 +85,7 @@ export class LunaChain extends CorporationCard {
 
     player.game.log(
       'The next card costs ${0} M€ to maximize the LunaChain skill',
-      (b) => b.number(actualCost)
+      (b) => b.number(actualCost),
     );
   }
 }

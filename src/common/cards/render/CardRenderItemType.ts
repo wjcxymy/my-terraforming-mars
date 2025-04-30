@@ -12,7 +12,7 @@ export enum CardRenderItemType {
   MEGACREDITS = 'megacredits',
   MEGACREDITSTEXT = 'megacredits_text',
   CARDS = 'cards',
-  ONE_SET = 'one_set', 
+  ONE_SET = 'one_set',
   TAG = 'tag',
   RESOURCE = 'resource',
 

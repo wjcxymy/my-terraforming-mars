@@ -55,7 +55,7 @@ export class WorldLineVoyager extends CorporationCard {
 
     // 根据是否为1次行动或3次行动，返回卡牌的费用折扣
     if (this.isOneActionThisRound) {
-      return 3;  // 1动时，项目卡费用减少3 M€
+      return 3; // 1动时，项目卡费用减少3 M€
     } else {
       return -1; // 3动时，项目卡费用增加1 M€
     }

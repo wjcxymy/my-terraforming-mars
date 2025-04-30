@@ -1,4 +1,4 @@
-import { IGame } from "../server/IGame";
+import {IGame} from '../server/IGame';
 
 // Base constants
 export const CARD_COST = 3;

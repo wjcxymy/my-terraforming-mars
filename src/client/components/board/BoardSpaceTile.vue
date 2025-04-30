@@ -54,7 +54,7 @@ const tileTypeToCssClass: Record<TileType, string> = {
   [TileType.MARS_NOMADS]: '', // This never actually renders.
   [TileType.REY_SKYWALKER]: 'martian-nature-wonders', // Use Martian Nature Wonders cube CSS.
   [TileType.MAN_MADE_VOLCANO]: 'man-made-volcano',
-  [TileType.GAMBLING_DISTRICT_LAS_VEGAS]: 'gambling-district-las-vegas', 
+  [TileType.GAMBLING_DISTRICT_LAS_VEGAS]: 'gambling-district-las-vegas',
 };
 
 const tileTypeToCssClassAresOverride = new Map<TileType, string>([

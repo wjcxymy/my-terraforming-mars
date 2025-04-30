@@ -201,7 +201,7 @@ export default Vue.extend({
         return this.card.lastProjectCardCost;
       }
       return undefined;
-    }
+    },
   },
 });
 

@@ -1,16 +1,16 @@
-import { CardName } from '../../../common/cards/CardName';
-import { TileType } from '../../../common/TileType';
-import { CardRenderer } from '../render/CardRenderer';
-import { CardType } from '../../../common/cards/CardType';
-import { IProjectCard } from '../IProjectCard';
-import { Card } from '../Card';
-import { Tag } from '../../../common/cards/Tag';
-import { IPlayer } from '../../../server/IPlayer';
-import { Space } from '../../../server/boards/Space';
-import { BoardType } from '../../../server/boards/BoardType';
-import { SpaceType } from '../../../common/boards/SpaceType';
-import { Resource } from '../../../common/Resource';
-import { all } from '../Options';
+import {CardName} from '../../../common/cards/CardName';
+import {TileType} from '../../../common/TileType';
+import {CardRenderer} from '../render/CardRenderer';
+import {CardType} from '../../../common/cards/CardType';
+import {IProjectCard} from '../IProjectCard';
+import {Card} from '../Card';
+import {Tag} from '../../../common/cards/Tag';
+import {IPlayer} from '../../../server/IPlayer';
+import {Space} from '../../../server/boards/Space';
+import {BoardType} from '../../../server/boards/BoardType';
+import {SpaceType} from '../../../common/boards/SpaceType';
+import {Resource} from '../../../common/Resource';
+import {all} from '../Options';
 
 export class GamblingDistrictLasVegas extends Card implements IProjectCard {
   constructor() {
@@ -20,7 +20,7 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
       tags: [Tag.BUILDING, Tag.CITY],
       cost: 20,
       behavior: {
-        production: { energy: -1, megacredits: 3 },
+        production: {energy: -1, megacredits: 3},
         tile: {
           type: TileType.GAMBLING_DISTRICT_LAS_VEGAS,
           on: 'city',
@@ -44,16 +44,16 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
           });
           b.br;
           b.plainEffect('When a tile is placed adjacent to it, the player must pay 3 M€ more, then roll 1d6 to gain that many M€.', (eb) => {
-            eb.megacreditsText("-3", { all })
+            eb.megacreditsText('-3', {all})
               .nbsp
               .myXDian()
-              .startEffect.megacreditsText("+X", { all });
+              .startEffect.megacreditsText('+X', {all});
           });
           b.br;
           b.plainEffect('If the result is 5 or 6, they also draw a card.', (eb) => {
             eb.my5Dian()
               .my6Dian()
-              .startEffect.cards(1, { all });
+              .startEffect.cards(1, {all});
           });
         }),
         description: '',
@@ -72,7 +72,7 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
     // 遍历周围格子，检查是否邻接赌城
     const adjacentSpaces = game.board.getAdjacentSpaces(space);
     const isAdjacentToGamblingDistrict = adjacentSpaces.some(
-      (adjSpace) => adjSpace.tile?.tileType === TileType.GAMBLING_DISTRICT_LAS_VEGAS
+      (adjSpace) => adjSpace.tile?.tileType === TileType.GAMBLING_DISTRICT_LAS_VEGAS,
     );
 
     if (!isAdjacentToGamblingDistrict) {
@@ -95,12 +95,12 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
     if (drewCard) {
       game.log(
         '${0} rolled ${1} and gained ${2} M€, then drew a card from ${3}.',
-        (b) => b.player(activePlayer).number(diceRoll).number(diceRoll).card(this)
+        (b) => b.player(activePlayer).number(diceRoll).number(diceRoll).card(this),
       );
     } else {
       game.log(
         '${0} rolled ${1} and gained ${2} M€ from ${3}.',
-        (b) => b.player(activePlayer).number(diceRoll).number(diceRoll).card(this)
+        (b) => b.player(activePlayer).number(diceRoll).number(diceRoll).card(this),
       );
     }
   }

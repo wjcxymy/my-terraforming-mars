@@ -1,31 +1,31 @@
-import { CorporationCard } from '../corporation/CorporationCard';
-import { CardName } from '../../../common/cards/CardName';
-import { CardRenderer } from '../render/CardRenderer';
-import { IActionCard, ICard, isIActionCard, isIHasCheckLoops } from '../ICard';
-import { IPlayer } from '../../IPlayer';
-import { SelectCard } from '../../inputs/SelectCard';
-import { OrOptions } from '../../inputs/OrOptions';
-import { SelectOption } from '../../inputs/SelectOption';
-import { SelectAmount } from '../../inputs/SelectAmount';
-import { ChooseCards } from '../../deferredActions/ChooseCards';
-import { GainResources } from '../../inputs/GainResources';
-import { Size } from '../../../common/cards/render/Size';
+import {CorporationCard} from '../corporation/CorporationCard';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
+import {IActionCard, ICard, isIActionCard, isIHasCheckLoops} from '../ICard';
+import {IPlayer} from '../../IPlayer';
+import {SelectCard} from '../../inputs/SelectCard';
+import {OrOptions} from '../../inputs/OrOptions';
+import {SelectOption} from '../../inputs/SelectOption';
+import {SelectAmount} from '../../inputs/SelectAmount';
+import {ChooseCards} from '../../deferredActions/ChooseCards';
+import {GainResources} from '../../inputs/GainResources';
+import {Size} from '../../../common/cards/render/Size';
 
 export class GoldenFinger extends CorporationCard {
-    constructor() {
-      super({
-        name: CardName.GOLDEN_FINGER,
-        tags: [],
-        startingMegaCredits: 999,
-        metadata: {
-          cardNumber: 'MY-CORP-04',
-          description: '可无限执行公司行动，内含测试工具。',
-          renderData: CardRenderer.builder((b) => {
-            b.megacredits(999, { size: Size.LARGE });
-          }),
-        },
-      });
-    }
+  constructor() {
+    super({
+      name: CardName.GOLDEN_FINGER,
+      tags: [],
+      startingMegaCredits: 999,
+      metadata: {
+        cardNumber: 'MY-CORP-04',
+        description: '可无限执行公司行动，内含测试工具。',
+        renderData: CardRenderer.builder((b) => {
+          b.megacredits(999, {size: Size.LARGE});
+        }),
+      },
+    });
+  }
 
   public canAct(): boolean {
     return true;
@@ -64,7 +64,7 @@ export class GoldenFinger extends CorporationCard {
     // 行动 3：展示牌堆顶 X 张牌，保留 1 张
     const revealDeck = new SelectOption('展示牌堆顶 X 张牌，保留 1 张', 'Reveal').andThen(() => {
       return new SelectAmount('输入要展示的牌数（最多保留1张）', '确定', 1, 1000, true).andThen((amount) => {
-        player.drawCardKeepSome(amount, { keepMax: 1 });
+        player.drawCardKeepSome(amount, {keepMax: 1});
         return undefined;
       });
     });
@@ -74,11 +74,14 @@ export class GoldenFinger extends CorporationCard {
       return new SelectAmount('输入要展示的牌数（最多保留1张）', '确定', 1, 1000, true).andThen((amount) => {
         const selectedCards = [];
         for (let idx = 0; idx < amount && player.game.projectDeck.discardPile.length > 0; idx++) {
-          selectedCards.push(player.game.projectDeck.discardPile.pop()!);
+          const card = player.game.projectDeck.discardPile.pop();
+          if (card) {
+            selectedCards.push(card);
+          }
         }
 
         const keepCount = Math.min(1, selectedCards.length);
-        player.game.defer(new ChooseCards(player, selectedCards, { keepMax: keepCount }));
+        player.game.defer(new ChooseCards(player, selectedCards, {keepMax: keepCount}));
         return undefined;
       });
     });
@@ -94,10 +97,10 @@ export class GoldenFinger extends CorporationCard {
       return new SelectCard(
         '选择一个已使用过的蓝卡来再次行动',
         '使用',
-        actionCards
+        actionCards,
       ).andThen(([card]) => {
         player.game.log('${0} 使用了 ${1} 的行动（来自 ${2}）', (b) =>
-          b.player(player).card(card).card(this)
+          b.player(player).card(card).card(this),
         );
         return card.action(player);
       });
