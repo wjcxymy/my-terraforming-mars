@@ -1,11 +1,11 @@
-import { IProjectCard } from '../IProjectCard';
-import { CardType } from '../../../common/cards/CardType';
-import { CardName } from '../../../common/cards/CardName';
-import { CardRenderer } from '../render/CardRenderer';
-import { Card } from '../Card';
-import { Tag } from '../../../common/cards/Tag';
-import { IPlayer } from '../../../server/IPlayer';
-import { Resource } from '../../../common/Resource';
+import {IProjectCard} from '../IProjectCard';
+import {CardType} from '../../../common/cards/CardType';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
+import {Card} from '../Card';
+import {Tag} from '../../../common/cards/Tag';
+import {IPlayer} from '../../../server/IPlayer';
+import {Resource} from '../../../common/Resource';
 
 export class ArtifactHarvest extends Card implements IProjectCard {
   constructor() {
@@ -14,7 +14,7 @@ export class ArtifactHarvest extends Card implements IProjectCard {
       name: CardName.ARTIFACT_HARVEST,
       tags: [Tag.PLANT],
       cost: 7,
-      requirements: { oceans: 7 },
+      requirements: {oceans: 7},
       victoryPoints: 1,
       behavior: {},
       metadata: {
@@ -27,7 +27,7 @@ export class ArtifactHarvest extends Card implements IProjectCard {
               eb.text('X').wild(1).asterix()
                 .startEffect
                 .text('X').plants(1);
-            }
+            },
           );
         }),
       },
@@ -37,13 +37,13 @@ export class ArtifactHarvest extends Card implements IProjectCard {
   public override play(player: IPlayer) {
     // 计算玩家拥有的不同种类的非标准资源数量
     const nonStandardResources = new Set(
-      player.getCardsWithResources().map((card) => card.resourceType)
+      player.getCardsWithResources().map((card) => card.resourceType),
     ).size;
 
     // 每种非标准资源给予1植物，总计最多7植物（对应7种资源）
     const plantGain = Math.min(nonStandardResources, 7);
 
-    player.stock.add(Resource.PLANTS, plantGain, { log: true });
+    player.stock.add(Resource.PLANTS, plantGain, {log: true});
     return undefined;
   }
 }

@@ -230,16 +230,16 @@ export default (Vue as WithRefs<Refs>).extend({
       const corporation2 = getCardOrThrow(corpName2);
 
       // 计算初始MC，并减去42（针对双公司的特殊调整）
-      let startingMegaCredits = 
-        ((corporation1.startingMegaCredits ?? 0) + 
+      let startingMegaCredits =
+        ((corporation1.startingMegaCredits ?? 0) +
         (corporation2.startingMegaCredits ?? 0) - 42);
 
       // 计算并减去留牌费用
-      const cardCost = 
-        (((corporation1.cardCost ?? constants.CARD_COST) + 
-          (corporation2.cardCost ?? constants.CARD_COST)) - 
+      const cardCost =
+        (((corporation1.cardCost ?? constants.CARD_COST) +
+          (corporation2.cardCost ?? constants.CARD_COST)) -
         constants.CARD_COST);
-      
+
       startingMegaCredits -= this.selectedCards.length * cardCost;
 
       return startingMegaCredits;
@@ -265,7 +265,7 @@ export default (Vue as WithRefs<Refs>).extend({
         if (this.selectedCorporations.length === 2) {
           result.responses.push({
             type: 'card',
-            cards: this.selectedCorporations,  // 选择2张公司卡
+            cards: this.selectedCorporations, // 选择2张公司卡
           });
         } else {
           this.warning = 'You need to select exactly 2 corporations';
@@ -275,7 +275,7 @@ export default (Vue as WithRefs<Refs>).extend({
         if (this.selectedCorporations.length === 1) {
           result.responses.push({
             type: 'card',
-            cards: [this.selectedCorporations[0]],  // 选择1张公司卡
+            cards: [this.selectedCorporations[0]], // 选择1张公司卡
           });
         } else if (this.selectedCorporations.length > 1) {
           this.warning = 'You selected too many corporations';
@@ -400,13 +400,16 @@ export default (Vue as WithRefs<Refs>).extend({
       return hasOption(this.playerinput.options, titles.SELECT_TWO_CORPORATIONS_TITLE);
     },
     corpCardOption() {
-      const title = this.isDoubleCorpVariantEnabled
-        ? titles.SELECT_TWO_CORPORATIONS_TITLE
-        : titles.SELECT_CORPORATION_TITLE;
+      const title = this.isDoubleCorpVariantEnabled ?
+        titles.SELECT_TWO_CORPORATIONS_TITLE :
+        titles.SELECT_CORPORATION_TITLE;
 
       const option = getOption(this.playerinput.options, title);
-      option.min = this.isDoubleCorpVariantEnabled ? 2 : 1;
-      option.max = this.isDoubleCorpVariantEnabled ? 2 : option.cards.length;
+      if (getPreferences().experimental_ui) {
+        // UI 实验功能下仍支持选择所有公司卡，min 受双公司影响
+        option.min = this.isDoubleCorpVariantEnabled ? 2 : 1;
+        option.max = option.cards?.length ?? 0;
+      }
       return option;
     },
     preludeCardOption() {

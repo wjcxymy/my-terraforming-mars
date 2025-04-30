@@ -8,10 +8,9 @@ import {CardType} from '../../../common/cards/CardType';
 import {Size} from '../../../common/cards/render/Size';
 import {SelectCard} from '../../inputs/SelectCard';
 import {PlayerInput} from '../../../server/PlayerInput';
-import { LogHelper } from '../../../server/LogHelper';
+import {LogHelper} from '../../../server/LogHelper';
 
 export class TrisynInstitute extends CorporationCard {
-
   private lastComboCount = 0;
 
   constructor() {
@@ -113,7 +112,7 @@ export class TrisynInstitute extends CorporationCard {
       this.lastComboCount = currentComboCount;
       player.game.log(
         '收集了 ${0} 套红绿蓝卡牌，抽 1 张牌',
-        (b) => b.number(currentComboCount)
+        (b) => b.number(currentComboCount),
       );
       player.drawCard(1);
     }

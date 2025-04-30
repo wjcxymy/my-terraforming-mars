@@ -59,7 +59,7 @@ export enum TileType {
     MAN_MADE_VOLCANO, // 42
 
     // MingYue
-    GAMBLING_DISTRICT_LAS_VEGAS, //43
+    GAMBLING_DISTRICT_LAS_VEGAS, // 43
   }
 
 export const tileTypeToString: Record<TileType, string> = {

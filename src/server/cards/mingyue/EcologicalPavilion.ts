@@ -1,9 +1,9 @@
-import { IProjectCard } from '../IProjectCard';
-import { Tag } from '../../../common/cards/Tag';
-import { Card } from '../Card';
-import { CardType } from '../../../common/cards/CardType';
-import { CardName } from '../../../common/cards/CardName';
-import { CardRenderer } from '../render/CardRenderer';
+import {IProjectCard} from '../IProjectCard';
+import {Tag} from '../../../common/cards/Tag';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
 
 export class EcologicalPavilion extends Card implements IProjectCard {
   constructor() {
@@ -14,9 +14,9 @@ export class EcologicalPavilion extends Card implements IProjectCard {
       cost: 10,
       victoryPoints: 1,
       requirements: [
-        { tag: Tag.PLANT },
-        { tag: Tag.MICROBE },
-        { tag: Tag.ANIMAL },
+        {tag: Tag.PLANT},
+        {tag: Tag.MICROBE},
+        {tag: Tag.ANIMAL},
       ],
 
       behavior: {

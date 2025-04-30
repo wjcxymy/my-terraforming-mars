@@ -12,7 +12,7 @@ import {InputResponse, isSelectInitialCardsResponse} from '../../common/inputs/I
 export class SelectInitialCards extends OptionsInput<undefined> {
   constructor(
     private player: IPlayer,
-    cb: (corporations: ICorporationCard[]) => undefined
+    cb: (corporations: ICorporationCard[]) => undefined,
   ) {
     super('initialCards', '', []);
     const game = player.game;
@@ -97,16 +97,16 @@ export class SelectInitialCards extends OptionsInput<undefined> {
     const isDoubleCorpVariant = corporation2 !== undefined;
 
     // 计算每张起始手牌的费用
-    const cardCost = isDoubleCorpVariant
-    ? (((corporation1.cardCost ?? player.cardCost) + (corporation2.cardCost ?? player.cardCost)) - player.cardCost)
-    : (corporation1.cardCost ?? player.cardCost);
+    const cardCost = isDoubleCorpVariant ?
+      (((corporation1.cardCost ?? player.cardCost) + (corporation2.cardCost ?? player.cardCost)) - player.cardCost) :
+      (corporation1.cardCost ?? player.cardCost);
 
     const totalCardCost = player.cardsInHand.length * cardCost;
 
     // 计算起始可用 M€
-    const availableCredits = isDoubleCorpVariant
-    ? ((corporation1.startingMegaCredits ?? 0) + (corporation2?.startingMegaCredits ?? 0) - 42)
-    : (corporation1.startingMegaCredits ?? 0);
+    const availableCredits = isDoubleCorpVariant ?
+      ((corporation1.startingMegaCredits ?? 0) + (corporation2?.startingMegaCredits ?? 0) - 42) :
+      (corporation1.startingMegaCredits ?? 0);
 
     if (corporation1.name !== CardName.BEGINNER_CORPORATION && totalCardCost > availableCredits) {
       player.cardsInHand = [];
@@ -114,7 +114,7 @@ export class SelectInitialCards extends OptionsInput<undefined> {
       throw new InputError('Too many cards selected');
     }
 
-    const selectedNames = corporations.map(c => c.name);
+    const selectedNames = corporations.map((c) => c.name);
     for (const card of player.dealtCorporationCards) {
       if (!selectedNames.includes(card.name)) {
         game.corporationDeck.discard(card);

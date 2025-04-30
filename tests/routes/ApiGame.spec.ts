@@ -70,7 +70,7 @@ describe('ApiGame', () => {
             'colonies': false,
             'community': false,
             'corpera': true,
-            "mingyue": false,
+            'mingyue': false,
             'moon': false,
             'pathfinders': false,
             'prelude': false,
