@@ -12,7 +12,7 @@
       </div>
       <CardExpansion :expansion="getCardExpansion()" :isCorporation="isCorporationCard()" :isResourceCard="isResourceCard()" :compatibility="getCardCompatibility()" />
       <!-- 👇 仅对 LUNA_CHAIN 显示 -->
-      <div v-if="cardInstance.name === 'LunaChain'" class="card-lastpay-counter">
+      <div v-if="cardInstance.name === 'Luna Chain'" class="card-lastpay-counter">
         <div class="card-lastpay-counter-number">
           {{ lastCardCost }}
         </div>
@@ -197,7 +197,7 @@ export default Vue.extend({
       return `board-cube board-cube--${this.cubeColor}`;
     },
     lastCardCost(): number | undefined {
-      if (this.card.name === 'LunaChain') {
+      if (this.card.name === 'Luna Chain') {
         return this.card.lastProjectCardCost;
       }
       return undefined;

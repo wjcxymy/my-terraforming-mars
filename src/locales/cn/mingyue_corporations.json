@@ -3,7 +3,7 @@
     "(Effect: After you play a project card, if this completes a new set of red, green, and blue project cards, draw 1 card.)":"（效果：当你打出项目卡后，若因此新凑齐一套红/绿/蓝项目卡，抽1张牌。）",
     "(Action: Reveal and discard 2 cards to draw 1 card of a color not among the discarded ones.)":"（行动：展示并弃置2张牌，抽1张未被弃置颜色的牌。）",
 
-    "LunaChain": "连月",
+    "Luna Chain": "连月",
     "(Effect: When the actual paid M€ of your current and previous project cards differ by X (X < 3), gain (3 - X) M€.)": "（效果：当你打出的项目卡实际支付的M€与上一张项目卡相差X(X<3)时，你获得(3-X)M€。）",
     "${0} gained ${1} M€ due to ${2} effect.": " ${0} 因 ${2} 效果，获得了 ${1} M€。",
     "${0} has accumulated ${1} M€, averaging ${2} M€ per project card (LunaChain God 🌙)": "${0} 累计获得了 ${1} M€，平均每张项目卡获得 ${2} M€ (连月之神 🌙)",

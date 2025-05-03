@@ -48,7 +48,7 @@ export function cardsToModel(
       }
     }
 
-    // 《LunaChain》专用: 记录上一张项目牌的实际支付费用
+    // 《Luna Chain》专用: 记录上一张项目牌的实际支付费用
     let lastProjectCardCost: number | undefined = undefined;
     if (card.name === CardName.LUNA_CHAIN) {
       lastProjectCardCost = (card as LunaChain).getLastProjectCardMegacreditCost(player);

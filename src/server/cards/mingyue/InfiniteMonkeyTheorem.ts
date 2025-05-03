@@ -33,13 +33,8 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
                 .nbsp.diverseTag().slash().resource(CardResource.MONKEY).asterix();
             },
           ).br;
-          b.plainEffect(
-            'Then gain 1M€ per animal here.',
-            (eb) => {
-              eb.empty().startEffect
-                .resource(CardResource.MONKEY).slash().megacredits(1);
-            },
-          ).br;
+          b.resource(CardResource.MONKEY).slash().megacredits(1).br;
+          b.plainText('(Then gain 1M€ per animal here.)').br;
           b.text('Cannot gain animals by other means.', Size.SMALL, true);
         }),
       },
