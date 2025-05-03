@@ -1599,10 +1599,10 @@ export class Player implements IPlayer {
         game.phase = Phase.ACTION;
       }
 
-      // 如果玩家拥有世界线航行者公司，则首回合行动次数应为3次
+      // 如果玩家拥有世界线航行者公司，且基础行动数为初始状态2次，则根据世界线状态重新设置基础行动数
       const worldlinevoyager = this.getCorporation(CardName.WORLD_LINE_VOYAGER);
       if (worldlinevoyager instanceof WorldLineVoyager && this.availableActionsThisRound === 2) {
-        this.availableActionsThisRound = 3;
+        this.availableActionsThisRound = getWorldLineVoyagerData(this.game).isOneActionThisRound ? 1 : 3;
       }
 
       if (game.hasPassedThisActionPhase(this) ||
