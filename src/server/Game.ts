@@ -85,6 +85,8 @@ import {maybeRenamedAward} from '../common/ma/AwardName';
 import {Eris} from './cards/community/Eris';
 import {AresHazards} from './ares/AresHazards';
 import {hazardSeverity} from '../common/AresTileType';
+import {MingYueData} from './mingyue/MingYueData';
+import {MingYueExpansion} from './mingyue/MingYueExpansion';
 
 // Can be overridden by tests
 
@@ -155,6 +157,7 @@ export class Game implements IGame, Logger {
   public pathfindersData: PathfindersData | undefined;
   public underworldData: UnderworldData = UnderworldExpansion.initializeGameWithoutUnderworld();
   public inTurmoil: boolean = false;
+  public mingyueData: MingYueData | undefined;
 
   // Card-specific data
   // Mons Insurance promo corp
@@ -340,6 +343,10 @@ export class Game implements IGame, Logger {
       game.pathfindersData = PathfindersExpansion.initialize(game);
     }
 
+    if (gameOptions.mingyueExpansion) {
+      game.mingyueData = MingYueExpansion.initialize();
+    }
+
     // Failsafe for exceeding corporation pool
     // (I do not think this is necessary any further given how corporation cards are stored now)
     const minCorpsRequired = players.length * gameOptions.startingCorporations;
@@ -456,6 +463,7 @@ export class Game implements IGame, Logger {
       oxygenLevel: this.oxygenLevel,
       passedPlayers: Array.from(this.passedPlayers),
       pathfindersData: PathfindersData.serialize(this.pathfindersData),
+      mingyueData: MingYueData.serialize(this.mingyueData),
       phase: this.phase,
       players: this.players.map((p) => p.serialize()),
       preludeDeck: this.preludeDeck.serialize(),
@@ -1698,6 +1706,10 @@ export class Game implements IGame, Logger {
 
     if (d.pathfindersData !== undefined && gameOptions.pathfindersExpansion === true) {
       game.pathfindersData = PathfindersData.deserialize(d.pathfindersData);
+    }
+
+    if (d.mingyueData !== undefined && gameOptions.mingyueExpansion === true) {
+      game.mingyueData = MingYueData.deserialize(d.mingyueData);
     }
 
     if (d.underworldData !== undefined) {

@@ -51,13 +51,13 @@ export function cardsToModel(
     // 《LunaChain》专用: 记录上一张项目牌的实际支付费用
     let lastProjectCardCost: number | undefined = undefined;
     if (card.name === CardName.LUNA_CHAIN) {
-      lastProjectCardCost = (card as LunaChain).getLastProjectCardMegacreditCost();
+      lastProjectCardCost = (card as LunaChain).getLastProjectCardMegacreditCost(player);
     }
 
     // 《世界线航行者》专用: 记录当前所处世界线状态
     let currentWorldline: number | undefined = undefined;
     if (card.name === CardName.WORLD_LINE_VOYAGER) {
-      currentWorldline = (card as WorldLineVoyager).getCurrentWorldline();
+      currentWorldline = (card as WorldLineVoyager).getCurrentWorldline(player);
     }
 
     const model: CardModel = {
