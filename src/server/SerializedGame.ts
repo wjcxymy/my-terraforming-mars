@@ -19,6 +19,7 @@ import {AwardName} from '../common/ma/AwardName';
 import {GlobalParameter} from '../common/GlobalParameter';
 import {MilestoneName} from '../common/ma/MilestoneName';
 import {Tag} from '../common/cards/Tag';
+import {SerializedMingYueData} from './mingyue/SerializedMingYueData';
 
 export type SerializedGame = {
     activePlayer: PlayerId;
@@ -51,6 +52,7 @@ export type SerializedGame = {
     moonData: SerializedMoonData | undefined;
     nomadSpace: SpaceId | undefined;
     pathfindersData: SerializedPathfindersData | undefined;
+    mingyueData: SerializedMingYueData | undefined;
     oxygenLevel: number;
     passedPlayers: Array<PlayerId>;
     phase: Phase;

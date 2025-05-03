@@ -4,11 +4,9 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {IPlayer} from '../../IPlayer';
 import {Size} from '../../../common/cards/render/Size';
+import {getWorldLineVoyagerData} from '../../../server/mingyue/MingYueData';
 
 export class WorldLineVoyager extends CorporationCard {
-  // 初始为 β 世界线（3 次行动）
-  public isOneActionThisRound: boolean = false;
-
   constructor() {
     super({
       name: CardName.WORLD_LINE_VOYAGER,
@@ -43,8 +41,8 @@ export class WorldLineVoyager extends CorporationCard {
    * β 世界线：编号 2（3 次行动，isOneActionThisRound 为 false）
    * 注：Steins;Gate 世界线为设想中的第 3 条线（未使用）
    */
-  public getCurrentWorldline(): number {
-    return this.isOneActionThisRound? 1 : 2;
+  public getCurrentWorldline(player: IPlayer): number {
+    return getWorldLineVoyagerData(player.game).isOneActionThisRound? 1 : 2;
   }
 
   /**
@@ -54,7 +52,7 @@ export class WorldLineVoyager extends CorporationCard {
     if (!player.isCorporation(this.name)) return 0;
 
     // 根据是否为1次行动或3次行动，返回卡牌的费用折扣
-    if (this.isOneActionThisRound) {
+    if (getWorldLineVoyagerData(player.game).isOneActionThisRound) {
       return 3; // 1动时，项目卡费用减少3 M€
     } else {
       return -1; // 3动时，项目卡费用增加1 M€

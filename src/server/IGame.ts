@@ -34,6 +34,7 @@ import {Logger} from './logs/Logger';
 import {GlobalParameter} from '../common/GlobalParameter';
 import {UnderworldData} from './underworld/UnderworldData';
 import {OrOptions} from './inputs/OrOptions';
+import {MingYueData} from './mingyue/MingYueData';
 
 export interface Score {
   corporation: String;
@@ -82,6 +83,7 @@ export interface IGame extends Logger {
   moonData: MoonData | undefined;
   pathfindersData: PathfindersData | undefined;
   underworldData: UnderworldData;
+  mingyueData: MingYueData | undefined;
 
   // Card-specific data
 

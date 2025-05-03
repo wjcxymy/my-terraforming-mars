@@ -83,6 +83,7 @@ import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
 import {GoldenFinger} from './cards/mingyue/GoldenFinger';
 import {WorldLineVoyager} from './cards/mingyue/WorldLineVoyager';
+import {getWorldLineVoyagerData} from './mingyue/MingYueData';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -1612,24 +1613,18 @@ export class Player implements IPlayer {
       ) {
         // 如果玩家拥有世界线航行者公司，则行动次数在1次、3次切换
         if (worldlinevoyager instanceof WorldLineVoyager) {
+          const data = getWorldLineVoyagerData(this.game);
           // 反转 isOneActionThisRound 状态
-          worldlinevoyager.isOneActionThisRound = !worldlinevoyager.isOneActionThisRound;
+          data.isOneActionThisRound = !data.isOneActionThisRound;
           // 根据 isOneActionThisRound 调整恢复的行动次数
-          if (worldlinevoyager.isOneActionThisRound) {
-            this.availableActionsThisRound = 1; // 每回合只有一次行动
-            this.game.log(
-              '${0}\'s ${1} has jumped to the α World Line. You can take 1 action next round.',
-              (b) => b.player(this).card(worldlinevoyager),
-            );
-          } else {
-            this.availableActionsThisRound = 3; // 每回合可以恢复三次行动
-            this.game.log(
-              '${0}\'s ${1} has jumped to the β World Line. You can take 3 actions next round.',
-              (b) => b.player(this).card(worldlinevoyager),
-            );
-          }
+          this.availableActionsThisRound = data.isOneActionThisRound ? 1 : 3;
+          this.game.log(
+            (data.isOneActionThisRound ?
+              '${0}\'s ${1} has jumped to the α World Line. You can take 1 action next round.' :
+              '${0}\'s ${1} has jumped to the β World Line. You can take 3 actions next round.'),
+            (b) => b.player(this).card(worldlinevoyager),
+          );
         } else {
-          // 如果没有世界线航行者公司，恢复默认的行动次数
           this.availableActionsThisRound = 2; // 默认每回合2次行动
         }
         this.actionsTakenThisRound = 0;
