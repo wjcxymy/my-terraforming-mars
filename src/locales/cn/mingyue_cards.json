@@ -32,6 +32,14 @@
     "${0} rolled ${1} and gained ${2} M€ from ${3}.": "${0} 掷出 ${1}，获得了 ${2} M€(来自 ${3})。",
 
     "Artifact Harvest": "奇物丰收",
-    "Requires 7 oceans. Gain 1 plants for each type of non-standard resource you have (up to 7 types counted).": "需要7片海洋。你每拥有1种非标准资源，获得1植物（最多计入7种资源）。"
+    "Requires 7 oceans. Gain 1 plants for each type of non-standard resource you have (up to 7 types counted).": "需要7片海洋。你每拥有1种非标准资源，获得1植物（最多计入7种资源）。",
+
+    "Divergencies Assort": "分歧的交汇点",
+    "(Action: Draw the top 2 cards of the deck. Keep at most 1 of them.)": "（行动：抽取牌堆顶两张牌，保留其中至多一张。）",
+    "If you kept any, all other players draw 1 card.": "若你保留了卡牌，其余所有玩家各抽 1 张牌",
+    "Select 1 card to keep or none": "选择保留 1 张牌或不保留",
+    "${0} kept a card during the action of ${1}.": "${0} 在 ${1} 的行动中保留了一张牌",
+    "${0} drew a card due to the action of ${1}.": "${0} 因 ${1} 的行动抽了一张牌",
+    "${0} kept no cards during the action of ${1}.": "${0} 在 ${1} 的行动中未保留任何牌"
 
 }
