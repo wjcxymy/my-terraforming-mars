@@ -612,8 +612,8 @@ export enum CardName {
   ARTIFACT_HARVEST = 'Artifact Harvest',
 
   // MingYue corps
-  TRISYN_INSTITUTE = 'TrisynInstitute',
-  LUNA_CHAIN = 'LunaChain',
+  TRISYN_INSTITUTE = 'Trisyn Institute',
+  LUNA_CHAIN = 'Luna Chain',
   TITHES = 'Tithes',
   GOLDEN_FINGER = 'Golden Finger',
   WORLD_LINE_VOYAGER = 'World Line Voyager',

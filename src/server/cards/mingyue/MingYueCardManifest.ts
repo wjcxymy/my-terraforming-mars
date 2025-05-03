@@ -19,10 +19,10 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
   corporationCards: {
     [CardName.TRISYN_INSTITUTE]: {Factory: TrisynInstitute},
-    [CardName.LUNA_CHAIN]: {Factory: LunaChain},
+    [CardName.LUNA_CHAIN]: {Factory: LunaChain, compatibility: 'mingyue'},
     [CardName.TITHES]: {Factory: Tithes},
     [CardName.GOLDEN_FINGER]: {Factory: GoldenFinger},
-    [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager},
+    [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager, compatibility: 'mingyue'},
   },
   preludeCards: {
   },

@@ -34,15 +34,11 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
       metadata: {
         cardNumber: 'MY08',
         renderData: CardRenderer.builder((b) => {
-          b.plainEffect('Place this tile. It counts as a City.', (eb) => {
-            eb.empty()
-              .startEffect.production((pb) => {
-                pb.minus().energy(1).plus().megacredits(3);
-              })
-              .nbsp
-              .tile(TileType.GAMBLING_DISTRICT_LAS_VEGAS, false, false);
+          b.production((pb) => {
+            pb.minus().energy(1).plus().megacredits(3);
           });
-          b.br;
+          b.nbsp.tile(TileType.GAMBLING_DISTRICT_LAS_VEGAS, false, false).br;
+          b.plainText('(Place this tile. It counts as a City.)').br;
           b.plainEffect('When a tile is placed adjacent to it, the player must pay 3 M€ more, then roll 1d6 to gain that many M€.', (eb) => {
             eb.megacreditsText('-3', {all})
               .nbsp
