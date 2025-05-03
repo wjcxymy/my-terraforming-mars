@@ -14,6 +14,7 @@ import {EcologicalPavilion} from './EcologicalPavilion';
 import {GamblingDistrictLasVegas} from './GamblingDistrictLasVegas';
 import {ArtifactHarvest} from './ArtifactHarvest';
 import {WorldLineVoyager} from './WorldLineVoyager';
+import {DivergenciesAssort} from './DivergenciesAssort';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -35,6 +36,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.FLORAL_BLOOM_SURGE]: {Factory: FloralBloomSurge},
     [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
     [CardName.ARTIFACT_HARVEST]: {Factory: ArtifactHarvest},
+    [CardName.DIVERGENCIES_ASSORT]: {Factory: DivergenciesAssort},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
   },
   globalEvents: {

@@ -610,6 +610,7 @@ export enum CardName {
   ECOLOGICAL_PAVILION = 'Ecological Pavilion',
   GAMBLING_DISTRICT_LAS_VEGAS = 'Gambling District Las Vegas',
   ARTIFACT_HARVEST = 'Artifact Harvest',
+  DIVERGENCIES_ASSORT = 'Divergencies Assort',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',
