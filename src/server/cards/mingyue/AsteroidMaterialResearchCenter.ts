@@ -15,7 +15,7 @@ export class AsteroidMaterialResearchCenter extends Card implements IProjectCard
 
   // 每张蓝卡每代最多刷新2次
   private refreshCounter: Map<string, number> = new Map();
-  private counterGeneration: number = -1; // refreshCounter 所属的世代
+  private counterGeneration: number = -1; // refreshCounter 所属的时代
 
   constructor() {
     super({

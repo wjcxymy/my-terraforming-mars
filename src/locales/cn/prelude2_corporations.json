@@ -1,0 +1,30 @@
+{
+    "SPIRE": "SPIRE",
+    "Spire": "Spire",
+    "Standard Project": "Standard Projekt",
+    "You start with 50 M€. As your first action, draw 4 cards, then discard 3 cards from your hand.": "起始获得50M€。作为游戏的第一个行动，抽取4张卡牌并弃置其中3张。",
+    "Effect: When you play a card with at least 2 tags. including this, add 1 science resource here.": "效果：当你打出包含至少2个标签的卡牌（包括此牌）时，在此卡上添加1个科学资源。",
+    "Effect: When you pay for a standard project, science resources here may be used as 2 M€ each.": "效果：支付标准项目费用时，此卡每个科学资源可抵扣2M€。",
+
+    "SAGITTA FRONTIER SERVICES": "SAGITTA GRENZDIENSTE",
+    "Sagitta Frontier Services": "Sagitta Grenzdienste",
+    "You start with 31 M€. Increase energy production 1 step and M€ production 2 steps. Draw a card that has no tag.": "起始获得31M€。提升1级能量产能和2级M€产能，抽取1张无标签卡牌。",
+    "Effect: When you play a card with no tags, including this, gain 4 M€.": "效果：当你打出无标签卡牌（包括此牌）时，获得4M€。",
+    "Effect: When you play a card with EXACTLY 1 TAG, you gain 1 M€.": "效果：当你打出仅含1个标签的卡牌时，获得1M€。",
+
+    "ECOTEC": "ECOTEC",
+    "Ecotec": "Ecotec",
+    "You start with 42 M€. Increase your plant production 1 step.": "起始获得42M€。提升1级植物产能。",
+    "Effect: When you play a bio tag, gain 1 plant or add a microbe to ANY card.": "效果：当你打出生物标签卡牌时，获得1植物或在任意卡牌添加1个微生物。",
+
+    "PALLADIN SHIPPING": "PALLADIN-VERSAND",
+    "Palladin Shipping": "Palladin-Versand",
+    "You start with 36 M€. Gain 5 titanium.": "起始获得36M€。获得5个钛资源。",
+    "Effect: When you play a space event, gain 1 titanium.": "效果：当你打出太空事件卡时，获得1个钛资源。",
+    "Action: Spend 2 titanium to raise the temperature 1 step.": "行动：花费2个钛资源提升1级温度。",
+
+    "NIGRAL ENTERPRISES": "NIGRAL ENTERPRISES",
+    "Nigral Enterprises": "Nigral Enterprises",
+    "You start with 30 M€. Increase your energy, plant, and steel production 1 step each.": "起始获得30M€。分别提升1级能量、植物和钢铁产能。",
+    "Effect: AWARDS AND MILESTONES ALWAYS COST 0 M€ FOR YOU.": "效果：你获取奖项和里程碑无需支付M€。"
+}

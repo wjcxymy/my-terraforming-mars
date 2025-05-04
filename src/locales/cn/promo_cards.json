@@ -226,5 +226,11 @@
 
   "Topsoil Contract": "表土合约",
   "Effect: When you gain a microbe to ANY CARD, also gain 1 M€.": "效果：当你在任意卡牌获得微生物资源时，额外获得1M€。",
-  "Gain 3 plants.": "获得3个植物。"
+  "Gain 3 plants.": "获得3个植物。",
+
+  "Protected Growth": "受保护生长",
+  "Oxygen must be 7% or less. Gain 1 plant per power tag you have.": "需求氧气等级≤7%。你拥有的每个电力标签获得1植物",
+
+  "Public Baths": "公共浴场",
+  "Requires 6 oceans. Gain 6 M€.": "需求6个海洋板块。获得6M€"
 }
