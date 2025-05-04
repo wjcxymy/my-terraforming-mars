@@ -1,29 +1,29 @@
 {
-    "Trade Embargo (I)": "贸易封锁（I）",
-    "Nobody may trade for the rest of this generation.": "本时代剩余时间所有玩家禁止进行贸易",
+  "Trade Embargo (I)": "贸易封锁（I）",
+  "Nobody may trade for the rest of this generation.": "本时代剩余时间所有玩家禁止进行贸易",
 
-    "Clone Troopers (II)": "克隆士兵（II）",
-    "Action: Add one Clone Trooper to this card OR remove one Clone Trooper from this card to steal one standard resource from any player.": "行动：添加1个克隆士兵至此卡，或移除此卡1个克隆士兵偷取任意玩家1个标准资源",
-    "Requires 6 ocean tiles. 1 VP per Clone Trooper on this card.": "需求6个海洋板块。此卡每个克隆士兵获得1VP",
+  "Clone Troopers (II)": "克隆士兵（II）",
+  "Action: Add one Clone Trooper to this card OR remove one Clone Trooper from this card to steal one standard resource from any player.": "行动：添加1个克隆士兵至此卡，或移除此卡1个克隆士兵偷取任意玩家1个标准资源",
+  "Requires 6 ocean tiles. 1 VP per Clone Trooper on this card.": "需求6个海洋板块。此卡每个克隆士兵获得1VP",
 
-    "Behold The Emperor! (III)": "觐见皇帝！（III）",
-    "Requires that you are Chairman. The current ruling party will automatically be the ruling party during the next Solar phase, and you will remain the Chairman. (As if the current ruling party were dominant and you were its party leader.)": "需求成为主席。当前执政党将在下个时代自动连任，你保留主席职位（视为该派系保持主导地位且你为其领导者）",
+  "Behold The Emperor! (III)": "觐见皇帝！（III）",
+  "Requires that you are Chairman. The current ruling party will automatically be the ruling party during the next Solar phase, and you will remain the Chairman. (As if the current ruling party were dominant and you were its party leader.)": "需要成为主席。当前执政党将在下个时代自动连任，你保留主席职位（视为该派系保持主导地位且你为其领袖）",
 
-    "Tosche Station (IV)": "托什站（IV）",
-    "Action: Spend X Energy and gain X-1 plants (max 4.)": "行动：消耗X点能量，获得X-1植物（最多4个）",
+  "Tosche Station (IV)": "托什站（IV）",
+  "Action: Spend X Energy and gain X-1 plants (max 4.)": "行动：消耗X点能量，获得X-1植物（最多4个）",
 
-    "Cloud City (V)": "云城（V）",
-    "Requires Venus 6%. Raise Venus 1 step. Add 2 floaters to any card.": "需求金星参数≥6%。提升1级金星改造度，向任意卡牌添加2个云资源",
+  "Cloud City (V)": "云城（V）",
+  "Requires Venus 6%. Raise Venus 1 step. Add 2 floaters to any card.": "需求金星参数≥6%。提升1级金星改造度，向任意卡牌添加2个云资源",
 
-    "Forest Moon (VI)": "森林之月（VI）",
-    "Requires any 4 greeneries on Mars. Decrease any energy production 2 steps. Add an animal to any card.": "需求火星上有4个绿化区。降低任一玩家能量产能2级，向任意卡牌添加1个动物",
+  "Forest Moon (VI)": "森林之月（VI）",
+  "Requires any 4 greeneries on Mars. Decrease any energy production 2 steps. Add an animal to any card.": "需求火星上有4个绿化板块。降低任一玩家能量产能2级，向任意卡牌添加1个动物",
 
-    "Takonda Castle (VII)": "塔孔达城堡（VII）",
-    "Gain 1 M€ for each of your microbe tags and animal tags.": "你拥有的每个微生物标签和动物标签各获得1M€",
+  "Takonda Castle (VII)": "塔孔达城堡（VII）",
+  "Gain 1 M€ for each of your microbe tags and animal tags.": "你拥有的每个微生物标签和动物标签各获得1M€",
 
-    "Tool with the First Order (VIII)": "第一秩序工具（VIII）",
-    "Take another action this turn. Gain 1 TR.": "本回合执行一次额外行动，获得1TR",
+  "Tool with the First Order (VIII)": "第一秩序工具（VIII）",
+  "Take another action this turn. Gain 1 TR.": "本回合执行一次额外行动，获得1TR",
 
-    "Rey ... Skywalker?! (IX)": "雷伊...天行者？！（IX）",
-    "Raise your M€ production 4 steps. Place a bronze cube on an empty unreserved space on Mars. No tile may be placed on that space for the rest of the game.": "提升4级M€产能。在火星空置区域放置青铜标记，游戏剩余时间该位置不可放置任何板块"
+  "Rey ... Skywalker?! (IX)": "雷伊...天行者？！（IX）",
+  "Raise your M€ production 4 steps. Place a bronze cube on an empty unreserved space on Mars. No tile may be placed on that space for the rest of the game.": "提升4级M€产能。在火星空置区域放置青铜标记，游戏剩余时间该位置不可放置任何板块"
 }

@@ -1,14 +1,16 @@
 {
-
-    "Not affiliated with FryxGames, Asmodee Digital or Steam in any way.": "不以任何形式隶属于FryxGames, Asmodee Digital 或 Steam.",
-    "New game": "新的游戏",
-    "How to Play": "",
-    "Cards list": "卡牌列表",
-    "Board game": "桌游介绍",
-    "About us": "关于我们",
-    "Whats new?": "版本更新内容",
-    "Join us on Discord": "在Discord全球约玩",
-    "Create game": "创建游戏"
-
-
+  "TERRAFORMING": "殖民",
+  "MARS": "火星",
+  "New game": "新的游戏",
+  "How to Play": "游戏规则",
+  "Cards list": "卡牌列表",
+  "Board game": "桌游介绍",
+  "About us": "关于我们",
+  "Whats new?": "版本更新内容",
+  "Join us on Discord": "在Discord全球约玩",
+  "Create game": "创建游戏",
+  "Looking for people to play with": "寻找玩家",
+  "version": "版本",
+  "deployed": "部署时间",
+  " Not affiliated with FryxGames, Asmodee Digital or Steam in any way. ": "与FryxGames、Asmodee Digital及Steam无任何关联"
 }
