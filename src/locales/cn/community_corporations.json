@@ -1,24 +1,40 @@
 {
-    "Agricola Inc": "阿格里科拉公司",
-    "You start with 1 plant production, 1 M€ production, 1 heat production and 40 M€.": "起始1点植物产量、1点热能产量、1 M€产量和40 M€。",
-    "Effect: At game end, score -2 / 0 / 1 / 2 VP PER TAG TYPE for 0 / 1-2 / 3-4 / 5+ tags.": "效果：终局计分时，若你拥有每种标志0/1-2/3-4/5+个，得到-2/0/1/2 VP。",
+  "Agricola Inc": "Agricola Inc",
+  "You start with 1 plant production, 1 M€ production, 1 heat production and 40 M€.": "起始1点植物产量、1点热能产量、1 M€产量和40 M€。",
+  "Effect: At game end, score -2 / 0 / 1 / 2 VP PER TAG TYPE for 0 / 1-2 / 3-4 / 5+ tags.": "效果：终局计分时，若你拥有每种标志0/1-2/3-4/5+个，得到-2/0/1/2 VP。",
 
-    "Curiosity II": "求知II型公司",
-    "You start with 40 M€ and 2 steel production.":"起始拥有40 M€和2钢铁产量",
-    "Effect: When you place a tile on an area that has a RESOURCE placement bonus, or on top of another tile, you may pay 2 M€ to draw a card.":"效果：当你在一个有资源放置奖励的区域上放置一个板块，或将板块放置在另一个板块上，你可以支付2 M€来抽一张牌。",
+  "Athena": "Athena",
+  "You start with 62 M€. As your first action, place 2 hazard tiles adjacent to no other tiles.": "起始获得62 M€。首个行动需放置2个危险板块（需与其他板块不相邻）。",
+  "Effect: You do not lose production when placing adjacent to hazard tiles.": "效果：与危险板块相邻放置时不损失产能。",
 
-    "Incite": "煽动公司",
-    "You start with 32 M€. As your first action, place two delegates in one party.": "起始拥有32 M€，作为第一个行动，放置2个代表到1个党派上。",
-    "Effect: You have +1 influence. When you send a delegate using the lobbying action, you pay 2 M€ less for it.": "影响力始终+1，当你从储备区派遣代表时，少支付2 M€。",
+  "Curosity II": "Curosity II",
+  "You start with 40 M€ and 2 steel production.": "起始拥有40 M€和2钢铁产量",
+  "Effect: When you place a tile on an area that has a RESOURCE placement bonus, or on top of another tile, you may pay 2 M€ to draw a card.": "效果：当你在一个有资源放置奖励的区域上放置一个板块，或将板块放置在另一个板块上，你可以支付2 M€来抽一张牌。",
 
-    "Midas": "迈达斯",
-    "You start with 120 M€. Lower your TR 7 steps.": "起始获得120 M€，降低7点改造度。",
+  "Eris": "Eris",
+  "You start with 46 M€. As your first action, draw an Ares card.": "起始获得46 M€。首个行动抽取1张阿瑞斯卡牌",
+  "Action: Place a new hazard tile adjacent to NO OTHER TILE, OR remove a hazard tile to gain 1 TR.": "行动：放置1个独立危险板块，或移除1个危险板块获得1TR",
 
-    "Playwrights": "剧作家",
-    "You start with 38 M€ and 1 energy production.": "起始拥有38 M€和1点电力产量。",
-    "Action: Replay a played event from any player by paying its cost ONLY in M€ (discounts and rebates apply), then REMOVE IT FROM PLAY.": "行动：仅适用M€支付费用来重复一个任意玩家已经打出的事件效果（适用减费与回钱），然后将其从游戏中移除。",
+  "Incite": "Incite",
+  "You start with 32 M€. As your first action, place two delegates in one party.": "起始拥有32 M€，作为第一个行动，放置2个代表到1个党派上。",
+  "Effect: You have +1 influence. When you send a delegate using the lobbying action, you pay 2 M€ less for it.": "影响力始终+1，当你从储备区派遣代表时，少支付2 M€。",
 
-   "Project Workshop": "项目探讨公司",
-    "You start with 39 M€, 1 steel and 1 titanium. As your first action, draw a blue card.": "起始获得39 M€，一个铁和一个钛。第一个行动时抽一张蓝色牌。",
-    "Action: Flip and discard a played blue card to convert any VP on it into TR and draw 2 cards, or spend 3 M€ to draw a blue card.": "行动：翻面并弃掉一张蓝色卡牌，将卡牌上的分数转化为改造度并抽2张牌，或者花3 M€抽取一张蓝色卡牌。"
+  "Midas": "Midas",
+  "You start with 120 M€. Lower your TR 7 steps.": "起始获得120 M€，降低7点改造度。",
+
+  "Playwrights": "Playwrights",
+  "You start with 38 M€ and 1 energy production.": "起始拥有38 M€和1点电力产量。",
+  "Action: Replay a played event from any player (INCLUDING events that place special tiles) by paying its cost ONLY in M€ (discounts and rebates apply), then REMOVE IT FROM PLAY.": "行动：仅用M€支付费用（可享折扣）重打任意玩家已打出的事件卡（含放置特殊板块事件），随后移出游戏",
+
+  "Project Workshop": "Project Workshop",
+  "You start with 39 M€, 1 steel and 1 titanium. As your first action, draw a blue card.": "起始获得39 M€，一个铁和一个钛。第一个行动时抽一张蓝色牌。",
+  "Action: Flip and discard a played blue card to convert any VP on it into TR and draw 2 cards, or spend 3 M€ to draw a blue card.": "行动：翻面并弃掉一张蓝色卡牌，将卡牌上的分数转化为改造度并抽2张牌，或者花3 M€抽取一张蓝色卡牌。",
+
+  "Junk Ventures": "Junk Ventures",
+  "You start with 43 M€. As your first action, discard the top 3 cards of the deck.": "起始获得43 M€。首个行动弃置牌库顶3张卡牌",
+  "ACTION: SHUFFLE THE DISCARD PILE, THEN DRAW 3 CARDS FROM IT. KEEP 1 AND DISCARD THE OTHER 2.": "行动：洗混弃牌堆并抽取3张，保留1张弃置其余2张",
+
+  "UNITED NATIONS MISSION ONE": "UNITED NATIONS MISSION ONE",
+  "You start with 39 M€. Increase your TR 1 step.": "起始获得39 M€，提升1级TR",
+  "Effect: When any player takes an action or plays a card that increases TR, including this, gain 1 M€ for each step.": "效果：任一玩家（含自己）执行提升TR的行动或卡牌时，每提升1级获得1M€"
 }
