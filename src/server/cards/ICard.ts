@@ -82,6 +82,7 @@ export interface ICard {
   onCardPlayed?(player: IPlayer, card: ICard): PlayerInput | undefined | void;
   onCardPlayedFromAnyPlayer?(thisCardOwner: IPlayer, playedCardOwner: IPlayer, card: IProjectCard): PlayerInput | undefined;
   onCardPlayedWithPayment?(player: IPlayer, card: ICard, payment: Payment): PlayerInput | undefined | void;
+  onStandardResourceSpent?(player: IPlayer, resource: Resource, amount: number): void;
   onStandardProject?(player: IPlayer, project: IStandardProjectCard): void;
   onTilePlaced?(cardOwner: IPlayer, activePlayer: IPlayer, space: Space, boardType: BoardType): void;
   onDiscard?(player: IPlayer): void;

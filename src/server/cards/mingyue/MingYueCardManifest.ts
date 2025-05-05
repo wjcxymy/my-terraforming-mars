@@ -15,6 +15,7 @@ import {GamblingDistrictLasVegas} from './GamblingDistrictLasVegas';
 import {ArtifactHarvest} from './ArtifactHarvest';
 import {WorldLineVoyager} from './WorldLineVoyager';
 import {DivergenciesAssort} from './DivergenciesAssort';
+import {InfinityCircuit} from './InfinityCircuit';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -24,6 +25,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.TITHES]: {Factory: Tithes},
     [CardName.GOLDEN_FINGER]: {Factory: GoldenFinger},
     [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager, compatibility: 'mingyue'},
+    [CardName.INFINITY_CIRCUIT]: {Factory: InfinityCircuit},
   },
   preludeCards: {
   },

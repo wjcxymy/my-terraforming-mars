@@ -988,6 +988,21 @@ export class Player implements IPlayer {
     }
   }
 
+  // 玩家对象的钩子函数：用于响应“标准资源”（植物、能量、热量等）被花费的情况
+  public onStandardResourceSpent(player: Player, resource: Resource, amount: number) {
+    // 遍历所有已打出的项目卡，如果它们定义了资源支出处理逻辑，则调用它们的处理函数
+    for (const playedCard of this.playedCards) {
+      const actionFromPlayedCard = playedCard.onStandardResourceSpent?.(player, resource, amount);
+      this.defer(actionFromPlayedCard); // 延迟处理可能返回的异步 Action（如动画、额外效果）
+    }
+
+    // 遍历所有公司卡，同样检查是否定义了资源支出处理逻辑
+    for (const corporationCard of this.corporations) {
+      const actionFromPlayedCard = corporationCard.onStandardResourceSpent?.(player, resource, amount);
+      this.defer(actionFromPlayedCard); // 同样延迟处理
+    }
+  }
+
   /* Visible for testing */
   public playActionCard(): PlayerInput {
     return new SelectCard<ICard & IActionCard>(

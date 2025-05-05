@@ -307,6 +307,7 @@ export interface IPlayer {
   playCard(selectedCard: IProjectCard, payment?: Payment, cardAction?: CardAction): void;
   onCardPlayed(card: IProjectCard): void;
   onCardPlayedWithPayment(card: IProjectCard, payment?: Payment): void;
+  onStandardResourceSpent?(player: IPlayer, resource: Resource, amount: number): void;
   playAdditionalCorporationCard(corporationCard: ICorporationCard): void;
   playCorporationCard(corporationCard: ICorporationCard): void;
   drawCard(count?: number, options?: DrawOptions): void;

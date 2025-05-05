@@ -32,6 +32,14 @@
   "α World Line: Base actions per round are 1, project card costs are reduced by 3 M€.": "α世界线：基础行动次数为1，项目卡费用减少3 M€。",
   "β World Line: Base actions per round are 3, project card costs are increased by 1 M€.": "β世界线：基础行动次数为3，项目卡费用增加1 M€。",
   "${0}'s ${1} has jumped to the β World Line. You can take 3 actions next round.": "${0} 的 ${1} 已跳跃到 β 世界线，下回合可进行 3 次行动。",
-  "${0}'s ${1} has jumped to the α World Line. You can take 1 action next round.": "${0} 的 ${1} 已跳跃到 α 世界线，下回合可进行 1 次行动。"
+  "${0}'s ${1} has jumped to the α World Line. You can take 1 action next round.": "${0} 的 ${1} 已跳跃到 α 世界线，下回合可进行 1 次行动。",
+
+  "Infinity Circuit": "无限回路",
+  "INFINITY CIRCUIT": "无限回路",
+  "You start with 42 M€, and 2 each of plants, energy, and heat.": "起始获得48M€，2 个植物、电力和热能。",
+  "Effect: When you spend 2 or more plants, energy, or heat, gain 2 energy, 2 heat, or 1 plant, respectively.": "效果：当你消耗 2 个或更多的植物、电力或热能时，分别获得 2 个电力、2 个热能或 1 个植物。",
+  "${0} gained ${1} energy via ${2} (paid ${3} plants)": "${0} 通过 ${2} 获得了 ${1} 电力（支付了 ${3} 个植物）",
+  "${0} gained ${1} heat via ${2} (paid ${3} energy)": "${0} 通过 ${2} 获得了 ${1} 热能（支付了 ${3} 个电力）",
+  "${0} gained ${1} plant via ${2} (paid ${3} heat)": "${0} 通过 ${2} 获得了 ${1} 植物（支付了 ${3} 个热能）"
 
 }
