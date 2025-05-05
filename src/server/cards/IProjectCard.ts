@@ -18,7 +18,6 @@ export interface IProjectCard extends ICard {
   // The only card that is going to call this is Oumuamua Type Object Survey.
   canPlayPostRequirements(player: IPlayer, canAffordOptions?: CanAffordOptions): boolean;
   cost: number;
-  paidMegaCredits?: number; // 记录实际支付的 M€
 
   /**
    * The bonus resource gained when playing this card. This value is a serialized value.
