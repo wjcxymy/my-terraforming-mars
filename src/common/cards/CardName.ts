@@ -618,6 +618,7 @@ export enum CardName {
   TITHES = 'Tithes',
   GOLDEN_FINGER = 'Golden Finger',
   WORLD_LINE_VOYAGER = 'World Line Voyager',
+  INFINITY_CIRCUIT = 'Infinity Circuit',
 
   // MingYue preludes
 

@@ -126,6 +126,12 @@ export class Stock {
 
     this.units[resource] += delta;
 
+    // 当资源减少（delta < 0）且来源不是其他玩家时（options?.from === undefined）
+    // 调用玩家的 onStandardResourceSpent 钩子，通知资源被花费
+    if (delta < 0 && options?.from === undefined) {
+      this.player?.onStandardResourceSpent?.(this.player, resource, -delta);
+    }
+
     if (options?.log === true) {
       this.player.logUnitDelta(resource, delta, 'amount', options.from, options.stealing);
     }
