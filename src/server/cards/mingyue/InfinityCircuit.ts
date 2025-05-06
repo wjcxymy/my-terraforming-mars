@@ -23,6 +23,9 @@ export class InfinityCircuit extends CorporationCard {
       name: CardName.INFINITY_CIRCUIT,
       tags: [Tag.POWER, Tag.PLANT],
       startingMegaCredits: 42,
+      behavior: {
+        stock: {plants: 2, energy: 2, heat: 2},
+      },
       metadata: {
         cardNumber: 'MY-CORP-06',
         description: 'You start with 42 M€, and 2 each of plants, energy, and heat.',

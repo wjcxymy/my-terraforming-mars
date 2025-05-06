@@ -36,10 +36,17 @@
 
   "Infinity Circuit": "无限回路",
   "INFINITY CIRCUIT": "无限回路",
-  "You start with 42 M€, and 2 each of plants, energy, and heat.": "起始获得48M€，2 个植物、电力和热能。",
+  "You start with 42 M€, and 2 each of plants, energy, and heat.": "起始获得42M€，2 个植物、电力和热能。",
   "Effect: When you spend 2 or more plants, energy, or heat, gain 2 energy, 2 heat, or 1 plant, respectively.": "效果：当你消耗 2 个或更多的植物、电力或热能时，分别获得 2 个电力、2 个热能或 1 个植物。",
   "${0} gained ${1} energy via ${2} (paid ${3} plants)": "${0} 通过 ${2} 获得了 ${1} 电力（支付了 ${3} 个植物）",
   "${0} gained ${1} heat via ${2} (paid ${3} energy)": "${0} 通过 ${2} 获得了 ${1} 热能（支付了 ${3} 个电力）",
-  "${0} gained ${1} plant via ${2} (paid ${3} heat)": "${0} 通过 ${2} 获得了 ${1} 植物（支付了 ${3} 个热能）"
+  "${0} gained ${1} plant via ${2} (paid ${3} heat)": "${0} 通过 ${2} 获得了 ${1} 植物（支付了 ${3} 个热能）",
+
+  "Heavyworks Creed": "重工信条",
+  "HEAVYWORKS CREED": "重工信条",
+  "You start with 10 steel and 1 worker.": "起始获得10钢铁和1个工人。",
+  "Effect: When you play a project card and pay 2 or more steel, place 1 worker on this card.": "效果：当你打出项目卡且支付≥2钢铁时，在此卡上放置1个工人。",
+  "Effect: For every 2 workers, reduce the cost of building- or space-tagged cards you play by 1 M€.": "效果：每有2个工人，你打出的建筑或太空标志牌减1 M€。",
+  "${0} paid ${1} steel and added 1 worker to ${2}.": "${0} 支付了 ${1} 钢铁，并在 ${2} 上放置了1个工人。"
 
 }

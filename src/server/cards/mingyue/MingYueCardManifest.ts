@@ -16,6 +16,7 @@ import {ArtifactHarvest} from './ArtifactHarvest';
 import {WorldLineVoyager} from './WorldLineVoyager';
 import {DivergenciesAssort} from './DivergenciesAssort';
 import {InfinityCircuit} from './InfinityCircuit';
+import {HeavyworksCreed} from './HeavyworksCreed';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -26,6 +27,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.GOLDEN_FINGER]: {Factory: GoldenFinger},
     [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager, compatibility: 'mingyue'},
     [CardName.INFINITY_CIRCUIT]: {Factory: InfinityCircuit},
+    [CardName.HEAVYWORKS_CREED]: {Factory: HeavyworksCreed},
   },
   preludeCards: {
   },
