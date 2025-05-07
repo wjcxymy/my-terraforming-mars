@@ -212,6 +212,8 @@ export class Player implements IPlayer {
   public playedCards: Array<IProjectCard> = [];
   public draftedCards: Array<IProjectCard> = [];
   public draftHand: Array<IProjectCard> = [];
+  public genericDraftedCards: Array<ICorporationCard> = [];
+  public genericDraftHand: Array<ICorporationCard> = [];
   public cardCost: number = constants.CARD_COST;
   public needsToDraft?: boolean;
 

@@ -365,6 +365,14 @@
                                 </label>
                                 </div>
 
+                                <div v-if="initialDraft && doubleCorpVariant">
+                                <input type="checkbox" name="corporationDraft" v-model="corporationDraftVariant" id="corporationDraft-checkbox">
+                                <label for="corporationDraft-checkbox">
+                                    <span v-i18n>Corporation Draft variant</span>&nbsp;
+                                    <a href="" class="tooltip" target="_blank">&#9432;</a>
+                                </label>
+                                </div>
+
                                 <div v-if="initialDraft && expansions.prelude">
                                 <input type="checkbox" name="preludeDraft" v-model="preludeDraftVariant" id="preludeDraft-checkbox">
                                 <label for="preludeDraft-checkbox">
@@ -665,6 +673,7 @@ export default (Vue as WithRefs<Refs>).extend({
       customCeos: [],
       startingCeos: 3,
       startingPreludes: 4,
+      corporationDraftVariant: undefined,
       preludeDraftVariant: undefined,
       preludeToggled: false,
       uploading: false,
@@ -1238,6 +1247,7 @@ export default (Vue as WithRefs<Refs>).extend({
         soloTR,
         clonedGamedId,
         initialDraft,
+        corporationDraftVariant: this.corporationDraftVariant ?? false,
         preludeDraftVariant: this.preludeDraftVariant ?? false,
         randomMA,
         shuffleMapOption,

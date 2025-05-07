@@ -7,8 +7,10 @@ import {LunaProjectOffice} from './cards/moon/LunaProjectOffice';
 import {SelectCard} from './inputs/SelectCard';
 import {message} from './logs/MessageBuilder';
 import {IPreludeCard} from './cards/prelude/IPreludeCard';
+import {ICard} from './cards/ICard';
+import {ICorporationCard} from './cards/corporation/ICorporationCard';
 
-export type DraftType = 'none' | 'initial' | 'prelude' | 'standard';
+export type DraftType = 'none' | 'initial' | 'prelude' | 'standard' | 'corporation';
 
 /*
  * Drafting terminology:
@@ -21,11 +23,13 @@ export type DraftType = 'none' | 'initial' | 'prelude' | 'standard';
 /**
  * Implements a specific draft.
  */
-export abstract class Draft {
+export abstract class Draft<T extends ICard> {
+  // 表示是否使用泛型字段 genericDraftHand / genericDraftedCards
+  public useGeneric: boolean = false;
   constructor(public readonly type: DraftType, protected readonly game: IGame) {}
 
   /** draw cards into hand at the start of the iteration. */
-  protected abstract draw(player: IPlayer): Array<IProjectCard>;
+  protected abstract draw(player: IPlayer): T[];
   /** The number of cards the player will choose in this draft round. Almost always 1. */
   protected abstract cardsToKeep(player: IPlayer): number;
   /** The direction in which cards are passed. Either to the player before (right) or after (left). */
@@ -40,13 +44,22 @@ export abstract class Draft {
    */
   // TODO(kberg): Create a startDraft() which draws, and a continueDraft() which uses the cards a player is handed.
   public startDraft(save: boolean = true) {
-    const arrays: Array<Array<IProjectCard>> = [];
+    const arrays: Array<Array<T>> = [];
     if (this.game.draftRound === 1) {
       for (const player of this.game.getPlayers()) {
+        // 第1轮：为每位玩家抽取一组卡牌
         arrays.push(this.draw(player));
       }
     } else {
-      arrays.push(...this.game.getPlayers().map((player) => player.draftHand));
+      // 第2+轮：传递上一轮的 draftHand 或 genericDraftHand
+      arrays.push(...this.game.getPlayers().map((player) => {
+        // 根据 useGeneric 选择使用哪个字段
+        return this.useGeneric ?
+          (player.genericDraftHand as unknown as Array<T>) :
+          (player.draftHand as unknown as Array<T>);
+      }));
+
+      // 根据传递方向旋转卡组
       if (this.passDirection() === 'after') {
         arrays.unshift(arrays.pop()!); // eslint-disable-line @typescript-eslint/no-non-null-assertion
       } else {
@@ -55,11 +68,17 @@ export abstract class Draft {
     }
 
     for (const [player, draftHand] of zip(this.game.getPlayers(), arrays)) {
-      player.draftHand = draftHand;
+      // 根据 useGeneric 判断赋值给哪一个字段
+      if (this.useGeneric) {
+        player.genericDraftHand = draftHand as unknown as ICorporationCard[]; // 泛型轮抽字段
+      } else {
+        player.draftHand = draftHand as unknown as IProjectCard[]; // 原项目卡字段
+      }
       player.needsToDraft = true;
       this.askPlayerToDraft(player);
     }
     if (save) {
+      // 保存游戏状态（通常在第一轮）
       this.game.save();
     }
   }
@@ -110,21 +129,40 @@ export abstract class Draft {
     const messageTitle = cardsToKeep === 1 ?
       'Select a card to keep and pass the rest to ${0}' :
       'Select two cards to keep and pass the rest to ${0}';
-    player.setWaitingFor(
-      new SelectCard(
-        message(messageTitle, (b) => b.player(giveTo)),
-        'Keep',
-        player.draftHand,
-        {min: cardsToKeep, max: cardsToKeep, played: false})
-        .andThen((selected) => {
-          for (const card of selected) {
-            player.draftedCards.push(card);
-            inplaceRemove(player.draftHand, card);
-          }
-          this.onCardDrafted(player);
-          return undefined;
-        }),
-    );
+
+    if (this.useGeneric) {
+      player.setWaitingFor(
+        new SelectCard(
+          message(messageTitle, (b) => b.player(giveTo)),
+          'Keep',
+          player.genericDraftHand,
+          {min: cardsToKeep, max: cardsToKeep, played: false})
+          .andThen((selected) => {
+            for (const card of selected) {
+              player.genericDraftedCards.push(card);
+              inplaceRemove(player.genericDraftHand, card);
+            }
+            this.onCardDrafted(player);
+            return undefined;
+          }),
+      );
+    } else {
+      player.setWaitingFor(
+        new SelectCard(
+          message(messageTitle, (b) => b.player(giveTo)),
+          'Keep',
+          player.draftHand,
+          {min: cardsToKeep, max: cardsToKeep, played: false})
+          .andThen((selected) => {
+            for (const card of selected) {
+              player.draftedCards.push(card);
+              inplaceRemove(player.draftHand, card);
+            }
+            this.onCardDrafted(player);
+            return undefined;
+          }),
+      );
+    }
   }
 
   /** Called when a player has chosen a card to draft. */
@@ -137,24 +175,39 @@ export abstract class Draft {
       return;
     }
 
-    // If more than 1 card is to be passed to the next player, that means we're still drafting
-    if (player.draftHand.length > 1) {
-      this.game.draftRound++;
-      this.startDraft();
-      return;
-    }
+    if (this.useGeneric) {
+      // If more than 1 card is to be passed to the next player, that means we're still drafting
+      if (player.genericDraftHand.length > 1) {
+        this.game.draftRound++;
+        this.startDraft();
+        return;
+      }
 
-    // Push last cards for each player
-    for (const player of this.game.getPlayers()) {
-      player.draftedCards.push(...copyAndEmpty(this.takingFrom(player).draftHand));
-      player.needsToDraft = undefined;
+      // Push last cards for each player
+      for (const player of this.game.getPlayers()) {
+        player.genericDraftedCards.push(...copyAndEmpty(this.takingFrom(player).genericDraftHand));
+        player.needsToDraft = undefined;
+      }
+    } else {
+      // If more than 1 card is to be passed to the next player, that means we're still drafting
+      if (player.draftHand.length > 1) {
+        this.game.draftRound++;
+        this.startDraft();
+        return;
+      }
+
+      // Push last cards for each player
+      for (const player of this.game.getPlayers()) {
+        player.draftedCards.push(...copyAndEmpty(this.takingFrom(player).draftHand));
+        player.needsToDraft = undefined;
+      }
     }
 
     this.endRound();
   }
 }
 
-class StandardDraft extends Draft {
+class StandardDraft extends Draft<IProjectCard> {
   constructor(game: IGame) {
     super('standard', game);
   }
@@ -198,7 +251,7 @@ class StandardDraft extends Draft {
   }
 }
 
-class InitialDraft extends Draft {
+class InitialDraft extends Draft<IProjectCard> {
   constructor(game: IGame) {
     super('initial', game);
   }
@@ -231,6 +284,8 @@ class InitialDraft extends Draft {
       }
       if (this.game.gameOptions.preludeExtension && this.game.gameOptions.preludeDraftVariant) {
         newPreludeDraft(this.game).startDraft();
+      } else if (this.game.gameOptions.corporationDraftVariant) {
+        newCorporationDraft(this.game).startDraft();
       } else {
         this.game.gotoInitialResearchPhase();
       }
@@ -239,7 +294,7 @@ class InitialDraft extends Draft {
   }
 }
 
-class PreludeDraft extends Draft {
+class PreludeDraft extends Draft<IPreludeCard> {
   constructor(game: IGame) {
     super('prelude', game);
   }
@@ -263,6 +318,43 @@ class PreludeDraft extends Draft {
       player.draftedCards = [];
     }
 
+    if (this.game.gameOptions.corporationDraftVariant) {
+      // 重置轮抽轮次，确保公司轮抽时，从第一轮开始
+      this.game.draftRound = 1;
+      newCorporationDraft(this.game).startDraft();
+    } else {
+      this.game.gotoInitialResearchPhase();
+    }
+  }
+}
+
+class CorporationDraft extends Draft<ICorporationCard> {
+  constructor(game: IGame) {
+    super('corporation', game);
+    this.useGeneric = true; // 启用泛型字段 genericDraftHand / genericDraftedCards
+  }
+
+  // draw 方法返回玩家被发的公司卡（玩家的公司卡是通过 dealtCorporationCards 存储的）
+  override draw(player: IPlayer) {
+    return player.dealtCorporationCards;
+  }
+
+  // 公司轮抽时每个玩家可以保留的公司卡数量
+  override cardsToKeep(_player: IPlayer): number {
+    return 1; // 每个玩家只能保留1张公司卡
+  }
+
+  override passDirection(): 'before' {
+    return 'before';
+  }
+
+  // 结束回合时的处理逻辑
+  override endRound() {
+    for (const player of this.game.getPlayers()) {
+      player.dealtCorporationCards = player.genericDraftedCards as Array<ICorporationCard>;
+      player.genericDraftedCards = [];
+    }
+
     this.game.gotoInitialResearchPhase();
   }
 }
@@ -277,4 +369,8 @@ export function newInitialDraft(game: IGame) {
 
 export function newPreludeDraft(game: IGame) {
   return new PreludeDraft(game);
+}
+
+export function newCorporationDraft(game: IGame) {
+  return new CorporationDraft(game);
 }
