@@ -48,6 +48,7 @@ export interface NewGameConfig {
   // Variants
   draftVariant: boolean;
   initialDraft: boolean; // initialDraftVariant: boolean;
+  corporationDraftVariant: boolean;
   preludeDraftVariant: boolean;
   startingCorporations: number;
   shuffleMapOption: boolean;

@@ -37,6 +37,7 @@ export type CreateGameModel = {
   players: Array<NewPlayerModel>;
   playersCount: number;
   politicalAgendasExtension: AgendaStyle;
+  corporationDraftVariant: boolean | undefined;
   preludeDraftVariant: boolean | undefined;
   randomFirstPlayer: boolean;
   randomMA: RandomMAOptionType;

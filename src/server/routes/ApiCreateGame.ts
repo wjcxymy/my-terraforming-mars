@@ -143,6 +143,7 @@ export class ApiCreateGame extends Handler {
             pathfindersExpansion: gameReq.expansions.pathfinders,
             politicalAgendasExtension: gameReq.politicalAgendasExtension,
             prelude2Expansion: gameReq.expansions.prelude2,
+            corporationDraftVariant: gameReq.corporationDraftVariant,
             preludeDraftVariant: gameReq.preludeDraftVariant,
             preludeExtension: gameReq.expansions.prelude,
             promoCardsOption: gameReq.expansions.promo,
