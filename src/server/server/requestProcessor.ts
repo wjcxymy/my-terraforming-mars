@@ -39,6 +39,7 @@ import * as authcookies from './auth/authcookies';
 import {DiscordUser} from './auth/discord';
 import {getHerokuIpAddress} from './heroku';
 import * as responses from './responses';
+import {ApiGameRollback} from '../routes/ApiGameRollback';
 
 const metrics = {
   count: new prometheus.Counter({
@@ -72,6 +73,7 @@ const handlers: Map<string, IHandler> = new Map(
     [paths.API_GAME, ApiGame.INSTANCE],
     [paths.API_GAME_HISTORY, ApiGameHistory.INSTANCE],
     [paths.API_GAME_LOGS, ApiGameLogs.INSTANCE],
+    [paths.API_GAME_ROLL_BACK, ApiGameRollback.INSTANCE],
     [paths.API_GAMES, ApiGames.INSTANCE],
     [paths.API_IPS, ApiIPs.INSTANCE],
     [paths.API_METRICS, ApiMetrics.INSTANCE],

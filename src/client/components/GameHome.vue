@@ -2,6 +2,12 @@
       <div id="game-home" class="game-home-container">
         <h1><span v-i18n>Terraforming Mars</span> [<span v-i18n>game id:</span> <span>{{getGameId()}}</span>]</h1>
         <h4><span v-i18n>Instructions: To start the game, separately copy and share the links with all players, and then click on your name.</span><br/><span v-i18n>Save this page in case you or one of your opponents loses a link.</span></h4>
+        <div class="rollback-ui" v-if="game && game.lastSaveId !== undefined" style="margin-top: 1em;">
+          <h4 style="display: flex; align-items: center; gap: 1em;">
+            <span>Last Save Id: {{ game.lastSaveId }}</span>
+            <AppButton title="ROLLBACK" size="medium" @click="rollbackToLastSave" />
+          </h4>
+        </div>
         <ul>
           <li v-for="(player, index) in (game === undefined ? [] : game.players)" :key="player.color">
             <span class="turn-order" v-i18n>{{getTurnOrder(index)}}</span>
@@ -115,6 +121,31 @@ export default Vue.extend({
     },
     isPlayerUrlCopied(playerId: string): boolean {
       return playerId === this.urlCopiedPlayerId;
+    },
+    async rollbackToLastSave() {
+      if (!this.game) return;
+
+      // 发送 POST 请求到后端 API，包含 gameId
+      try {
+        const response = await fetch(`/api/gamerollback?gameId=${this.game.id}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        // 检查请求是否成功
+        if (response.ok) {
+          window.alert('回退成功，正在重新加载...');
+          window.location.reload();
+        } else {
+          const errorText = await response.text();
+          window.alert(`回退失败：${errorText}`);
+        }
+      } catch (error) {
+        console.error('回退过程中发生错误：', error);
+        window.alert('回退操作时发生错误，请稍后再试。');
+      }
     },
   },
 });
