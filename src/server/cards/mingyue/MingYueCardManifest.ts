@@ -17,6 +17,7 @@ import {WorldLineVoyager} from './WorldLineVoyager';
 import {DivergenciesAssort} from './DivergenciesAssort';
 import {InfinityCircuit} from './InfinityCircuit';
 import {HeavyworksCreed} from './HeavyworksCreed';
+import {NookConstruction} from './NookConstruction';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -28,6 +29,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.WORLD_LINE_VOYAGER]: {Factory: WorldLineVoyager, compatibility: 'mingyue'},
     [CardName.INFINITY_CIRCUIT]: {Factory: InfinityCircuit},
     [CardName.HEAVYWORKS_CREED]: {Factory: HeavyworksCreed},
+    [CardName.NOOK_CONSTRUCTION]: {Factory: NookConstruction},
   },
   preludeCards: {
   },

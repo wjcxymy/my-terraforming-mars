@@ -620,6 +620,7 @@ export enum CardName {
   WORLD_LINE_VOYAGER = 'World Line Voyager',
   INFINITY_CIRCUIT = 'Infinity Circuit',
   HEAVYWORKS_CREED = 'Heavyworks Creed',
+  NOOK_CONSTRUCTION = 'Nook Construction',
 
   // MingYue preludes
 
