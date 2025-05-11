@@ -39,7 +39,7 @@ export class NookConstruction extends CorporationCard {
               },
             );
             cb.effect(
-              'When you place any tile on Mars, Gain 2 + ⌊Bells ÷ 4⌋ M€.',
+              'When you place any tile on Mars (excluding ocean tiles), gain 2 + ⌊Bells ÷ 4⌋ M€.',
               (eb) => {
                 eb.emptyTile('normal', {size: Size.SMALL}).asterix().startEffect.megacredits(2).plus().megacredits(1).slash().resource(CardResource.BELLS, {amount: BELLS_TO_MEGACREDIT_RATIO, digit});
               },
@@ -51,21 +51,21 @@ export class NookConstruction extends CorporationCard {
   }
 
   public onTilePlaced(cardOwner: IPlayer, activePlayer: IPlayer, space: Space, boardType: BoardType): void {
-    // 确保是由卡牌所有者放置的板块
+    // 仅在卡牌拥有者亲自放置板块时触发
     if (cardOwner.id !== activePlayer.id) return;
 
-    // 仅限火星板块
+    // 仅适用于火星地图（排除月球等其他地图）
     if (boardType !== BoardType.MARS) return;
 
-    // 确保板块已被玩家占据
+    // 排除无玩家标记的板块（如海洋）
     if (space.player === undefined) return;
 
-    // 跳过殖民地板块
+    // 跳过殖民地类型的板块
     if (space.spaceType === SpaceType.COLONY) return;
 
     const game = cardOwner.game;
 
-    // 放置特殊板块时获得 1 铃钱
+    // 放置特殊板块时获得 1 个铃钱
     if (isSpecialTileSpace(space)) {
       cardOwner.addResourceTo(this, 1);
       game.log(
@@ -74,7 +74,7 @@ export class NookConstruction extends CorporationCard {
       );
     }
 
-    // 任意板块放置都能获得返现（根据铃钱数量）
+    // 放置任意板块可返现，返现金额与铃钱数量有关
     const bellsCount = this.resourceCount;
     const income = Math.floor(bellsCount / BELLS_TO_MEGACREDIT_RATIO) + 2;
 
