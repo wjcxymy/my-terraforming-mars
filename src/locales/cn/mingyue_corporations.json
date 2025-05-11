@@ -53,5 +53,5 @@
   "NOOK CONSTRUCTION": "狸克建设",
   "You start with 50 M€ and 2 Bells.": "起始获得50M€和2个铃钱。",
   "Effect: When you place a special tile on Mars, Gain 1 Bells.": "效果：当你在火星上放置一个特殊板块时，获得1个铃钱。",
-  "Effect: When you place any tile on Mars, Gain 2 + ⌊Bells ÷ 4⌋ M€.": "效果：当你在火星上放置任意板块时，获得 2 + ⌊铃钱 ÷ 4⌋ M€。"
+  "Effect: When you place any tile on Mars (excluding ocean tiles), gain 2 + ⌊Bells ÷ 4⌋ M€.": "效果：当你在火星上放置任意非海洋板块时，获得 2 + ⌊铃钱 ÷ 4⌋ M€。"
 }
