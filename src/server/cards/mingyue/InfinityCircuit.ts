@@ -8,13 +8,13 @@ import {IPlayer} from '../../../server/IPlayer';
 import {Resource} from '../../../common/Resource';
 
 // 无限回路转换比例
-const PLANTS_TO_ENERGY_THRESHOLD = 2;
+const PLANTS_TO_ENERGY_THRESHOLD = 3;
 const PLANTS_TO_ENERGY_GAIN = 2;
 
-const ENERGY_TO_HEAT_THRESHOLD = 2;
+const ENERGY_TO_HEAT_THRESHOLD = 3;
 const ENERGY_TO_HEAT_GAIN = 2;
 
-const HEAT_TO_PLANTS_THRESHOLD = 2;
+const HEAT_TO_PLANTS_THRESHOLD = 3;
 const HEAT_TO_PLANTS_GAIN = 1;
 
 export class InfinityCircuit extends CorporationCard {
@@ -34,13 +34,13 @@ export class InfinityCircuit extends CorporationCard {
           b.corpBox('effect', (cb) => {
             cb.vSpace(Size.MEDIUM);
             cb.effect(undefined, (eb) => {
-              eb.text('2+').plants(1).startEffect.energy(PLANTS_TO_ENERGY_GAIN);
+              eb.text('3+').plants(1).startEffect.energy(PLANTS_TO_ENERGY_GAIN);
             });
             cb.effect(undefined, (eb) => {
-              eb.text('2+').energy(1).startEffect.heat(ENERGY_TO_HEAT_GAIN);
+              eb.text('3+').energy(1).startEffect.heat(ENERGY_TO_HEAT_GAIN);
             });
             cb.effect(`When you spend ${HEAT_TO_PLANTS_THRESHOLD} or more plants, energy, or heat, gain ${PLANTS_TO_ENERGY_GAIN} energy, ${ENERGY_TO_HEAT_GAIN} heat, or ${HEAT_TO_PLANTS_GAIN} plant, respectively.`, (eb) => {
-              eb.text('2+').heat(1).startEffect.plants(HEAT_TO_PLANTS_GAIN);
+              eb.text('3+').heat(1).startEffect.plants(HEAT_TO_PLANTS_GAIN);
             });
           });
         }),
