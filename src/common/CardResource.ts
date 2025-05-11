@@ -50,4 +50,5 @@ export enum CardResource {
 
   // MingYue
   MONKEY = 'Monkey',
+  BELLS = 'bells',
 }

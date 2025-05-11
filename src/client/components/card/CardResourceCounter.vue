@@ -39,6 +39,7 @@ const cssClass: Record<CardResource, string> = {
   [CardResource.SUPPLY_CHAIN]: 'card-resource-supply-chain',
   [CardResource.DIRECTOR]: 'card-resource-director',
   [CardResource.MONKEY]: 'card-resource-monkey',
+  [CardResource.BELLS]: 'card-resource-bells',
 };
 
 export default Vue.extend({
