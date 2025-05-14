@@ -18,6 +18,7 @@ import {DivergenciesAssort} from './DivergenciesAssort';
 import {InfinityCircuit} from './InfinityCircuit';
 import {HeavyworksCreed} from './HeavyworksCreed';
 import {NookConstruction} from './NookConstruction';
+import {MoonlitWarren} from './MoonlitWarren';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -43,6 +44,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.ECOLOGICAL_PAVILION]: {Factory: EcologicalPavilion},
     [CardName.ARTIFACT_HARVEST]: {Factory: ArtifactHarvest},
     [CardName.DIVERGENCIES_ASSORT]: {Factory: DivergenciesAssort},
+    [CardName.MOONLIT_WARREN]: {Factory: MoonlitWarren},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
   },
   globalEvents: {
