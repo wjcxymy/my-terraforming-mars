@@ -611,6 +611,7 @@ export enum CardName {
   GAMBLING_DISTRICT_LAS_VEGAS = 'Gambling District Las Vegas',
   ARTIFACT_HARVEST = 'Artifact Harvest',
   DIVERGENCIES_ASSORT = 'Divergencies Assort',
+  MOONLIT_WARREN = 'Moonlit Warren',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',
