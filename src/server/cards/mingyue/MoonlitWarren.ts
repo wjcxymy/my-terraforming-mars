@@ -29,7 +29,7 @@ export class MoonlitWarren extends Card implements IProjectCard, IActionCard {
         cardNumber: 'MY11',
         renderData: CardRenderer.builder((b) => {
           b.action(
-            'Spend up to X plants to add that many animals here. X = ⌊animals / 2⌋',
+            'Spend up to X plants to add that many animals here. X = ⌊animals on this card / 2⌋',
             (eb) => {
               eb.text('X').plants(1).startAction.text('X').resource(CardResource.ANIMAL);
             },
