@@ -43,7 +43,7 @@
   "${0} kept no cards during the action of ${1}.": "${0} 在 ${1} 的行动中未保留任何牌",
 
   "Moonlit Warren": "月见兔苑",
-  "Action: Spend up to X plants to add that many animals here. X = ⌊animals / 2⌋": "行动：至多消耗X个植物资源，在此牌上添加等量的动物。X = ⌊动物数量 / 2⌋",
+  "Action: Spend up to X plants to add that many animals here. X = ⌊animals on this card / 2⌋": "行动：至多消耗X个植物资源，在此牌上添加等量的动物。X = ⌊此牌上的动物数量 / 2⌋",
   "1 VP per 2 animals on this card.": "此牌上每有2个动物资源，获得1分。",
   "Add 2 animals to this card.": "将2个动物资源放置于此牌上。",
   "Choose how many plants to spend (max: 1)": "选择要消耗的植物数量（最多：1）",
