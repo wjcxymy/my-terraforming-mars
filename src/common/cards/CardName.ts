@@ -612,6 +612,7 @@ export enum CardName {
   ARTIFACT_HARVEST = 'Artifact Harvest',
   DIVERGENCIES_ASSORT = 'Divergencies Assort',
   MOONLIT_WARREN = 'Moonlit Warren',
+  MICROBIAL_REACTOR = 'Microbial Reactor',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',

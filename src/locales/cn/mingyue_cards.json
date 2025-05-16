@@ -52,6 +52,10 @@
   "Choose how many plants to spend (max: 4)": "选择要消耗的植物数量（最多：4）",
   "Choose how many plants to spend (max: 5)": "选择要消耗的植物数量（最多：5）",
   "Feed": "喂食",
-  "${0} spent ${1} plant(s) to add ${2} animal(s) to ${3}.": "${0} 消耗了 ${1} 个植物资源，将 ${2} 个动物放置到 ${3}上。"
+  "${0} spent ${1} plant(s) to add ${2} animal(s) to ${3}.": "${0} 消耗了 ${1} 个植物资源，将 ${2} 个动物放置到 ${3}上。",
+
+  "Microbial Reactor": "微生物反应堆",
+  "Effect: For every 2 microbes on this card, remove them to gain 2 heat and 1 plant production.": "效果：此牌上每有2个微生物，移除它们以获得2点热量和1点植物产量。",
+  "${0} removed ${1} microbe(s) from ${2} to gain ${3} heat and increase plant production by ${4}." : "${0}从${2}移除了${1}个微生物，获得了${3}点热量并使植物产量提升了${4}点。"
 
 }
