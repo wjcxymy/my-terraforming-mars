@@ -20,6 +20,7 @@ import {HeavyworksCreed} from './HeavyworksCreed';
 import {NookConstruction} from './NookConstruction';
 import {MoonlitWarren} from './MoonlitWarren';
 import {MicrobialReactor} from './MicrobialReactor';
+import {MarsMonument} from './MarsMonument';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -47,6 +48,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.DIVERGENCIES_ASSORT]: {Factory: DivergenciesAssort},
     [CardName.MOONLIT_WARREN]: {Factory: MoonlitWarren},
     [CardName.MICROBIAL_REACTOR]: {Factory: MicrobialReactor},
+    [CardName.MARS_MONUMENT]: {Factory: MarsMonument},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
   },
   globalEvents: {
