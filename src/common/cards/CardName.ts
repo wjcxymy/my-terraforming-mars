@@ -613,6 +613,7 @@ export enum CardName {
   DIVERGENCIES_ASSORT = 'Divergencies Assort',
   MOONLIT_WARREN = 'Moonlit Warren',
   MICROBIAL_REACTOR = 'Microbial Reactor',
+  MARS_MONUMENT = 'Mars Monument',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',
