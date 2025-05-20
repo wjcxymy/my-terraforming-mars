@@ -21,6 +21,7 @@ import {NookConstruction} from './NookConstruction';
 import {MoonlitWarren} from './MoonlitWarren';
 import {MicrobialReactor} from './MicrobialReactor';
 import {MarsMonument} from './MarsMonument';
+import {RainbowPark} from './RainbowPark';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -33,6 +34,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.INFINITY_CIRCUIT]: {Factory: InfinityCircuit},
     [CardName.HEAVYWORKS_CREED]: {Factory: HeavyworksCreed},
     [CardName.NOOK_CONSTRUCTION]: {Factory: NookConstruction},
+    [CardName.RAINBOW_PARK]: {Factory: RainbowPark},
   },
   preludeCards: {
   },
