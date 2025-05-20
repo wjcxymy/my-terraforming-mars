@@ -230,6 +230,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.MARS_MATHS, 'card-mars-maths-logo'],
   [CardName.TITHES, 'card-tithes-logo'],
   [CardName.NOOK_CONSTRUCTION, 'card-nook-construction-logo'],
+  [CardName.TRISYN_INSTITUTE, 'card-trisyn-institute-logo'],
   [CardName.RAINBOW_PARK, 'card-rainbow-park-logo'],
 ]);
 
