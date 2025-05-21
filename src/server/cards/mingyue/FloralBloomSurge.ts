@@ -15,8 +15,10 @@ export class FloralBloomSurge extends Card implements IProjectCard {
       tags: [Tag.PLANT],
       cost: 10,
       requirements: {tag: Tag.PLANT, count: 2}, // 2个植物标记前置
+
       metadata: {
         cardNumber: 'MY06',
+        description: 'Requires 2 plant tags.',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a plant tag card (including this), increase your plant production by 1.', (eb) => {
             eb.tag(Tag.PLANT).startEffect.production((pb) => pb.plants(1));

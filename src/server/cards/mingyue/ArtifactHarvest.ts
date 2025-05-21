@@ -16,13 +16,13 @@ export class ArtifactHarvest extends Card implements IProjectCard {
       cost: 7,
       requirements: {oceans: 7},
       victoryPoints: 1,
-      behavior: {},
+
       metadata: {
         cardNumber: 'MY09',
-        description: '',
+        description: 'Requires 7 ocean tiles.',
         renderData: CardRenderer.builder((b) => {
           b.plainEffect(
-            'Requires 7 oceans. Gain 1 plants for each type of non-standard resource you have (up to 7 types counted).',
+            'Gain 1 plants for each type of non-standard resource you have (up to 7 types counted).',
             (eb) => {
               eb.text('X').wild(1).asterix()
                 .startEffect

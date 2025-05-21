@@ -18,8 +18,10 @@ export class DivergenciesAssort extends Card implements IProjectCard {
       cost: 12,
       victoryPoints: 1,
       requirements: {tag: Tag.SCIENCE, count: 2},
+
       metadata: {
         cardNumber: 'MY10',
+        description: 'Requires 2 science tags.',
         renderData: CardRenderer.builder((b) => {
           b.action(
             'Draw the top 2 cards of the deck. Keep at most 1 of them.',
