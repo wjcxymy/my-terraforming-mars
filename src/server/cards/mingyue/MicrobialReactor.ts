@@ -25,6 +25,7 @@ export class MicrobialReactor extends Card implements IProjectCard {
 
       metadata: {
         cardNumber: 'MY12',
+        description: 'Requires that you have 2 greenery tiles in play.',
         renderData: CardRenderer.builder((b) => {
           b.effect(
             'For every 2 microbes on this card, remove them to gain 2 heat and 1 plant production.',
@@ -36,7 +37,6 @@ export class MicrobialReactor extends Card implements IProjectCard {
             },
           );
         }),
-        description: '',
       },
     });
   }

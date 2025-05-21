@@ -29,7 +29,7 @@ export class MarsMonument extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.tile(TileType.MARS_MONUMENT, false, false);
         }),
-        description: 'Place the Mars Monument tile — a silent monument to humanity’s dream of Terraforming Mars.',
+        description: 'Requires that you have at least 35 TR. Place the Mars Monument tile — a silent monument to humanity’s dream of Terraforming Mars.',
       },
     });
   }
