@@ -614,6 +614,7 @@ export enum CardName {
   MOONLIT_WARREN = 'Moonlit Warren',
   MICROBIAL_REACTOR = 'Microbial Reactor',
   MARS_MONUMENT = 'Mars Monument',
+  EXPANSION_OF_POPULATION = 'Expansion Of Population',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',

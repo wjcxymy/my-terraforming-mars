@@ -22,6 +22,7 @@ import {MoonlitWarren} from './MoonlitWarren';
 import {MicrobialReactor} from './MicrobialReactor';
 import {MarsMonument} from './MarsMonument';
 import {RainbowPark} from './RainbowPark';
+import {ExpansionOfPopulation} from './ExpansionOfPopulation';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -51,6 +52,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.MOONLIT_WARREN]: {Factory: MoonlitWarren},
     [CardName.MICROBIAL_REACTOR]: {Factory: MicrobialReactor},
     [CardName.MARS_MONUMENT]: {Factory: MarsMonument},
+    [CardName.EXPANSION_OF_POPULATION]: {Factory: ExpansionOfPopulation},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
   },
   globalEvents: {
