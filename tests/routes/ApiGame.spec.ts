@@ -44,6 +44,7 @@ describe('ApiGame', () => {
         'activePlayer': 'black',
         'expectedPurgeTimeMs': -1,
         'id': 'game-valid-id',
+        'lastSaveId': 0,
         'lastSoloGeneration': 14,
         'phase': 'research',
         'players': [
@@ -87,6 +88,7 @@ describe('ApiGame', () => {
           'initialDraftVariant': false,
           'politicalAgendasExtension': 'Standard',
           'preludeDraftVariant': false,
+          'corporationDraftVariant': false,
           'randomMA': 'No randomization',
           'removeNegativeGlobalEvents': false,
           'requiresMoonTrackCompletion': false,
