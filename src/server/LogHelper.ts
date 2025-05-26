@@ -110,6 +110,41 @@ export class LogHelper {
     }, options);
   }
 
+  static logLookedAtCards(player: IPlayer, cards: ReadonlyArray<ICard> | ReadonlyArray<CardName>, privateMessage: boolean = false) {
+    let message = '${0} looked at ';
+    if (cards.length === 0) {
+      message += 'no cards';
+    } else {
+      for (let i = 0, length = cards.length; i < length; i++) {
+        if (i > 0) {
+          if (i < length - 1) {
+            message += ', ';
+          } else {
+            message += ' and ';
+          }
+        }
+        message += '${' + (i + 1) + '}';
+      }
+    }
+
+    const options = privateMessage ? {reservedFor: player} : {};
+
+    player.game.log(message, (b) => {
+      if (privateMessage === false) {
+        b.player(player);
+      } else {
+        b.string('You');
+      }
+      for (const card of cards) {
+        if (typeof card === 'string') {
+          b.cardName(card);
+        } else {
+          b.card(card);
+        }
+      }
+    }, options);
+  }
+
   static logStealFromNeutralPlayer(player: IPlayer, resource: Resource, amount: number) {
     player.game.log('${0} stole ${1} ${2} from the neutral player', (b) => b.player(player).number(amount).string(resource));
   }
