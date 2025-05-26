@@ -59,6 +59,11 @@
   "RAINBOW PARK": "彩虹乐园",
   "have": "拥有",
   "Action: Gain M€ equal to the number of different resource types you have.": "行动：获得等同于你当前拥有的不同资源种类数量的 M€。",
-  "${0} took ${1} action and gained ${2} M€.": "${0} 执行了 ${1} 的行动，获得了 ${2} M€。"
+  "${0} took ${1} action and gained ${2} M€.": "${0} 执行了 ${1} 的行动，获得了 ${2} M€。",
+
+  "Foresight Technologies": "远见科技",
+  "FORESIGHT TECHNOLOGIES": "远见科技",
+  "look at": "查看",
+  "Action: Look at the top 10 cards of the deck.": "行动：查看牌堆顶的 10 张牌。"
 
 }

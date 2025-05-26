@@ -626,6 +626,7 @@ export enum CardName {
   HEAVYWORKS_CREED = 'Heavyworks Creed',
   NOOK_CONSTRUCTION = 'Nook Construction',
   RAINBOW_PARK = 'Rainbow Park',
+  FORESIGHT_TECHNOLOGIES = 'Foresight Technologies',
 
   // MingYue preludes
 

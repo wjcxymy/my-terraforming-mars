@@ -23,6 +23,7 @@ import {MicrobialReactor} from './MicrobialReactor';
 import {MarsMonument} from './MarsMonument';
 import {RainbowPark} from './RainbowPark';
 import {ExpansionOfPopulation} from './ExpansionOfPopulation';
+import {ForesightTechnologies} from './ForesightTechnologies';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -36,6 +37,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.HEAVYWORKS_CREED]: {Factory: HeavyworksCreed},
     [CardName.NOOK_CONSTRUCTION]: {Factory: NookConstruction},
     [CardName.RAINBOW_PARK]: {Factory: RainbowPark},
+    [CardName.FORESIGHT_TECHNOLOGIES]: {Factory: ForesightTechnologies},
   },
   preludeCards: {
   },
