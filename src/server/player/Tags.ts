@@ -63,7 +63,10 @@ export class Tags {
    * Get the number of tags this player has.
    */
   public count(tag: Tag, mode: CountingMode = 'default') {
-    const includeEvents = this.player.isCorporation(CardName.ODYSSEY);
+    const includeEvents =
+      this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
+
     const includeTagSubstitutions = (mode === 'default' || mode === 'milestone');
 
     let tagCount = this.rawCount(tag, includeEvents);
@@ -158,7 +161,9 @@ export class Tags {
    * Tag substitutions are included, and not counted repeatedly.
    */
   public multipleCount(tags: Array<Tag>, mode: MultipleCountMode = 'default'): number {
-    const includeEvents = this.player.isCorporation(CardName.ODYSSEY);
+    const includeEvents =
+      this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
 
     let tagCount = 0;
     tags.forEach((tag) => {
@@ -206,14 +211,16 @@ export class Tags {
    */
   public distinctCount(mode: DistinctCountMode, extraTag?: Tag): number {
     const uniqueTags = new Set<Tag>();
-    const playerIsOdyssey = this.player.isCorporation(CardName.ODYSSEY);
+    const includeEvents =
+      this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
     let wildTagCount = 0;
 
     for (const card of this.player.tableau) {
       if (card.isDisabled) {
         continue;
       }
-      if (playerIsOdyssey || card.type !== CardType.EVENT) {
+      if (includeEvents || card.type !== CardType.EVENT) {
         for (const tag of card.tags) {
           if (tag === Tag.WILD) {
             wildTagCount++;
@@ -222,7 +229,7 @@ export class Tags {
           }
         }
       }
-      if (playerIsOdyssey && card.type === CardType.EVENT) {
+      if (includeEvents && card.type === CardType.EVENT) {
         uniqueTags.add(Tag.EVENT);
       }
     }
@@ -241,7 +248,7 @@ export class Tags {
     if (mode === 'milestone' && this.player.isCorporation(CardName.CHIMERA)) wildTagCount--;
 
     let maximum = this.tagsInGame();
-    if (playerIsOdyssey) maximum++;
+    if (includeEvents) maximum++;
     return Math.min(uniqueTags.size + wildTagCount, maximum);
   }
 
