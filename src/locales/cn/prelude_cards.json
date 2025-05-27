@@ -1,27 +1,27 @@
 {
-  "max":"最大",
-  "Global requirements":"全球需求",
+  "max": "最大",
+  "Global requirements": "全球需求",
 
-  "House Printing":"房屋印刷",
-  "Increase your steel production 1 step.":"增加你的钢铁产量1级。",
+  "House Printing": "房屋印刷",
+  "Increase your steel production 1 step.": "增加你的钢铁产量1级。",
 
-  "Lava Tube Settlement":"熔岩城",
-  "Decrease your energy production 1 step and increase your M€ production 2 steps. Place a city tile on a VOLCANIC AREA regardless of adjacent cities.":"减少1点电力产量，提升2点金钱产量。放置一个城市板块到火山区，忽视相邻规则",
+  "Lava Tube Settlement": "熔岩城",
+  "Decrease your energy production 1 step and increase your M€ production 2 steps. Place a city tile on a VOLCANIC AREA regardless of adjacent cities.": "减少1点电力产量，提升2点金钱产量。放置一个城市板块到火山区，忽视相邻规则",
 
-  "Martian Survey":"火星勘察",
-  "Oxygen must be 4% or lower. Draw two cards.":"氧气浓度≤4%.抽两张卡",
+  "Martian Survey": "火星勘察",
+  "Oxygen must be 4% or lower. Draw two cards.": "氧气浓度≤4%.抽两张卡",
 
-  "Psychrophiles":"嗜冷性细菌",
-  "Action: Add 1 microbe to this card.":"行动：在这张卡上添加1个微生物。",
-  "Effect: When paying for a plant card, microbes here may be used as 2 M€ each.":"效果：当你打出植物标志的卡牌是，这张卡上的每个微生物资源可以作为2 M€支付",
-  "Temperature must be -20 C or lower.":"温度必须 ≤ -20℃",
+  "Psychrophiles": "嗜冷性细菌",
+  "Action: Add 1 microbe to this card.": "行动：在这张卡上添加1个微生物。",
+  "Effect: When paying for a plant card, microbes here may be used as 2 M€ each.": "效果：当你打出植物标志的卡牌是，这张卡上的每个微生物资源可以作为2 M€支付",
+  "Temperature must be -20 C or lower.": "温度必须 ≤ -20℃",
 
-  "Research Coordination":"研究环境",
-  "After being played, when you perform an action, the wild tag counts as any tag of your choice.":"打出来之后，当你执行行动时，问号可以视为任意标志",
+  "Research Coordination": "研究环境",
+  "After being played, when you perform an action, the wild tag counts as any tag of your choice.": "打出来之后，当你执行行动时，问号可以视为任意标志",
 
-  "SF Memorial":"SF纪念碑",
-  "Draw 1 card.":"抽取一张牌",
+  "SF Memorial": "SF纪念碑",
+  "Draw 1 card.": "抽取一张牌",
 
-  "Space Hotels":"太空酒店",
-  "Requires 2 Earth tags. Increase M€ production 4 steps.":"需要两个地球图标.增加4点M€产量"
+  "Space Hotels": "太空酒店",
+  "Requires 2 Earth tags. Increase M€ production 4 steps.": "需要两个地球图标.增加4点M€产量"
 }

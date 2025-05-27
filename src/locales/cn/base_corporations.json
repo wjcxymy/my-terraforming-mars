@@ -25,13 +25,13 @@
   "CINEMATICS": "影音",
   "Interplanetary Cinematics": "星际影音",
   "You start with 20 steel and 30 M€.": "起始获得30 M€和20个钢铁资源。",
-  "Effect: Each time you play an event, you gain 2 M€.": "效果：每次你打出事件卡时，获得2 M€。",
+  "Effect: Each time you play an event, you gain 2 M€.": "效果：当你打出1张事件卡时，获得2M€。",
 
   "INVENTRIX": "发明矩阵",
   "Inventrix": "发明矩阵",
   "As your first action in the game, draw 3 cards. Start with 45 M€.": "起始获得45 M€。作为你的第一个行动，抽3张牌。",
   "Effect: Your temperature, oxygen, ocean, and Venus requirements are +2 or -2 steps, your choice in each case.": "效果：你打牌时的 温度/氧气浓度/海洋 要求 +2级或-2级。",
-  "Draw 3 cards":"抽三张牌",
+  "Draw 3 cards": "抽三张牌",
 
   "PhoboLog": "火卫一日志",
   "Phobolog": "火卫一日志",
