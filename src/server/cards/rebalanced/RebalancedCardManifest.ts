@@ -6,6 +6,7 @@ import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsReba
 export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
   module: 'rebalanced',
   corporationCards: {
+    [CardName.ARKLIGHT_REBALANCED]: {Factory: ArklightRebalanced},
   },
   preludeCards: {
   },
@@ -14,5 +15,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
   globalEvents: {
   },
   cardsToRemove: [
+    CardName.ARKLIGHT,
   ],
 });

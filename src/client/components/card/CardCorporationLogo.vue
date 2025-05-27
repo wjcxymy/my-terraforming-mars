@@ -212,6 +212,7 @@ const imageOnlyLogos: Map<CardName, string> = new Map([
 const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.APHRODITE, 'card-aphrodite-logo'],
   [CardName.ARKLIGHT, 'card-arklight-logo'],
+  [CardName.ARKLIGHT_REBALANCED, 'card-arklight-logo'],
   [CardName.POSEIDON, 'card-poseidon-logo'],
   [CardName.MORNING_STAR_INC, 'card-morning-star-logo'],
   [CardName.PRISTAR, 'card-pristar-logo'],

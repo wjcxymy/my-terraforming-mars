@@ -637,6 +637,7 @@ export enum CardName {
   // Rebalanced cards
 
   // Rebalanced corps
+  ARKLIGHT_REBALANCED = 'Arklight Rebalanced',
 
   // Rebalanced preludes
 
