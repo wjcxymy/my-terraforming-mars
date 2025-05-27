@@ -21,3 +21,4 @@ export const CEOEXTENSION = 'ceoExtension';
 export const STARWARSEXPANSION = 'starWarsExpansion';
 export const UNDERWORLDEXPANSION = 'underworldExpansion';
 export const MINGYUEEXPANSION = 'mingyueExpansion';
+export const REBALANCEDEXPANSION = 'rebalancedExpansion';

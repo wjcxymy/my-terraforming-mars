@@ -86,6 +86,13 @@
                               <span>Double Corp</span>
                             </label>
 
+                            <!-- Rebalanced -->
+                            <input type="checkbox" id="rebalanced-checkbox" v-model="expansions.rebalanced">
+                            <label for="rebalanced-checkbox" class="expansion-button">
+                              <div class="create-game-expansion-icon expansion-icon-rebalanced"></div>
+                              <span>Rebalanced</span>
+                            </label>
+
                             <!-- MingYue -->
                             <input type="checkbox" name="mingyue" id="mingyue-checkbox" v-model="expansions.mingyue">
                             <label for="mingyue-checkbox" class="expansion-button">
@@ -818,6 +825,7 @@ export default (Vue as WithRefs<Refs>).extend({
               starwars: json_constants.STARWARSEXPANSION,
               underworld: json_constants.UNDERWORLDEXPANSION,
               mingyue: json_constants.MINGYUEEXPANSION,
+              rebalanced: json_constants.REBALANCEDEXPANSION,
             } as const;
             for (const expansion of Object.keys(oldFields)) {
               const x = oldFields[expansion as Expansion];

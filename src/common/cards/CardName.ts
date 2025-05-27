@@ -634,6 +634,16 @@ export enum CardName {
 
   // End of MingYue cards
 
+  // Rebalanced cards
+
+  // Rebalanced corps
+
+  // Rebalanced preludes
+
+  // Rebalanced colonies
+
+  // End of Rebalanced cards
+
   // For Playwright.
   SPECIAL_DESIGN_PROXY = 'Special Design:proxy',
 

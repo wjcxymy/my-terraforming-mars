@@ -70,6 +70,7 @@ describe('ApiCreateGame', () => {
           community: false,
           ares: false,
           mingyue: false,
+          rebalanced: false,
           moon: false,
           pathfinders: false,
           ceo: false,

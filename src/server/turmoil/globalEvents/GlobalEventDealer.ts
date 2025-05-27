@@ -71,6 +71,7 @@ export class GlobalEventDealer {
       starwars: gameOptions.starWarsExpansion,
       underworld: gameOptions.underworldExpansion,
       mingyue: gameOptions.mingyueExpansion,
+      rebalanced: gameOptions.rebalancedExpansion,
     };
 
     for (const manifest of ALL_MODULE_MANIFESTS) {

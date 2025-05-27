@@ -23,6 +23,7 @@ const MODULE_ABBREVIATIONS: Record<GameModule, string> = {
   starwars: 'w',
   underworld: 'u',
   mingyue: 'y',
+  rebalanced: 'R',
 };
 
 const TYPE_ABBREVIATIONS: Record<TypeOption, string> = {
@@ -93,6 +94,7 @@ export function hashToModel(windowLocationHash: string): CardListModel {
       starwars: false,
       underworld: false,
       mingyue: true,
+      rebalanced: true,
     },
     types: {
       event: true,

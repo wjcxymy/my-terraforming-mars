@@ -24,6 +24,7 @@ import {PRELUDE2_CARD_MANIFEST} from './cards/prelude2/Prelude2CardManifest';
 import {STAR_WARS_CARD_MANIFEST} from './cards/starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './cards/underworld/UnderworldCardManifest';
 import {MINGYUE_CARD_MANIFEST} from './cards/mingyue/MingYueCardManifest';
+import {REBALANCED_CARD_MANIFEST} from './cards/rebalanced/RebalancedCardManifest';
 
 /**
  * Returns the cards available to a game based on its `GameOptions`.
@@ -62,6 +63,7 @@ export class GameCards {
       [gameOptions.starWarsExpansion, STAR_WARS_CARD_MANIFEST],
       [gameOptions.underworldExpansion, UNDERWORLD_CARD_MANIFEST],
       [gameOptions.mingyueExpansion, MINGYUE_CARD_MANIFEST],
+      [gameOptions.rebalancedExpansion, REBALANCED_CARD_MANIFEST],
     ];
 
     this.moduleManifests = manifests
