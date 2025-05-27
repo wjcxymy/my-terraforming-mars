@@ -1,10 +1,10 @@
 {
-  "Project Reorganization":"项目重整",
-  "(Action: Spend 2 energy to look at the top 4 cards of the discard pile. Keep 1 and return the rest in order.)":"（行动：花费2个电力资源，观看弃牌顶的4张牌并保留其中1张牌，然后将其余牌按原顺序放回弃牌堆顶。）",
+  "Project Reorganization": "项目重整",
+  "(Action: Spend 2 energy to look at the top 4 cards of the discard pile. Keep 1 and return the rest in order.)": "（行动：花费2个电力资源，观看弃牌顶的4张牌并保留其中1张牌，然后将其余牌按原顺序放回弃牌堆顶。）",
 
-  "Asteroid Material Research Center":"小行星物质研究中心",
-  "(Effect: When your blue card gains an asteroid resource, refresh its action (max 2 times per generation per card))":"（效果：当你的蓝卡获得小行星资源后，刷新其行动次数（每时代每卡最多2次））",
-  "(Effect: When you play an event card with \"asteroid\" in its name, add 1 asteroid resource to any card)":"（效果：当你打出名字带有“小行星（asteroid）”的事件牌时，向任意卡牌添加1个小行星资源）",
+  "Asteroid Material Research Center": "小行星物质研究中心",
+  "(Effect: When your blue card gains an asteroid resource, refresh its action (max 2 times per generation per card))": "（效果：当你的蓝卡获得小行星资源后，刷新其行动次数（每时代每卡最多2次））",
+  "(Effect: When you play an event card with \"asteroid\" in its name, add 1 asteroid resource to any card)": "（效果：当你打出名字带有“小行星（asteroid）”的事件牌时，向任意卡牌添加1个小行星资源）",
 
   "Resource Planning Bureau": "资源规划局",
   "pay": "支付",

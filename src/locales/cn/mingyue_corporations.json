@@ -17,7 +17,7 @@
   "Tithes": "什一税",
   "TITHES": "什一税",
   "(Action: Each other player loses 10% (rounded down) of their M€. You gain the total amount lost.)": "（行动：每个其他玩家失去其10%(向下取整)的M€，你获得这些失去的M€。）",
-  "(Each other player who loses 3 M€ or more due to this action draws 1 card.)":"（每个因这一行动损失3 M€或更多的其他玩家将抽1张牌。)",
+  "(Each other player who loses 3 M€ or more due to this action draws 1 card.)": "（每个因这一行动损失3 M€或更多的其他玩家将抽1张牌。)",
   "${0} paid ${1} M€ in ${2} and draws 1 card.": "${0} 在 ${2} 中支付了 ${1} M€ 并抽了1张牌。",
   "${0} paid ${1} M€ in ${2}.": "${0} 在 ${2} 中支付了 ${1} M€。",
   "${0} collected a total of ${1} M€ via ${2}.": "${0} 通过 ${2} 共计获得了 ${1} M€。",
