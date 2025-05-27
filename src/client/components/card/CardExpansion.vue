@@ -27,6 +27,7 @@ const MODULE_TO_CSS: Record<Expansion, string> = {
   starwars: 'starwars-icon',
   underworld: 'underworld-icon',
   mingyue: 'mingyue-icon',
+  rebalanced: 'rebalanced-icon',
 };
 
 export default Vue.extend({
