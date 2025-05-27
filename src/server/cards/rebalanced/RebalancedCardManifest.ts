@@ -7,6 +7,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
   module: 'rebalanced',
   corporationCards: {
     [CardName.ARKLIGHT_REBALANCED]: {Factory: ArklightRebalanced},
+    [CardName.INTERPLANETARY_CINEMATICS_REBALANCED]: {Factory: InterplanetaryCinematicsRebalanced},
   },
   preludeCards: {
   },
@@ -16,5 +17,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
   },
   cardsToRemove: [
     CardName.ARKLIGHT,
+    CardName.INTERPLANETARY_CINEMATICS,
   ],
 });
