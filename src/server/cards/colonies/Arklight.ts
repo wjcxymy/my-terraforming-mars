@@ -8,9 +8,24 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 
 export class Arklight extends CorporationCard {
-  constructor() {
+  constructor({
+    name = CardName.ARKLIGHT,
+    metadata = {
+      cardNumber: 'R04',
+      description: 'You start with 45 M€. Increase your M€ production 2 steps. 1 VP per 2 animals on this card.',
+      renderData: CardRenderer.builder((b) => {
+        b.megacredits(45).nbsp.production((pb) => pb.megacredits(2));
+        b.corpBox('effect', (ce) => {
+          ce.effect('When you play an animal or plant tag, including this, add 1 animal to this card.', (eb) => {
+            eb.tag(Tag.ANIMAL).slash().tag(Tag.PLANT).startEffect.resource(CardResource.ANIMAL);
+          });
+          ce.vSpace(); // to offset the description to the top a bit so it can be readable
+        });
+      }),
+    },
+  } = {}) {
     super({
-      name: CardName.ARKLIGHT,
+      name,
       tags: [Tag.ANIMAL],
       startingMegaCredits: 45,
       resourceType: CardResource.ANIMAL,
@@ -21,19 +36,7 @@ export class Arklight extends CorporationCard {
         addResources: 1,
       },
 
-      metadata: {
-        cardNumber: 'R04',
-        description: 'You start with 45 M€. Increase your M€ production 2 steps. 1 VP per 2 animals on this card.',
-        renderData: CardRenderer.builder((b) => {
-          b.megacredits(45).nbsp.production((pb) => pb.megacredits(2));
-          b.corpBox('effect', (ce) => {
-            ce.effect('When you play an animal or plant tag, including this, add 1 animal to this card.', (eb) => {
-              eb.tag(Tag.ANIMAL).slash().tag(Tag.PLANT).startEffect.resource(CardResource.ANIMAL);
-            });
-            ce.vSpace(); // to offset the description to the top a bit so it can be readable
-          });
-        }),
-      },
+      metadata,
     });
   }
 
@@ -42,7 +45,7 @@ export class Arklight extends CorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard): void {
-    if (player.isCorporation(CardName.ARKLIGHT)) {
+    if (player.isCorporation(this.name)) {
       player.addResourceTo(this, {qty: card.tags.filter((cardTag) => cardTag === Tag.ANIMAL || cardTag === Tag.PLANT).length, log: true});
     }
   }
