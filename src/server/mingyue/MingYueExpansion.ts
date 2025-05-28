@@ -14,6 +14,9 @@ export class MingYueExpansion {
         // 初始为 β 世界线（3 次行动）
         isOneActionThisRound: false,
       },
+      trisynInstitute: {
+        lastSetCount: 0,
+      },
     };
   }
 }

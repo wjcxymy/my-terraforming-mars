@@ -1,7 +1,9 @@
 {
-  "You start with 48 M€.":"起始获得48M€。",
-  "(Effect: After you play a project card, if this completes a new set of red, green, and blue project cards, draw 1 card.)":"（效果：当你打出项目卡后，若因此新凑齐一套红/绿/蓝项目卡，抽1张牌。）",
-  "(Action: Reveal and discard 2 cards to draw 1 card of a color not among the discarded ones.)":"（行动：展示并弃置2张牌，抽1张未被弃置颜色的牌。）",
+  "You start with 48 M€.": "起始获得48M€。",
+  "(Effect: After you play a project card, if this completes a new set of red, green, and blue project cards, draw 1 card.)": "（效果：当你打出项目卡后，若因此新凑齐一套红/绿/蓝项目卡，抽1张牌。）",
+  "(Action: Reveal and discard 2 cards to draw 1 card of a color not among the discarded ones.)": "（行动：展示并弃置2张牌，抽1张未被弃置颜色的牌。）",
+  "${0} collected ${1} red-green-blue sets, drew 1 card due to ${2} effect.": "${0} 收集了 ${1} 套红绿蓝，因 ${2} 效果摸了 1 张牌。",
+  "${0}'s red-green-blue set count decreased to ${1}.": "${0} 的红绿蓝套数减少到了 ${1}。",
 
   "Luna Chain": "连月",
   "(Effect: When the actual paid M€ of your current and previous project cards differ by X (X < 3), gain (3 - X) M€.)": "（效果：当你打出的项目卡实际支付的M€与上一张项目卡相差X(X<3)时，你获得(3-X)M€。）",

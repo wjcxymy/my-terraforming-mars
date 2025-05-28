@@ -9,10 +9,9 @@ import {Size} from '../../../common/cards/render/Size';
 import {SelectCard} from '../../inputs/SelectCard';
 import {PlayerInput} from '../../../server/PlayerInput';
 import {LogHelper} from '../../../server/LogHelper';
+import {getTrisynInstituteData} from '../../../server/mingyue/MingYueData';
 
 export class TrisynInstitute extends CorporationCard {
-  private lastComboCount = 0;
-
   constructor() {
     super({
       name: CardName.TRISYN_INSTITUTE,
@@ -96,25 +95,42 @@ export class TrisynInstitute extends CorporationCard {
     return undefined;
   }
 
-  public onCardPlayed(player: IPlayer, card: ICard) {
-    if (!player.isCorporation(this.name)) return;
-
-    // 判断是否为项目卡
-    if (card.type !== CardType.AUTOMATED && card.type !== CardType.ACTIVE && card.type !== CardType.EVENT) return;
-
+  /**
+   * 更新玩家拥有的红/绿/蓝卡的最小套数：
+   * 若套数增加，则抽1张牌；若减少，则记录日志。
+   *
+   * 通常在玩家打出一张红/绿/蓝项目卡时调用。
+   * AstraMechanica.ts 也会调用该函数，因为其效果可能回收至多2张事件卡，
+   * 从而改变 playedCards，进而影响套数计算。
+   */
+  public updateTrisynSetCount(player: IPlayer) {
     const red = player.playedCards.filter((c) => c.type === CardType.EVENT).length;
     const green = player.playedCards.filter((c) => c.type === CardType.AUTOMATED).length;
     const blue = player.playedCards.filter((c) => c.type === CardType.ACTIVE).length;
+    const currentSetCount = Math.min(red, green, blue);
 
-    const currentComboCount = Math.min(red, green, blue);
+    const data = getTrisynInstituteData(player.game);
 
-    if (currentComboCount > this.lastComboCount) {
-      this.lastComboCount = currentComboCount;
+    if (currentSetCount > data.lastSetCount) {
       player.game.log(
-        '收集了 ${0} 套红绿蓝卡牌，抽 1 张牌',
-        (b) => b.number(currentComboCount),
+        '${0} collected ${1} red-green-blue sets, drew 1 card due to ${2} effect.',
+        (b) => b.player(player).number(currentSetCount).card(this),
       );
       player.drawCard(1);
+    } else if (currentSetCount < data.lastSetCount) {
+      player.game.log(
+        '${0}\'s red-green-blue set count decreased to ${1}.',
+        (b) => b.player(player).number(currentSetCount),
+      );
     }
+
+    data.lastSetCount = currentSetCount;
+  }
+
+  public onCardPlayed(player: IPlayer, card: ICard) {
+    if (!player.isCorporation(this.name)) return;
+    if (card.type !== CardType.AUTOMATED && card.type !== CardType.ACTIVE && card.type !== CardType.EVENT) return;
+
+    this.updateTrisynSetCount(player);
   }
 }

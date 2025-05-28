@@ -7,6 +7,7 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {SelectCard} from '../../inputs/SelectCard';
 import {isSpecialTile} from '../../boards/Board';
+import {TrisynInstitute} from '../mingyue/TrisynInstitute';
 
 export class AstraMechanica extends Card implements IProjectCard {
   constructor() {
@@ -67,6 +68,12 @@ export class AstraMechanica extends Card implements IProjectCard {
             player.cardsInHand.push(card);
             card.onDiscard?.(player);
             player.game.log('${0} returned ${1} to their hand', (b) => b.player(player).card(card));
+          }
+
+          // 若玩家为三重协同公司，更新当前项目卡套数。
+          const trisynInstitute = player.getCorporation(CardName.TRISYN_INSTITUTE);
+          if (trisynInstitute instanceof TrisynInstitute) {
+            trisynInstitute.updateTrisynSetCount(player);
           }
           return undefined;
         });
