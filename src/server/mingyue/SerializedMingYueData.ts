@@ -7,4 +7,7 @@ export interface SerializedMingYueData {
   worldLineVoyager?: {
     isOneActionThisRound: boolean;
   };
+  trisynInstitute?: {
+    lastSetCount: number;
+  };
 }

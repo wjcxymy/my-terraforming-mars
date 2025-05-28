@@ -10,6 +10,9 @@ export interface MingYueData {
   worldLineVoyager?: {
     isOneActionThisRound: boolean;
   };
+  trisynInstitute?: {
+    lastSetCount: number;
+  };
 }
 
 export namespace MingYueData {
@@ -28,6 +31,11 @@ export namespace MingYueData {
           isOneActionThisRound: data.worldLineVoyager.isOneActionThisRound,
         },
       }),
+      ...(data.trisynInstitute !== undefined && {
+        trisynInstitute: {
+          lastSetCount: data.trisynInstitute.lastSetCount,
+        },
+      }),
     };
   }
 
@@ -42,6 +50,10 @@ export namespace MingYueData {
       worldLineVoyager: data.worldLineVoyager ?
         {
           isOneActionThisRound: data.worldLineVoyager.isOneActionThisRound ?? false,
+        } : undefined,
+      trisynInstitute: data.trisynInstitute ?
+        {
+          lastSetCount: data.trisynInstitute.lastSetCount ?? 0,
         } : undefined,
     };
   }
@@ -63,4 +75,12 @@ export function getWorldLineVoyagerData(game: IGame) {
     isOneActionThisRound: false,
   };
   return game.mingyueData.worldLineVoyager;
+}
+
+export function getTrisynInstituteData(game: IGame) {
+  game.mingyueData ??= {};
+  game.mingyueData.trisynInstitute ??= {
+    lastSetCount: 0,
+  };
+  return game.mingyueData.trisynInstitute;
 }
