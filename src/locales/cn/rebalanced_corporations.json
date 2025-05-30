@@ -14,6 +14,13 @@
   "You start with 60 M€.": "起始获得60M€。",
   "up": "朝上",
   "Effect: Your event cards stay face up, and their tags are in use as if those were automated (green) cards.": "效果：你的事件卡始终正面朝上，其标志持续生效（如同绿色自动化卡牌）。",
-  "Effect: Each time you play an event, you gain 2 M€.": "效果：当你打出1张事件卡时，获得2M€。"
+  "Effect: Each time you play an event, you gain 2 M€.": "效果：当你打出1张事件卡时，获得2M€。",
 
+  "Thorgate_Rebalanced": "Thorgate",
+  "THORGATE_REBALANCED": "THORGATE",
+  "Thorgate Rebalanced": "Thorgate",
+  "THORGATE REBALANCED": "THORGATE",
+  "You start with 2 energy production and 42 M€.": "你起始获得42 M€，提升你的电力产量2级。",
+  "Effect: When playing a power card, you pay 2 M€ less for it.": "效果：当你打出带有电力标志的牌时，你可以少支付2 M€。",
+  "Action: gain 1 M€ for each power tag you have.": "行动：你每有1个电力标志，获得1 M€。"
 }

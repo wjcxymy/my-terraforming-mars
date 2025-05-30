@@ -224,6 +224,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.POINT_LUNA, 'card-luna-logo'],
   [CardName.POLYPHEMOS, 'card-polyphemos-logo'],
   [CardName.THORGATE, 'card-thorgate-logo'],
+  [CardName.THORGATE_REBALANCED, 'card-thorgate-logo'],
   [CardName.VIRON, 'card-viron-logo'],
   [CardName.ARIDOR, 'card-aridor-logo'],
   [CardName.TERACTOR, 'card-teractor-logo'],
