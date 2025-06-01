@@ -5,7 +5,7 @@
         SATURN <span style="font-size:20px;display:inline-block;">&#x25CF;</span> SYSTEMS
       </div>
     </template>
-    <template v-else-if="title === CardName.CELESTIC">
+    <template v-else-if="title === CardName.CELESTIC || title === CardName.CELESTIC_REBALANCED">
       <div class="card-celestic-logo">
         <span style="background: linear-gradient(to right, rgb(251,192,137),rgb(251,192,137),rgb(23,185,236));padding-left: 5px;">CEL</span>
         <span style="background:linear-gradient(to right,rgb(23,185,236),rgb(251,192,137))">ES</span>
