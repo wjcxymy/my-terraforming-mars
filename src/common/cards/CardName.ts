@@ -640,6 +640,7 @@ export enum CardName {
   ARKLIGHT_REBALANCED = 'Arklight Rebalanced',
   INTERPLANETARY_CINEMATICS_REBALANCED = 'Interplanetary Cinematics Rebalanced',
   THORGATE_REBALANCED = 'Thorgate Rebalanced',
+  CELESTIC_REBALANCED = 'Celestic Rebalanced',
 
   // Rebalanced preludes
 

@@ -22,5 +22,11 @@
   "THORGATE REBALANCED": "THORGATE",
   "You start with 2 energy production and 42 M€.": "你起始获得42 M€，提升你的电力产量2级。",
   "Effect: When playing a power card, you pay 2 M€ less for it.": "效果：当你打出带有电力标志的牌时，你可以少支付2 M€。",
-  "Action: gain 1 M€ for each power tag you have.": "行动：你每有1个电力标志，获得1 M€。"
+  "Action: gain 1 M€ for each power tag you have.": "行动：你每有1个电力标志，获得1 M€。",
+
+  "Celestic_Rebalanced": "Celestic",
+  "CELESTIC_REBALANCED": "CELESTIC",
+  "Celestic Rebalanced": "Celestic",
+  "CELESTIC REBALANCED": "CELESTIC",
+  "Effect: When you gain an floater to ANY CARD, gain 1 M€.": "效果：当你在任意卡上增加1个云资源时，获得1M€。"
 }
