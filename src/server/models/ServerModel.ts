@@ -283,6 +283,7 @@ export class Server {
         detailsMilestones: [],
         detailsAwards: [],
         detailsPlanetaryTracks: [],
+        negativeVP: 0,
       },
       victoryPointsByGeneration: [],
       excavations: UnderworldExpansion.excavationMarkerCount(player),
