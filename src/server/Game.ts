@@ -270,6 +270,8 @@ export class Game implements IGame, Logger {
         ceo: options.ceoExtension ?? false,
         starwars: options.starWarsExpansion ?? false,
         underworld: options.underworldExpansion ?? false,
+        mingyue: options.mingyueExpansion ?? false,
+        rebalanced: options.rebalancedExpansion ?? false,
       };
     }
     const gameOptions = {...DEFAULT_GAME_OPTIONS, ...options};
@@ -1720,6 +1722,8 @@ export class Game implements IGame, Logger {
         ceo: d.gameOptions.ceoExtension,
         starwars: d.gameOptions.starWarsExpansion,
         underworld: d.gameOptions.underworldExpansion,
+        mingyue: d.gameOptions.mingyueExpansion,
+        rebalanced: d.gameOptions.rebalancedExpansion,
       };
     }
     const gameOptions = d.gameOptions;

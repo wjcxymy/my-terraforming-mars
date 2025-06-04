@@ -103,6 +103,6 @@ describe('CorporateTheft', () => {
     expect(card.canPlay(player)).is.true;
 
     cast(card.play(player), undefined);
-    expect(player.underworldData.corruption).eq(3);
+    expect(player.underworldData.corruption).eq(4);
   });
 });
