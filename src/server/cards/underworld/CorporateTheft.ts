@@ -7,12 +7,14 @@ import {IPlayer} from '../../IPlayer';
 import {RemoveResourcesFromCard} from '../../deferredActions/RemoveResourcesFromCard';
 import {UnderworldExpansion} from '../../underworld/UnderworldExpansion';
 import {AddResourcesToCard} from '../../deferredActions/AddResourcesToCard';
+import {Tag} from '../../../common/cards/Tag';
 
 export class CorporateTheft extends Card implements IProjectCard {
   constructor() {
     super({
       name: CardName.CORPORATE_THEFT,
       type: CardType.EVENT,
+      tags: [Tag.CRIME],
       cost: 10,
 
       requirements: {corruption: 2},
@@ -43,6 +45,9 @@ export class CorporateTheft extends Card implements IProjectCard {
       UnderworldExpansion.gainCorruption(player, 1, {log: true});
     }
     const game = player.game;
+    if (game.isSoloMode()) {
+      UnderworldExpansion.gainCorruption(player, 1, {log: true});
+    }
     game.defer(new RemoveResourcesFromCard(player, undefined, 1, {source: 'opponents', blockable: true, autoselect: false})).andThen((response) => {
       if (response.proceed && response.card !== undefined) {
         const type = response.card.resourceType;

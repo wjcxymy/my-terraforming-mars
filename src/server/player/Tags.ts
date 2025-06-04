@@ -217,7 +217,7 @@ export class Tags {
     let wildTagCount = 0;
 
     for (const card of this.player.tableau) {
-      if (card.isDisabled) {
+      if (card.name === CardName.PHARMACY_UNION && card.isDisabled) {
         continue;
       }
       if (includeEvents || card.type !== CardType.EVENT) {
@@ -258,8 +258,14 @@ export class Tags {
     tags.forEach((tag) => {
       if (this.count(tag, 'raw') > 0) {
         distinctCount++;
-      } else if (tag === Tag.SCIENCE && this.player.hasTurmoilScienceTagBonus) {
-        distinctCount++;
+      } else if (tag === Tag.SCIENCE) {
+        if (this.player.hasTurmoilScienceTagBonus) {
+          distinctCount++;
+        } else if (this.player.isCorporation(CardName.HABITAT_MARTE)) {
+          if (this.count(Tag.MARS, 'raw') > 0) {
+            distinctCount++;
+          }
+        }
       }
     });
     if (distinctCount + this.count(Tag.WILD) >= tags.length) {

@@ -232,5 +232,13 @@
   "Oxygen must be 7% or less. Gain 1 plant per power tag you have.": "需求氧气等级≤7%。你拥有的每个电力标签获得1植物",
 
   "Public Baths": "公共浴场",
-  "Requires 6 oceans. Gain 6 M€.": "需求6个海洋板块。获得6M€"
+  "Requires 6 oceans. Gain 6 M€.": "需求6个海洋板块。获得6M€",
+
+  "New Holland": "新海诚",
+  "Requires 4 city tiles ON MARS. Increase your M€ production 3 steps. Place a city tile on top of an already placed ocean tile, FOLLOWING NORMAL CITY PLACEMENT RESTRICTIONS. The tile counts as a city and an ocean.": "需要在火星上有4个城市板块。提升3点M€产能。将一个城市板块放置在已存在的海洋板块上，遵循正常的城市放置规则。该板块同时视为城市和海洋。",
+
+  "Vermin": "城市鼠疫",
+  "Effect: When any city is placed, add 1 animal here.": "效果：每当有城市被放置时，在此卡牌上添加1个动物资源。",
+  "Action: Add 1 animal here or 1 microbe to ANOTHER card.": "行动：将1个动物添加到此卡，或将1个微生物添加到其他卡牌。",
+  "(Each player, including you, gets -1 VP per city they have IF THERE ARE AT LEAST 10 ANIMALS HERE.)": "（如果此卡上至少有10个动物资源，则每位玩家（包括你）每有1个城市，失去1分。）"
 }
