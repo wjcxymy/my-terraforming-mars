@@ -1590,11 +1590,13 @@ export class Player implements IPlayer {
         this.availableActionsThisRound = getWorldLineVoyagerData(this.game).isOneActionThisRound ? 1 : 3;
       }
 
-      if (game.hasPassedThisActionPhase(this) ||
-        (
-          this.allOtherPlayersHavePassed() === false &&
-          this.actionsTakenThisRound >= this.availableActionsThisRound
-        )
+      const reachedActionLimit = this.actionsTakenThisRound >= this.availableActionsThisRound;
+      if (
+        game.hasPassedThisActionPhase(this) ||
+        (reachedActionLimit && (
+          worldlinevoyager instanceof WorldLineVoyager ||
+          this.allOtherPlayersHavePassed() === false
+        ))
       ) {
         // 如果玩家拥有世界线航行者公司，则行动次数在1次、3次切换
         if (worldlinevoyager instanceof WorldLineVoyager) {
@@ -1801,10 +1803,6 @@ export class Player implements IPlayer {
 
   private allOtherPlayersHavePassed(): boolean {
     const game = this.game;
-    // 如果玩家拥有世界线航行者公司，则solo模式也需要进行回合切换，确保世界线能够切换
-    // MingYueTUDO: 暂未发现世界线航行者公司在solo模式下是否存在bug
-    const worldlinevoyager = this.getCorporation(CardName.WORLD_LINE_VOYAGER);
-    if (game.isSoloMode() && worldlinevoyager instanceof WorldLineVoyager) return false;
     if (game.isSoloMode()) return true;
     const players = game.getPlayers();
     const passedPlayers = game.getPassedPlayers();
