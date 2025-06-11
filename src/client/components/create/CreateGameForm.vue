@@ -1318,14 +1318,21 @@ export default (Vue as WithRefs<Refs>).extend({
 
       if (dataToSend === undefined) return;
       const onSuccess = (json: any) => {
-        if (json.players.length === 1) {
-          window.location.href = 'player?id=' + json.players[0].id;
-          return;
-        } else {
-          window.history.replaceState(json, `${constants.APP_NAME} - Game`, 'game?id=' + json.id);
-          vueRoot(this).game = json;
-          vueRoot(this).screen = 'game-home';
-        }
+        // 取消了创建游戏后单人玩家直接跳转的逻辑，
+        // 统一改为无论多少玩家，创建完成后都跳转到游戏主页。
+
+        // if (json.players.length === 1) {
+        //   window.location.href = 'player?id=' + json.players[0].id;
+        //   return;
+        // } else {
+        //   window.history.replaceState(json, `${constants.APP_NAME} - Game`, 'game?id=' + json.id);
+        //   vueRoot(this).game = json;
+        //   vueRoot(this).screen = 'game-home';
+        // }
+
+        window.history.replaceState(json, `${constants.APP_NAME} - Game`, 'game?id=' + json.id);
+        vueRoot(this).game = json;
+        vueRoot(this).screen = 'game-home';
       };
 
       fetch(paths.API_CREATEGAME, {'method': 'PUT', 'body': dataToSend, 'headers': {'Content-Type': 'application/json'}})
