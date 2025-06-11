@@ -170,6 +170,12 @@
           <Card :card="card"/>
         </div>
       </template>
+      <div class="player_home_block player_home_block--hand" v-if="playerView.genericDraftedCards.length > 0">
+        <dynamic-title title="Drafted Corporation Cards" :color="thisPlayer.color"/>
+        <div v-for="card in playerView.genericDraftedCards" :key="card.name" class="cardbox">
+            <Card :card="card"/>
+        </div>
+      </div>
       <div class="player_home_block player_home_block--hand" v-if="playerView.draftedCards.length > 0">
         <dynamic-title title="Drafted Cards" :color="thisPlayer.color"/>
         <div v-for="card in playerView.draftedCards" :key="card.name" class="cardbox">
@@ -182,6 +188,9 @@
         <div>
           <div class="cardbox">
             <Card :card="playerView.pickedCorporationCard[0]"/>
+          </div>
+          <div class="cardbox" v-if="playerView.secondaryCorporationCard.length > 0">
+            <Card :card="playerView.secondaryCorporationCard[0]"/>
           </div>
           <template v-if="game.gameOptions.expansions.prelude">
             <div v-for="card in playerView.preludeCardsInHand" :key="card.name" class="cardbox">

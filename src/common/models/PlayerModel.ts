@@ -90,9 +90,11 @@ export interface PlayerViewModel extends ViewModel {
   dealtProjectCards: ReadonlyArray<CardModel>;
   dealtCeoCards: ReadonlyArray<CardModel>;
   draftedCards: ReadonlyArray<CardModel>;
+  genericDraftedCards: ReadonlyArray<CardModel>;
   id: PlayerId;
   ceoCardsInHand: ReadonlyArray<CardModel>;
   pickedCorporationCard: ReadonlyArray<CardModel>; // Why Array?
+  secondaryCorporationCard: ReadonlyArray<CardModel>;
   preludeCardsInHand: ReadonlyArray<CardModel>;
   thisPlayer: PublicPlayerModel;
   waitingFor: PlayerInputModel | undefined;
