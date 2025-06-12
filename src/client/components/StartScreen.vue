@@ -19,7 +19,7 @@
         <div class="nowrap start-screen-version"><span v-i18n>version</span>: {{raw_settings.head}}</div>
       </div>
       <div class="source-code">
-        <a href="https://github.com/terraforming-mars/terraforming-mars" target="_blank" class="source-code-text">
+        <a href="https://github.com/wjcxymy/my-terraforming-mars" target="_blank" class="source-code-text">
         <img src="assets/misc/github.png" class="source-code-img">
           source code
         </a>
