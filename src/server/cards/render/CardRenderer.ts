@@ -162,7 +162,7 @@ abstract class Builder<T> {
   }
 
   public megacreditsText(text: string, options?: ItemOptions): this {
-    const item = new CardRenderItem(CardRenderItemType.MEGACREDITSTEXT, 0, options);
+    const item = new CardRenderItem(CardRenderItemType.MEGACREDITS_TEXT, 0, options);
     item.text = text;
     item.amountInside = true;
     item.showDigit = true;
