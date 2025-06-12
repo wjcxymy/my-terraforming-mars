@@ -20,13 +20,13 @@ export class WorldLineVoyager extends CorporationCard {
           b.megacredits(48);
           b.corpBox('effect', (cb) => {
             cb.vSpace(Size.LARGE);
-            cb.effect('At the end of each round, you jump to another World Line (in the first round, you start in the β World Line).', (eb) => {
+            cb.effect('At the end of each turn, you jump to another World Line (in the first turn, you start in the β World Line).', (eb) => {
               eb.empty().startEffect.text('α World Line ⇄ β World Line', Size.SMALL);
             });
-            cb.plainEffect('α World Line: Base actions per round are 1, project card costs are reduced by 3 M€.', (eb) => {
+            cb.plainEffect('α World Line: Base actions per turn are 1, project card costs are reduced by 3 M€.', (eb) => {
               eb.text('α World Line', Size.SMALL).startEffect.arrow().megacreditsText('-3');
             });
-            cb.plainEffect('β World Line: Base actions per round are 3, project card costs are increased by 1 M€.', (eb) => {
+            cb.plainEffect('β World Line: Base actions per turn are 3, project card costs are increased by 1 M€.', (eb) => {
               eb.text('β World Line', Size.SMALL).startEffect.arrow().arrow().arrow().megacreditsText('+1');
             });
           });

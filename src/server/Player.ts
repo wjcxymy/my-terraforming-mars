@@ -1608,8 +1608,8 @@ export class Player implements IPlayer {
           this.availableActionsThisRound = data.isOneActionThisRound ? 1 : 3;
           this.game.log(
             (data.isOneActionThisRound ?
-              '${0}\'s ${1} has jumped to the α World Line. You can take 1 action next round.' :
-              '${0}\'s ${1} has jumped to the β World Line. You can take 3 actions next round.'),
+              '${0}\'s ${1} has jumped to the α World Line. You can take 1 action next turn.' :
+              '${0}\'s ${1} has jumped to the β World Line. You can take 3 actions next turn.'),
             (b) => b.player(this).card(worldlinevoyager),
           );
         } else {
