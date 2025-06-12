@@ -44,6 +44,9 @@ export class HeavyworksCreed extends CorporationCard {
 
   public onCardPlayedWithPayment(player: IPlayer, _card: IProjectCard, payment: Payment): void {
     if (!player.isCorporation(this.name)) return;
+
+    // console.log(`[DEBUG] 卡牌名称: ${_card.name}, payment:`, payment);
+
     if (payment.steel >= 2) {
       player.addResourceTo(this, 1);
       player.game.log(
