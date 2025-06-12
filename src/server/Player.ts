@@ -925,9 +925,10 @@ export class Player implements IPlayer {
     // See DeclareCloneTag for why this skips cards with clone tags.
     if (!selectedCard.tags.includes(Tag.CLONE) && cardAction !== 'double-down') {
       this.onCardPlayed(selectedCard);
-      if (payment !== undefined) {
-        this.onCardPlayedWithPayment(selectedCard, payment);
-      }
+    }
+
+    if (payment !== undefined) {
+      this.onCardPlayedWithPayment(selectedCard, payment);
     }
 
     return undefined;
