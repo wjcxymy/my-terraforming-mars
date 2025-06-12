@@ -10,9 +10,7 @@ export enum CardRenderItemType {
   TITANIUM = 'titanium',
   STEEL = 'steel',
   MEGACREDITS = 'megacredits',
-  MEGACREDITSTEXT = 'megacredits_text',
   CARDS = 'cards',
-  ONE_SET = 'one_set',
   TAG = 'tag',
   RESOURCE = 'resource',
 
@@ -81,6 +79,8 @@ export enum CardRenderItemType {
   UNDERGROUND_SHELTERS = 'underground-shelters',
 
   // MingYue
+  MEGACREDITS_TEXT = 'megacredits_text',
+  ONE_SET = 'one_set',
   MY_ASTEROID = 'my_asteroid',
   MY_LOOP_ARROW = 'my_loop_arrow',
   MY_X_DIAN = 'my_x_dian',
