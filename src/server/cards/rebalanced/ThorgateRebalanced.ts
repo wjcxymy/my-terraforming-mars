@@ -30,7 +30,7 @@ export class ThorgateRebalanced extends Thorgate {
               ab.empty().startAction.megacredits(1).slash().tag(Tag.POWER);
             });
             ce.effect('When playing a power card, you pay 2 M€ less for it.', (eb) => {
-              eb.tag(Tag.POWER).asterix().startEffect.megacredits(-2);
+              eb.tag(Tag.POWER).startEffect.megacredits(-2);
             });
           });
         }),
