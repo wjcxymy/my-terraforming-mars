@@ -643,6 +643,7 @@ export enum CardName {
   INTERPLANETARY_CINEMATICS_REBALANCED = 'Interplanetary Cinematics Rebalanced',
   THORGATE_REBALANCED = 'Thorgate Rebalanced',
   CELESTIC_REBALANCED = 'Celestic Rebalanced',
+  SOLBANK_REBALANCED = 'SolBank Rebalanced',
 
   // Rebalanced preludes
 

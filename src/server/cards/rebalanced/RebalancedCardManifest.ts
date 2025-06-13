@@ -3,6 +3,7 @@ import {ModuleManifest} from '../ModuleManifest';
 import {ArklightRebalanced} from './ArklightRebalanced';
 import {CelesticRebalanced} from './CelesticRebalanced';
 import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsRebalanced';
+import {SolBankRebalanced} from './SolBankRebalanced';
 import {ThorgateRebalanced} from './ThorgateRebalanced';
 
 export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
@@ -12,6 +13,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.INTERPLANETARY_CINEMATICS_REBALANCED]: {Factory: InterplanetaryCinematicsRebalanced},
     [CardName.THORGATE_REBALANCED]: {Factory: ThorgateRebalanced},
     [CardName.CELESTIC_REBALANCED]: {Factory: CelesticRebalanced},
+    [CardName.SOLBANK_REBALANCED]: {Factory: SolBankRebalanced},
   },
   preludeCards: {
   },
@@ -23,5 +25,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.ARKLIGHT,
     CardName.INTERPLANETARY_CINEMATICS,
     CardName.THORGATE,
+    CardName.CELESTIC,
+    CardName.SOLBANK,
   ],
 });
