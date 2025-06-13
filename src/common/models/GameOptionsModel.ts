@@ -34,4 +34,6 @@ export type GameOptionsModel = {
   requiresVenusTrackCompletion: boolean,
   twoCorpsVariant: boolean,
   undoOption: boolean,
+  sevenHeatVariant: boolean,
+  doubleCorpVariant: boolean,
 }
