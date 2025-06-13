@@ -15,6 +15,8 @@
               <div v-if="isPoliticalAgendasOn" class="create-game-expansion-icon expansion-icon-agendas"></div>
               <div v-if="gameOptions.expansions.ceo" class="create-game-expansion-icon expansion-icon-ceo"></div>
               <div v-if="gameOptions.expansions.underworld" class="create-game-expansion-icon expansion-icon-underworld"></div>
+              <div v-if="gameOptions.expansions.mingyue" class="create-game-expansion-icon expansion-icon-mingyue"></div>
+              <div v-if="gameOptions.expansions.rebalanced" class="create-game-expansion-icon expansion-icon-rebalanced"></div>
             </li>
 
             <li><div class="setup-item" v-i18n>Board:</div>
@@ -44,7 +46,8 @@
               <div v-if="gameOptions.initialDraftVariant" class="game-config generic" v-i18n>Initial</div>
               <div v-if="gameOptions.draftVariant" class="game-config generic" v-i18n>Research phase</div>
               <div v-if="!gameOptions.initialDraftVariant && !gameOptions.draftVariant" class="game-config generic" v-i18n>Off</div>
-              <div v-if="gameOptions.preludeDraftVariant">Prelude</div>
+              <div v-if="gameOptions.corporationDraftVariant" class="game-config generic" v-i18n>Corporation</div>
+              <div v-if="gameOptions.preludeDraftVariant" class="game-config generic" v-i18n>Prelude</div>
             </li>
 
             <li v-if="gameOptions.escapeVelocityMode">
@@ -69,8 +72,10 @@
               <div v-if="gameOptions.showTimers" class="game-config timer" v-i18n>timer</div>
               <div v-if="gameOptions.showOtherPlayersVP" class="game-config realtime-vp" v-i18n>real-time vp</div>
               <div v-if="gameOptions.undoOption" class="game-config undo" v-i18n>undo</div>
+              <div v-if="gameOptions.sevenHeatVariant" class="game-config sevenHeat" v-i18n>7热升温</div>
+              <div v-if="gameOptions.twoCorpsVariant" class="game-config twoCorps" v-i18n>Merger</div>
+              <div v-if="gameOptions.doubleCorpVariant" class="game-config doubleCorp" v-i18n>双公司</div>
             </li>
-            <li v-if="gameOptions.twoCorpsVariant"><div class="setup-item" v-i18n>Merger</div></li>
             <li v-if="gameOptions.bannedCards.length > 0"><div class="setup-item" v-i18n>Banned cards:</div>{{ gameOptions.bannedCards.join(', ') }}</li>
           </ul>
         </div>

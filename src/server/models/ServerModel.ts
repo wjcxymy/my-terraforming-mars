@@ -467,6 +467,8 @@ export class Server {
       requiresVenusTrackCompletion: options.requiresVenusTrackCompletion,
       twoCorpsVariant: options.twoCorpsVariant,
       undoOption: options.undoOption,
+      sevenHeatVariant: options.sevenHeatVariant,
+      doubleCorpVariant: options.doubleCorpVariant,
     };
   }
 
