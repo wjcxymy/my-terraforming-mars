@@ -262,5 +262,12 @@ export class PathfindersExpansion {
         () => player.addResourceTo(solBank, {qty: 1, log: true}),
         Priority.GAIN_RESOURCE_OR_PRODUCTION);
     }
+
+    const solBank_rebalanced = player.getCorporation(CardName.SOLBANK_REBALANCED);
+    if (solBank_rebalanced !== undefined) {
+      player.defer(
+        () => player.addResourceTo(solBank_rebalanced, {qty: 1, log: true}),
+        Priority.GAIN_RESOURCE_OR_PRODUCTION);
+    }
   }
 }

@@ -39,7 +39,7 @@
   "(Effect: After new ruling party is chosen, place the political program tile of the second most popular party on this card (you may use its effect as a passive effect of your corporation or as ruling party this generation).)": "（效果：新执政党上台后，将得票数第二高的政党议程板块放置于此卡上（可选择作为本时代的执政奖励、执政政策使用）。）",
   "(You start with 40 M€. When you reveal this card, select any remaining political program tile (you may use its effect as a passive effect of your corporation or as ruling party this generation).)": "（起始获得40M€。揭示此卡时，选择任意一个未被使用的政党议程板块（可选择作为本时代的执政奖励、执政政策使用）。）",
 
-  "Mars Math": "火星数学",
+  "Mars Maths": "火星数学",
   "(Effect: At the beginning of the Research phase, you draw 5 cards, but may STILL only buy 4 cards. If you are drafting, keep 2 cards for your first draft.)": "（效果：在研究阶段开始时，你抽取5张卡牌，但仍然只能购买4张卡牌。如果是轮抽模式，你可以在第一轮轮抽选择保留2张卡牌。）",
   "(Action: Take another two actions this turn.)": "（行动：在本回合中额外执行两次行动。）",
   "(You start with 40 M€. As your first action, draw 2 cards)": "（起始获得40M€。作为游戏的第一个行动，抽2张牌。）",
@@ -48,7 +48,7 @@
   "(Effect: Whenever you play an event card, raise your M€ production 1 step.)": "（效果：当你打出一张事件牌时，你的M€产能增加1。）",
   "(You start with 42 M€ and 1 M€ production.)": "（起始获得42M€，1点M€产能。）",
 
-  "MindSet Mars": "火星思维",
+  "Mind Set Mars": "火星思维",
   "(Action: When you play a card with a building tag, add 1 agenda on this card.)": "（效果：当你打出一张建筑牌时，在此卡上放置1个议程资源。）",
   "(Action: Spend 2 agenda resources to place 1 delegate in any party.)": "（行动：从此卡上移除2个议程资源，将1个代表放置在任意政党中。）",
   "(Action: Spend 5 agenda resources to place a city tile on Mars.)": "（行动：从此卡上移除5个议程资源，放置一块城市板块。）",
@@ -73,7 +73,8 @@
   "(Action: Remove 3 floaters from this card to raise Venus 1 step or raise oxygen 1 step)": "（行动：从此卡中移除3个漂浮物，提升1格金星改造度或氧气浓度。）",
   "(You start with 39 M€.)": "（起始获得39M€。）",
 
-  "Solbank": "区块链银行",
+  "SolBank": "区块链银行",
+  "SOLBANK": "区块链银行",
   "(Effect: Whenever you spend M€ (or steel or titanium) add 1 data to this card.)": "（效果：当你花费M€、钢或钛时，向此卡添加1个数据资源。）",
   "(Effect: During the production phase convert each data from this card into 1M€ each.)": "（效果：生产阶段中，将此卡上的每个数据资源转换为1M€。）",
   "(You start with 40 M€.)": "（起始获得40M€。）",

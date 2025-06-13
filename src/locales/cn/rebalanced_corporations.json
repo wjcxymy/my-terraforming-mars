@@ -28,5 +28,11 @@
   "CELESTIC_REBALANCED": "CELESTIC",
   "Celestic Rebalanced": "Celestic",
   "CELESTIC REBALANCED": "CELESTIC",
-  "Effect: When you gain an floater to ANY CARD, gain 1 M€.": "效果：当你在任意卡上增加1个云资源时，获得1M€。"
+  "Effect: When you gain an floater to ANY CARD, gain 1 M€.": "效果：当你在任意卡上增加1个云资源时，获得1M€。",
+
+  "SolBank_Rebalanced": "SolBank",
+  "SOLBANK_REBALANCED": "SOLBANK",
+  "SolBank Rebalanced": "SolBank",
+  "SOLBANK REBALANCED": "SOLBANK",
+  "Action: convert each data from this card into 1M€ each.": "行动：将此卡上的每个数据资源转换为1M€。"
 }
