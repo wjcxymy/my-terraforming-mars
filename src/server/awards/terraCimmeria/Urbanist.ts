@@ -18,6 +18,7 @@ export class Urbanist implements IAward {
         case TileType.CITY:
         case TileType.OCEAN_CITY:
         case TileType.NEW_HOLLAND:
+        case TileType.GAMBLING_DISTRICT_LAS_VEGAS:
           score += this.countGreeneries(player, space);
           break;
         case TileType.CAPITAL:
