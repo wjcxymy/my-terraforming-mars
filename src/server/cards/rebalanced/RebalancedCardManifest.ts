@@ -6,6 +6,7 @@ import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsReba
 import {OdysseyRebalanced} from './OdysseyRebalanced';
 import {SolBankRebalanced} from './SolBankRebalanced';
 import {ThorgateRebalanced} from './ThorgateRebalanced';
+import {TychoMagneticsRebalanced} from './TychoMagneticsRebalanced';
 
 export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
   module: 'rebalanced',
@@ -16,6 +17,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.CELESTIC_REBALANCED]: {Factory: CelesticRebalanced},
     [CardName.SOLBANK_REBALANCED]: {Factory: SolBankRebalanced},
     [CardName.ODYSSEY_REBALANCED]: {Factory: OdysseyRebalanced},
+    [CardName.TYCHO_MAGNETICS_REBALANCED]: {Factory: TychoMagneticsRebalanced},
   },
   preludeCards: {
   },
@@ -30,5 +32,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.CELESTIC,
     CardName.SOLBANK,
     CardName.ODYSSEY,
+    CardName.TYCHO_MAGNETICS,
   ],
 });
