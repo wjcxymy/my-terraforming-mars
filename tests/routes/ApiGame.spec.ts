@@ -101,6 +101,8 @@ describe('ApiGame', () => {
           'soloTR': false,
           'twoCorpsVariant': false,
           'undoOption': false,
+          'sevenHeatVariant': false,
+          'doubleCorpVariant': false,
         },
       },
     );
