@@ -644,6 +644,7 @@ export enum CardName {
   THORGATE_REBALANCED = 'Thorgate Rebalanced',
   CELESTIC_REBALANCED = 'Celestic Rebalanced',
   SOLBANK_REBALANCED = 'SolBank Rebalanced',
+  ODYSSEY_REBALANCED = 'Odyssey Rebalanced',
 
   // Rebalanced preludes
 

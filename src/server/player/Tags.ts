@@ -65,6 +65,7 @@ export class Tags {
   public count(tag: Tag, mode: CountingMode = 'default') {
     const includeEvents =
       this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.ODYSSEY_REBALANCED) ||
       this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
 
     const includeTagSubstitutions = (mode === 'default' || mode === 'milestone');
@@ -163,6 +164,7 @@ export class Tags {
   public multipleCount(tags: Array<Tag>, mode: MultipleCountMode = 'default'): number {
     const includeEvents =
       this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.ODYSSEY_REBALANCED) ||
       this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
 
     let tagCount = 0;
@@ -213,6 +215,7 @@ export class Tags {
     const uniqueTags = new Set<Tag>();
     const includeEvents =
       this.player.isCorporation(CardName.ODYSSEY) ||
+      this.player.isCorporation(CardName.ODYSSEY_REBALANCED) ||
       this.player.isCorporation(CardName.INTERPLANETARY_CINEMATICS_REBALANCED);
     let wildTagCount = 0;
 
