@@ -134,7 +134,7 @@
         <span style="color: rgb(208, 96, 3);box-shadow: -6px -6px #d58c56;">MATHS</span>
       </div>
     </template>
-    <template v-else-if="title === CardName.TYCHO_MAGNETICS">
+    <template v-else-if="title === CardName.TYCHO_MAGNETICS || title === CardName.TYCHO_MAGNETICS_REBALANCED">
       <div class="card-tycho-magnetics-logo">
         <div>TYCHO</div>
         <div>MAGNETICS</div>
