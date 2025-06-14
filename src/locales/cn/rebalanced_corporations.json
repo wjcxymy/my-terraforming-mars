@@ -34,5 +34,11 @@
   "SOLBANK_REBALANCED": "SOLBANK",
   "SolBank Rebalanced": "SolBank",
   "SOLBANK REBALANCED": "SOLBANK",
-  "Action: convert each data from this card into 1M€ each.": "行动：将此卡上的每个数据资源转换为1M€。"
+  "Action: convert each data from this card into 1M€ each.": "行动：将此卡上的每个数据资源转换为1M€。",
+
+  "Odyssey_Rebalanced": "Odyssey",
+  "ODYSSEY_REBALANCED": "ODYSSEY",
+  "Odyssey Rebalanced": "Odyssey",
+  "ODYSSEY REBALANCED": "ODYSSEY",
+  "Action: Play for free an event card you have already played that has a base cost of 16M€ or less (INCLUDING events that place special tiles,) after which discard that card.": "行动：你可以免费再次打出一张已打出的事件卡（费用至多为16M€，包括放置特殊板块的事件卡），然后丢弃这张事件卡。"
 }
