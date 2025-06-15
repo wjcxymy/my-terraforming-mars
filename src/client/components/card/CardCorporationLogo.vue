@@ -217,6 +217,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.POSEIDON, 'card-poseidon-logo'],
   [CardName.MORNING_STAR_INC, 'card-morning-star-logo'],
   [CardName.PRISTAR, 'card-pristar-logo'],
+  [CardName.PRISTAR_REBALANCED, 'card-pristar-logo'],
   [CardName.CREDICOR, 'card-credicor-logo'],
   [CardName.ECOLINE, 'card-ecoline-logo'],
   [CardName.HELION, 'card-helion-logo'],

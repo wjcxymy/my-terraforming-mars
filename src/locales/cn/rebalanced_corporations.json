@@ -47,6 +47,12 @@
   "Tycho Magnetics Rebalanced": "Tycho Magnetics",
   "TYCHO MAGNETICS REBALANCED": "TYCHO MAGNETICS",
   "You start with 42 M€, 1 energy and 1 energy production.": "起始获得42 M€，1点电力和1点电力产能。",
-  "Action: Spend any amount of energy to draw that many cards. Keep 1 and discard the rest. (For every additional 5 energy spent, excluding the first, you may keep 1 more.)": "行动：消耗任意数量的电力来抽取等量的卡牌，保留1张并弃置其余。（每额外消耗5点电力，不计首点，可额外保留1张。）"
+  "Action: Spend any amount of energy to draw that many cards. Keep 1 and discard the rest. (For every additional 5 energy spent, excluding the first, you may keep 1 more.)": "行动：消耗任意数量的电力来抽取等量的卡牌，保留1张并弃置其余。（每额外消耗5点电力，不计首点，可额外保留1张。）",
+
+  "Pristar_Rebalanced": "Pristar",
+  "PRISTAR_REBALANCED": "PRISTAR",
+  "Pristar Rebalanced": "Pristar",
+  "PRISTAR REBALANCED": "PRISTAR",
+  "Effect: During production phase, if you did not get TR so far this generation, or if you have the lowest TR, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，或改造度为全场最低，获得6M€并添加1个卫资源。"
 
 }
