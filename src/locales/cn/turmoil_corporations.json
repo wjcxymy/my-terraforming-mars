@@ -23,6 +23,6 @@
 
   "Pristar": "星际预防所",
   "PRISTAR": "星际预防所",
-  "You start with 53 M€. Decrease your TR 2 steps. 1 VP per preservation resource here.": "起始获得53 M€,降低你的改造度(TR)2级这张牌上每有1个保卫资源,获得1分",
-  "Effect: During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 6 M€.": "效果： 生产阶段时,如果你本时代没提升过改造度,则放置1个保卫资源到这张牌并获得6 M€"
+  "You start with 53 M€. Decrease your TR 2 steps. 1 VP per preservation resource here.": "起始获得53 M€，降低你的改造度(TR)2级。这张牌上每有1个卫资源，获得1分",
+  "Effect: During production phase, if you did not get TR so far this generation, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，获得6M€并添加1个卫资源。"
 }

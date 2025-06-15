@@ -646,6 +646,7 @@ export enum CardName {
   SOLBANK_REBALANCED = 'SolBank Rebalanced',
   ODYSSEY_REBALANCED = 'Odyssey Rebalanced',
   TYCHO_MAGNETICS_REBALANCED = 'Tycho Magnetics Rebalanced',
+  PRISTAR_REBALANCED = 'Pristar Rebalanced',
 
   // Rebalanced preludes
 
