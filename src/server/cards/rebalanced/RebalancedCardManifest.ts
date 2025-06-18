@@ -1,5 +1,6 @@
 import {CardName} from '../../../common/cards/CardName';
 import {ModuleManifest} from '../ModuleManifest';
+import {AdhaiHighOrbitConstructionsRebalanced} from './AdhaiHighOrbitConstructionsRebalanced';
 import {ArklightRebalanced} from './ArklightRebalanced';
 import {CelesticRebalanced} from './CelesticRebalanced';
 import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsRebalanced';
@@ -20,6 +21,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.ODYSSEY_REBALANCED]: {Factory: OdysseyRebalanced},
     [CardName.TYCHO_MAGNETICS_REBALANCED]: {Factory: TychoMagneticsRebalanced},
     [CardName.PRISTAR_REBALANCED]: {Factory: PristarRebalanced},
+    [CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED]: {Factory: AdhaiHighOrbitConstructionsRebalanced},
   },
   preludeCards: {
   },
@@ -36,5 +38,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.ODYSSEY,
     CardName.TYCHO_MAGNETICS,
     CardName.PRISTAR,
+    CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS,
   ],
 });

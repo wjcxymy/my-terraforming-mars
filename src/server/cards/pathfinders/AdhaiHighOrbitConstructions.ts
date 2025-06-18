@@ -11,9 +11,25 @@ import {AltSecondaryTag} from '../../../common/cards/render/AltSecondaryTag';
 import {IStandardProjectCard} from '../IStandardProjectCard';
 
 export class AdhaiHighOrbitConstructions extends CorporationCard {
-  constructor() {
+  constructor({
+    name = CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS,
+    metadata = {
+      cardNumber: 'PfC23',
+      description: 'You start with 43 M€.',
+      renderData: CardRenderer.builder((b) => {
+        b.megacredits(43).nbsp.nbsp.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).colon().resource(CardResource.ORBITAL).br;
+        b.text('(Effect: Whenever you play a card with a space tag BUT NO PLANETARY TAG (including this) add 1 orbital on this card.)', Size.SMALL, false, false);
+        b.br;
+        b.effect('For every 2 orbitals on this card, cards with a space tag but with no planetary tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.', (eb) => {
+          eb.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).slash(Size.SMALL).asterix().colonies(1, {size: Size.SMALL}).slash(Size.SMALL).trade({size: Size.SMALL})
+            .startEffect
+            .minus().megacredits(1).text('/2').resource(CardResource.ORBITAL);
+        });
+      }),
+    },
+  } = {}) {
     super({
-      name: CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS,
+      name,
       tags: [Tag.SPACE],
       startingMegaCredits: 43,
       resourceType: CardResource.ORBITAL,
@@ -23,23 +39,9 @@ export class AdhaiHighOrbitConstructions extends CorporationCard {
         addResources: 1,
       },
 
-      metadata: {
-        cardNumber: 'PfC23',
-        description: 'You start with 43 M€.',
-        renderData: CardRenderer.builder((b) => {
-          b.megacredits(43).nbsp.nbsp.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).colon().resource(CardResource.ORBITAL).br;
-          b.text('(Effect: Whenever you play a card with a space tag BUT NO PLANETARY TAG (including this) add 1 orbital on this card.)', Size.SMALL, false, false);
-          b.br;
-          b.effect('For every 2 orbitals on this card, cards with a space tag but with no planetary tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.', (eb) => {
-            eb.tag(Tag.SPACE, {secondaryTag: AltSecondaryTag.NO_PLANETARY_TAG}).slash(Size.SMALL).asterix().colonies(1, {size: Size.SMALL}).slash(Size.SMALL).trade({size: Size.SMALL})
-              .startEffect
-              .minus().megacredits(1).text('/2').resource(CardResource.ORBITAL);
-          });
-        }),
-      },
+      metadata,
     });
   }
-
 
   private matchingTags(tags: Array<Tag>): boolean {
     let spaceTag = false;

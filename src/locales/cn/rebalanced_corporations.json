@@ -53,6 +53,13 @@
   "PRISTAR_REBALANCED": "PRISTAR",
   "Pristar Rebalanced": "Pristar",
   "PRISTAR REBALANCED": "PRISTAR",
-  "Effect: During production phase, if you did not get TR so far this generation, or if you have the lowest TR, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，或改造度为全场最低，获得6M€并添加1个卫资源。"
+  "Effect: During production phase, if you did not get TR so far this generation, or if you have the lowest TR, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，或改造度为全场最低，获得6M€并添加1个卫资源。",
+
+  "Adhai_High_Orbit_Constructions_Rebalanced": "Adhai High Orbit Constructions",
+  "ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED": "ADHAI HIGH ORBIT CONSTRUCTIONS",
+  "Adhai High Orbit Constructions Rebalanced": "Adhai High Orbit Constructions",
+  "ADHAI HIGH ORBIT CONSTRUCTIONS REBALANCED": "ADHAI HIGH ORBIT CONSTRUCTIONS",
+  "Effect: Whenever you play a card with a space tag (including this) add 1 orbital on this card.": "效果：当你打出一张太空牌（包括此牌）时，在此牌上增加1个轨道资源。",
+  "Effect: For every 2 orbitals on this card, cards with a space tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.": "效果：当你打出一张太空牌、或使用殖民地标准项目、或进行贸易时，此卡上每有2个轨道资源，你可以少支付1M€。"
 
 }
