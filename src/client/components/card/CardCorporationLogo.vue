@@ -200,6 +200,7 @@ const imageOnlyLogos: Map<CardName, string> = new Map([
   [CardName.BIO_SOL, 'card-bio-sol-logo'],
   [CardName.MIND_SET_MARS, 'card-mind-set-mars-logo'],
   [CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS, 'card-adhai-high-orbit-constructions-logo'],
+  [CardName.ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED, 'card-adhai-high-orbit-constructions-logo'],
   [CardName.HABITAT_MARTE, 'card-habitat-marte-logo'],
   [CardName.ODYSSEY, 'card-odyssey-logo'],
   [CardName.ODYSSEY_REBALANCED, 'card-odyssey-logo'],
