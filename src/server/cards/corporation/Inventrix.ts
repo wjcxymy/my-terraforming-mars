@@ -4,32 +4,35 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 
 export class Inventrix extends CorporationCard {
-  constructor() {
+  constructor({
+    name = CardName.INVENTRIX,
+    globalParameterRequirementBonus = {steps: 2},
+    metadata = {
+      cardNumber: 'R43',
+      description: 'As your first action in the game, draw 3 cards. Start with 45 M€.',
+      renderData: CardRenderer.builder((b) => {
+        b.br;
+        b.megacredits(45).nbsp.cards(3);
+        b.corpBox('effect', (ce) => {
+          ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +2 or -2 steps, your choice in each case.', (eb) => {
+            eb.plate('Global requirements').startEffect.text('+/- 2');
+          });
+        });
+      }),
+    },
+  } = {}) {
     super({
-      name: CardName.INVENTRIX,
+      name,
       tags: [Tag.SCIENCE],
       startingMegaCredits: 45,
-      globalParameterRequirementBonus: {steps: 2},
+      globalParameterRequirementBonus,
 
       firstAction: {
         text: 'Draw 3 cards',
         drawCard: 3,
       },
 
-      metadata: {
-        cardNumber: 'R43',
-        description: 'As your first action in the game, draw 3 cards. Start with 45 M€.',
-        renderData: CardRenderer.builder((b) => {
-          b.br;
-          b.megacredits(45).nbsp.cards(3);
-          b.corpBox('effect', (ce) => {
-            ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +2 or -2 steps, your choice in each case.', (eb) => {
-              eb.plate('Global requirements').startEffect.text('+/- 2');
-            });
-          });
-        }),
-      },
+      metadata,
     });
   }
 }
-

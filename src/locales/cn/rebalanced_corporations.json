@@ -60,6 +60,16 @@
   "Adhai High Orbit Constructions Rebalanced": "Adhai High Orbit Constructions",
   "ADHAI HIGH ORBIT CONSTRUCTIONS REBALANCED": "ADHAI HIGH ORBIT CONSTRUCTIONS",
   "Effect: Whenever you play a card with a space tag (including this) add 1 orbital on this card.": "效果：当你打出一张太空牌（包括此牌）时，在此牌上增加1个轨道资源。",
-  "Effect: For every 2 orbitals on this card, cards with a space tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.": "效果：当你打出一张太空牌、或使用殖民地标准项目、或进行贸易时，此卡上每有2个轨道资源，你可以少支付1M€。"
+  "Effect: For every 2 orbitals on this card, cards with a space tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.": "效果：当你打出一张太空牌、或使用殖民地标准项目、或进行贸易时，此卡上每有2个轨道资源，你可以少支付1M€。",
+
+  "Inventrix_Rebalanced": "Inventrix",
+  "INVENTRIX_REBALANCED": "INVENTRIX",
+  "Inventrix Rebalanced": "Inventrix",
+  "INVENTRIX REBALANCED": "INVENTRIX",
+  "Effect: When you use the global requirement modifier to play a card, gain 3 M€.": "效果：当你使用全球参数修正来打出一张牌时，获得 3 M€。",
+  "${0} gained 3 M€ from ${1} effect. Parameter: venus, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：金星，当前值：${2}，需求值：${3}。",
+  "${0} gained 3 M€ from ${1} effect. Parameter: oxygen, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：氧气，当前值：${2}，需求值：${3}。",
+  "${0} gained 3 M€ from ${1} effect. Parameter: temperature, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：温度，当前值：${2}，需求值：${3}。",
+  "${0} gained 3 M€ from ${1} effect. Parameter: oceans, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：海洋，当前值：${2}，需求值：${3}。"
 
 }
