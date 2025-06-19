@@ -19,7 +19,7 @@ describe('PreferencesManager', () => {
   it('default values', () => {
     const values = instance.values();
     expect(values.hide_active_cards).eq(false);
-    expect(values.lang).eq('en');
+    expect(values.lang).eq('cn');
     expect(values.enable_sounds).eq(true);
   });
 
