@@ -29,7 +29,7 @@ const defaults: Preferences = {
   enable_sounds: true,
   magnify_cards: true,
   show_alerts: true,
-  lang: 'en',
+  lang: 'cn',
 
   hide_hand: false,
   hide_awards_and_milestones: false,
