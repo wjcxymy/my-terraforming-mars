@@ -648,6 +648,7 @@ export enum CardName {
   TYCHO_MAGNETICS_REBALANCED = 'Tycho Magnetics Rebalanced',
   PRISTAR_REBALANCED = 'Pristar Rebalanced',
   ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED = 'Adhai High Orbit Constructions Rebalanced',
+  INVENTRIX_REBALANCED = 'Inventrix Rebalanced',
 
   // Rebalanced preludes
 
