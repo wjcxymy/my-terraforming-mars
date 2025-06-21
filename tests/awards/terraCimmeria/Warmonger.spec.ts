@@ -49,6 +49,7 @@ describe('Warmonger', () => {
     CardName.REVOLTING_COLONISTS, CardName.ROAD_PIRACY, CardName.SABOTAGE, CardName.SERVER_SABOTAGE,
     CardName.SMALL_ASTEROID, CardName.SMALL_COMET, CardName.SOLAR_STORM, CardName.SPECIAL_PERMIT,
     CardName.VIRUS,
+    CardName.HIGH_SPEED_COMET,
   ] as const;
   for (const manifest of ALL_MODULE_MANIFESTS) {
     for (const projectCard of CardManifest.values(manifest.projectCards)) {

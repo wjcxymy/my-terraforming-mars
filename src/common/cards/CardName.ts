@@ -656,6 +656,27 @@ export enum CardName {
 
   // End of Rebalanced cards
 
+  // Chemical cards
+  SPONSORED_RESEARCH_FIRM = 'Sponsored Research Firm',
+  NEAR_MISS_ROTARY_ASTEROID = 'Near-miss Rotary Asteroid',
+  HIGH_SPEED_COMET = 'High Speed Comet',
+  LASER_DRILL_MINING = 'Laser Drill Mining',
+  FUEL_CELL_PRODUCTION = 'Fuel Cell Production',
+  SPECIES_CRYOPRESERVATION = 'Species Cryopreservation',
+  GRAND_STADIUM = 'Grand Stadium',
+  BIOMASS_REACTOR = 'Biomass Reactor',
+  PERFLUOROCARBON_PRODUCTION = 'Perfluorocarbon Production',
+  PORT_OF_ELYSIUM = 'Port Of Elysium',
+  WAYPOINT_COLONY = 'Waypoint Colony',
+
+  // Chemical corps
+
+  // Chemical preludes
+
+  // Chemical colonies
+
+  // End of Chemical cards
+
   // For Playwright.
   SPECIAL_DESIGN_PROXY = 'Special Design:proxy',
 
