@@ -1,0 +1,37 @@
+{
+  "Sponsored Research Firm": "资助研究机构",
+  "Requires 2 Earth tags. Raise your TR 1 steps.": "需要2个地球标志。提升1点改造度。",
+  "Action: If you have increased your TR this generation, draw 1 card.": "行动：若你本时代提升过改造度，则抽1张牌。",
+
+  "Near-miss Rotary Asteroid": "掠轨旋转小行星",
+  "Raise Venus 1 step and add an asteroid to ANY card.": "提升金星改造度1级，并在任意卡牌上添加1个小行星资源。",
+
+  "High Speed Comet": "高速彗星",
+  "Raise the temperature 2 steps and place an ocean tile, Remove up to 5 plants from any player.": "提升火星温度2级，并放置1个海洋板块。移除任一玩家最多5个植物资源。",
+
+  "Laser Drill Mining": "激光钻采技术",
+  "Decrease your energy production 1 step. Increase your titanium production 1 step and your heat production 2 steps.": "降低电力产量1级，提升钛产量1级和热能产量2级。",
+
+  "Fuel Cell Production": "燃料电池生产",
+  "Decrease your M€ production 2 steps and increase your energy production 2 steps.": "降低M€产量2级，提升电力产量2级。",
+
+  "Species Cryopreservation": "物种冷冻保存",
+  "Requires 2 animal tags.": "需要2个动物标志。",
+
+  "Grand Stadium": "大型体育场",
+  "Requires that you own 3 cities. Decrease your energy production 1 step and increase your M€ production 3 steps.": "需要你拥有3座城市。降低电力产量1级，提升M€产量3级。",
+
+  "Biomass Reactor": "生物质反应堆",
+  "Gain 2 energy.": "获得2点电力。",
+  "Action: Spend 1 plant to gain 3 energy.": "行动：消耗1个植物资源以获得3点电力。",
+
+  "Perfluorocarbon Production": "全氟碳化物生产",
+  "Decrease your energy production 1 step and increase your heat production 5 steps.": "降低电力产量1级，提升热能产量5级。",
+
+  "Port Of Elysium": "极乐港",
+  "Requires 3 colonies. Decrease your energy production 2 steps, increase your M€ production 5 steps, place a city tile, gain a trade fleet, and gain 2 titanium.": "需要你拥有3个殖民地。降低电力产量2级，提升M€产量5级。放置一个城市板块，获得1艘贸易舰队，并获得2个钛资源。",
+
+  "Waypoint Colony": "航标殖民地",
+  "Place a colony.": "放置一个殖民地",
+  "Effect: When you play a space card, you pay 2 M€ less for it.": "效果：当你打出一张带有太空标志的卡牌时，其费用减少2 M€。"
+}
