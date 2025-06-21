@@ -61,7 +61,8 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
 
     // 统计 topCard 中哪些标签是“新出现的”
     const newTags: Tag[] = [];
-    for (const tag of topCard.tags) {
+    const topCardUniqueTags = Array.from(new Set(topCard.tags));
+    for (const tag of topCardUniqueTags) {
       // 如果之前未出现该标签
       const countInPrevious = this.targetCards
         .slice(0, this.targetCards.length - 1) // 排除刚展示的 topCard
