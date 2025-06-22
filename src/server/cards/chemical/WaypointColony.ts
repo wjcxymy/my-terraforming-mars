@@ -1,9 +1,9 @@
-import {IProjectCard} from '../../IProjectCard';
-import {Card} from '../../Card';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {CardName} from '../../../../common/cards/CardName';
-import {CardRenderer} from '../../render/CardRenderer';
+import {IProjectCard} from '../IProjectCard';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
 
 export class WaypointColony extends Card implements IProjectCard {
   constructor() {
@@ -20,7 +20,7 @@ export class WaypointColony extends Card implements IProjectCard {
       cardDiscount: {tag: Tag.SPACE, amount: 2},
 
       metadata: {
-        cardNumber: 'MY25',
+        cardNumber: 'CHM11',
         description: 'Place a colony.',
         renderData: CardRenderer.builder((b) => {
           b.effect('When you play a space card, you pay 2 M€ less for it.', (eb) => {

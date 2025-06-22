@@ -1,10 +1,10 @@
-import {Card} from '../../Card';
-import {CardName} from '../../../../common/cards/CardName';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {IProjectCard} from '../../IProjectCard';
-import {CardRenderer} from '../../render/CardRenderer';
-import {all} from '../../Options';
+import {Card} from '../Card';
+import {CardName} from '../../../common/cards/CardName';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {IProjectCard} from '../IProjectCard';
+import {CardRenderer} from '../render/CardRenderer';
+import {all} from '../Options';
 
 export class HighSpeedComet extends Card implements IProjectCard {
   constructor() {
@@ -21,7 +21,7 @@ export class HighSpeedComet extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'MY17',
+        cardNumber: 'CHM03',
         description: 'Raise the temperature 2 steps and place an ocean tile, Remove up to 5 plants from any player.',
         renderData: CardRenderer.builder((b) => {
           b.temperature(2).br;

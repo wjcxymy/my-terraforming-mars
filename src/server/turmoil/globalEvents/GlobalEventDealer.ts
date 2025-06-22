@@ -72,6 +72,7 @@ export class GlobalEventDealer {
       underworld: gameOptions.underworldExpansion,
       mingyue: gameOptions.mingyueExpansion,
       rebalanced: gameOptions.rebalancedExpansion,
+      chemical: gameOptions.chemicalExpansion,
     };
 
     for (const manifest of ALL_MODULE_MANIFESTS) {

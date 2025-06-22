@@ -41,6 +41,7 @@ export type GameOptions = {
   expansions: Record<Expansion, boolean>,
   mingyueExpansion: boolean;
   rebalancedExpansion: boolean;
+  chemicalExpansion: boolean;
 
   // Variants
   draftVariant: boolean;
@@ -121,6 +122,7 @@ export const DEFAULT_GAME_OPTIONS: GameOptions = {
     underworld: false,
     mingyue: false,
     rebalanced: false,
+    chemical: false,
   },
   fastModeOption: false,
   includeFanMA: false,
@@ -153,6 +155,7 @@ export const DEFAULT_GAME_OPTIONS: GameOptions = {
   underworldExpansion: false,
   mingyueExpansion: false,
   rebalancedExpansion: false,
+  chemicalExpansion: false,
   undoOption: false,
   venusNextExtension: false,
   twoCorpsVariant: false,

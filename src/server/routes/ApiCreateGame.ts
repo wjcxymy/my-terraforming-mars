@@ -168,6 +168,7 @@ export class ApiCreateGame extends Handler {
             underworldExpansion: gameReq.expansions.underworld,
             mingyueExpansion: gameReq.expansions.mingyue,
             rebalancedExpansion: gameReq.expansions.rebalanced,
+            chemicalExpansion: gameReq.expansions.chemical,
             undoOption: gameReq.undoOption,
             venusNextExtension: gameReq.expansions.venus,
           };

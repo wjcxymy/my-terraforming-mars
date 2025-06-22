@@ -15,6 +15,7 @@ export const EXPANSIONS = [
   'underworld',
   'mingyue',
   'rebalanced',
+  'chemical',
 ] as const;
 
 export const GAME_MODULES = [
@@ -43,6 +44,7 @@ export const MODULE_NAMES: Readonly<Record<GameModule, string>> = {
   underworld: 'Underworld',
   mingyue: 'MingYue',
   rebalanced: 'Rebalanced',
+  chemical: 'Chemical',
 };
 
 export const DEFAULT_EXPANSIONS: Record<Expansion, boolean> = {
@@ -62,4 +64,5 @@ export const DEFAULT_EXPANSIONS: Record<Expansion, boolean> = {
   underworld: false,
   mingyue: false,
   rebalanced: false,
+  chemical: false,
 };

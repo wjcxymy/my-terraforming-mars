@@ -24,17 +24,6 @@ import {MarsMonument} from './MarsMonument';
 import {RainbowPark} from './RainbowPark';
 import {ExpansionOfPopulation} from './ExpansionOfPopulation';
 import {ForesightTechnologies} from './ForesightTechnologies';
-import {SponsoredResearchFirm} from './chemical/SponsoredResearchFirm';
-import {NearMissRotaryAsteroid} from './chemical/NearMissRotaryAsteroid';
-import {HighSpeedComet} from './chemical/HighSpeedComet';
-import {LaserDrillMining} from './chemical/LaserDrillMining';
-import {FuelCellProduction} from './chemical/FuelCellProduction';
-import {SpeciesCryopreservation} from './chemical/SpeciesCryopreservation';
-import {GrandStadium} from './chemical/GrandStadium';
-import {BiomassReactor} from './chemical/BiomassReactor';
-import {PerfluorocarbonProduction} from './chemical/PerfluorocarbonProduction';
-import {PortOfElysium} from './chemical/PortOfElysium';
-import {WaypointColony} from './chemical/WaypointColony';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -67,17 +56,6 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.MARS_MONUMENT]: {Factory: MarsMonument},
     [CardName.EXPANSION_OF_POPULATION]: {Factory: ExpansionOfPopulation},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
-    [CardName.SPONSORED_RESEARCH_FIRM]: {Factory: SponsoredResearchFirm},
-    [CardName.NEAR_MISS_ROTARY_ASTEROID]: {Factory: NearMissRotaryAsteroid, compatibility: 'venus'},
-    [CardName.HIGH_SPEED_COMET]: {Factory: HighSpeedComet},
-    [CardName.LASER_DRILL_MINING]: {Factory: LaserDrillMining},
-    [CardName.FUEL_CELL_PRODUCTION]: {Factory: FuelCellProduction},
-    [CardName.SPECIES_CRYOPRESERVATION]: {Factory: SpeciesCryopreservation},
-    [CardName.GRAND_STADIUM]: {Factory: GrandStadium},
-    [CardName.BIOMASS_REACTOR]: {Factory: BiomassReactor},
-    [CardName.PERFLUOROCARBON_PRODUCTION]: {Factory: PerfluorocarbonProduction},
-    [CardName.PORT_OF_ELYSIUM]: {Factory: PortOfElysium, compatibility: 'colonies'},
-    [CardName.WAYPOINT_COLONY]: {Factory: WaypointColony, compatibility: 'colonies'},
   },
   globalEvents: {
   },

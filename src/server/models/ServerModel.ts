@@ -448,6 +448,7 @@ export class Server {
         underworld: options.underworldExpansion,
         mingyue: options.mingyueExpansion,
         rebalanced: options.rebalancedExpansion,
+        chemical: options.chemicalExpansion,
       },
       fastModeOption: options.fastModeOption,
       includedCards: options.includedCards,
