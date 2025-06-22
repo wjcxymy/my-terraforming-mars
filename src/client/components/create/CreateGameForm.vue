@@ -100,6 +100,13 @@
                                 <span v-i18n>MingYue</span>&nbsp;<a href="https://github.com/wjcxymy/my-terraforming-mars/wiki" class="tooltip" target="_blank">&#9432;</a>
                             </label>
 
+                            <!-- Chemical -->
+                            <input type="checkbox" id="chemical-checkbox" v-model="expansions.chemical">
+                            <label for="chemical-checkbox" class="expansion-button">
+                              <div class="create-game-expansion-icon expansion-icon-chemical"></div>
+                              <span v-i18n>Chemical</span>&nbsp;<a href="https://github.com/wjcxymy/my-terraforming-mars/wiki" class="tooltip" target="_blank">&#9432;</a>
+                            </label>
+
                             <input type="checkbox" name="ares" id="ares-checkbox" v-model="expansions.ares">
                             <label for="ares-checkbox" class="expansion-button">
                                 <div class="create-game-expansion-icon expansion-icon-ares"></div>
@@ -826,6 +833,7 @@ export default (Vue as WithRefs<Refs>).extend({
               underworld: json_constants.UNDERWORLDEXPANSION,
               mingyue: json_constants.MINGYUEEXPANSION,
               rebalanced: json_constants.REBALANCEDEXPANSION,
+              chemical: json_constants.CHEMICALEXPANSION,
             } as const;
             for (const expansion of Object.keys(oldFields)) {
               const x = oldFields[expansion as Expansion];

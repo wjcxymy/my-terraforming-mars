@@ -1,10 +1,10 @@
-import {Card} from '../../Card';
-import {CardName} from '../../../../common/cards/CardName';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {IProjectCard} from '../../IProjectCard';
-import {CardRenderer} from '../../render/CardRenderer';
-import {CardResource} from '../../../../common/CardResource';
+import {Card} from '../Card';
+import {CardName} from '../../../common/cards/CardName';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {IProjectCard} from '../IProjectCard';
+import {CardRenderer} from '../render/CardRenderer';
+import {CardResource} from '../../../common/CardResource';
 
 export class NearMissRotaryAsteroid extends Card implements IProjectCard {
   constructor() {
@@ -21,7 +21,7 @@ export class NearMissRotaryAsteroid extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'MY16',
+        cardNumber: 'CHM02',
         description: 'Raise Venus 1 step and add an asteroid to ANY card.',
         renderData: CardRenderer.builder((b) => {
           b.venus(1).resource(CardResource.ASTEROID).asterix();

@@ -17,6 +17,7 @@
               <div v-if="gameOptions.expansions.underworld" class="create-game-expansion-icon expansion-icon-underworld"></div>
               <div v-if="gameOptions.expansions.mingyue" class="create-game-expansion-icon expansion-icon-mingyue"></div>
               <div v-if="gameOptions.expansions.rebalanced" class="create-game-expansion-icon expansion-icon-rebalanced"></div>
+              <div v-if="gameOptions.expansions.chemical" class="create-game-expansion-icon expansion-icon-chemical"></div>
             </li>
 
             <li><div class="setup-item" v-i18n>Board:</div>

@@ -18,6 +18,7 @@ import {STAR_WARS_CARD_MANIFEST} from './starwars/StarwarsCardManifest';
 import {UNDERWORLD_CARD_MANIFEST} from './underworld/UnderworldCardManifest';
 import {MINGYUE_CARD_MANIFEST} from './mingyue/MingYueCardManifest';
 import {REBALANCED_CARD_MANIFEST} from './rebalanced/RebalancedCardManifest';
+import {CHEMICAL_CARD_MANIFEST} from './chemical/ChemicalCardManifest';
 
 export const ALL_MODULE_MANIFESTS: Array<ModuleManifest> = [
   BASE_CARD_MANIFEST,
@@ -37,4 +38,5 @@ export const ALL_MODULE_MANIFESTS: Array<ModuleManifest> = [
   UNDERWORLD_CARD_MANIFEST,
   MINGYUE_CARD_MANIFEST,
   REBALANCED_CARD_MANIFEST,
+  CHEMICAL_CARD_MANIFEST,
 ];

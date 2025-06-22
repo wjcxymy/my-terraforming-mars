@@ -1,8 +1,8 @@
-import {IProjectCard} from '../../IProjectCard';
-import {Card} from '../../Card';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {CardName} from '../../../../common/cards/CardName';
+import {IProjectCard} from '../IProjectCard';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {CardName} from '../../../common/cards/CardName';
 
 export class SpeciesCryopreservation extends Card implements IProjectCard {
   constructor() {
@@ -19,7 +19,7 @@ export class SpeciesCryopreservation extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'MY20',
+        cardNumber: 'CHM06',
         description: 'Requires 2 animal tags.',
       },
     });

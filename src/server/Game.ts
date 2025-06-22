@@ -272,6 +272,7 @@ export class Game implements IGame, Logger {
         underworld: options.underworldExpansion ?? false,
         mingyue: options.mingyueExpansion ?? false,
         rebalanced: options.rebalancedExpansion ?? false,
+        chemical: options.chemicalExpansion ?? false,
       };
     }
     const gameOptions = {...DEFAULT_GAME_OPTIONS, ...options};
@@ -1724,6 +1725,7 @@ export class Game implements IGame, Logger {
         underworld: d.gameOptions.underworldExpansion,
         mingyue: d.gameOptions.mingyueExpansion,
         rebalanced: d.gameOptions.rebalancedExpansion,
+        chemical: d.gameOptions.chemicalExpansion,
       };
     }
     const gameOptions = d.gameOptions;

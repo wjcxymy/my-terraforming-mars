@@ -1,9 +1,9 @@
-import {IProjectCard} from '../../IProjectCard';
-import {Card} from '../../Card';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {CardName} from '../../../../common/cards/CardName';
-import {CardRenderer} from '../../render/CardRenderer';
+import {IProjectCard} from '../IProjectCard';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
 
 export class PortOfElysium extends Card implements IProjectCard {
   constructor() {
@@ -27,7 +27,7 @@ export class PortOfElysium extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'MY24',
+        cardNumber: 'CHM10',
         description: 'Requires 3 colonies. Decrease your energy production 2 steps, increase your M€ production 5 steps, place a city tile, gain a trade fleet, and gain 2 titanium.',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {

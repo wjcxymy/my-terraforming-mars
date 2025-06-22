@@ -22,3 +22,4 @@ export const STARWARSEXPANSION = 'starWarsExpansion';
 export const UNDERWORLDEXPANSION = 'underworldExpansion';
 export const MINGYUEEXPANSION = 'mingyueExpansion';
 export const REBALANCEDEXPANSION = 'rebalancedExpansion';
+export const CHEMICALEXPANSION = 'chemicalExpansion';

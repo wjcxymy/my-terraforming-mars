@@ -28,6 +28,7 @@ const MODULE_TO_CSS: Record<Expansion, string> = {
   underworld: 'underworld-icon',
   mingyue: 'mingyue-icon',
   rebalanced: 'rebalanced-icon',
+  chemical: 'chemical-icon',
 };
 
 export default Vue.extend({

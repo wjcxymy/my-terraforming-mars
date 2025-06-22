@@ -1,9 +1,9 @@
-import {IProjectCard} from '../../IProjectCard';
-import {Card} from '../../Card';
-import {CardType} from '../../../../common/cards/CardType';
-import {Tag} from '../../../../common/cards/Tag';
-import {CardName} from '../../../../common/cards/CardName';
-import {CardRenderer} from '../../render/CardRenderer';
+import {IProjectCard} from '../IProjectCard';
+import {Card} from '../Card';
+import {CardType} from '../../../common/cards/CardType';
+import {Tag} from '../../../common/cards/Tag';
+import {CardName} from '../../../common/cards/CardName';
+import {CardRenderer} from '../render/CardRenderer';
 
 export class GrandStadium extends Card implements IProjectCard {
   constructor() {
@@ -24,7 +24,7 @@ export class GrandStadium extends Card implements IProjectCard {
       },
 
       metadata: {
-        cardNumber: 'MY21',
+        cardNumber: 'CHM07',
         description: 'Requires that you own 3 cities. Decrease your energy production 1 step and increase your M€ production 3 steps.',
         renderData: CardRenderer.builder((b) => {
           b.production((pb) => {
