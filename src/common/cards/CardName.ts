@@ -668,6 +668,14 @@ export enum CardName {
   PERFLUOROCARBON_PRODUCTION = 'Perfluorocarbon Production',
   PORT_OF_ELYSIUM = 'Port Of Elysium',
   WAYPOINT_COLONY = 'Waypoint Colony',
+  AQUATIC_BIODOMES = 'Aquatic Biodomes',
+  MIXOTROPHS = 'Mixotrophs',
+  EFFICIENT_BATTERIES = 'Efficient Batteries',
+  LARGE_POWER_PLANT = 'Large Power Plant',
+  CALLISTO_OPERATIONS = 'Callisto Operations',
+  POWER_SURGE = 'Power Surge',
+  CROWDFUNDING = 'Crowdfunding',
+  CONSTRUCTION_CENTER = 'Construction Center',
 
   // Chemical corps
 

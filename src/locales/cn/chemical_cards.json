@@ -33,5 +33,31 @@
 
   "Waypoint Colony": "航标殖民地",
   "Place a colony.": "放置一个殖民地",
-  "Effect: When you play a space card, you pay 2 M€ less for it.": "效果：当你打出一张带有太空标志的卡牌时，其费用减少2 M€。"
+  "Effect: When you play a space card, you pay 2 M€ less for it.": "效果：当你打出一张带有太空标志的卡牌时，其费用减少2 M€。",
+
+  "Aquatic Biodomes": "水栖生物穹顶",
+  "Requires -10°C or warmer. Increase your plant production 2 steps, place an ocean tile, and add 2 animals to ANY card.": "需要温度不低于 -10°C。提升植物产量2级，放置1个海洋板块，并在任意一张卡牌上放置2个动物资源。",
+
+  "Mixotrophs": "兼养生物",
+  "Requires 1 microbe tag. Increase your plant production 1 step.": "需要1个微生物标志。提升植物产量1级。",
+
+  "Efficient Batteries": "高效电池",
+  "Increase your energy production 1 step for every 2 power tags you have, including this.": "你每拥有2个电力标志（包括本牌），提升1点电力产量。",
+
+  "Large Power Plant": "大型电站",
+  "Increase your energy production 2 steps and gain 2 energy.": "提升2点电力产量并获得2点电力资源。",
+
+  "Callisto Operations": "卡利斯托作业",
+  "Increase your titanium production 1 step and place an ocean tile.": "提升1点钛产量并放置1个海洋板块。",
+
+  "Power Surge": "能量涌现",
+  "Requires 2 power tags. Gain 8 energy.": "需要2个电力标志。获得8点电力资源。",
+
+  "Crowdfunding": "众筹融资",
+  "Increase your M€ production 1 step for every 2 Earth tags you have, including this.": "每拥有2个地球标志（包含此牌），提升1点M€产量。",
+
+  "Construction Center": "建设中心",
+  "Effect: When you play a building card, you pay 2 M€ less for it.": "效果：当你打出带有建筑标志的牌时，支付费用减少2 M€。",
+  "Decrease your energy production 1 step, increase your M€ production 3 steps, and place a city tile.": "降低电力产量1级，提升M€产量3级，并放置一个城市板块。"
+
 }
