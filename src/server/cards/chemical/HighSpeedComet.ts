@@ -4,7 +4,7 @@ import {CardType} from '../../../common/cards/CardType';
 import {Tag} from '../../../common/cards/Tag';
 import {IProjectCard} from '../IProjectCard';
 import {CardRenderer} from '../render/CardRenderer';
-import {all} from '../Options';
+import {all, digit} from '../Options';
 
 export class HighSpeedComet extends Card implements IProjectCard {
   constructor() {
@@ -26,7 +26,7 @@ export class HighSpeedComet extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.temperature(2).br;
           b.oceans(1).br;
-          b.minus().plants(-5, {all});
+          b.minus().plants(5, {digit, all});
         }),
       },
     });
