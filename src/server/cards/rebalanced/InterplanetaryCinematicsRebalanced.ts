@@ -15,16 +15,16 @@ export class InterplanetaryCinematicsRebalanced extends InterplanetaryCinematics
     super({
       name: CardName.INTERPLANETARY_CINEMATICS_REBALANCED,
       tags: [],
-      startingMegaCredits: 60,
+      startingMegaCredits: 55,
       behavior: {
         stock: {steel: 0},
       },
       metadata: {
         cardNumber: 'RB-CORP-02',
-        description: 'You start with 60 M€.',
+        description: 'You start with 55 M€.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(60);
+          b.megacredits(55);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.MEDIUM);
             ce.effect(

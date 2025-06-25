@@ -9,9 +9,10 @@ export class CallistoOperations extends Card implements IProjectCard {
   constructor() {
     super({
       name: CardName.CALLISTO_OPERATIONS,
-      cost: 22,
+      cost: 25,
       type: CardType.AUTOMATED,
       tags: [Tag.JOVIAN, Tag.SPACE],
+      victoryPoints: 1,
 
       behavior: {
         production: {titanium: 1},
