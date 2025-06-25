@@ -70,6 +70,12 @@
   "${0} gained 3 M€ from ${1} effect. Parameter: venus, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：金星，当前值：${2}，需求值：${3}。",
   "${0} gained 3 M€ from ${1} effect. Parameter: oxygen, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：氧气，当前值：${2}，需求值：${3}。",
   "${0} gained 3 M€ from ${1} effect. Parameter: temperature, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：温度，当前值：${2}，需求值：${3}。",
-  "${0} gained 3 M€ from ${1} effect. Parameter: oceans, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：海洋，当前值：${2}，需求值：${3}。"
+  "${0} gained 3 M€ from ${1} effect. Parameter: oceans, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：海洋，当前值：${2}，需求值：${3}。",
+
+  "Midas_Rebalanced": "Midas",
+  "MIDAS_REBALANCED": "MIDAS",
+  "Midas Rebalanced": "Midas",
+  "MIDAS REBALANCED": "MIDAS",
+  "You start with 100 M€. Lower your TR 4 steps.": "起始获得100 M€，降低4点改造度。"
 
 }

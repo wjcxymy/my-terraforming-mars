@@ -649,6 +649,7 @@ export enum CardName {
   PRISTAR_REBALANCED = 'Pristar Rebalanced',
   ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED = 'Adhai High Orbit Constructions Rebalanced',
   INVENTRIX_REBALANCED = 'Inventrix Rebalanced',
+  MIDAS_REBALANCED = 'Midas Rebalanced',
 
   // Rebalanced preludes
 
