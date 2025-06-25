@@ -4,24 +4,31 @@ import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../../../common/cards/render/Size';
 
 export class Midas extends CorporationCard {
-  constructor() {
+  constructor({
+    name = CardName.MIDAS,
+    startingMegaCredits = 120,
+
+    behavior = {
+      tr: -7,
+    },
+
+    metadata = {
+      cardNumber: 'R41',
+      description: 'You start with 120 M€. Lower your TR 7 steps.',
+      renderData: CardRenderer.builder((b) => {
+        b.vSpace(Size.LARGE).br;
+        b.megacredits(120, {size: Size.LARGE}).nbsp.nbsp.nbsp;
+        b.minus().tr(7);
+      }),
+    },
+  } = {}) {
     super({
-      name: CardName.MIDAS,
-      startingMegaCredits: 120,
+      name,
+      startingMegaCredits,
 
-      behavior: {
-        tr: -7,
-      },
+      behavior,
 
-      metadata: {
-        cardNumber: 'R41',
-        description: 'You start with 120 M€. Lower your TR 7 steps.',
-        renderData: CardRenderer.builder((b) => {
-          b.vSpace(Size.LARGE).br;
-          b.megacredits(120, {size: Size.LARGE}).nbsp.nbsp.nbsp;
-          b.minus().tr(7);
-        }),
-      },
+      metadata,
     });
   }
 }
