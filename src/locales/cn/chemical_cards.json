@@ -58,6 +58,46 @@
 
   "Construction Center": "建设中心",
   "Effect: When you play a building card, you pay 2 M€ less for it.": "效果：当你打出带有建筑标志的牌时，支付费用减少2 M€。",
-  "Decrease your energy production 1 step, increase your M€ production 3 steps, and place a city tile.": "降低电力产量1级，提升M€产量3级，并放置一个城市板块。"
+  "Decrease your energy production 1 step, increase your M€ production 3 steps, and place a city tile.": "降低电力产量1级，提升M€产量3级，并放置一个城市板块。",
+
+  "Power Failure": "停电",
+  "Decrease any energy production 1 step.": "使任意一名玩家的电力产量减少1级。",
+
+  "Parasite": "寄生虫",
+  "Add a microbe to ANY card. Remove up to 2 microbes or 1 animal from any player.": "在任意卡牌上添加1个微生物资源。移除任一玩家最多2个微生物资源或1个动物资源。",
+  "There were no microbes or animals to remove from any player.": "没有玩家拥有可移除的微生物或动物资源。",
+
+  "Small Supply Drop": "小型补给投放",
+  "Gain 2 steel and 2 plants.": "获得2点钢铁和2点植物资源。",
+
+  "Nova Foundry": "新星铸造厂",
+  "Effect: Your titanium resources are worth 1 M€ extra.": "效果：你的钛资源价值+1M€。",
+  "Requires 5 science tags. Increase your titanium production 2 steps and your heat production 2 steps.": "需要5个科学标志。提升2点钛产量和2点热量产量。",
+
+  "Kugelblitz Engine": "球状闪电引擎",
+  "Effect: When you play a space card, you pay 3 M€ less for it.": "效果：当你打出一张带有太空标志的卡牌时，其费用减少3 M€。",
+  "Requires 4 power tags. Increase your energy production 4 steps.": "需要4个电力标志。提升4点电力产量。",
+
+  "Galilean Governor": "伽利略总督",
+  "Requires 2 Jovian tags. Increase your M€ production 2 steps.": "需要2个木星标志。提升2点M€产量。",
+
+  "Solar Station": "太阳能站",
+  "Requires 4 science tags. Increase your heat production 1 step and gain 3 heat.": "需要4个科学标志。提升1点热量产量并获得3点热量。",
+
+  "Data Center": "数据中心",
+  "Add 2 data to ANY card and draw 2 cards.": "在任意卡牌上添加2个数据资源并抽2张牌。",
+
+  "Worker Drones": "工蜂无人机",
+  "Add 2 resource to ANY Venus CARD.": "在任意金星牌上添加2个资源。",
+
+  "Kickbacks": "回扣",
+  "Requires that you are chairman. Increase your M€ production 2 steps and gain 3 M€.": "需要你是主席。提升2点M€产量并获得3 M€。",
+
+  "First Martian Memorial": "首位火星人纪念碑",
+  "Requires that you are chairman. Draw a card.": "需要你是主席。抽1张牌。",
+
+  "Martian Research Network": "火星研究网络",
+  "Requires ANY 3 Mars tags in play.": "需要游戏中存在3个火星标志。",
+  "Effect: When you play a card, you pay 1 M€ less for it.": "效果：当你打出一张卡时，少支付1 M€。"
 
 }

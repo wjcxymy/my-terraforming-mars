@@ -677,6 +677,18 @@ export enum CardName {
   POWER_SURGE = 'Power Surge',
   CROWDFUNDING = 'Crowdfunding',
   CONSTRUCTION_CENTER = 'Construction Center',
+  POWER_FAILURE = 'Power Failure',
+  PARASITE = 'Parasite',
+  SMALL_SUPPLY_DROP = 'Small Supply Drop',
+  NOVA_FOUNDRY = 'Nova Foundry',
+  KUGELBLITZ_ENGINE = 'Kugelblitz Engine',
+  GALILEAN_GOVERNOR = 'Galilean Governor',
+  SOLAR_STATION = 'Solar Station',
+  DATA_CENTER = 'Data Center',
+  WORKER_DRONES = 'Worker Drones',
+  KICKBACKS = 'Kickbacks',
+  FIRST_MARTIAN_MEMORIAL = 'First Martian Memorial',
+  MARTIAN_RESEARCH_NETWORK = 'Martian Research Network',
 
   // Chemical corps
 

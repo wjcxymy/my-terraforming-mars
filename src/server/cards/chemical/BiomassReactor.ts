@@ -4,6 +4,7 @@ import {CardType} from '../../../common/cards/CardType';
 import {Tag} from '../../../common/cards/Tag';
 import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
+import {digit} from '../Options';
 
 export class BiomassReactor extends Card implements IProjectCard {
   constructor() {
@@ -27,7 +28,7 @@ export class BiomassReactor extends Card implements IProjectCard {
         description: 'Gain 2 energy.',
         renderData: CardRenderer.builder((b) => {
           b.action('Spend 1 plant to gain 3 energy.', (eb) => {
-            eb.plants(1).startAction.energy(3);
+            eb.plants(1).startAction.energy(3, {digit});
           }).br;
           b.energy(2);
         }),
