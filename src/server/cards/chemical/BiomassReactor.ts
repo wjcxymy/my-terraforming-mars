@@ -1,12 +1,12 @@
 import {IProjectCard} from '../IProjectCard';
-import {Card} from '../Card';
+import {ActionCard} from '../ActionCard';
 import {CardType} from '../../../common/cards/CardType';
 import {Tag} from '../../../common/cards/Tag';
 import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {digit} from '../Options';
 
-export class BiomassReactor extends Card implements IProjectCard {
+export class BiomassReactor extends ActionCard implements IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
