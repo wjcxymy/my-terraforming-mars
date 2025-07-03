@@ -1031,6 +1031,32 @@ export class Player implements IPlayer {
       });
   }
 
+  public playMultipleActionCards(): PlayerInput {
+    const playableCards = this.getPlayableActionCards();
+
+    return new SelectCard<ICard & IActionCard>(
+      'Perform multiple actions from played cards',
+      'Take action',
+      playableCards,
+      {
+        selectBlueCardAction: true,
+        max: playableCards.length,
+        min: 1,
+      },
+    ).andThen((cards) => {
+      for (const card of cards) {
+        this.game.log('${0} used ${1} action', (b) => b.player(this).card(card));
+        const action = card.action(this);
+        this.defer(action);
+        // 过滤掉 GoldenFinger 不加入 actionsThisGeneration
+        if (!(card instanceof GoldenFinger)) {
+          this.actionsThisGeneration.add(card.name);
+        }
+      }
+      return undefined;
+    });
+  }
+
   private playCeoOPGAction(): PlayerInput {
     return new SelectCard<ICeoCard>(
       'Use CEO once per game action',
@@ -1803,6 +1829,11 @@ export class Player implements IPlayer {
     // Action cards
     if (this.getPlayableActionCards().length > 0) {
       action.options.push(this.playActionCard());
+    }
+
+    // Multiple action cards (solo mode only)
+    if (this.getPlayableActionCards().length > 0 && this.game.isSoloMode()) {
+      action.options.push(this.playMultipleActionCards());
     }
 
     // CEO cards
