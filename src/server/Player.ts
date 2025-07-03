@@ -1,6 +1,6 @@
 import * as constants from '../common/constants';
 import {PlayerId} from '../common/Types';
-import {getHeatForTemperature, MILESTONE_COST, REDS_RULING_POLICY_COST} from '../common/constants';
+import {getHeatForTemperature, MAX_OCEAN_TILES, MAX_TEMPERATURE, MAX_VENUS_SCALE, MILESTONE_COST, REDS_RULING_POLICY_COST} from '../common/constants';
 import {cardsFromJSON, ceosFromJSON, corporationCardsFromJSON, newCorporationCard, preludesFromJSON} from './createCard';
 import {CardName} from '../common/cards/CardName';
 import {CardType} from '../common/cards/CardType';
@@ -83,6 +83,7 @@ import {AlliedParty, PolicyId} from '../common/turmoil/Types';
 import {GoldenFinger} from './cards/mingyue/GoldenFinger';
 import {WorldLineVoyager} from './cards/mingyue/WorldLineVoyager';
 import {getWorldLineVoyagerData} from './mingyue/MingYueData';
+import {SelectAmount} from './inputs/SelectAmount';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -1505,8 +1506,75 @@ export class Player implements IPlayer {
       'Standard projects',
       'Confirm',
       standardProjects,
-      {enabled: standardProjects.map((card) => card.canAct(this))})
-      .andThen(([card]) => card.action(this));
+      {enabled: standardProjects.map((card) => card.canAct(this))},
+    ).andThen(([card]) => {
+      // 多次执行只限于以下标准项目
+      const multiExecutable = new Set<CardName>([
+        CardName.ASTEROID_STANDARD_PROJECT,
+        CardName.AIR_SCRAPPING_STANDARD_PROJECT,
+        CardName.AQUIFER_STANDARD_PROJECT,
+        CardName.GREENERY_STANDARD_PROJECT,
+        CardName.BUFFER_GAS_STANDARD_PROJECT,
+        CardName.POWER_PLANT_STANDARD_PROJECT,
+        CardName.CITY_STANDARD_PROJECT,
+      ]);
+      // 如果为solo模式且为可多次执行的标准项目，则询问用户连续执行次数
+      if (this.game.isSoloMode() && multiExecutable.has(card.name) && this.megaCredits > 100) {
+        return new SelectAmount(
+          card.name,
+          '确定',
+          1,
+          100,
+          false,
+        ).andThen((times: number) => this.performMultipleStandardProjectActions(card, times));
+      }
+
+      // 默认执行一次
+      return card.action(this);
+    });
+  }
+
+  private performMultipleStandardProjectActions(card: IStandardProjectCard, times: number) {
+    const game = this.game;
+
+    // 若执行次数非法或不可执行，提前返回
+    if (times <= 0 || !card.canAct(this)) return undefined;
+
+    // 检查是否到达全球参数上限
+    switch (card.name) {
+    case CardName.ASTEROID_STANDARD_PROJECT:
+      if (game.getTemperature() >= MAX_TEMPERATURE) return undefined;
+      break;
+
+    case CardName.AIR_SCRAPPING_STANDARD_PROJECT:
+      if (game.getVenusScaleLevel() >= MAX_VENUS_SCALE) return undefined;
+      break;
+
+    case CardName.AQUIFER_STANDARD_PROJECT:
+      if (game.board.getOceanSpaces().length >= MAX_OCEAN_TILES) return undefined;
+      break;
+
+    case CardName.GREENERY_STANDARD_PROJECT:
+    case CardName.BUFFER_GAS_STANDARD_PROJECT:
+    case CardName.POWER_PLANT_STANDARD_PROJECT:
+    case CardName.CITY_STANDARD_PROJECT:
+      break;
+
+    default:
+      return undefined;
+    }
+
+    // 正常执行一次
+    const result = card.action(this);
+
+    // 执行剩余次数
+    if (times > 1) {
+      game.defer(new SimpleDeferredAction(this, () =>
+        this.performMultipleStandardProjectActions(card, times - 1),
+      ));
+    }
+
+    return result;
   }
 
   private headStartIsInEffect() {
