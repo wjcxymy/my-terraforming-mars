@@ -76,6 +76,17 @@
   "MIDAS_REBALANCED": "MIDAS",
   "Midas Rebalanced": "Midas",
   "MIDAS REBALANCED": "MIDAS",
-  "You start with 100 M€. Lower your TR 4 steps.": "起始获得100 M€，降低4点改造度。"
+  "You start with 100 M€. Lower your TR 4 steps.": "起始获得100 M€，降低4点改造度。",
 
+  "Factorum_Rebalanced": "Factorum",
+  "FACTORUM_REBALANCED": "FACTORUM",
+  "Factorum Rebalanced": "Factorum",
+  "FACTORUM REBALANCED": "FACTORUM",
+  "You start with 37 M€. Increase your steel and energy production 1 step.": "起始获得37 M€，提升1点钢铁和电力产量。",
+  "least": "最少",
+  "most": "最多",
+  "Action: If you have (or are tied for) the least energy resources, Increase your energy production 1 step.": "行动：如果你拥有最少的电力资源（包括并列），提升1点电力产量。",
+  "Action: If you have (or are tied for) the most steel resources, draw a building card.": "行动：如果你拥有最多的钢铁资源（包括并列），抽1张建筑牌。",
+  "Increase your energy production 1 step": "提升1点电力产量",
+  "Draw a building card": "抽一张建筑牌"
 }
