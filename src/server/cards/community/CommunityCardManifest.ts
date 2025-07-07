@@ -20,6 +20,7 @@ import {SpecialDesignProxy} from './SpecialDesignProxy';
 import {TradeAdvance} from './TradeAdvance';
 import {UnitedNationsMissionOne} from './UnitedNationsMissionOne';
 import {ValuableGases} from './ValuableGases';
+import {Aristarchus} from './Aristarchus';
 
 export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
   module: 'community',
@@ -34,6 +35,7 @@ export const COMMUNITY_CARD_MANIFEST = new ModuleManifest({
     [CardName.JUNK_VENTURES]: {Factory: JunkVentures},
     [CardName.ERIS]: {Factory: Eris, compatibility: 'ares'},
     [CardName.ATHENA]: {Factory: Athena, compatibility: 'ares'},
+    [CardName.ARISTARCHUS]: {Factory: Aristarchus},
   },
   preludeCards: {
     [CardName.RESEARCH_GRANT]: {Factory: ResearchGrant},
