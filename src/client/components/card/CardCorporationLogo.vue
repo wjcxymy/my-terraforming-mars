@@ -234,6 +234,8 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.TERACTOR, 'card-teractor-logo'],
   [CardName.MIDAS, 'card-midas-logo'],
   [CardName.MIDAS_REBALANCED, 'card-midas-logo'],
+  [CardName.JUNK_VENTURES, 'card-junk-ventures-logo'],
+  [CardName.ARISTARCHUS, 'card-aristarchus-logo'],
   [CardName.MARS_MATHS, 'card-mars-maths-logo'],
   [CardName.TITHES, 'card-tithes-logo'],
   [CardName.NOOK_CONSTRUCTION, 'card-nook-construction-logo'],
