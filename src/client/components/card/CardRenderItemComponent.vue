@@ -303,7 +303,8 @@ export default Vue.extend({
         return ['my-card-icon', 'card-icon-5-dian'];
       case CardRenderItemType.MY_6_DIAN:
         return ['my-card-icon', 'card-icon-6-dian'];
-
+      case CardRenderItemType.QUICK_ARROW:
+        return ['my-card-icon', 'card-icon-quick-arrow'];
       default:
         return [];
       }

@@ -66,6 +66,14 @@
   "Foresight Technologies": "远见科技",
   "FORESIGHT TECHNOLOGIES": "远见科技",
   "look at": "查看",
-  "Action: Look at the top 10 cards of the deck.": "行动：查看牌堆顶的 10 张牌。"
+  "Action: Look at the top 10 cards of the deck.": "行动：查看牌堆顶的 10 张牌。",
 
+  "Immediate Action Corp": "立即行动公司",
+  "IMMEDIATE ACTION CORP": "立即行动公司",
+  "Effect: When you play a blue card with an action, you may immediately use its action (without spending it)": "效果：当你打出具有行动的蓝卡时，可以立即使用其行动（不消耗次数）",
+  "Effect: When you play a blue card, gain 1 M€.": "效果：当你打出蓝卡时，获得 1 M€。",
+  "${0} used ${1} action (via ${2})": "${0} 执行了 ${1} 行动（来自 ${2} 效果）",
+  "immediately use ${0} action (without spending it)": "立即使用 ${0} 的行动（不消耗次数）",
+  "use": "使用",
+  "skip": "跳过"
 }

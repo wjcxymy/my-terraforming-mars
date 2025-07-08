@@ -639,6 +639,9 @@ abstract class Builder<T> {
   public my6Dian(): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.MY_6_DIAN));
   }
+  public quickArrow(): this {
+    return this._appendToRow(new CardRenderItem(CardRenderItemType.QUICK_ARROW));
+  }
 }
 
 class RootBuilder extends Builder<CardRenderRoot> {

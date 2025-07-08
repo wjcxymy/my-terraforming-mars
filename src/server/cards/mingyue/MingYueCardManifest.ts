@@ -24,6 +24,7 @@ import {MarsMonument} from './MarsMonument';
 import {RainbowPark} from './RainbowPark';
 import {ExpansionOfPopulation} from './ExpansionOfPopulation';
 import {ForesightTechnologies} from './ForesightTechnologies';
+import {ImmediateActionCorp} from './ImmediateActionCorp';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -38,6 +39,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.NOOK_CONSTRUCTION]: {Factory: NookConstruction},
     [CardName.RAINBOW_PARK]: {Factory: RainbowPark},
     [CardName.FORESIGHT_TECHNOLOGIES]: {Factory: ForesightTechnologies},
+    [CardName.IMMEDIATE_ACTION_CORP]: {Factory: ImmediateActionCorp},
   },
   preludeCards: {
   },
