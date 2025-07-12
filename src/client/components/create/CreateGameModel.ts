@@ -63,4 +63,8 @@ export type CreateGameModel = {
   doubleCorpVariant: boolean;
   sevenHeatVariant: boolean;
   undoOption: boolean;
+  selectedDefaultTemplate: string;
+  templateOptions: string[];
+  templateLoading: boolean;
+  templateError: string | null;
 }

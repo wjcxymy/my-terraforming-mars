@@ -8,6 +8,7 @@ export const paths = {
   API_GAME_ROLL_BACK: 'api/gamerollback',
   API_GAMES: 'api/games',
   API_IPS: 'api/ips',
+  API_LIST_TEMPLATES: 'api/list-templates',
   API_METRICS: 'api/metrics',
   API_LOGOUT: 'api/logout',
   API_PLAYER: 'api/player',

@@ -501,6 +501,23 @@
                         </div>
 
                         <div class="create-game-action">
+                            <div style="display: flex; align-items: center; gap: 1em; flex-wrap: wrap;">
+                              <label>
+                                <span v-i18n>选择默认模板：</span>
+                                <select v-model="selectedDefaultTemplate">
+                                  <option disabled value="">-- Select --</option>
+                                  <option v-for="filename in templateOptions" :key="filename" :value="filename">
+                                    {{ filename }}
+                                  </option>
+                                </select>
+                              </label>
+
+                              <AppButton title="使用所选模板" size="big" @click="useSelectedTemplate" />
+                            </div>
+
+                            <!-- Template loading status -->
+                            <div v-if="templateLoading">Loading templates...</div>
+                            <div v-if="templateError" style="color: red;">{{ templateError }}</div>
                             <AppButton title="Create game" size="big" @click="createGame"/>
 
                             <label>
@@ -691,6 +708,10 @@ export default (Vue as WithRefs<Refs>).extend({
       preludeDraftVariant: undefined,
       preludeToggled: false,
       uploading: false,
+      selectedDefaultTemplate: '',
+      templateOptions: [] as string[],
+      templateLoading: true,
+      templateError: null as string | null,
     };
   },
   components: {
@@ -779,130 +800,154 @@ export default (Vue as WithRefs<Refs>).extend({
         a.click();
       }
     },
-    uploadSettings() {
+    uploadSettings(filename?: string) {
+      if (filename) {
+        // 从服务器加载默认模板
+        fetch(`/assets/templates/${filename}.json`)
+          .then((response) => {
+            if (!response.ok) throw new Error('Network response was not ok');
+            return response.text();
+          })
+          .then((text) => {
+            // 模拟 FileReader 的 load 事件
+            const mockEvent = {
+              target: {result: text},
+            } as ProgressEvent<FileReader>;
+            this.handleFileLoad(mockEvent);
+          })
+          .catch((error) => {
+            window.alert('Error loading default template: ' + error);
+          });
+        return;
+      }
+
+      // 原有文件上传逻辑
       const refs: Refs = this.$refs;
       const file = refs.file.files !== null ? refs.file.files[0] : undefined;
       const reader = new FileReader();
-      const component: CreateGameModel = this;
 
-      reader.addEventListener('load', () => {
-        const warnings = [];
-        try {
-          const readerResults = reader.result;
-          if (typeof(readerResults) === 'string') {
-            this.uploading = true;
-            const results = JSON.parse(readerResults);
+      reader.addEventListener('load', this.handleFileLoad.bind(this), false);
 
-            const players = results['players'];
-            const validationErrors = validatePlayers(players);
-            if (validationErrors.length > 0) {
-              throw new Error(validationErrors.join('\n'));
-            }
+      if (file && /\.json$/i.test(file.name)) {
+        reader.readAsText(file);
+      }
+    },
+    // 提取处理 JSON 的逻辑为独立方法
+    handleFileLoad(event: ProgressEvent<FileReader>) {
+      const refs: Refs = this.$refs;
+      const readerResults = event.target?.result;
+      if (typeof readerResults !== 'string') return;
 
-            if (results.corporationsDraft !== undefined) {
-              warnings.push('Corporations draft is no longer available. Future versions might just raise an error, so edit your JSON file.');
-            }
+      const warnings: string[] = [];
+      try {
+        this.uploading = true;
+        const results = JSON.parse(readerResults);
 
-            const customCorporations = results[json_constants.CUSTOM_CORPORATIONS] || results[json_constants.OLD_CUSTOM_CORPORATIONS] || [];
-            const customColonies = results[json_constants.CUSTOM_COLONIES] || results[json_constants.OLD_CUSTOM_COLONIES] || [];
-            const bannedCards = results[json_constants.BANNED_CARDS] || results[json_constants.OLD_BANNED_CARDS] || [];
-            const includedCards = results[json_constants.INCLUDED_CARDS] || [];
-            const customPreludes = results[json_constants.CUSTOM_PRELUDES] || [];
-
-            component.playersCount = players.length;
-            component.showCorporationList = customCorporations.length > 0;
-            component.showColoniesList = customColonies.length > 0;
-            component.showBannedCards = bannedCards.length > 0;
-            component.showIncludedCards = includedCards.length > 0;
-            component.showPreludesList = customPreludes.length > 0;
-
-            const oldFields: Record<Expansion, string> = {
-              corpera: json_constants.CORPORATEERA,
-              promo: json_constants.PROMOCARDSOPTION,
-              venus: json_constants.VENUSNEXT,
-              colonies: json_constants.COLONIES,
-              prelude: json_constants.PRELUDE,
-              prelude2: json_constants.PRELUDE2EXPANSION,
-              turmoil: json_constants.TURMOIL,
-              community: json_constants.COMMUNITYCARDSOPTION,
-              ares: json_constants.ARESEXTENSION,
-              moon: json_constants.MOONEXPANSION,
-              pathfinders: json_constants.PATHFINDERSEXPANSION,
-              ceo: json_constants.CEOEXTENSION,
-              starwars: json_constants.STARWARSEXPANSION,
-              underworld: json_constants.UNDERWORLDEXPANSION,
-              mingyue: json_constants.MINGYUEEXPANSION,
-              rebalanced: json_constants.REBALANCEDEXPANSION,
-              chemical: json_constants.CHEMICALEXPANSION,
-            } as const;
-            for (const expansion of Object.keys(oldFields)) {
-              const x = oldFields[expansion as Expansion];
-              const val = results[x];
-              if (val !== undefined) {
-                component.expansions[expansion as Expansion] = val;
-              }
-            }
-
-
-            // Capture the solar phase option since several of the other results will change
-            // it via the watch mechanism.
-            const capturedSolarPhaseOption = results.solarPhaseOption;
-
-            const specialFields = [
-              json_constants.CUSTOM_CORPORATIONS,
-              json_constants.OLD_CUSTOM_CORPORATIONS,
-              json_constants.CUSTOM_COLONIES,
-              json_constants.OLD_CUSTOM_COLONIES,
-              json_constants.CUSTOM_PRELUDES,
-              json_constants.BANNED_CARDS,
-              json_constants.INCLUDED_CARDS,
-              json_constants.OLD_BANNED_CARDS,
-              ...Object.values(oldFields),
-              'players',
-              'solarPhaseOption',
-              'constants'];
-            for (const k in results) {
-              if (specialFields.includes(k)) continue;
-              if (!Object.prototype.hasOwnProperty.call(component, k)) {
-                warnings.push('Unknown property: ' + k);
-              }
-              // This is safe because of the hasOwnProperty check, above. hasOwnProperty doesn't help with type declarations.
-              (component as any)[k] = results[k];
-            }
-
-            for (let i = 0; i < players.length; i++) {
-              component.players[i] = players[i];
-            }
-
-            Vue.nextTick(() => {
-              try {
-                if (component.showColoniesList) refs.coloniesFilter.updateColoniesByNames(customColonies);
-                if (component.showCorporationList) refs.corporationsFilter.selectedCorporations = customCorporations;
-                if (component.showPreludesList) refs.preludesFilter.updatePreludes(customPreludes);
-                if (component.showBannedCards) refs.cardsFilter.selected = bannedCards;
-                if (component.showIncludedCards) refs.cardsFilter2.selected = includedCards;
-                if (!component.seededGame) component.seed = Math.random();
-                // set to alter after any watched properties
-                component.solarPhaseOption = Boolean(capturedSolarPhaseOption);
-                this.uploading = false;
-              } catch (e) {
-                window.alert('Error reading JSON ' + e);
-              }
-            });
-          }
-          if (warnings.length > 0) {
-            window.alert('Settings loaded, with these warnings: \n' + warnings.join('\n'));
-          } else {
-            window.alert('Settings loaded.');
-          }
-        } catch (e) {
-          window.alert('Error loading settings ' + e);
+        const players = results['players'];
+        const validationErrors = validatePlayers(players);
+        if (validationErrors.length > 0) {
+          throw new Error(validationErrors.join('\n'));
         }
-      }, false);
-      if (file) {
-        if (/\.json$/i.test(file.name)) {
-          reader.readAsText(file);
+
+        if (results.corporationsDraft !== undefined) {
+          warnings.push('Corporations draft is no longer available. Future versions might just raise an error, so edit your JSON file.');
         }
+
+        const customCorporations = results[json_constants.CUSTOM_CORPORATIONS] || results[json_constants.OLD_CUSTOM_CORPORATIONS] || [];
+        const customColonies = results[json_constants.CUSTOM_COLONIES] || results[json_constants.OLD_CUSTOM_COLONIES] || [];
+        const bannedCards = results[json_constants.BANNED_CARDS] || results[json_constants.OLD_BANNED_CARDS] || [];
+        const includedCards = results[json_constants.INCLUDED_CARDS] || [];
+        const customPreludes = results[json_constants.CUSTOM_PRELUDES] || [];
+
+        this.playersCount = players.length;
+        this.showCorporationList = customCorporations.length > 0;
+        this.showColoniesList = customColonies.length > 0;
+        this.showBannedCards = bannedCards.length > 0;
+        this.showIncludedCards = includedCards.length > 0;
+        this.showPreludesList = customPreludes.length > 0;
+
+        const oldFields: Record<Expansion, string> = {
+          corpera: json_constants.CORPORATEERA,
+          promo: json_constants.PROMOCARDSOPTION,
+          venus: json_constants.VENUSNEXT,
+          colonies: json_constants.COLONIES,
+          prelude: json_constants.PRELUDE,
+          prelude2: json_constants.PRELUDE2EXPANSION,
+          turmoil: json_constants.TURMOIL,
+          community: json_constants.COMMUNITYCARDSOPTION,
+          ares: json_constants.ARESEXTENSION,
+          moon: json_constants.MOONEXPANSION,
+          pathfinders: json_constants.PATHFINDERSEXPANSION,
+          ceo: json_constants.CEOEXTENSION,
+          starwars: json_constants.STARWARSEXPANSION,
+          underworld: json_constants.UNDERWORLDEXPANSION,
+          mingyue: json_constants.MINGYUEEXPANSION,
+          rebalanced: json_constants.REBALANCEDEXPANSION,
+          chemical: json_constants.CHEMICALEXPANSION,
+        } as const;
+        for (const expansion of Object.keys(oldFields)) {
+          const x = oldFields[expansion as Expansion];
+          const val = results[x];
+          if (val !== undefined) {
+            this.expansions[expansion as Expansion] = val;
+          }
+        }
+
+        // Capture the solar phase option since several of the other results will change
+        // it via the watch mechanism.
+        const capturedSolarPhaseOption = results.solarPhaseOption;
+
+        const specialFields = [
+          json_constants.CUSTOM_CORPORATIONS,
+          json_constants.OLD_CUSTOM_CORPORATIONS,
+          json_constants.CUSTOM_COLONIES,
+          json_constants.OLD_CUSTOM_COLONIES,
+          json_constants.CUSTOM_PRELUDES,
+          json_constants.BANNED_CARDS,
+          json_constants.INCLUDED_CARDS,
+          json_constants.OLD_BANNED_CARDS,
+          ...Object.values(oldFields),
+          'players',
+          'solarPhaseOption',
+          'constants',
+        ];
+
+        for (const k in results) {
+          if (specialFields.includes(k)) continue;
+          if (!Object.prototype.hasOwnProperty.call(this, k)) {
+            warnings.push('Unknown property: ' + k);
+          }
+          // This is safe because of the hasOwnProperty check, above. hasOwnProperty doesn't help with type declarations.
+          (this as any)[k] = results[k];
+        }
+
+        for (let i = 0; i < players.length; i++) {
+          this.players[i] = players[i];
+        }
+
+        Vue.nextTick(() => {
+          try {
+            if (this.showColoniesList) refs.coloniesFilter.updateColoniesByNames(customColonies);
+            if (this.showCorporationList) refs.corporationsFilter.selectedCorporations = customCorporations;
+            if (this.showPreludesList) refs.preludesFilter.updatePreludes(customPreludes);
+            if (this.showBannedCards) refs.cardsFilter.selected = bannedCards;
+            if (this.showIncludedCards) refs.cardsFilter2.selected = includedCards;
+            if (!this.seededGame) this.seed = Math.random();
+            // set to alter after any watched properties
+            this.solarPhaseOption = Boolean(capturedSolarPhaseOption);
+            this.uploading = false;
+          } catch (e) {
+            window.alert('Error reading JSON ' + e);
+          }
+        });
+
+        if (warnings.length > 0) {
+          window.alert('Settings loaded, with these warnings: \n' + warnings.join('\n'));
+        } else {
+          window.alert('Settings loaded.');
+        }
+      } catch (e) {
+        window.alert('Error loading settings ' + e);
       }
     },
     getPlayerNamePlaceholder(index: number): string {
@@ -1357,6 +1402,33 @@ export default (Vue as WithRefs<Refs>).extend({
           alert(error.message);
         });
     },
+    useSelectedTemplate() {
+      const filename = this.selectedDefaultTemplate;
+      if (filename) {
+        this.uploadSettings(filename);
+      } else {
+        window.alert('请先选择一个模板');
+      }
+    },
+    async fetchTemplateList() {
+      try {
+        const response = await fetch('/api/list-templates');
+        const data = await response.json();
+
+        if (Array.isArray(data.templates)) {
+          this.templateOptions = data.templates;
+        } else {
+          this.templateError = 'Invalid template list format';
+        }
+      } catch (err) {
+        this.templateError = 'Failed to load templates';
+      } finally {
+        this.templateLoading = false;
+      }
+    },
+  },
+  mounted() {
+    this.fetchTemplateList();
   },
 });
 
