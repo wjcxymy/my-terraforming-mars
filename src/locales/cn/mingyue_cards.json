@@ -67,6 +67,14 @@
   "Requires that you have at least 35 TR. Place the Mars Monument tile — a silent monument to humanity’s dream of Terraforming Mars.": "需要你至少有35点TR。放置火星丰碑板块，献给人类地球化火星梦想的无声纪念。",
 
   "Expansion Of Population": "种群扩张",
-  "Spend 3 plants to add 3 animals to ANY card.": "消耗3个植物，将3个动物添加到任意一张卡牌上。"
+  "Spend 3 plants to add 3 animals to ANY card.": "消耗3个植物，将3个动物添加到任意一张卡牌上。",
 
+  "Slum": "贫民窟",
+  "Decrease your energy production 1 step. Place a city tile ADJACENT TO AT LEAST 1 OTHER CITY TILE.": "降低电力产量1级，将城市板块放置在至少邻接1座城市的位置。",
+
+  "Overtime": "加班",
+  "Take another two actions this turn.": "本回合额外执行两次行动。",
+
+  "Poachers": "偷猎者",
+  "Move 1 resource from any card to another card with the same resource type that already has resources.": "将任意卡牌上的1个资源转移至另一张具有相同资源类型且已有资源的卡牌。"
 }
