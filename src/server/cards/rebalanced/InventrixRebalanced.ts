@@ -8,7 +8,7 @@ import {RequirementType} from '../../../common/cards/RequirementType';
 import {requirementType} from '../../../common/cards/CardRequirementDescriptor';
 import {Size} from '../../../common/cards/render/Size';
 
-const GLOBAL_REQUIREMENT_MODIFIER = 2;
+const GLOBAL_REQUIREMENT_MODIFIER = 3;
 
 const stepValues = {
   venus: 2,
@@ -38,8 +38,8 @@ export class InventrixRebalanced extends Inventrix {
           b.megacredits(45).nbsp.cards(3);
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.LARGE);
-            ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +2 or -2 steps, your choice in each case.', (eb) => {
-              eb.plate('Global requirements').startEffect.text('+/- 2');
+            ce.effect('Your temperature, oxygen, ocean, and Venus requirements are +3 or -3 steps, your choice in each case.', (eb) => {
+              eb.plate('Global requirements').startEffect.text('+/- 3');
             });
             ce.effect('When you use the global requirement modifier to play a card, gain 3 M€.', (eb) => {
               eb.cards(1).plate('Global requirements').asterix().startEffect.megacredits(3);
