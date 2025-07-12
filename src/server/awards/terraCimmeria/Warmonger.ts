@@ -79,6 +79,8 @@ export class Warmonger implements IAward {
     // Prelude 2
     CardName.RECESSION,
     CardName.SPECIAL_PERMIT,
+    // MingYue
+    CardName.POACHERS,
     // Chemical
     CardName.POWER_FAILURE,
     CardName.PARASITE,

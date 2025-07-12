@@ -618,6 +618,9 @@ export enum CardName {
   MICROBIAL_REACTOR = 'Microbial Reactor',
   MARS_MONUMENT = 'Mars Monument',
   EXPANSION_OF_POPULATION = 'Expansion Of Population',
+  SLUM = 'Slum',
+  OVERTIME = 'Overtime',
+  POACHERS = 'Poachers',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',

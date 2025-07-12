@@ -25,6 +25,9 @@ import {RainbowPark} from './RainbowPark';
 import {ExpansionOfPopulation} from './ExpansionOfPopulation';
 import {ForesightTechnologies} from './ForesightTechnologies';
 import {ImmediateActionCorp} from './ImmediateActionCorp';
+import {Slum} from './Slum';
+import {Overtime} from './Overtime';
+import {Poachers} from './Poachers';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -58,6 +61,9 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.MARS_MONUMENT]: {Factory: MarsMonument},
     [CardName.EXPANSION_OF_POPULATION]: {Factory: ExpansionOfPopulation},
     [CardName.GAMBLING_DISTRICT_LAS_VEGAS]: {Factory: GamblingDistrictLasVegas, compatibility: 'ares'},
+    [CardName.SLUM]: {Factory: Slum},
+    [CardName.OVERTIME]: {Factory: Overtime},
+    [CardName.POACHERS]: {Factory: Poachers},
   },
   globalEvents: {
   },
