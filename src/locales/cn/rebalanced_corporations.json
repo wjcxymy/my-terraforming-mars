@@ -66,6 +66,7 @@
   "INVENTRIX_REBALANCED": "INVENTRIX",
   "Inventrix Rebalanced": "Inventrix",
   "INVENTRIX REBALANCED": "INVENTRIX",
+  "Effect: Your temperature, oxygen, ocean, and Venus requirements are +3 or -3 steps, your choice in each case.": "效果：你打牌时的 温度/氧气/海洋/金星 要求 +3级或-3级。",
   "Effect: When you use the global requirement modifier to play a card, gain 3 M€.": "效果：当你使用全球参数修正来打出一张牌时，获得 3 M€。",
   "${0} gained 3 M€ from ${1} effect. Parameter: venus, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：金星，当前值：${2}，需求值：${3}。",
   "${0} gained 3 M€ from ${1} effect. Parameter: oxygen, Current: ${2}, Required: ${3}.": "${0} 通过 ${1} 效果获得了 3 M€。参数：氧气，当前值：${2}，需求值：${3}。",
