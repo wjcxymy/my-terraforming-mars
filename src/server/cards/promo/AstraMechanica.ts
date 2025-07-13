@@ -7,7 +7,7 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {SelectCard} from '../../inputs/SelectCard';
 import {isSpecialTile} from '../../boards/Board';
-import {TrisynInstitute} from '../mingyue/TrisynInstitute';
+import {TrisynInstitute} from '../mingyue/corporations/TrisynInstitute';
 
 export class AstraMechanica extends Card implements IProjectCard {
   constructor() {

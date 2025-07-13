@@ -1,15 +1,15 @@
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {IActionCard, ICard, isIActionCard, isIHasCheckLoops} from '../ICard';
-import {IPlayer} from '../../IPlayer';
-import {SelectCard} from '../../inputs/SelectCard';
-import {OrOptions} from '../../inputs/OrOptions';
-import {SelectOption} from '../../inputs/SelectOption';
-import {SelectAmount} from '../../inputs/SelectAmount';
-import {ChooseCards} from '../../deferredActions/ChooseCards';
-import {GainResources} from '../../inputs/GainResources';
-import {Size} from '../../../common/cards/render/Size';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {IActionCard, ICard, isIActionCard, isIHasCheckLoops} from '../../ICard';
+import {IPlayer} from '../../../IPlayer';
+import {SelectCard} from '../../../inputs/SelectCard';
+import {OrOptions} from '../../../inputs/OrOptions';
+import {SelectOption} from '../../../inputs/SelectOption';
+import {SelectAmount} from '../../../inputs/SelectAmount';
+import {ChooseCards} from '../../../deferredActions/ChooseCards';
+import {GainResources} from '../../../inputs/GainResources';
+import {Size} from '../../../../common/cards/render/Size';
 
 export class GoldenFinger extends CorporationCard {
   constructor() {

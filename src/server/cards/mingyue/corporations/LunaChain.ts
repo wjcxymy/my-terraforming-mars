@@ -1,12 +1,12 @@
-import {Tag} from '../../../common/cards/Tag';
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {CardType} from '../../../common/cards/CardType';
-import {ICard} from '../ICard';
-import {IPlayer} from '../../IPlayer';
-import {Payment} from '../../../common/inputs/Payment';
-import {getLunaChainData} from '../../mingyue/MingYueData';
+import {Tag} from '../../../../common/cards/Tag';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {CardType} from '../../../../common/cards/CardType';
+import {ICard} from '../../ICard';
+import {IPlayer} from '../../../IPlayer';
+import {Payment} from '../../../../common/inputs/Payment';
+import {getLunaChainData} from '../../../mingyue/MingYueData';
 
 export class LunaChain extends CorporationCard {
   constructor() {

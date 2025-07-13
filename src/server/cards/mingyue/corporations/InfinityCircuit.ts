@@ -1,11 +1,11 @@
-import {Tag} from '../../../common/cards/Tag';
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {Size} from '../../../common/cards/render/Size';
-import {digit} from '../Options';
-import {IPlayer} from '../../../server/IPlayer';
-import {Resource} from '../../../common/Resource';
+import {Tag} from '../../../../common/cards/Tag';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {Size} from '../../../../common/cards/render/Size';
+import {digit} from '../../Options';
+import {IPlayer} from '../../../IPlayer';
+import {Resource} from '../../../../common/Resource';
 
 // 无限回路转换比例
 const PLANTS_TO_ENERGY_THRESHOLD = 3;

@@ -1,10 +1,10 @@
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {Tag} from '../../../common/cards/Tag';
-import {CardRenderer} from '../render/CardRenderer';
-import {IPlayer} from '../../IPlayer';
-import {ResourceTypeRequirement} from '../../../server/cards/requirements/ResourceTypeRequirement';
-import {Resource} from '../../../common/Resource';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {Tag} from '../../../../common/cards/Tag';
+import {CardRenderer} from '../../render/CardRenderer';
+import {IPlayer} from '../../../IPlayer';
+import {ResourceTypeRequirement} from '../../../../server/cards/requirements/ResourceTypeRequirement';
+import {Resource} from '../../../../common/Resource';
 
 export class RainbowPark extends CorporationCard {
   constructor() {

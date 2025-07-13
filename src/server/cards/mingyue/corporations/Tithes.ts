@@ -1,11 +1,11 @@
-import {Tag} from '../../../common/cards/Tag';
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {IPlayer} from '../../IPlayer';
-import {all} from '../Options';
-import {Resource} from '../../../common/Resource';
-import {Size} from '../../../common/cards/render/Size';
+import {Tag} from '../../../../common/cards/Tag';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {IPlayer} from '../../../IPlayer';
+import {all} from '../../Options';
+import {Resource} from '../../../../common/Resource';
+import {Size} from '../../../../common/cards/render/Size';
 
 export class Tithes extends CorporationCard {
   constructor() {

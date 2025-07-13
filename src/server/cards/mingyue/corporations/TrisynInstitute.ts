@@ -1,15 +1,15 @@
-import {Tag} from '../../../common/cards/Tag';
-import {IPlayer} from '../../IPlayer';
-import {CorporationCard} from '../corporation/CorporationCard';
-import {ICard} from '../ICard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {CardType} from '../../../common/cards/CardType';
-import {Size} from '../../../common/cards/render/Size';
-import {SelectCard} from '../../inputs/SelectCard';
-import {PlayerInput} from '../../../server/PlayerInput';
-import {LogHelper} from '../../../server/LogHelper';
-import {getTrisynInstituteData} from '../../../server/mingyue/MingYueData';
+import {Tag} from '../../../../common/cards/Tag';
+import {IPlayer} from '../../../IPlayer';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {ICard} from '../../ICard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {CardType} from '../../../../common/cards/CardType';
+import {Size} from '../../../../common/cards/render/Size';
+import {SelectCard} from '../../../inputs/SelectCard';
+import {PlayerInput} from '../../../PlayerInput';
+import {LogHelper} from '../../../LogHelper';
+import {getTrisynInstituteData} from '../../../mingyue/MingYueData';
 
 export class TrisynInstitute extends CorporationCard {
   constructor() {
