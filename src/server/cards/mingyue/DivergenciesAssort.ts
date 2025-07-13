@@ -3,13 +3,13 @@ import {CardType} from '../../../common/cards/CardType';
 import {IProjectCard} from '../IProjectCard';
 import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
-import {Card} from '../Card';
+import {ActionCard} from '../ActionCard';
 import {IPlayer} from '../../../server/IPlayer';
 import {SelectCard} from '../../../server/inputs/SelectCard';
 import {DrawCards} from '../../../server/deferredActions/DrawCards';
 import {all} from '../Options';
 
-export class DivergenciesAssort extends Card implements IProjectCard {
+export class DivergenciesAssort extends ActionCard implements IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
@@ -18,6 +18,8 @@ export class DivergenciesAssort extends Card implements IProjectCard {
       cost: 12,
       victoryPoints: 1,
       requirements: {tag: Tag.SCIENCE, count: 2},
+
+      action: {},
 
       metadata: {
         cardNumber: 'MY10',
@@ -37,11 +39,11 @@ export class DivergenciesAssort extends Card implements IProjectCard {
     });
   }
 
-  public canAct(player: IPlayer): boolean {
+  public override bespokeCanAct(player: IPlayer): boolean {
     return player.game.projectDeck.canDraw(2);
   }
 
-  public action(player: IPlayer) {
+  public override bespokeAction(player: IPlayer) {
     const game = player.game;
     const cards = game.projectDeck.drawNOrThrow(game, 2);
 
