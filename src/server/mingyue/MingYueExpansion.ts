@@ -17,6 +17,10 @@ export class MingYueExpansion {
       trisynInstitute: {
         lastSetCount: 0,
       },
+      asteroidMaterialResearchCenter: {
+        counterGeneration: -1,
+        refreshCounter: {},
+      },
     };
   }
 }
