@@ -7,6 +7,7 @@ import {Size} from '../../../common/cards/render/Size';
 import {CorporationCard} from '../corporation/CorporationCard';
 import {IActionCard} from '../ICard';
 import {SelectCard} from '../../../server/inputs/SelectCard';
+import {Payment} from '../../../common/inputs/Payment';
 
 export class OdysseyRebalanced extends CorporationCard implements IActionCard {
   constructor() {
@@ -72,7 +73,7 @@ export class OdysseyRebalanced extends CorporationCard implements IActionCard {
       .andThen((cards) => {
         const card = cards[0];
         player.removedFromPlayCards.push(card);
-        player.playCard(card, undefined, 'discard');
+        player.playCard(card, Payment.EMPTY, 'discard');
         return undefined;
       });
   }
