@@ -1,6 +1,4 @@
 import {IProjectCard} from '../IProjectCard';
-import {IActionCard} from '../ICard';
-import {Card} from '../Card';
 import {CardType} from '../../../common/cards/CardType';
 import {Tag} from '../../../common/cards/Tag';
 import {CardName} from '../../../common/cards/CardName';
@@ -9,8 +7,9 @@ import {CardRenderer} from '../render/CardRenderer';
 import {IPlayer} from '../../IPlayer';
 import {Resource} from '../../../common/Resource';
 import {Size} from '../../../common/cards/render/Size';
+import {ActionCard} from '../ActionCard';
 
-export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IActionCard {
+export class InfiniteMonkeyTheorem extends ActionCard implements IProjectCard {
   // 存储所有曾经展示的牌
   public targetCards: IProjectCard[] = [];
 
@@ -22,6 +21,9 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
       type: CardType.ACTIVE,
       resourceType: CardResource.MONKEY,
       victoryPoints: 1,
+
+      action: {},
+
       metadata: {
         cardNumber: 'MY05',
         renderData: CardRenderer.builder((b) => {
@@ -41,11 +43,11 @@ export class InfiniteMonkeyTheorem extends Card implements IProjectCard, IAction
     });
   }
 
-  public canAct(player: IPlayer): boolean {
+  public override bespokeCanAct(player: IPlayer): boolean {
     return player.game.projectDeck.canDraw(1);
   }
 
-  public action(player: IPlayer) {
+  public override bespokeAction(player: IPlayer) {
     const topCard = player.game.projectDeck.drawOrThrow(player.game);
     if (!topCard) return;
 

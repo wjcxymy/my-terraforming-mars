@@ -1,17 +1,16 @@
 import {IProjectCard} from '../IProjectCard';
 import {IPlayer} from '../../IPlayer';
-import {Card} from '../Card';
 import {CardType} from '../../../common/cards/CardType';
 import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
-import {IActionCard} from '../ICard';
 import {Resource} from '../../../common/Resource';
 import {Tag} from '../../../common/cards/Tag';
 import {CardResource} from '../../../common/CardResource';
 import {SelectAmount} from '../../inputs/SelectAmount';
 import {digit} from '../Options';
+import {ActionCard} from '../ActionCard';
 
-export class MoonlitWarren extends Card implements IProjectCard, IActionCard {
+export class MoonlitWarren extends ActionCard implements IProjectCard {
   constructor() {
     super({
       type: CardType.ACTIVE,
@@ -24,6 +23,8 @@ export class MoonlitWarren extends Card implements IProjectCard, IActionCard {
       behavior: {
         addResources: 2,
       },
+
+      action: {},
 
       metadata: {
         cardNumber: 'MY11',
@@ -42,13 +43,13 @@ export class MoonlitWarren extends Card implements IProjectCard, IActionCard {
     });
   }
 
-  public canAct(player: IPlayer): boolean {
+  public override bespokeCanAct(player: IPlayer): boolean {
     const animals = this.resourceCount;
     const maxSpend = Math.floor(animals / 2);
     return maxSpend > 0 && player.plants > 0;
   }
 
-  public action(player: IPlayer) {
+  public override bespokeAction(player: IPlayer) {
     const animals = this.resourceCount;
     const maxSpend = Math.min(Math.floor(animals / 2), player.plants);
 
