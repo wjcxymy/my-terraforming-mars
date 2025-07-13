@@ -2,6 +2,7 @@ import {Behavior} from '../behavior/Behavior';
 import {IPlayer} from '../IPlayer';
 import {Card, StaticCardProperties} from './Card';
 import {getBehaviorExecutor} from '../behavior/BehaviorExecutor';
+import {PlayerInput} from '../PlayerInput';
 
 // Same as StaticCardProperties, but action is expected.
 export interface StaticActionCardProperties extends StaticCardProperties {
@@ -27,7 +28,7 @@ export abstract class ActionCard extends Card {
     return this.bespokeCanAct(player);
   }
 
-  public action(player: IPlayer) {
+  public action(player: IPlayer): PlayerInput | undefined {
     if (this.properties.action === undefined) {
       throw new Error('action not defined');
     }
@@ -39,7 +40,7 @@ export abstract class ActionCard extends Card {
     return true;
   }
 
-  public bespokeAction(_player: IPlayer) {
+  public bespokeAction(_player: IPlayer): PlayerInput | undefined {
     return undefined;
   }
 }
