@@ -1,14 +1,14 @@
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardType} from '../../../common/cards/CardType';
-import {CardRenderer} from '../render/CardRenderer';
-import {ICard, isIActionCard} from '../ICard';
-import {IPlayer} from '../../IPlayer';
-import {OrOptions} from '../../../server/inputs/OrOptions';
-import {SelectOption} from '../../../server/inputs/SelectOption';
-import {AltSecondaryTag} from '../../../common/cards/render/AltSecondaryTag';
-import {Resource} from '../../../common/Resource';
-import {Size} from '../../../common/cards/render/Size';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardType} from '../../../../common/cards/CardType';
+import {CardRenderer} from '../../render/CardRenderer';
+import {ICard, isIActionCard} from '../../ICard';
+import {IPlayer} from '../../../IPlayer';
+import {OrOptions} from '../../../inputs/OrOptions';
+import {SelectOption} from '../../../inputs/SelectOption';
+import {AltSecondaryTag} from '../../../../common/cards/render/AltSecondaryTag';
+import {Resource} from '../../../../common/Resource';
+import {Size} from '../../../../common/cards/render/Size';
 
 export class ImmediateActionCorp extends CorporationCard {
   constructor() {

@@ -1,9 +1,9 @@
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {Tag} from '../../../common/cards/Tag';
-import {CardRenderer} from '../render/CardRenderer';
-import {IPlayer} from '../../IPlayer';
-import {LogHelper} from '../../LogHelper';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {Tag} from '../../../../common/cards/Tag';
+import {CardRenderer} from '../../render/CardRenderer';
+import {IPlayer} from '../../../IPlayer';
+import {LogHelper} from '../../../LogHelper';
 
 const LOOK_COUNT = 10;
 

@@ -80,8 +80,8 @@ import {newStandardDraft} from './Draft';
 import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
 import {AlliedParty, PolicyId} from '../common/turmoil/Types';
-import {GoldenFinger} from './cards/mingyue/GoldenFinger';
-import {WorldLineVoyager} from './cards/mingyue/WorldLineVoyager';
+import {GoldenFinger} from './cards/mingyue/corporations/GoldenFinger';
+import {WorldLineVoyager} from './cards/mingyue/corporations/WorldLineVoyager';
 import {getWorldLineVoyagerData} from './mingyue/MingYueData';
 import {SelectAmount} from './inputs/SelectAmount';
 

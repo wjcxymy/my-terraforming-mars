@@ -11,8 +11,8 @@ import {IColony} from '../colonies/IColony';
 import {CardName} from '../../common/cards/CardName';
 import {Tag} from '../../common/cards/Tag';
 import {asArray} from '../../common/utils/utils';
-import {LunaChain} from '../cards/mingyue/LunaChain';
-import {WorldLineVoyager} from '../cards/mingyue/WorldLineVoyager';
+import {LunaChain} from '../cards/mingyue/corporations/LunaChain';
+import {WorldLineVoyager} from '../cards/mingyue/corporations/WorldLineVoyager';
 
 export function cardsToModel(
   player: IPlayer,

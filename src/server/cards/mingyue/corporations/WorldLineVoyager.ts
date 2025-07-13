@@ -1,10 +1,10 @@
-import {Tag} from '../../../common/cards/Tag';
-import {CorporationCard} from '../corporation/CorporationCard';
-import {CardName} from '../../../common/cards/CardName';
-import {CardRenderer} from '../render/CardRenderer';
-import {IPlayer} from '../../IPlayer';
-import {Size} from '../../../common/cards/render/Size';
-import {getWorldLineVoyagerData} from '../../../server/mingyue/MingYueData';
+import {Tag} from '../../../../common/cards/Tag';
+import {CorporationCard} from '../../corporation/CorporationCard';
+import {CardName} from '../../../../common/cards/CardName';
+import {CardRenderer} from '../../render/CardRenderer';
+import {IPlayer} from '../../../IPlayer';
+import {Size} from '../../../../common/cards/render/Size';
+import {getWorldLineVoyagerData} from '../../../mingyue/MingYueData';
 
 export class WorldLineVoyager extends CorporationCard {
   constructor() {
