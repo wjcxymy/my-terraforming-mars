@@ -13,6 +13,10 @@ export interface MingYueData {
   trisynInstitute?: {
     lastSetCount: number;
   };
+  asteroidMaterialResearchCenter?: {
+    counterGeneration: number;
+    refreshCounter: {[cardName: string]: number};
+  };
 }
 
 export namespace MingYueData {
@@ -36,6 +40,12 @@ export namespace MingYueData {
           lastSetCount: data.trisynInstitute.lastSetCount,
         },
       }),
+      ...(data.asteroidMaterialResearchCenter !== undefined && {
+        asteroidMaterialResearchCenter: {
+          counterGeneration: data.asteroidMaterialResearchCenter.counterGeneration,
+          refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter,
+        },
+      }),
     };
   }
 
@@ -54,6 +64,11 @@ export namespace MingYueData {
       trisynInstitute: data.trisynInstitute ?
         {
           lastSetCount: data.trisynInstitute.lastSetCount ?? 0,
+        } : undefined,
+      asteroidMaterialResearchCenter: data.asteroidMaterialResearchCenter ?
+        {
+          counterGeneration: data.asteroidMaterialResearchCenter.counterGeneration ?? -1,
+          refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter ?? {},
         } : undefined,
     };
   }
@@ -83,4 +98,13 @@ export function getTrisynInstituteData(game: IGame) {
     lastSetCount: 0,
   };
   return game.mingyueData.trisynInstitute;
+}
+
+export function getAsteroidMaterialResearchCenterData(game: IGame) {
+  game.mingyueData ??= {};
+  game.mingyueData.asteroidMaterialResearchCenter ??= {
+    counterGeneration: -1,
+    refreshCounter: {},
+  };
+  return game.mingyueData.asteroidMaterialResearchCenter;
 }

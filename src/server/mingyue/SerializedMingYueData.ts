@@ -10,4 +10,8 @@ export interface SerializedMingYueData {
   trisynInstitute?: {
     lastSetCount: number;
   };
+  asteroidMaterialResearchCenter?: {
+    counterGeneration?: number;
+    refreshCounter?: { [cardName: string]: number };
+  };
 }
