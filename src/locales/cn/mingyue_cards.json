@@ -76,5 +76,5 @@
   "Take another two actions this turn.": "本回合额外执行两次行动。",
 
   "Poachers": "偷猎者",
-  "Move 1 resource from any card to another card with the same resource type that already has resources.": "将任意卡牌上的1个资源转移至另一张具有相同资源类型且已有资源的卡牌。"
+  "Move 1 resource from any card to another card with the same resource type.": "将任意卡牌上的1个资源转移至另一张具有相同资源类型的卡牌。"
 }
