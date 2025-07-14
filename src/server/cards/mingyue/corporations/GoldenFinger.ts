@@ -10,6 +10,8 @@ import {SelectAmount} from '../../../inputs/SelectAmount';
 import {ChooseCards} from '../../../deferredActions/ChooseCards';
 import {GainResources} from '../../../inputs/GainResources';
 import {Size} from '../../../../common/cards/render/Size';
+import {Payment} from '../../../../common/inputs/Payment';
+import {message} from '../../../../server/logs/MessageBuilder';
 
 export class GoldenFinger extends CorporationCard {
   constructor() {
@@ -106,12 +108,57 @@ export class GoldenFinger extends CorporationCard {
       });
     });
 
+    // 行动 6：展示牌堆顶所有牌，保留 x 张
+    const revealDeckAll = new SelectOption('展示牌堆顶所有牌，保留 x 张', 'Reveal').andThen(() => {
+      return new SelectAmount('输入要保留的牌数', '确定', 1, 1000, false).andThen((amount) => {
+        player.drawCardKeepSome(1000, {keepMax: amount});
+        return undefined;
+      });
+    });
+
+    // 行动 7：从手牌中无视所有条件免费打出一张牌
+    const playCard = new SelectOption('从手牌中无视所有条件免费打出一张牌', 'play Card').andThen(() => {
+      return new SelectCard('从手牌中无视所有条件免费打出一张牌', '打出', player.cardsInHand, {min: 1, max: 1, played: false})
+        .andThen((cards) => {
+          const card = cards[0];
+          player.playCard(card, Payment.EMPTY, 'add');
+          return undefined;
+        });
+    });
+
+    // 行动 8：从手牌中选一张交给其他玩家
+    const giveCardToOpponent = new SelectOption('从手牌中选一张交给其他玩家', 'Give Card').andThen(() => {
+      if (player.getOpponents().length === 0 || player.cardsInHand.length === 0) {
+        return undefined;
+      }
+      return new SelectCard('选择一张手牌', '选择', player.cardsInHand, {min: 1, max: 1, played: false})
+        .andThen((cards) => {
+          const card = cards[0];
+          const options = new OrOptions();
+          player.getOpponents().forEach((opponent) => {
+            options.options.push(
+              new SelectOption(message('Give ${0} to ${1}', (b) => b.card(card).player(opponent)))
+                .andThen(() => {
+                  player.cardsInHand = player.cardsInHand.filter((c) => c !== card);
+                  opponent.cardsInHand.push(card);
+                  player.game.log('${0} gave ${1} to ${2}', (b) => b.player(player).card(card).player(opponent));
+                  return undefined;
+                }),
+            );
+          });
+          return options;
+        });
+    });
+
     return new OrOptions(
       useBlueCard,
+      playCard,
       revealDeck,
+      revealDeckAll,
       revealDiscardPile,
       drawCards,
       gainResource,
+      giveCardToOpponent,
     );
   }
 }
