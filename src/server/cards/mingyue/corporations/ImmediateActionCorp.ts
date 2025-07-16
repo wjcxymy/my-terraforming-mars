@@ -2,13 +2,16 @@ import {CorporationCard} from '../../corporation/CorporationCard';
 import {CardName} from '../../../../common/cards/CardName';
 import {CardType} from '../../../../common/cards/CardType';
 import {CardRenderer} from '../../render/CardRenderer';
-import {ICard, isIActionCard} from '../../ICard';
+import {IActionCard, ICard, isIActionCard} from '../../ICard';
 import {IPlayer} from '../../../IPlayer';
 import {OrOptions} from '../../../inputs/OrOptions';
 import {SelectOption} from '../../../inputs/SelectOption';
 import {AltSecondaryTag} from '../../../../common/cards/render/AltSecondaryTag';
 import {Resource} from '../../../../common/Resource';
 import {Size} from '../../../../common/cards/render/Size';
+import {DeferredAction} from '../../../../server/deferredActions/DeferredAction';
+import {Priority} from '../../../../server/deferredActions/Priority';
+import {message} from '../../../../server/logs/MessageBuilder';
 
 export class ImmediateActionCorp extends CorporationCard {
   constructor() {
@@ -42,43 +45,47 @@ export class ImmediateActionCorp extends CorporationCard {
   }
 
   public onCardPlayed(player: IPlayer, card: ICard) {
-    if (!player.isCorporation(this.name)) {
-      // player.game.log('【调试】onCardPlayed: 不是本公司，跳过');
-      return;
-    }
-
-    if (card.type !== CardType.ACTIVE) {
-      // player.game.log(`【调试】onCardPlayed: ${card.name} 不是蓝卡，跳过`);
-      return;
-    }
+    if (!player.isCorporation(this.name)) return;
+    if (card.type !== CardType.ACTIVE) return;
 
     player.stock.add(Resource.MEGACREDITS, 1, {log: true});
 
-    if (!isIActionCard(card)) {
-      player.game.log(`【调试】onCardPlayed: ${card.name} 没有行动，跳过`);
-      return;
-    }
+    if (!isIActionCard(card)) return;
 
-    if (!card.canAct(player)) {
-      player.game.log(`【调试】onCardPlayed: ${card.name} 当前不能行动，跳过`);
-      return;
-    }
+    player.game.defer(new UseActionImmediately(player, card, this));
+  }
+}
 
-    player.game.log(`【调试】onCardPlayed: ${card.name} 符合条件，提供立即行动选项`);
+class UseActionImmediately extends DeferredAction {
+  constructor(
+    player: IPlayer,
+    private card: IActionCard & ICard,
+    private source: ICard,
+  ) {
+    super(player, Priority.BACK_OF_THE_LINE);
+  }
 
-    const orOptions = new OrOptions();
+  public execute() {
+    if (!this.card.canAct(this.player)) return undefined;
 
-    orOptions.options.push(
-      new SelectOption(`immediately use ${card.name} action (without spending it)`, 'use').andThen(() => {
-        player.game.log('${0} used ${1} action (via ${2})', (b) =>
-          b.player(player).card(card).card(this),
+    const options = new OrOptions();
+    options.options.push(
+      new SelectOption(
+        message(
+          'immediately use ${0} action (without spending it)',
+          (b) => b.card(this.card),
+        ),
+        'use',
+      ).andThen(() => {
+        this.player.game.log(
+          '${0} used ${1} action (via ${2})',
+          (b) => b.player(this.player).card(this.card).card(this.source),
         );
-        return card.action(player);
+        return this.card.action(this.player);
       }),
     );
 
-    orOptions.options.push(new SelectOption('skip'));
-
-    return orOptions;
+    options.options.push(new SelectOption('skip'));
+    return options;
   }
 }
