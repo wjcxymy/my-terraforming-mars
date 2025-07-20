@@ -7,7 +7,6 @@ import {Size} from '../../../../common/cards/render/Size';
 import {BoardType} from '../../../boards/BoardType';
 import {SpaceType} from '../../../../common/boards/SpaceType';
 import {Resource} from '../../../../common/Resource';
-import {GainResources} from '../../../deferredActions/GainResources';
 import {Space} from '../../../boards/Space';
 import {isSpecialTileSpace} from '../../../boards/Board';
 import {CardResource} from '../../../../common/CardResource';
@@ -78,7 +77,7 @@ export class NookConstruction extends CorporationCard {
     const bellsCount = this.resourceCount;
     const income = Math.floor(bellsCount / BELLS_TO_MEGACREDIT_RATIO) + 2;
 
-    game.defer(new GainResources(cardOwner, Resource.MEGACREDITS, {count: income, log: false}));
+    cardOwner.stock.add(Resource.MEGACREDITS, income, {log: false});
     game.log(
       '${0} gained ${1} M€ from ${2} after placing a tile on Mars.',
       (b) => b.player(cardOwner).number(income).card(this),

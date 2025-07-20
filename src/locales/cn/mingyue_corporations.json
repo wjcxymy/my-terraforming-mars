@@ -40,9 +40,9 @@
   "INFINITY CIRCUIT": "无限回路",
   "You start with 42 M€, and 2 each of plants, energy, and heat.": "起始获得42M€，2 个植物、电力和热能。",
   "Effect: When you spend 3 or more plants, energy, or heat, gain 2 energy, 2 heat, or 1 plant, respectively.": "效果：当你消耗 3 个或更多的植物、电力或热能时，分别获得 2 个电力、2 个热能或 1 个植物。",
-  "${0} gained ${1} energy via ${2} (paid ${3} plants)": "${0} 通过 ${2} 获得了 ${1} 电力（支付了 ${3} 个植物）",
-  "${0} gained ${1} heat via ${2} (paid ${3} energy)": "${0} 通过 ${2} 获得了 ${1} 热能（支付了 ${3} 个电力）",
-  "${0} gained ${1} plant via ${2} (paid ${3} heat)": "${0} 通过 ${2} 获得了 ${1} 植物（支付了 ${3} 个热能）",
+  "${0} gained ${1} energy via ${2} (spent ${3} plants)": "${0} 通过 ${2} 获得了 ${1} 电力（消耗了 ${3} 个植物）",
+  "${0} gained ${1} heat via ${2} (spent ${3} energy)": "${0} 通过 ${2} 获得了 ${1} 热能（消耗了 ${3} 个电力）",
+  "${0} gained ${1} plant via ${2} (spent ${3} heat)": "${0} 通过 ${2} 获得了 ${1} 植物（消耗了 ${3} 个热能）",
 
   "Heavyworks Creed": "重工信条",
   "HEAVYWORKS CREED": "重工信条",
