@@ -222,6 +222,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.CREDICOR, 'card-credicor-logo'],
   [CardName.ECOLINE, 'card-ecoline-logo'],
   [CardName.HELION, 'card-helion-logo'],
+  [CardName.HELION_REBALANCED, 'card-helion-logo'],
   [CardName.FACTORUM, 'card-factorum-logo'],
   [CardName.FACTORUM_REBALANCED, 'card-factorum-logo'],
   [CardName.PHOBOLOG, 'card-phobolog-logo'],

@@ -89,5 +89,14 @@
   "Action: If you have (or are tied for) the least energy resources, Increase your energy production 1 step.": "行动：如果你拥有最少的电力资源（包括并列），提升1点电力产量。",
   "Action: If you have (or are tied for) the most steel resources, draw a building card.": "行动：如果你拥有最多的钢铁资源（包括并列），抽1张建筑牌。",
   "Increase your energy production 1 step": "提升1点电力产量",
-  "Draw a building card": "抽一张建筑牌"
+  "Draw a building card": "抽一张建筑牌",
+
+  "Helion_Rebalanced": "Helion",
+  "HELION_REBALANCED": "HELION",
+  "Helion Rebalanced": "Helion",
+  "HELION REBALANCED": "HELION",
+  "You start with 3 heat production and 42 M€.": "起始获得42 M€，提升热能产量3级。",
+  "Effect: Heat may be used as 1 M€ each. M€ may not be used as heat.": "效果：每个热能资源可抵1M€。M€不能当作热能使用。",
+  "Effect: For every 2 heat you spend, gain 1 M€.": "效果：每消耗2点热能资源，获得1M€。",
+  "${0} gained ${1} M€ via ${2} (spent ${3} heat)": "${0} 通过 ${2} 获得了 ${1} M€（消耗了 ${3} 个热能）"
 }
