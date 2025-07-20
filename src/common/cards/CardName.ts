@@ -657,6 +657,7 @@ export enum CardName {
   MIDAS_REBALANCED = 'Midas Rebalanced',
   FACTORUM_REBALANCED = 'Factorum Rebalanced',
   HELION_REBALANCED = 'Helion Rebalanced',
+  MINING_GUILD_REBALANCED = 'Mining Guild Rebalanced',
 
   // Rebalanced preludes
 

@@ -54,7 +54,7 @@
     <template v-else-if="title === CardName.LAKEFRONT_RESORTS">
       <div class="card-lakefront-logo">LAKEFRONT <br> &nbsp;&nbsp;RESORTS</div>
     </template>
-    <template v-else-if="title === CardName.MINING_GUILD">
+    <template v-else-if="title === CardName.MINING_GUILD || title === CardName.MINING_GUILD_REBALANCED">
       <span class="card-mining-guild-logo">MINING<br>GUILD</span>
     </template>
     <template v-else-if="title === CardName.PHILARES">

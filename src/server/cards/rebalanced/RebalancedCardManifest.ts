@@ -8,6 +8,7 @@ import {HelionRebalanced} from './HelionRebalanced';
 import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsRebalanced';
 import {InventrixRebalanced} from './InventrixRebalanced';
 import {MidasRebalanced} from './MidasRebalanced';
+import {MiningGuildRebalanced} from './MiningGuildRebalanced';
 import {OdysseyRebalanced} from './OdysseyRebalanced';
 import {PristarRebalanced} from './PristarRebalanced';
 import {SolBankRebalanced} from './SolBankRebalanced';
@@ -30,6 +31,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.MIDAS_REBALANCED]: {Factory: MidasRebalanced},
     [CardName.FACTORUM_REBALANCED]: {Factory: FactorumRebalanced},
     [CardName.HELION_REBALANCED]: {Factory: HelionRebalanced},
+    [CardName.MINING_GUILD_REBALANCED]: {Factory: MiningGuildRebalanced},
   },
   preludeCards: {
   },
@@ -51,5 +53,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.MIDAS,
     CardName.FACTORUM,
     CardName.HELION,
+    CardName.MINING_GUILD,
   ],
 });

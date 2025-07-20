@@ -98,5 +98,11 @@
   "You start with 3 heat production and 42 M€.": "起始获得42 M€，提升热能产量3级。",
   "Effect: Heat may be used as 1 M€ each. M€ may not be used as heat.": "效果：每个热能资源可抵1M€。M€不能当作热能使用。",
   "Effect: For every 2 heat you spend, gain 1 M€.": "效果：每消耗2点热能资源，获得1M€。",
-  "${0} gained ${1} M€ via ${2} (spent ${3} heat)": "${0} 通过 ${2} 获得了 ${1} M€（消耗了 ${3} 个热能）"
+  "${0} gained ${1} M€ via ${2} (spent ${3} heat)": "${0} 通过 ${2} 获得了 ${1} M€（消耗了 ${3} 个热能）",
+
+  "Mining_Guild_Rebalanced": "Mining_Guild",
+  "MINING_GUILD_REBALANCED": "MINING_GUILD",
+  "Mining Guild Rebalanced": "Mining Guild",
+  "MINING GUILD REBALANCED": "MINING GUILD",
+  "Effect: STEEL MAY BE USED for the CITY STANDARD PROJECT as if you were playing a building card.": "效果：钢铁资源可用于城市标准项目。"
 }
