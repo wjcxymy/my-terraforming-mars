@@ -4,6 +4,7 @@ import {AdhaiHighOrbitConstructionsRebalanced} from './AdhaiHighOrbitConstructio
 import {ArklightRebalanced} from './ArklightRebalanced';
 import {CelesticRebalanced} from './CelesticRebalanced';
 import {FactorumRebalanced} from './FactorumRebalanced';
+import {HelionRebalanced} from './HelionRebalanced';
 import {InterplanetaryCinematicsRebalanced} from './InterplanetaryCinematicsRebalanced';
 import {InventrixRebalanced} from './InventrixRebalanced';
 import {MidasRebalanced} from './MidasRebalanced';
@@ -28,6 +29,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.INVENTRIX_REBALANCED]: {Factory: InventrixRebalanced},
     [CardName.MIDAS_REBALANCED]: {Factory: MidasRebalanced},
     [CardName.FACTORUM_REBALANCED]: {Factory: FactorumRebalanced},
+    [CardName.HELION_REBALANCED]: {Factory: HelionRebalanced},
   },
   preludeCards: {
   },
@@ -48,5 +50,6 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.INVENTRIX,
     CardName.MIDAS,
     CardName.FACTORUM,
+    CardName.HELION,
   ],
 });

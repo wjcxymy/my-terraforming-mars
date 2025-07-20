@@ -63,7 +63,7 @@ export default Vue.extend({
     },
     // TODO LUNA TRADE FEDERATION
     canUseHeatAsMegaCredits(): boolean {
-      return this.player.tableau.some((card) => card.name === CardName.HELION);
+      return this.player.tableau.some((card) => card.name === CardName.HELION || card.name === CardName.HELION_REBALANCED);
     },
   },
   components: {

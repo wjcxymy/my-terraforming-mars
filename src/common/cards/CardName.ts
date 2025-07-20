@@ -656,6 +656,7 @@ export enum CardName {
   INVENTRIX_REBALANCED = 'Inventrix Rebalanced',
   MIDAS_REBALANCED = 'Midas Rebalanced',
   FACTORUM_REBALANCED = 'Factorum Rebalanced',
+  HELION_REBALANCED = 'Helion Rebalanced',
 
   // Rebalanced preludes
 
