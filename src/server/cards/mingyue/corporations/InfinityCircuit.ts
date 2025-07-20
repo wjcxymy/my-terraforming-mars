@@ -52,7 +52,7 @@ export class InfinityCircuit extends CorporationCard {
     if (resource === Resource.PLANTS && amount >= PLANTS_TO_ENERGY_THRESHOLD) {
       player.stock.add(Resource.ENERGY, PLANTS_TO_ENERGY_GAIN, {log: false});
       player.game.log(
-        '${0} gained ${1} energy via ${2} (paid ${3} plants)',
+        '${0} gained ${1} energy via ${2} (spent ${3} plants)',
         (b) => b.player(player).number(PLANTS_TO_ENERGY_GAIN).card(this).number(amount),
       );
     }
@@ -60,7 +60,7 @@ export class InfinityCircuit extends CorporationCard {
     if (resource === Resource.ENERGY && amount >= ENERGY_TO_HEAT_THRESHOLD) {
       player.stock.add(Resource.HEAT, ENERGY_TO_HEAT_GAIN, {log: false});
       player.game.log(
-        '${0} gained ${1} heat via ${2} (paid ${3} energy)',
+        '${0} gained ${1} heat via ${2} (spent ${3} energy)',
         (b) => b.player(player).number(ENERGY_TO_HEAT_GAIN).card(this).number(amount),
       );
     }
@@ -68,7 +68,7 @@ export class InfinityCircuit extends CorporationCard {
     if (resource === Resource.HEAT && amount >= HEAT_TO_PLANTS_THRESHOLD) {
       player.stock.add(Resource.PLANTS, HEAT_TO_PLANTS_GAIN, {log: false});
       player.game.log(
-        '${0} gained ${1} plant via ${2} (paid ${3} heat)',
+        '${0} gained ${1} plant via ${2} (spent ${3} heat)',
         (b) => b.player(player).number(HEAT_TO_PLANTS_GAIN).card(this).number(amount),
       );
     }

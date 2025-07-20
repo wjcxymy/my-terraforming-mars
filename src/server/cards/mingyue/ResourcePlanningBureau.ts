@@ -7,6 +7,7 @@ import {IPlayer} from '../../IPlayer';
 import {ICard} from '../ICard';
 import {CardRenderer} from '../render/CardRenderer';
 import {Payment} from '../../../common/inputs/Payment';
+import {Resource} from '../../../common/Resource';
 
 export class ResourcePlanningBureau extends Card implements IProjectCard {
   constructor() {
@@ -38,8 +39,8 @@ export class ResourcePlanningBureau extends Card implements IProjectCard {
     // 确保支付的 M€ 为 0，且支付了至少1个其他资源
     if (payment.megaCredits === 0 && Object.values(payment).some((value) => value > 0)) {
       const gain = 2;
-      player.megaCredits += 2;
 
+      player.stock.add(Resource.MEGACREDITS, gain, {log: false});
       player.game.log(
         '${0} gained ${1} M€ from ${2} effect.',
         (b) => b.player(player).number(gain).card(this),

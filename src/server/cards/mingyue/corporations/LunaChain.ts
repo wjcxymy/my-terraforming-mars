@@ -7,6 +7,7 @@ import {ICard} from '../../ICard';
 import {IPlayer} from '../../../IPlayer';
 import {Payment} from '../../../../common/inputs/Payment';
 import {getLunaChainData} from '../../../mingyue/MingYueData';
+import {Resource} from '../../../../common/Resource';
 
 export class LunaChain extends CorporationCard {
   constructor() {
@@ -52,9 +53,9 @@ export class LunaChain extends CorporationCard {
 
       if (diff < 3) {
         const gain = 3 - diff;
-        player.megaCredits += gain;
-        data.totalGain += gain;
 
+        data.totalGain += gain;
+        player.stock.add(Resource.MEGACREDITS, gain, {log: false});
         player.game.log(
           '${0} gained ${1} M€ due to ${2} effect.',
           (b) => b.player(player).number(gain).card(this),
