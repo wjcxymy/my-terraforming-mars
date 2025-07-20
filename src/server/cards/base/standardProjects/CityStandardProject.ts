@@ -24,7 +24,7 @@ export class CityStandardProject extends StandardProjectCard {
   }
 
   public override canPayWith(player: IPlayer) {
-    if (player.getPlayedCard(CardName.PREFABRICATION_OF_HUMAN_HABITATS)) {
+    if (player.getPlayedCard(CardName.PREFABRICATION_OF_HUMAN_HABITATS) || player.getCorporation(CardName.MINING_GUILD_REBALANCED)) {
       return {steel: true};
     } else {
       return {};
