@@ -997,7 +997,7 @@ export class Player implements IPlayer {
     }
   }
 
-  // 玩家对象的钩子函数：用于响应“标准资源”（植物、能量、热量等）被花费的情况
+  // 玩家对象的钩子函数：用于响应“标准资源”（植物、电力、热能等）被花费的情况
   public onStandardResourceSpent(player: Player, resource: Resource, amount: number) {
     // 遍历所有已打出的项目卡，如果它们定义了资源支出处理逻辑，则调用它们的处理函数
     for (const playedCard of this.playedCards) {

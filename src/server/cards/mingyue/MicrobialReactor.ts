@@ -11,7 +11,7 @@ import {Resource} from '../../../common/Resource';
 
 /**
  * 微生物反应堆（Microbial Reactor）
- * 每获得资源时，若卡上有 2X 微生物，则移除这些资源，获得 2X 热量 和 X 点植物产量。
+ * 每获得资源时，若卡上有 2X 微生物，则移除这些资源，获得 2X 热能 和 X 点植物产量。
  */
 export class MicrobialReactor extends Card implements IProjectCard {
   constructor() {
@@ -43,7 +43,7 @@ export class MicrobialReactor extends Card implements IProjectCard {
 
   /**
    * 每次卡牌获得资源时触发。如果卡上有 2 的倍数数量的微生物，
-   * 则自动移除这些微生物，换取等量热量并提升植物产量。
+   * 则自动移除这些微生物，换取等量热能并提升植物产量。
    */
   public onResourceAdded(player: IPlayer, playedCard: ICard) {
     if (playedCard.name !== this.name) return;

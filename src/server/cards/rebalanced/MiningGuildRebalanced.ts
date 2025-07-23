@@ -30,7 +30,7 @@ export class MiningGuildRebalanced extends CorporationCard {
         hasExternalHelp: true,
         description: 'You start with 30 M€, 5 steel and 1 steel production.',
         renderData: CardRenderer.builder((b) => {
-          b.br.br;
+          b.br;
           b.megacredits(30).nbsp.steel(5, {digit}).nbsp.production((pb) => pb.steel(1));
           b.corpBox('effect', (ce) => {
             ce.vSpace(Size.MEDIUM);

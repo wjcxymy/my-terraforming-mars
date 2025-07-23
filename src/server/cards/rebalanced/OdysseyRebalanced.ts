@@ -21,7 +21,7 @@ export class OdysseyRebalanced extends CorporationCard implements IActionCard {
         renderData: CardRenderer.builder((b) => {
           b.megacredits(33);
           b.corpBox('action', (ce) => {
-            ce.vSpace(Size.LARGE);
+            ce.vSpace(Size.MEDIUM);
             ce.effect('Your event cards stay face up, and their tags are in use as if those were automated (green) cards.', (eb) => {
               eb.empty().startEffect.cards(1, {secondaryTag: Tag.EVENT}).text('up').asterix();
             });
