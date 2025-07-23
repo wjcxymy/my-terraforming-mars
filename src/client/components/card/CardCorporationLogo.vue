@@ -149,7 +149,7 @@
     <template v-else-if="title === CardName.ECOTEC">
       <div class="card-ecotec-logo"></div>
     </template>
-    <template v-else-if="title === CardName.PALLADIN_SHIPPING">
+    <template v-else-if="title === CardName.PALLADIN_SHIPPING || title === CardName.PALLADIN_SHIPPING_REBALANCED">
       <div class="card-palladin-shipping-logo"></div>
     </template>
     <template v-else-if="title === CardName.SAGITTA_FRONTIER_SERVICES">
@@ -226,6 +226,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.FACTORUM, 'card-factorum-logo'],
   [CardName.FACTORUM_REBALANCED, 'card-factorum-logo'],
   [CardName.PHOBOLOG, 'card-phobolog-logo'],
+  [CardName.PHOBOLOG_REBALANCED, 'card-phobolog-logo'],
   [CardName.POINT_LUNA, 'card-luna-logo'],
   [CardName.POLYPHEMOS, 'card-polyphemos-logo'],
   [CardName.THORGATE, 'card-thorgate-logo'],

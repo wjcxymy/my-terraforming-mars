@@ -10,6 +10,8 @@ import {InventrixRebalanced} from './InventrixRebalanced';
 import {MidasRebalanced} from './MidasRebalanced';
 import {MiningGuildRebalanced} from './MiningGuildRebalanced';
 import {OdysseyRebalanced} from './OdysseyRebalanced';
+import {PalladinShippingRebalanced} from './PalladinShippingRebalanced';
+import {PhoboLogRebalanced} from './PhoboLogRebalanced';
 import {PristarRebalanced} from './PristarRebalanced';
 import {SolBankRebalanced} from './SolBankRebalanced';
 import {ThorgateRebalanced} from './ThorgateRebalanced';
@@ -32,6 +34,8 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.FACTORUM_REBALANCED]: {Factory: FactorumRebalanced},
     [CardName.HELION_REBALANCED]: {Factory: HelionRebalanced},
     [CardName.MINING_GUILD_REBALANCED]: {Factory: MiningGuildRebalanced},
+    [CardName.PHOBOLOG_REBALANCED]: {Factory: PhoboLogRebalanced},
+    [CardName.PALLADIN_SHIPPING_REBALANCED]: {Factory: PalladinShippingRebalanced},
   },
   preludeCards: {
   },
@@ -54,5 +58,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.FACTORUM,
     CardName.HELION,
     CardName.MINING_GUILD,
+    CardName.PHOBOLOG,
+    CardName.PALLADIN_SHIPPING,
   ],
 });
