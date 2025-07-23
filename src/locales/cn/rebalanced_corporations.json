@@ -104,5 +104,17 @@
   "MINING_GUILD_REBALANCED": "MINING_GUILD",
   "Mining Guild Rebalanced": "Mining Guild",
   "MINING GUILD REBALANCED": "MINING GUILD",
-  "Effect: STEEL MAY BE USED for the CITY STANDARD PROJECT as if you were playing a building card.": "效果：钢铁资源可用于城市标准项目。"
+  "Effect: STEEL MAY BE USED for the CITY STANDARD PROJECT as if you were playing a building card.": "效果：钢铁资源可用于城市标准项目。",
+
+  "Phobolog_Rebalanced": "Phobolog",
+  "PHOBOLOG_REBALANCED": "PHOBOLOG",
+  "Phobolog Rebalanced": "Phobolog",
+  "PHOBOLOG REBALANCED": "PHOBOLOG",
+  "You start with 8 titanium and 30 M€.": "起始获得30 M€和8个钛资源。",
+
+  "Palladin_Shipping_Rebalanced": "Palladin_Shipping",
+  "PALLADIN_SHIPPING_REBALANCED": "PALLADIN_SHIPPING",
+  "Palladin Shipping Rebalanced": "Palladin Shipping",
+  "PALLADIN SHIPPING REBALANCED": "PALLADIN SHIPPING",
+  "Effect: When any player plays a space event, gain 1 titanium.": "效果：当任意玩家打出太空事件牌时，获得1个钛资源。"
 }
