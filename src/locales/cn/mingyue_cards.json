@@ -59,8 +59,8 @@
 
   "Microbial Reactor": "微生物反应堆",
   "Requires that you have 2 greenery tiles in play.": "需要你拥有2个绿化板块。",
-  "Effect: For every 2 microbes on this card, remove them to gain 2 heat and 1 plant production.": "效果：此牌上每有2个微生物，移除它们以获得2点热量和1点植物产量。",
-  "${0} removed ${1} microbe(s) from ${2} to gain ${3} heat and increase plant production by ${4}." : "${0}从${2}移除了${1}个微生物，获得了${3}点热量并使植物产量提升了${4}点。",
+  "Effect: For every 2 microbes on this card, remove them to gain 2 heat and 1 plant production.": "效果：此牌上每有2个微生物，移除它们以获得2点热能和1点植物产量。",
+  "${0} removed ${1} microbe(s) from ${2} to gain ${3} heat and increase plant production by ${4}." : "${0}从${2}移除了${1}个微生物，获得了${3}点热能并使植物产量提升了${4}点。",
 
   "Mars Monument": "火星丰碑",
   "Place the Mars Monument tile.": "放置火星丰碑板块。",

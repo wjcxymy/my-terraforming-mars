@@ -8,7 +8,7 @@
   "${0} claimed ${1} milestone": "${0} 获得了 ${1} 里程碑",
   "${0} passed": "${0} 结束本时代行动",
   "${0} ended turn": "${0} 结束本轮操作",
-  "${0} converted heat into temperature": "${0} 用热量提升火星温度",
+  "${0} converted heat into temperature": "${0} 用热能提升火星温度",
   "${0} converted plants into a greenery": "${0} 用植物放置森林板块",
   "${0} increased Venus scale ${1} step(s)" : "${0} 增加提升改造度 ${1} 级",
 
