@@ -11,16 +11,16 @@ export class MidasRebalanced extends Midas {
       startingMegaCredits: 100,
 
       behavior: {
-        tr: -4,
+        tr: -5,
       },
 
       metadata: {
         cardNumber: 'RB-CORP-11',
-        description: 'You start with 100 M€. Lower your TR 4 steps.',
+        description: 'You start with 100 M€. Lower your TR 5 steps.',
         renderData: CardRenderer.builder((b) => {
           b.vSpace(Size.LARGE).br;
           b.megacredits(100, {size: Size.LARGE}).nbsp.nbsp.nbsp;
-          b.minus().tr(4, {digit});
+          b.minus().tr(5, {digit});
         }),
       },
     });
