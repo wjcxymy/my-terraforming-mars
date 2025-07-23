@@ -53,7 +53,7 @@ export class InfiniteMonkeyTheorem extends ActionCard implements IProjectCard {
 
     this.targetCards.push(topCard);
 
-    // 从所有 targetCards 中重新统计已有标签
+    // 从所有 targetCards 中重新统计已有标志
     const ownedTags = new Set<Tag>();
     for (const card of this.targetCards) {
       for (const tag of card.tags) {
@@ -61,22 +61,22 @@ export class InfiniteMonkeyTheorem extends ActionCard implements IProjectCard {
       }
     }
 
-    // 统计 topCard 中哪些标签是“新出现的”
+    // 统计 topCard 中哪些标志是“新出现的”
     const newTags: Tag[] = [];
     const topCardUniqueTags = Array.from(new Set(topCard.tags));
     for (const tag of topCardUniqueTags) {
-      // 如果之前未出现该标签
+      // 如果之前未出现该标志
       const countInPrevious = this.targetCards
         .slice(0, this.targetCards.length - 1) // 排除刚展示的 topCard
         .some((card) => card.tags.includes(tag));
       if (!countInPrevious) {
         newTags.push(tag);
-        // console.log(`新获得的标签: ${tag}`);
+        // console.log(`新获得的标志: ${tag}`);
       }
     }
 
     // console.log(`当前存储的牌数量: ${this.targetCards.length}`);
-    // console.log(`已获得的标签种类数: ${ownedTags.size}`);
+    // console.log(`已获得的标志种类数: ${ownedTags.size}`);
 
     const gainedAnimalCount = newTags.length;
     if (gainedAnimalCount > 0) {
