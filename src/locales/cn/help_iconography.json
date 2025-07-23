@@ -76,7 +76,7 @@
   "use active card action": "使用可用的卡牌能力",
   "standard project": "标准项目",
   "convert plants to greenery": "消耗植物放置森林",
-  "convert heat to temperature": "消耗热量提升温度",
+  "convert heat to temperature": "消耗热能提升温度",
   "claim milestone": "宣告里程碑",
   "fund award": "资助奖励",
   "trade with 9 M€, 3 Ti, or 3 energy": "使用9 M€，3 钛，或者3电力来交易",
@@ -84,7 +84,7 @@
   "Pass for the generation": "跳过该时代",
 
   "Production Phase": "生产阶段",
-  "Energy becomes heat": "电能变成热量",
+  "Energy becomes heat": "电力变成热能",
   "Produce resources": "生产资源",
 
   "Solar Phase": "太阳阶段",

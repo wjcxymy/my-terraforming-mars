@@ -12,7 +12,7 @@
   "Add 4 director resources here.": "在此卡添加4个董事资源",
 
   "Colony Trade Hub": "殖民地贸易枢纽",
-  "Increase your energy production 1 step. Gain 2 titanium": "提升1级能量产能，获得2钛",
+  "Increase your energy production 1 step. Gain 2 titanium": "提升1级电力产能，获得2钛",
   "Effect: When any colony is placed, gain 2 M€.": "效果：每当有殖民地被放置时，获得2M€",
 
   "Corridors of Power": "权力走廊",
@@ -21,7 +21,7 @@
 
   "Early Colonization": "早期殖民",
   "INCREASE ALL COLONY TRACKS 2 STEPS": "所有殖民地轨道提升2格",
-  "Place a colony. Gain 3 energy.": "放置1个殖民地，获得3能量",
+  "Place a colony. Gain 3 energy.": "放置1个殖民地，获得3点电力资源",
 
   "Floating Trade Hub": "浮空贸易站",
   "Action: Add 2 floaters to ANY card.": "行动：向任意卡牌添加2个云资源",
@@ -66,11 +66,11 @@
   "Increase your M€ production 3 steps and place 3 delegates. YOU MAY PLACE THEM IN SEPARATE PARTIES.": "提升3级M€产能并放置3名代表（可分配至不同派系）",
 
   "Soil Bacteria": "土壤细菌",
-  "Effect: When playing a plant tag or a microbe tag, including this, gain 1 plant.": "效果：打出植物或微生物标签卡牌（含此卡）时获得1植物",
+  "Effect: When playing a plant tag or a microbe tag, including this, gain 1 plant.": "效果：打出植物或微生物标志卡牌（含此卡）时获得1植物",
   "Draw 2 microbe cards and gain 3 plants.": "抽取2张微生物卡并获得3植物",
 
   "Space Lanes": "太空航线",
-  "Effect: When you play a Jovian, Earth, or Venus tag, you pay 2 M€ less for it.": "效果：打出木星/地球/金星标签卡牌时减少2M€费用",
+  "Effect: When you play a Jovian, Earth, or Venus tag, you pay 2 M€ less for it.": "效果：打出木星/地球/金星标志卡牌时减少2M€费用",
   "Gain 3 titanium.": "获得3钛",
 
   "Suitable Infrastructure": "适宜基础设施",
