@@ -49,25 +49,33 @@ export class DivergenciesAssort extends ActionCard implements IProjectCard {
 
     return new SelectCard('Select 1 card to keep or none', undefined, cards, {min: 0, max: 1})
       .andThen((selected) => {
+        const kept = new Set(selected);
+        const discarded = cards.filter((card) => !kept.has(card));
+
         if (selected.length === 1) {
           player.cardsInHand.push(...selected);
-          player.game.log(
+          game.log(
             '${0} kept a card during the action of ${1}.',
             (b) => b.player(player).card(this),
           );
 
           for (const opponent of player.getOpponents()) {
             game.defer(DrawCards.keepAll(opponent));
-            player.game.log(
+            game.log(
               '${0} drew a card due to the action of ${1}.',
               (b) => b.player(opponent).card(this),
             );
           }
         } else {
-          player.game.log(
+          game.log(
             '${0} kept no cards during the action of ${1}.',
             (b) => b.player(player).card(this),
           );
+        }
+
+        for (const card of discarded) {
+          game.projectDeck.discard(card);
+          game.log('${0} was discarded.', (b) => b.card(card), {reservedFor: player});
         }
 
         return undefined;
