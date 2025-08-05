@@ -3,12 +3,13 @@ import {CardName} from '../../../common/cards/CardName';
 import {CardRenderer} from '../render/CardRenderer';
 import {Tag} from '../../../common/cards/Tag';
 import {IPlayer} from '../../IPlayer';
-import {IProjectCard} from '../IProjectCard';
 import {CardResource} from '../../../common/CardResource';
 import {Resource} from '../../../common/Resource';
 import {OrOptions} from '../../inputs/OrOptions';
 import {SelectOption} from '../../inputs/SelectOption';
 import {SelectCard} from '../../inputs/SelectCard';
+import {ICorporationCard} from '../corporation/ICorporationCard';
+import {ICard} from '../ICard';
 
 export class Ecotec extends CorporationCard {
   constructor() {
@@ -39,7 +40,11 @@ export class Ecotec extends CorporationCard {
     return undefined;
   }
 
-  public onCardPlayed(player: IPlayer, card: IProjectCard) {
+  public onCorpCardPlayed(player: IPlayer, card: ICorporationCard) {
+    this.onCardPlayed(player, card);
+  }
+
+  public onCardPlayed(player: IPlayer, card: ICard) {
     if (!player.isCorporation(this.name)) {
       return undefined;
     }
