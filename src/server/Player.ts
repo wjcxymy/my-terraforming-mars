@@ -1685,13 +1685,15 @@ export class Player implements IPlayer {
         this.availableActionsThisRound = getWorldLineVoyagerData(this.game).isOneActionThisRound ? 1 : 3;
       }
 
+      // console.log('resettable:', game.resettable);
+      // console.log('availableActionsThisRound:', this.availableActionsThisRound);
+      // console.log('actionsTakenThisRound:', this.actionsTakenThisRound);
       const reachedActionLimit = this.actionsTakenThisRound >= this.availableActionsThisRound;
       if (
         game.hasPassedThisActionPhase(this) ||
-        (reachedActionLimit && (
-          worldlinevoyager instanceof WorldLineVoyager ||
-          this.allOtherPlayersHavePassed() === false
-        ))
+        (reachedActionLimit
+        // && (worldlinevoyager instanceof WorldLineVoyager || this.allOtherPlayersHavePassed() === false)
+        )
       ) {
         // 如果玩家拥有世界线航行者公司，则行动次数在1次、3次切换
         if (worldlinevoyager instanceof WorldLineVoyager) {
@@ -1893,8 +1895,12 @@ export class Player implements IPlayer {
       action.options.push(sellPatents.action(this));
     }
 
-    // Propose undo action only if you have done one action this turn
-    if (this.actionsTakenThisRound > 0 && this.game.gameOptions.undoOption) {
+    // 仅当本回合已执行至少一次行动、游戏启用撤回选项，且当前游戏状态允许撤回（单人模式或可重置状态）时，提供撤回选项
+    if (
+      this.actionsTakenThisRound > 0 &&
+      this.game.gameOptions.undoOption &&
+      (this.game.isSoloMode() || this.game.resettable)
+    ) {
       action.options.push(new UndoActionOption());
     }
 

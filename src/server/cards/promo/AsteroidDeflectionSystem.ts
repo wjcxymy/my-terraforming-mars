@@ -51,6 +51,7 @@ export class AsteroidDeflectionSystem extends Card implements IActionCard, IProj
       player.addResourceTo(this, {qty: 1, log: true});
     }
     player.game.projectDeck.discard(card);
+    player.game.resettable = false;
     return undefined;
   }
 }

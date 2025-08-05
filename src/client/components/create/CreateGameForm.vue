@@ -679,7 +679,7 @@ export default (Vue as WithRefs<Refs>).extend({
       shuffleMapOption: false,
       aresExtremeVariant: false,
       politicalAgendasExtension: 'Standard',
-      undoOption: false,
+      undoOption: true,
       showTimers: true,
       fastModeOption: false,
       removeNegativeGlobalEventsOption: false,
