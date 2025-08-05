@@ -77,6 +77,7 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
 
     // 投掷骰子（1D6）
     const diceRoll = Math.floor(Math.random() * 6) + 1;
+    game.resettable = false;
 
     // 玩家获得等量 M€
     activePlayer.stock.add(Resource.MEGACREDITS, diceRoll);

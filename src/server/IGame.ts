@@ -55,6 +55,8 @@ export interface IGame extends Logger {
   gameLog: Array<LogMessage>;
   undoCount: number; // Each undo increases it
   inputsThisRound: number;
+  // 指示玩家本回合是否允许撤销操作，某些行为（如查看牌堆、打出以下卡牌）会将此设为 false。
+  // 例如：无限猴子理论（Infinite Monkey Theorem）、小行星防卫系统（Asteroid Deflection System）、赌城拉斯维加斯（Gambling District Las Vegas）
   resettable: boolean;
   generation: number;
   /**

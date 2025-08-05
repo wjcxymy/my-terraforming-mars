@@ -88,6 +88,7 @@ export class InfiniteMonkeyTheorem extends ActionCard implements IProjectCard {
     );
 
     player.stock.add(Resource.MEGACREDITS, this.resourceCount, {log: true});
+    player.game.resettable = false;
 
     return undefined;
   }
