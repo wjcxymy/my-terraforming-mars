@@ -14,6 +14,8 @@ import {PalladinShippingRebalanced} from './PalladinShippingRebalanced';
 import {PhoboLogRebalanced} from './PhoboLogRebalanced';
 import {PristarRebalanced} from './PristarRebalanced';
 import {SolBankRebalanced} from './SolBankRebalanced';
+import {StormcraftIncorporatedRebalanced} from './StormcraftIncorporatedRebalanced';
+import {TharsisRepublicRebalanced} from './TharsisRepublicRebalanced';
 import {ThorgateRebalanced} from './ThorgateRebalanced';
 import {TychoMagneticsRebalanced} from './TychoMagneticsRebalanced';
 
@@ -36,6 +38,8 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     [CardName.MINING_GUILD_REBALANCED]: {Factory: MiningGuildRebalanced},
     [CardName.PHOBOLOG_REBALANCED]: {Factory: PhoboLogRebalanced},
     [CardName.PALLADIN_SHIPPING_REBALANCED]: {Factory: PalladinShippingRebalanced},
+    [CardName.THARSIS_REPUBLIC_REBALANCED]: {Factory: TharsisRepublicRebalanced},
+    [CardName.STORMCRAFT_INCORPORATED_REBALANCED]: {Factory: StormcraftIncorporatedRebalanced},
   },
   preludeCards: {
   },
@@ -60,5 +64,7 @@ export const REBALANCED_CARD_MANIFEST = new ModuleManifest({
     CardName.MINING_GUILD,
     CardName.PHOBOLOG,
     CardName.PALLADIN_SHIPPING,
+    CardName.THARSIS_REPUBLIC,
+    CardName.STORMCRAFT_INCORPORATED,
   ],
 });
