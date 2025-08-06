@@ -45,7 +45,11 @@ export class PalladinShippingRebalanced extends CorporationCard implements IActi
 
   public onCardPlayed(player: IPlayer, card: IProjectCard) {
     if (card.type === CardType.EVENT && card.tags.includes(Tag.SPACE)) {
-      player.stock.add(Resource.TITANIUM, 1, {log: true});
+      player.game.getPlayers().forEach((p) => {
+        if (p.isCorporation(this.name)) {
+          p.stock.add(Resource.TITANIUM, 1, {log: true});
+        }
+      });
     }
   }
 
