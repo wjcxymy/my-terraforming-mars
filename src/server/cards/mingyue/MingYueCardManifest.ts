@@ -28,6 +28,7 @@ import {ImmediateActionCorp} from './corporations/ImmediateActionCorp';
 import {Slum} from './Slum';
 import {Overtime} from './Overtime';
 import {Poachers} from './Poachers';
+import {CoastalResort} from './CoastalResort';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -64,6 +65,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.SLUM]: {Factory: Slum},
     [CardName.OVERTIME]: {Factory: Overtime},
     [CardName.POACHERS]: {Factory: Poachers},
+    [CardName.COASTAL_RESORT]: {Factory: CoastalResort, compatibility: 'ares'},
   },
   globalEvents: {
   },

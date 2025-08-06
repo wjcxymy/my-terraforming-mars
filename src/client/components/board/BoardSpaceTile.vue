@@ -57,6 +57,7 @@ const tileTypeToCssClass: Record<TileType, string> = {
   [TileType.NEW_HOLLAND]: 'new-holland',
   [TileType.GAMBLING_DISTRICT_LAS_VEGAS]: 'gambling-district-las-vegas',
   [TileType.MARS_MONUMENT]: 'mars-monument',
+  [TileType.COASTAL_RESORT]: 'coastal-resort',
 };
 
 const tileTypeToCssClassAresOverride = new Map<TileType, string>([
