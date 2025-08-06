@@ -76,5 +76,11 @@
   "Take another two actions this turn.": "本回合额外执行两次行动。",
 
   "Poachers": "偷猎者",
-  "Move 1 resource from any card to another card with the same resource type.": "将任意卡牌上的1个资源转移至另一张具有相同资源类型的卡牌。"
+  "Move 1 resource from any card to another card with the same resource type.": "将任意卡牌上的1个资源转移至另一张具有相同资源类型的卡牌。",
+
+  "Coastal Resort": "海岸度假村",
+  "Requires 1 ocean tile.": "需要1个海洋板块。",
+  "Place this tile adjacent to an ocean tile. This tile grants an ADJACENCY BONUS of 1 M€.": "将此板块放置在海洋板块相邻的位置。此板块的相邻收益为1 M€。",
+  "If adjacent to a city tile, a greenery tile, and an ocean tile, gain 2 VP.": "若此板块与城市、绿地和海洋板块相邻，获得 2 VP。",
+  "Select a space adjacent to an ocean tile": "选择一个与海洋板块相邻的位置"
 }

@@ -134,6 +134,9 @@ const TILE_CLASSES: Record<TileType, Classes> = {
   [TileType.MARS_MONUMENT]: {
     tile: 'card-tile-mars-monument',
   },
+  [TileType.COASTAL_RESORT]: {
+    tile: 'card-tile-coastal-resort',
+  },
   [TileType.GREENERY]: {},
   [TileType.OCEAN]: {},
   [TileType.CITY]: {},

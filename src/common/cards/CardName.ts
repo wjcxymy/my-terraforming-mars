@@ -621,6 +621,7 @@ export enum CardName {
   SLUM = 'Slum',
   OVERTIME = 'Overtime',
   POACHERS = 'Poachers',
+  COASTAL_RESORT = 'Coastal Resort',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',
