@@ -70,6 +70,7 @@
 
   "Immediate Action Corp": "立即行动公司",
   "IMMEDIATE ACTION CORP": "立即行动公司",
+  "You start with 48 M€. As your first action, draw a blue card.": "起始获得48M€。作为第一个行动，抽一张蓝色牌。",
   "Effect: When you play a blue card with an action, you may immediately use its action (without spending it)": "效果：当你打出具有行动的蓝卡时，可以立即使用其行动（不消耗次数）",
   "Effect: When you play a blue card, gain 1 M€.": "效果：当你打出蓝卡时，获得 1 M€。",
   "${0} used ${1} action (via ${2})": "${0} 执行了 ${1} 行动（来自 ${2} 效果）",

@@ -19,11 +19,17 @@ export class ImmediateActionCorp extends CorporationCard {
       name: CardName.IMMEDIATE_ACTION_CORP,
       tags: [],
       startingMegaCredits: 48,
+
+      firstAction: {
+        text: 'Draw a blue card',
+        drawCard: {count: 1, type: CardType.ACTIVE},
+      },
+
       metadata: {
         cardNumber: 'MY-CORP-11',
-        description: 'You start with 48 M€.',
+        description: 'You start with 48 M€. As your first action, draw a blue card.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(48);
+          b.megacredits(48).cards(1, {secondaryTag: AltSecondaryTag.BLUE});
           b.corpBox('effect', (cb) => {
             cb.vSpace(Size.MEDIUM);
             cb.effect('When you play a blue card with an action, you may immediately use its action (without spending it)', (eb) =>
