@@ -116,5 +116,19 @@
   "PALLADIN_SHIPPING_REBALANCED": "PALLADIN_SHIPPING",
   "Palladin Shipping Rebalanced": "Palladin Shipping",
   "PALLADIN SHIPPING REBALANCED": "PALLADIN SHIPPING",
-  "Effect: When any player plays a space event, gain 1 titanium.": "效果：当任意玩家打出太空事件牌时，获得1个钛资源。"
+  "Effect: When any player plays a space event, gain 1 titanium.": "效果：当任意玩家打出太空事件牌时，获得1个钛资源。",
+
+  "Tharsis_Republic_Rebalanced": "Tharsis_Republic",
+  "THARSIS_REPUBLIC_REBALANCED": "THARSIS_REPUBLIC",
+  "Tharsis Republic Rebalanced": "Tharsis Republic",
+  "THARSIS REPUBLIC REBALANCED": "THARSIS REPUBLIC",
+  "Effect: When any city tile is placed, increase your M€ production 1 step. When you place a city tile, gain 3 M€.": "效果：每当有城市板块被放置时，提升你的M€产量1级。每当你放置一个城市板块时，获得3 M€。",
+
+  "Stormcraft_Incorporated_Rebalanced": "Stormcraft_Incorporated",
+  "STORMCRAFT_INCORPORATED_REBALANCED": "STORMCRAFT_INCORPORATED",
+  "Stormcraft Incorporated Rebalanced": "Stormcraft Incorporated",
+  "STORMCRAFT INCORPORATED REBALANCED": "STORMCRAFT INCORPORATED",
+  "Action: Add a floater each to 1 or 2 different cards.": "行动：在1或2张不同的卡牌上各放置1个云资源。",
+  "Select 2 cards to place 1 floater on each": "选择 2 张卡牌，各放置 1 个云资源",
+  "Place": "放置"
 }

@@ -660,6 +660,8 @@ export enum CardName {
   MINING_GUILD_REBALANCED = 'Mining Guild Rebalanced',
   PHOBOLOG_REBALANCED = 'Phobolog Rebalanced',
   PALLADIN_SHIPPING_REBALANCED = 'Palladin Shipping Rebalanced',
+  THARSIS_REPUBLIC_REBALANCED = 'Tharsis Republic Rebalanced',
+  STORMCRAFT_INCORPORATED_REBALANCED = 'Stormcraft Incorporated Rebalanced',
 
   // Rebalanced preludes
 

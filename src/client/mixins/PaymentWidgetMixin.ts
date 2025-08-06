@@ -236,8 +236,12 @@ export const PaymentWidgetMixin = {
       const model = this.asModel();
       const thisPlayer = model.playerView.thisPlayer;
       const stormcraft = thisPlayer.tableau.find((card) => card.name === CardName.STORMCRAFT_INCORPORATED);
+      const stormcraftRebalanced = thisPlayer.tableau.find((card) => card.name === CardName.STORMCRAFT_INCORPORATED_REBALANCED);
       if (stormcraft?.resources !== undefined) {
         return thisPlayer.heat + (stormcraft.resources * 2);
+      }
+      if (stormcraftRebalanced?.resources !== undefined) {
+        return thisPlayer.heat + (stormcraftRebalanced.resources * 2);
       }
       return thisPlayer.heat;
     },

@@ -84,6 +84,7 @@ import {GoldenFinger} from './cards/mingyue/corporations/GoldenFinger';
 import {WorldLineVoyager} from './cards/mingyue/corporations/WorldLineVoyager';
 import {getWorldLineVoyagerData} from './mingyue/MingYueData';
 import {SelectAmount} from './inputs/SelectAmount';
+import {StormcraftIncorporatedRebalanced} from './cards/rebalanced/StormcraftIncorporatedRebalanced';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -1178,14 +1179,20 @@ export class Player implements IPlayer {
   }
 
   public availableHeat(): number {
-    const floaters = this.resourcesOnCard(CardName.STORMCRAFT_INCORPORATED);
+    const floaters =
+      this.resourcesOnCard(CardName.STORMCRAFT_INCORPORATED) +
+      this.resourcesOnCard(CardName.STORMCRAFT_INCORPORATED_REBALANCED);
     return this.heat + (floaters * 2);
   }
 
   public spendHeat(amount: number, cb: () => (undefined | PlayerInput) = () => undefined) : PlayerInput | undefined {
     const stormcraft = <StormCraftIncorporated> this.getCorporation(CardName.STORMCRAFT_INCORPORATED);
+    const stormcraftRebalanced = <StormcraftIncorporatedRebalanced> this.getCorporation(CardName.STORMCRAFT_INCORPORATED_REBALANCED);
     if (stormcraft?.resourceCount > 0) {
       return stormcraft.spendHeat(this, amount, cb);
+    }
+    if (stormcraftRebalanced?.resourceCount > 0) {
+      return stormcraftRebalanced.spendHeat(this, amount, cb);
     }
     this.stock.deduct(Resource.HEAT, amount);
     return cb();
