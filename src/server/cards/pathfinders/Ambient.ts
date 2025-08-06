@@ -10,6 +10,8 @@ import {ICard} from '../ICard';
 import {MAX_TEMPERATURE} from '../../../common/constants';
 import {Size} from '../../../common/cards/render/Size';
 import {Units} from '../../../common/Units';
+import {Behavior} from '../../../server/behavior/Behavior';
+import {getBehaviorExecutor} from '../../../server/behavior/BehaviorExecutor';
 
 export class Ambient extends CorporationCard {
   constructor() {
@@ -60,9 +62,13 @@ export class Ambient extends CorporationCard {
     return player.heat >= 8 && player.game.getTemperature() === MAX_TEMPERATURE && player.canAfford({cost: 0, reserveUnits: Units.of({heat: 8}), tr: {tr: 1}});
   }
 
+  private static actionBehavior: Behavior = {
+    spend: {heat: 8},
+    tr: 1,
+  };
+
   public action(player: IPlayer) {
-    player.heat -= 8;
-    player.increaseTerraformRating();
+    getBehaviorExecutor().execute(Ambient.actionBehavior, player, this);
     // A hack that allows this action to be replayable.
     player.defer(() => {
       player.actionsThisGeneration.delete(this.name);
