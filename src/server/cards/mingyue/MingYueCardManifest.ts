@@ -29,6 +29,7 @@ import {Slum} from './Slum';
 import {Overtime} from './Overtime';
 import {Poachers} from './Poachers';
 import {CoastalResort} from './CoastalResort';
+import {FlowingCloud} from './corporations/FlowingCloud';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -44,6 +45,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.RAINBOW_PARK]: {Factory: RainbowPark},
     [CardName.FORESIGHT_TECHNOLOGIES]: {Factory: ForesightTechnologies},
     [CardName.IMMEDIATE_ACTION_CORP]: {Factory: ImmediateActionCorp},
+    [CardName.FLOWING_CLOUD]: {Factory: FlowingCloud, compatibility: 'venus'},
   },
   preludeCards: {
   },
