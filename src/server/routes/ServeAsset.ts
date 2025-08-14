@@ -171,9 +171,19 @@ export class ServeAsset extends Handler {
     default:
       if (urlPath.endsWith('.png') || urlPath.endsWith('.jpg') || urlPath.endsWith('.json')) {
         const assetsRoot = path.resolve('./assets');
-        const resolvedFile = path.resolve(path.normalize(urlPath));
 
-        // Only allow assets inside of assets directory
+        let resolvedFile: string;
+
+        // 专门处理 templates 下的 json 文件，支持中文文件名
+        if (urlPath.startsWith('assets/templates/') && urlPath.endsWith('.json')) {
+          // decode URL，恢复中文
+          const decodedPath = decodeURIComponent(urlPath);
+          resolvedFile = path.resolve(path.normalize(decodedPath));
+        } else {
+          resolvedFile = path.resolve(path.normalize(urlPath));
+        }
+
+        // 只允许 assets 内的文件
         if (resolvedFile.startsWith(assetsRoot)) {
           return {file: resolvedFile};
         }
