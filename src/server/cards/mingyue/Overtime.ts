@@ -9,8 +9,9 @@ export class Overtime extends Card implements IProjectCard {
   constructor() {
     super({
       name: CardName.OVERTIME,
-      cost: 4,
+      cost: 0,
       type: CardType.EVENT,
+      victoryPoints: -1,
 
       metadata: {
         cardNumber: 'MY16',

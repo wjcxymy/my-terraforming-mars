@@ -1,29 +1,29 @@
 {
     "players": [
         {
-            "name": "~2",
-            "color": "green",
+            "name": "~",
+            "color": "blue",
             "beginner": false,
             "handicap": 0,
             "first": false
         },
         {
-            "name": "~1",
-            "color": "yellow",
-            "beginner": false,
-            "handicap": 0,
-            "first": false
-        },
-        {
-            "name": "黑色",
+            "name": "~",
             "color": "black",
             "beginner": false,
             "handicap": 0,
             "first": false
         },
         {
-            "name": "~3",
-            "color": "blue",
+            "name": "~",
+            "color": "yellow",
+            "beginner": false,
+            "handicap": 0,
+            "first": false
+        },
+        {
+            "name": "~",
+            "color": "green",
             "beginner": false,
             "handicap": 0,
             "first": false
@@ -35,7 +35,7 @@
         "venus": true,
         "colonies": true,
         "prelude": true,
-        "prelude2": false,
+        "prelude2": true,
         "turmoil": true,
         "community": true,
         "ares": true,
@@ -52,8 +52,6 @@
     "showOtherPlayersVP": true,
     "customCorporationsList": [
         "CrediCor",
-        "PhoboLog",
-        "Tharsis Republic",
         "Saturn Systems",
         "Teractor",
         "Cheung Shing MARS",
@@ -89,13 +87,11 @@
         "World Line Voyager",
         "Robin Haulings",
         "EcoTec",
-        "Palladin Shipping",
         "Sagitta Frontier Services",
         "Spire",
         "Nook Construction",
         "EcoLine",
         "Rainbow Park",
-        "Mining Guild",
         "Arklight Rebalanced",
         "Interplanetary Cinematics Rebalanced",
         "Celestic Rebalanced",
@@ -108,7 +104,16 @@
         "Inventrix Rebalanced",
         "Midas Rebalanced",
         "Factorum Rebalanced",
-        "Immediate Action Corp"
+        "Immediate Action Corp",
+        "Helion Rebalanced",
+        "Mining Guild Rebalanced",
+        "Palladin Shipping Rebalanced",
+        "PhoboLog Rebalanced",
+        "Phobolog Rebalanced",
+        "Stormcraft Incorporated Rebalanced",
+        "Tharsis Republic Rebalanced",
+        "Flowing Cloud",
+        "Aristarchus"
     ],
     "customColoniesList": [
         "Callisto",
@@ -175,7 +180,9 @@
         "Survey Mission",
         "Valuable Gases:Pathfinders",
         "Venus First",
-        "Vital Colony"
+        "Vital Colony",
+        "Mohole",
+        "Mohole Excavation"
     ],
     "bannedCards": [
         "Communication Center",
@@ -184,7 +191,7 @@
     ],
     "includedCards": [],
     "board": "random all",
-    "seed": 0.06633239230591592,
+    "seed": 0.7902983251913012,
     "solarPhaseOption": true,
     "aresExtremeVariant": false,
     "politicalAgendasExtension": "Standard",
@@ -192,7 +199,7 @@
     "showTimers": true,
     "fastModeOption": true,
     "removeNegativeGlobalEventsOption": false,
-    "includeFanMA": false,
+    "includeFanMA": true,
     "modularMA": false,
     "startingCorporations": "5",
     "soloTR": false,
