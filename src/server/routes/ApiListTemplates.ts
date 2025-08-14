@@ -13,11 +13,16 @@ export class ApiListTemplates extends Handler {
     const templatesDir = path.resolve(process.cwd(), 'assets/templates');
 
     try {
-      const files = await fs.promises.readdir(templatesDir);
-      const templateNames = files
-        .filter((file) => file.endsWith('.json'))
-        .map((file) => file.replace('.json', ''));
+      // 读取目录（支持中文文件名）
+      const files = await fs.promises.readdir(templatesDir, {encoding: 'utf8'});
 
+      // 过滤 .json 文件（大小写不敏感）并去掉扩展名
+      const templateNames = files
+        .filter((file) => path.extname(file).toLowerCase() === '.json')
+        .map((file) => path.basename(file, '.json'));
+
+      // 确保响应头包含 UTF-8
+      res.setHeader('Content-Type', 'application/json; charset=utf-8');
       responses.writeJson(res, ctx, {templates: templateNames});
     } catch (error) {
       console.error('Failed to read template directory:', error);
