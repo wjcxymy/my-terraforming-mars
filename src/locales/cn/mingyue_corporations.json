@@ -46,7 +46,7 @@
 
   "Heavyworks Creed": "重工信条",
   "HEAVYWORKS CREED": "重工信条",
-  "You start with 10 steel and 1 worker.": "起始获得10钢铁和1个工人。",
+  "You start with 36 M€ and 10 steel.": "起始获得36M€和10个钢铁。",
   "Effect: When you play a project card and pay 2 or more steel, place 1 worker on this card.": "效果：当你打出项目卡且支付≥2钢铁时，在此卡上放置1个工人。",
   "Effect: For every 2 workers, reduce the cost of building- or space-tagged cards you play by 1 M€.": "效果：每有2个工人，你打出的建筑或太空标志牌减1 M€。",
   "${0} paid ${1} steel and added 1 worker to ${2}.": "${0} 支付了 ${1} 钢铁，并在 ${2} 上放置了1个工人。",
