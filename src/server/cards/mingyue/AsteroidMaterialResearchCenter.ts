@@ -10,16 +10,16 @@ import {CardRenderer} from '../render/CardRenderer';
 import {SelectCard} from '../../inputs/SelectCard';
 import {AltSecondaryTag} from '../../../common/cards/render/AltSecondaryTag';
 import {getAsteroidMaterialResearchCenterData} from '../../../server/mingyue/MingYueData';
+import {DeferredAction} from '../../../server/deferredActions/DeferredAction';
+import {Priority} from '../../../server/deferredActions/Priority';
 
 export class AsteroidMaterialResearchCenter extends Card implements IProjectCard {
-  private static readonly COST = 15;
-
   constructor() {
     super({
       type: CardType.ACTIVE,
       name: CardName.ASTEROID_MATERIAL_RESEARCH_CENTER,
       tags: [Tag.SPACE, Tag.SCIENCE],
-      cost: AsteroidMaterialResearchCenter.COST,
+      cost: 15,
       victoryPoints: 0,
 
       metadata: {
@@ -50,31 +50,7 @@ export class AsteroidMaterialResearchCenter extends Card implements IProjectCard
 
   // 效果1触发：蓝卡获得陨石资源时尝试刷新该卡行动
   public onResourceAdded(player: IPlayer, card: ICard): void {
-    if (card.resourceType !== CardResource.ASTEROID) return; // 不是陨石资源
-    if (card.type !== CardType.ACTIVE) return; // 不是具有行动的蓝卡
-    if (!player.actionsThisGeneration.has(card.name)) return; // 本代未使用，不需要刷新
-
-    const game = player.game;
-    const data = getAsteroidMaterialResearchCenterData(game);
-    const currentGeneration = game.generation;
-
-    // 新的一代，重置计数器
-    if (data.counterGeneration !== currentGeneration) {
-      data.refreshCounter = {}; // 赋新空对象，清空计数器
-      data.counterGeneration = currentGeneration;
-    }
-
-    const currentCount = data.refreshCounter[card.name] ?? 0;
-    if (currentCount >= 2) return; // 已刷新2次，不再刷新
-
-    // 执行刷新
-    player.actionsThisGeneration.delete(card.name);
-    data.refreshCounter[card.name] = currentCount + 1;
-
-    player.game.log(
-      '${0} 的 ${1} 获得陨石资源，行动被刷新（第 ${2}/2 次）',
-      (b) => b.player(player).card(card).number(currentCount + 1),
-    );
+    player.game.defer(new RefreshBlueCardAction(player, card));
   }
 
   // 效果2触发：当你打出名称中包含“asteroid”的事件牌时，为任意一张卡牌添加1个陨石资源
@@ -106,5 +82,50 @@ export class AsteroidMaterialResearchCenter extends Card implements IProjectCard
       player.addResourceTo(selected, {qty: 1, log: true});
       return undefined;
     });
+  }
+}
+
+/**
+ * 优先级最低的延迟刷新蓝卡行动
+ */
+class RefreshBlueCardAction extends DeferredAction {
+  constructor(
+    player: IPlayer,
+    private card: ICard,
+  ) {
+    super(player, Priority.BACK_OF_THE_LINE);
+  }
+
+  public execute() {
+    const {card, player} = this;
+
+    // 条件检查
+    if (card.resourceType !== CardResource.ASTEROID) return; // 不是陨石资源
+    if (card.type !== CardType.ACTIVE) return; // 不是具有行动的蓝卡
+    if (!player.actionsThisGeneration.has(card.name)) return; // 本代未使用，不需要刷新
+
+    const game = player.game;
+    const data = getAsteroidMaterialResearchCenterData(game);
+    const currentGeneration = game.generation;
+
+    // 新的一代，重置刷新计数器
+    if (data.counterGeneration !== currentGeneration) {
+      data.refreshCounter = {};
+      data.counterGeneration = currentGeneration;
+    }
+
+    const currentCount = data.refreshCounter[card.name] ?? 0;
+    if (currentCount >= 2) return;
+
+    // 执行刷新
+    player.actionsThisGeneration.delete(card.name);
+    data.refreshCounter[card.name] = currentCount + 1;
+
+    game.log(
+      '${0} 的 ${1} 获得陨石资源，行动被刷新（第 ${2}/2 次）',
+      (b) => b.player(player).card(card).number(currentCount + 1),
+    );
+
+    return undefined;
   }
 }
