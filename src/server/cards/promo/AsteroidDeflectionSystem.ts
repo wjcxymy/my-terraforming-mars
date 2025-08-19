@@ -8,7 +8,6 @@ import {Tag} from '../../../common/cards/Tag';
 import {IPlayer} from '../../IPlayer';
 import {CardRenderer} from '../render/CardRenderer';
 import {Size} from '../../../common/cards/render/Size';
-import {AddResourcesToCard} from '../../../server/deferredActions/AddResourcesToCard';
 
 export class AsteroidDeflectionSystem extends Card implements IActionCard, IProjectCard {
   constructor() {
@@ -49,7 +48,7 @@ export class AsteroidDeflectionSystem extends Card implements IActionCard, IProj
     const card = player.game.projectDeck.drawOrThrow(player.game);
     player.game.log('${0} revealed and discarded ${1}', (b) => b.player(player).card(card, {tags: true}));
     if (card.tags.includes(Tag.SPACE)) {
-      player.game.defer(new AddResourcesToCard(player, CardResource.ASTEROID, {filter: (c) => c.name === this.name}));
+      player.addResourceTo(this, {qty: 1, log: true});
     }
     player.game.projectDeck.discard(card);
     player.game.resettable = false;
