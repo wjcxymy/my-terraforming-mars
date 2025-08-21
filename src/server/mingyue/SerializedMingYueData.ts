@@ -14,4 +14,9 @@ export interface SerializedMingYueData {
     counterGeneration?: number;
     refreshCounter?: { [cardName: string]: number };
   };
+  abnormalTitan?: {
+    draw: number;
+    discard: number;
+    nothing: number;
+  };
 }

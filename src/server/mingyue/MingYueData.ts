@@ -17,6 +17,11 @@ export interface MingYueData {
     counterGeneration: number;
     refreshCounter: {[cardName: string]: number};
   };
+  abnormalTitan?: {
+    draw: number;
+    discard: number;
+    nothing: number;
+  };
 }
 
 export namespace MingYueData {
@@ -46,6 +51,13 @@ export namespace MingYueData {
           refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter,
         },
       }),
+      ...(data.abnormalTitan !== undefined && {
+        abnormalTitan: {
+          draw: data.abnormalTitan.draw,
+          discard: data.abnormalTitan.discard,
+          nothing: data.abnormalTitan.nothing,
+        },
+      }),
     };
   }
 
@@ -69,6 +81,12 @@ export namespace MingYueData {
         {
           counterGeneration: data.asteroidMaterialResearchCenter.counterGeneration ?? -1,
           refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter ?? {},
+        } : undefined,
+      abnormalTitan: data.abnormalTitan ?
+        {
+          draw: data.abnormalTitan.draw ?? 0,
+          discard: data.abnormalTitan.discard ?? 0,
+          nothing: data.abnormalTitan.nothing ?? 0,
         } : undefined,
     };
   }
@@ -107,4 +125,14 @@ export function getAsteroidMaterialResearchCenterData(game: IGame) {
     refreshCounter: {},
   };
   return game.mingyueData.asteroidMaterialResearchCenter;
+}
+
+export function getAbnormalTitanData(game: IGame) {
+  game.mingyueData ??= {};
+  game.mingyueData.abnormalTitan ??= {
+    draw: 0,
+    discard: 0,
+    nothing: 0,
+  };
+  return game.mingyueData.abnormalTitan;
 }
