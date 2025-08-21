@@ -21,6 +21,11 @@ export class MingYueExpansion {
         counterGeneration: -1,
         refreshCounter: {},
       },
+      abnormalTitan: {
+        draw: 0,
+        discard: 0,
+        nothing: 0,
+      },
     };
   }
 }

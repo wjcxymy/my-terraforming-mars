@@ -265,3 +265,21 @@
     background-size: 80px 80px;
     margin-top: 10px;
 }
+
+.card-abnormal-titan-logo {
+    position: relative;
+    background-image: url(./assets/mingyue/corp-logo-abnormal-titan.png);
+    height: 160px;
+    width: 160px;
+    background-size: 160px 160px;
+    margin-top: 10px;
+    margin-left: 32px;
+}
+
+.card-abnormal-titan-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.2); /* 半透明白雾 */
+    pointer-events: none; /* 不影响交互 */
+}

@@ -30,6 +30,7 @@ import {Overtime} from './Overtime';
 import {Poachers} from './Poachers';
 import {CoastalResort} from './CoastalResort';
 import {FlowingCloud} from './corporations/FlowingCloud';
+import {AbnormalTitan} from './corporations/AbnormalTitan';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -46,6 +47,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.FORESIGHT_TECHNOLOGIES]: {Factory: ForesightTechnologies},
     [CardName.IMMEDIATE_ACTION_CORP]: {Factory: ImmediateActionCorp},
     [CardName.FLOWING_CLOUD]: {Factory: FlowingCloud, compatibility: 'venus'},
+    [CardName.ABNORMAL_TITAN]: {Factory: AbnormalTitan},
   },
   preludeCards: {
   },
