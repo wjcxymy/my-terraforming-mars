@@ -637,6 +637,7 @@ export enum CardName {
   IMMEDIATE_ACTION_CORP = 'Immediate Action Corp',
   FLOWING_CLOUD = 'Flowing Cloud',
   ABNORMAL_TITAN = 'Abnormal Titan',
+  VOID = 'Void',
 
   // MingYue preludes
 

@@ -90,5 +90,9 @@
   "${0} triggered Abnormal Titan effect → draw (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 抽牌（累计：抽-${1} / 弃-${2} / 无事-${3}）",
   "${0} triggered Abnormal Titan effect → discard (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 弃牌（累计：抽-${1} / 弃-${2} / 无事-${3}）",
   "${0} triggered Abnormal Titan effect → nothing (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 无事（累计：抽-${1} / 弃-${2} / 无事-${3}）",
-  "Effect: After playing a project card: 1/3 chance to draw a card, 1/3 chance to discard a card from hand, and 1/3 chance that nothing happens.": "效果：打出一张项目牌后：1/3 机率抽一张牌，1/3 机率从手牌弃一张牌，1/3 机率无事发生。"
+  "Effect: After playing a project card: 1/3 chance to draw a card, 1/3 chance to discard a card from hand, and 1/3 chance that nothing happens.": "效果：打出一张项目牌后：1/3 机率抽一张牌，1/3 机率从手牌弃一张牌，1/3 机率无事发生。",
+
+  "Void": "Void",
+  "VOID": "VOID",
+  "You start with 70 M€.": "起始获得70M€。"
 }
