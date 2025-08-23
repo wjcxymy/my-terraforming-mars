@@ -11,7 +11,7 @@ export class EcologicalPavilion extends Card implements IProjectCard {
       type: CardType.AUTOMATED,
       name: CardName.ECOLOGICAL_PAVILION,
       tags: [Tag.PLANT, Tag.MICROBE, Tag.ANIMAL],
-      cost: 10,
+      cost: 13,
       victoryPoints: 1,
       requirements: [
         {tag: Tag.PLANT},
