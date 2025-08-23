@@ -31,6 +31,7 @@ import {Poachers} from './Poachers';
 import {CoastalResort} from './CoastalResort';
 import {FlowingCloud} from './corporations/FlowingCloud';
 import {AbnormalTitan} from './corporations/AbnormalTitan';
+import {Void} from './corporations/Void';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -48,6 +49,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.IMMEDIATE_ACTION_CORP]: {Factory: ImmediateActionCorp},
     [CardName.FLOWING_CLOUD]: {Factory: FlowingCloud, compatibility: 'venus'},
     [CardName.ABNORMAL_TITAN]: {Factory: AbnormalTitan},
+    [CardName.VOID]: {Factory: Void},
   },
   preludeCards: {
   },

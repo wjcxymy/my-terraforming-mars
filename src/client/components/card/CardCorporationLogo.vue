@@ -245,6 +245,7 @@ const imageLogosWithNames: Map<CardName, string> = new Map([
   [CardName.RAINBOW_PARK, 'card-rainbow-park-logo'],
   [CardName.FLOWING_CLOUD, 'card-flowing-cloud-logo'],
   [CardName.ABNORMAL_TITAN, 'card-abnormal-titan-logo'],
+  [CardName.VOID, 'card-void-logo'],
 ]);
 
 export default Vue.extend({
