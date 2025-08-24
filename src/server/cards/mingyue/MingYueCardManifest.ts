@@ -32,6 +32,7 @@ import {CoastalResort} from './CoastalResort';
 import {FlowingCloud} from './corporations/FlowingCloud';
 import {AbnormalTitan} from './corporations/AbnormalTitan';
 import {Void} from './corporations/Void';
+import {DataCommunicationCenter} from './corporations/DataCommunicationCenter';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -50,6 +51,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.FLOWING_CLOUD]: {Factory: FlowingCloud, compatibility: 'venus'},
     [CardName.ABNORMAL_TITAN]: {Factory: AbnormalTitan},
     [CardName.VOID]: {Factory: Void},
+    [CardName.DATA_COMMUNICATION_CENTER]: {Factory: DataCommunicationCenter},
   },
   preludeCards: {
   },
