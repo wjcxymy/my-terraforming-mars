@@ -638,6 +638,7 @@ export enum CardName {
   FLOWING_CLOUD = 'Flowing Cloud',
   ABNORMAL_TITAN = 'Abnormal Titan',
   VOID = 'Void',
+  DATA_COMMUNICATION_CENTER = 'Data Communication Center',
 
   // MingYue preludes
 
