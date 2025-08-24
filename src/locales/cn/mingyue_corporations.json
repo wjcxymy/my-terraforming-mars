@@ -87,10 +87,11 @@
 
   "Abnormal Titan": "奇行种巨人",
   "ABNORMAL TITAN": "奇行种巨人",
-  "${0} triggered Abnormal Titan effect → draw (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 抽牌（累计：抽-${1} / 弃-${2} / 无事-${3}）",
-  "${0} triggered Abnormal Titan effect → discard (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 弃牌（累计：抽-${1} / 弃-${2} / 无事-${3}）",
-  "${0} triggered Abnormal Titan effect → nothing (Total: Draw-${1} / Discard-${2} / Nothing-${3})": "${0} 触发奇行种巨人效果 → 无事（累计：抽-${1} / 弃-${2} / 无事-${3}）",
-  "Effect: After playing a project card: 1/3 chance to draw a card, 1/3 chance to discard a card from hand, and 1/3 chance that nothing happens.": "效果：打出一张项目牌后：1/3 机率抽一张牌，1/3 机率从手牌弃一张牌，1/3 机率无事发生。",
+  "You start with 54 M€.": "起始获得54M€。",
+  "${0} triggered ${1} effect → draw (Total: Draw-${2} / Discard-${3} / 1 M€-${4})": "${0} 触发 ${1} 效果 → 抽牌（累计：抽-${2} / 弃-${3} / 1 M€-${4}）",
+  "${0} triggered ${1} effect → discard (Total: Draw-${2} / Discard-${3} / 1 M€-${4})": "${0} 触发 ${1} 效果 → 弃牌（累计：抽-${2} / 弃-${3} / 1 M€-${4}）",
+  "${0} triggered ${1} effect → 1 M€ (Total: Draw-${2} / Discard-${3} / 1 M€-${4})": "${0} 触发 ${1} 效果 → 1 M€（累计：抽-${2} / 弃-${3} / 1 M€-${4}）",
+  "Effect: After playing a project card: 1/3 chance to draw a card, 1/3 chance to discard a card from hand, and 1/3 chance gain 1 M€.": "效果：打出一张项目牌后：1/3 机率抽一张牌，1/3 机率从手牌弃一张牌，1/3 机率获得1 M€。",
 
   "Void": "Void",
   "VOID": "VOID",
