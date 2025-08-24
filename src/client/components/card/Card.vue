@@ -1,5 +1,19 @@
 <template>
   <div :class="getCardClasses(card)">
+      <!-- WORLD_LINE_VOYAGER 背景层 -->
+      <div v-if="cardInstance.name === 'World Line Voyager'" class="card-worldline-state">
+        <div
+          class="worldline-image"
+          :class="{ 'worldline-inactive': card.currentWorldline === 1 }"
+          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-2.png\')'}"
+        ></div>
+        <div
+          class="worldline-image"
+          :class="{ 'worldline-inactive': card.currentWorldline === 2 }"
+          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-1.png\')'}"
+        ></div>
+      </div>
+      <!-- 卡牌文字/UI 层 -->
       <div class="card-content-wrapper" v-i18n @mouseover="hovering = true" @mouseleave="hovering = false">
           <div v-if="!isStandardProject()" class="card-cost-and-tags">
               <CardCost :amount="getCost()" :newCost="getReducedCost()" />
@@ -16,19 +30,6 @@
         <div class="card-lastpay-counter-number">
           {{ lastCardCost }}
         </div>
-      </div>
-      <!-- 👇 仅对 WORLD_LINE_VOYAGER 显示 -->
-      <div v-if="cardInstance.name === 'World Line Voyager'" class="card-worldline-state">
-        <div
-          class="worldline-image"
-          :class="{ 'worldline-inactive': card.currentWorldline === 1 }"
-          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-2.png\')'}"
-        ></div>
-        <div
-          class="worldline-image"
-          :class="{ 'worldline-inactive': card.currentWorldline === 2 }"
-          :style="{ backgroundImage: 'url(\'../../../../assets/mingyue/world-line-1.png\')'}"
-        ></div>
       </div>
       <CardResourceCounter v-if="hasResourceType" :amount="getResourceAmount()" :type="resourceType" />
       <CardExtraContent :card="card" />
