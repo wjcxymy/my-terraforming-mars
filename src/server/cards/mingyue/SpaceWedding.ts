@@ -37,6 +37,7 @@ export class SpaceWedding extends Card implements IProjectCard {
   }
 
   public override bespokePlay(player: IPlayer) {
+    player.game.resettable = false;
     const cards = player.game.projectDeck.drawByConditionOrThrow(player.game, 2, () => true);
     LogHelper.logDrawnCards(player, cards);
     player.game.defer(new SelectWeddingCard(player, cards));

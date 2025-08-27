@@ -46,6 +46,7 @@ export class DivergenciesAssort extends ActionCard implements IProjectCard {
   public override bespokeAction(player: IPlayer) {
     const game = player.game;
     const cards = game.projectDeck.drawNOrThrow(game, 2);
+    game.resettable = false;
 
     return new SelectCard('Select 1 card to keep or none', undefined, cards, {min: 0, max: 1})
       .andThen((selected) => {
