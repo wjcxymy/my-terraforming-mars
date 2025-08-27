@@ -26,7 +26,7 @@ export class TrisynInstitute extends CorporationCard {
 
           b.corpBox('action', (cb) => {
             cb.vSpace(Size.LARGE);
-            cb.action('Reveal and discard 2 cards to draw 1 card of a color not among the discarded ones.', (eb) => {
+            cb.action('Reveal and discard 2 cards from your hand, then draw 1 card of a color not present among the discarded cards.', (eb) => {
               eb.minus().cards(2).startAction.plus().cards(1).asterix();
             });
             cb.vSpace(Size.SMALL);

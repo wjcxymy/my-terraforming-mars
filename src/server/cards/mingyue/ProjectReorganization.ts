@@ -40,6 +40,7 @@ export class ProjectReorganization extends ActionCard implements IProjectCard {
   }
 
   public override bespokeAction(player: IPlayer) {
+    player.game.resettable = false;
     player.stock.deduct(Resource.ENERGY, ProjectReorganization.ENERGY_COST);
     player.game.log('${0} spent ${1} energy', (b) => b.player(player).number(ProjectReorganization.ENERGY_COST));
 
