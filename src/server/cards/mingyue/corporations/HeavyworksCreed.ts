@@ -35,7 +35,7 @@ export class HeavyworksCreed extends CorporationCard {
             cb.effect('For every 2 workers, reduce the cost of building- or space-tagged cards you play by 1 M€.', (eb) =>
               eb.tag(Tag.BUILDING).slash().tag(Tag.SPACE)
                 .startEffect
-                .megacreditsText('-1').slash().text('2').resource(CardResource.AGENDA),
+                .megacredits(-1).slash().text('2').resource(CardResource.AGENDA),
             );
           });
         }),

@@ -77,7 +77,7 @@ export default Vue.extend({
       }
 
       // size and text
-      if (this.item.text !== undefined && this.item.type !== CardRenderItemType.MEGACREDITS_TEXT) {
+      if (this.item.text !== undefined) {
         classes.push(`card-text-size--${this.item.size}`);
         if (this.item.isUppercase) {
           classes.push('card-text-uppercase');
@@ -285,12 +285,6 @@ export default Vue.extend({
         return ['card-underground-shelters'];
 
       // MingYue
-      case CardRenderItemType.MEGACREDITS_TEXT:
-        if (this.item.size !== undefined && this.item.size !== Size.MEDIUM) {
-          return [cardResource, 'card-resource-money-text', `card-money--${this.item.size}`];
-        } else {
-          return [cardResource, 'card-resource-money-text'];
-        }
       case CardRenderItemType.ONE_SET:
         return [cardResource, 'card-one-set'];
       case CardRenderItemType.MY_ASTEROID:

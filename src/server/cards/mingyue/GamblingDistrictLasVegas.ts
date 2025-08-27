@@ -40,10 +40,10 @@ export class GamblingDistrictLasVegas extends Card implements IProjectCard {
           b.nbsp.tile(TileType.GAMBLING_DISTRICT_LAS_VEGAS, false, false).br;
           b.plainText('(Place this tile. It counts as a City.)').br;
           b.plainEffect('When a tile is placed adjacent to it, the player must pay 3 M€ more, then roll 1d6 to gain that many M€.', (eb) => {
-            eb.megacreditsText('-3', {all})
+            eb.megacredits(-3)
               .nbsp
               .myXDian()
-              .startEffect.megacreditsText('+X', {all});
+              .startEffect.megacredits(1, {text: '+X', all});
           });
           b.br;
           b.plainEffect('If the result is 5 or 6, they also draw a card.', (eb) => {

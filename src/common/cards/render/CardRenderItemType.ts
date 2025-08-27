@@ -79,7 +79,6 @@ export enum CardRenderItemType {
   UNDERGROUND_SHELTERS = 'underground-shelters',
 
   // MingYue
-  MEGACREDITS_TEXT = 'megacredits_text',
   ONE_SET = 'one_set',
   MY_ASTEROID = 'my_asteroid',
   MY_LOOP_ARROW = 'my_loop_arrow',

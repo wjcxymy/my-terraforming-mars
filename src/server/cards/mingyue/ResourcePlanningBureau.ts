@@ -23,7 +23,7 @@ export class ResourcePlanningBureau extends Card implements IProjectCard {
         renderData: CardRenderer.builder((b) => {
           b.effect('Each time you play a project card, if you pay 0 M€ and at least 1 other resource, gain 2 M€.', (eb) =>
             eb.cards(1).text('pay')
-              .megacreditsText('0').wild(1).asterix()
+              .megacredits(1, {text: '0'}).wild(1).asterix()
               .startEffect
               .megacredits(2),
           );

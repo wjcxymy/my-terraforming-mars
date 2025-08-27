@@ -25,7 +25,15 @@ export class LunaChain extends CorporationCard {
             cb.effect(
               'After you play a project card, if the final M€ paid differs from the previous card by X (absolute value and X ≤ 2), gain (3 - X) M€.',
               (eb) => {
-                eb.cards(1).megacreditsText('M').minus().megacreditsText('N').text('<3').startEffect.megacreditsText('3-X').asterix();
+                eb.cards(1)
+                  .text('|')
+                  .megacredits(1, {text: 'M'})
+                  .text('-')
+                  .megacredits(1, {text: 'N'})
+                  .text('|')
+                  .text('≤ 2')
+                  .startEffect
+                  .megacredits(1, {text: '3-X'}).asterix();
               },
             );
           });

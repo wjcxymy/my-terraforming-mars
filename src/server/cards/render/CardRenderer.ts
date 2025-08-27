@@ -161,16 +161,6 @@ abstract class Builder<T> {
     return this._appendToRow(item);
   }
 
-  public megacreditsText(text: string, options?: ItemOptions): this {
-    const item = new CardRenderItem(CardRenderItemType.MEGACREDITS_TEXT, 0, options);
-    item.text = text;
-    item.amountInside = true;
-    item.showDigit = true;
-    item.size = options?.size ?? Size.MEDIUM;
-    item.isTextOnly = true;
-    return this._appendToRow(item);
-  }
-
   public cards(amount: number, options?: ItemOptions): this {
     return this._appendToRow(new CardRenderItem(CardRenderItemType.CARDS, amount, options));
   }
