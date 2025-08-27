@@ -22,7 +22,7 @@
   "Add 1 floater here for each Venus tag you have.": "你拥有的每个金星标志在此卡添加1个云资源",
 
   "Frontier Town": "边疆城镇",
-  "Requires that Mars First is ruling or that you have 2 delegates there. Decrease your energy production one step. Place a city tile. GAIN THE PRINTED PLACEMENT BONUS 2 ADDITIONAL TIMES.": "需求：火星优先党执政或在此派系有2名代表。降低1级电力产能。放置城市板块（可获得2次板块放置奖励）",
+  "Requires that Mars First is ruling or that you have 2 delegates there. Decrease your energy production one step. Place a city tile. GAIN THE PRINTED PLACEMENT BONUS 2 ADDITIONAL TIMES.": "需求：火星优先党执政或在此派系有2名代表。降低1级电力产能。放置一个城市板块，并额外获得2次板块放置奖励。",
 
   "GHG Shipment": "温室气体运输",
   "Requires that Kelvinists are in power or that you have 2 delegates there. Increase your heat production 1 step. Gain 1 heat for each floater you have.": "需求：开尔文党执政或在此派系有2名代表。提升1级热能产能，你拥有的每个云资源获得1热能",
@@ -34,7 +34,7 @@
   "Requires 2 Jovian tags. Place 2 delegates in 1 party.": "需求2个木星标志。在1个派系放置2名代表",
 
   "L1 Trade Terminal": "L1贸易终端",
-  "Effect: When you trade, first increase that colony tile track 2 steps.": "效果：进行贸易时，首先提升该殖民地轨道2格",
+  "Effect: When you trade, you may first increase that colony tile track 2 steps.": "效果：进行贸易时，你可以先提升该殖民地轨道2格。",
   "Add a resource to 3 different cards that already have resources.": "向3张已有资源的卡牌各添加1个资源",
 
   "Microgravity Nutrition": "微重力营养学",
