@@ -31,7 +31,7 @@ export class AdhaiHighOrbitConstructionsRebalanced extends CorporationCard {
             ce.effect('For every 2 orbitals on this card, cards with a space tag or the STANDARD COLONY PROJECT or TRADE ACTION costs 1M€ less.', (eb) => {
               eb.tag(Tag.SPACE).slash().colonies(1, {size: Size.SMALL}).slash().trade({size: Size.SMALL})
                 .startEffect
-                .megacreditsText('-1').slash().text('2').resource(CardResource.ORBITAL);
+                .megacredits(-1).slash().text('2').resource(CardResource.ORBITAL);
             });
           });
         }),

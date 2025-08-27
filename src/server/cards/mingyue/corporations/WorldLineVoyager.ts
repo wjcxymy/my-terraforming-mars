@@ -24,10 +24,10 @@ export class WorldLineVoyager extends CorporationCard {
               eb.empty().startEffect.text('α World Line ⇄ β World Line', Size.SMALL);
             });
             cb.plainEffect('α World Line: Base actions per turn are 1, project card costs are reduced by 3 M€.', (eb) => {
-              eb.text('α World Line', Size.SMALL).startEffect.arrow().megacreditsText('-3');
+              eb.text('α World Line', Size.SMALL).startEffect.arrow().megacredits(-3);
             });
             cb.plainEffect('β World Line: Base actions per turn are 3, project card costs are increased by 1 M€.', (eb) => {
-              eb.text('β World Line', Size.SMALL).startEffect.arrow().arrow().arrow().megacreditsText('+1');
+              eb.text('β World Line', Size.SMALL).startEffect.arrow().arrow().arrow().megacredits(1, {text: '+1'});
             });
           });
         }),

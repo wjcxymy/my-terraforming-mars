@@ -22,7 +22,7 @@ export class RainbowPark extends CorporationCard {
             cb.action(
               'Gain M€ equal to the number of different resource types you have.',
               (eb) => {
-                eb.empty().startAction.megacreditsText('X')
+                eb.empty().startAction.megacredits(1, {text: 'X'})
                   .nbsp.text('(').text('have').nbsp.text('X').wild(1).asterix().text(')');
               },
             );

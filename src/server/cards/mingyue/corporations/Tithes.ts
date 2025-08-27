@@ -26,8 +26,8 @@ export class Tithes extends CorporationCard {
                 eb
                   .empty()
                   .startAction
-                  .minus().megacreditsText('X', {all})
-                  .nbsp.plus().megacreditsText('ΣX')
+                  .minus().megacredits(1, {text: 'X', all})
+                  .nbsp.plus().megacredits(1, {text: 'ΣX'})
                   .asterix();
               },
             );
@@ -36,7 +36,7 @@ export class Tithes extends CorporationCard {
               'Each other player who loses 3 M€ or more due to this action draws 1 card.',
               (eb) => {
                 eb
-                  .megacreditsText('X', {all}).text('>=').megacredits(3, {all})
+                  .megacredits(1, {text: 'X', all}).text('>=').megacredits(3, {all})
                   .startEffect.cards(1, {all})
                   .asterix();
               },
