@@ -9,6 +9,10 @@ import {Resource} from '../../../common/Resource';
 export class Pristar extends CorporationCard {
   constructor({
     name = CardName.PRISTAR,
+    startingMegaCredits = 53,
+    behavior = {
+      tr: -2,
+    },
     metadata = {
       cardNumber: 'R07',
       description: 'You start with 53 M€. Decrease your TR 2 steps. 1 VP per preservation resource here.',
@@ -26,14 +30,12 @@ export class Pristar extends CorporationCard {
   } = {}) {
     super({
       name,
-      startingMegaCredits: 53,
+      startingMegaCredits,
       resourceType: CardResource.PRESERVATION,
 
       victoryPoints: {resourcesHere: {}},
 
-      behavior: {
-        tr: -2,
-      },
+      behavior,
 
       metadata,
     });

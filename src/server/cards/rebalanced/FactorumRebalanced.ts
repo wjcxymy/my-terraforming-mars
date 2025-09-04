@@ -31,7 +31,7 @@ export class FactorumRebalanced extends CorporationCard implements IActionCard {
               eb.text('least').energy(1).startAction.production((pb) => pb.energy(1));
             });
             ce.action('If you have (or are tied for) the most steel resources, draw a building card.', (eb) => {
-              eb.text('most').steel(1).startAction.cards(1, {secondaryTag: Tag.BUILDING});
+              eb.or().nbsp.text('most').steel(1).startAction.cards(1, {secondaryTag: Tag.BUILDING});
             });
           });
         }),
