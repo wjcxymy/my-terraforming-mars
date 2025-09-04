@@ -53,7 +53,8 @@
   "PRISTAR_REBALANCED": "PRISTAR",
   "Pristar Rebalanced": "Pristar",
   "PRISTAR REBALANCED": "PRISTAR",
-  "Effect: During production phase, if you did not get TR so far this generation, or if you have the lowest TR, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，或改造度为全场最低，获得6M€并添加1个卫资源。",
+  "You start with 60 M€. Decrease your TR 3 steps. 1 VP per preservation resource here.": "起始获得60 M€，降低3点改造度。此卡每有1个卫资源获得1VP。",
+  "Effect: During production phase, if you did not get TR so far this generation, or if you have the lowest TR, add one preservation resource here and gain 6 M€.": "效果：在生产阶段，若你本时代未提升改造度，或改造度为全场唯一最低，获得6M€并添加1个卫资源。",
 
   "Adhai_High_Orbit_Constructions_Rebalanced": "Adhai High Orbit Constructions",
   "ADHAI_HIGH_ORBIT_CONSTRUCTIONS_REBALANCED": "ADHAI HIGH ORBIT CONSTRUCTIONS",
