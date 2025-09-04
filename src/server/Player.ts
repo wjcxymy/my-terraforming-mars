@@ -80,7 +80,6 @@ import {newStandardDraft} from './Draft';
 import {Message} from '../common/logs/Message';
 import {DiscordId} from './server/auth/discord';
 import {AlliedParty, PolicyId} from '../common/turmoil/Types';
-import {GoldenFinger} from './cards/mingyue/corporations/GoldenFinger';
 import {WorldLineVoyager} from './cards/mingyue/corporations/WorldLineVoyager';
 import {getWorldLineVoyagerData} from './mingyue/MingYueData';
 import {SelectAmount} from './inputs/SelectAmount';
@@ -1024,10 +1023,7 @@ export class Player implements IPlayer {
         this.game.log('${0} used ${1} action', (b) => b.player(this).card(card));
         const action = card.action(this);
         this.defer(action);
-        // 过滤掉 GoldenFinger 不加入 actionsThisGeneration
-        if (!(card instanceof GoldenFinger)) {
-          this.actionsThisGeneration.add(card.name);
-        }
+        this.actionsThisGeneration.add(card.name);
         return undefined;
       });
   }
@@ -1049,10 +1045,7 @@ export class Player implements IPlayer {
         this.game.log('${0} used ${1} action', (b) => b.player(this).card(card));
         const action = card.action(this);
         this.defer(action);
-        // 过滤掉 GoldenFinger 不加入 actionsThisGeneration
-        if (!(card instanceof GoldenFinger)) {
-          this.actionsThisGeneration.add(card.name);
-        }
+        this.actionsThisGeneration.add(card.name);
       }
       return undefined;
     });

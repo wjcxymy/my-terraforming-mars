@@ -150,6 +150,11 @@ export class GoldenFinger extends CorporationCard {
         });
     });
 
+    // A hack that allows this action to be replayable.
+    player.defer(() => {
+      player.actionsThisGeneration.delete(this.name);
+    });
+
     return new OrOptions(
       useBlueCard,
       playCard,
