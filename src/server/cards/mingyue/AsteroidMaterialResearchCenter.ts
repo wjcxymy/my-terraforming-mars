@@ -83,6 +83,12 @@ export class AsteroidMaterialResearchCenter extends Card implements IProjectCard
       return undefined;
     });
   }
+
+  public onProductionPhase(player: IPlayer): undefined {
+    const data = getAsteroidMaterialResearchCenterData(player.game);
+    data.refreshCounter = {};
+    return undefined;
+  }
 }
 
 /**
@@ -106,13 +112,6 @@ class RefreshBlueCardAction extends DeferredAction {
 
     const game = player.game;
     const data = getAsteroidMaterialResearchCenterData(game);
-    const currentGeneration = game.generation;
-
-    // 新的一代，重置刷新计数器
-    if (data.counterGeneration !== currentGeneration) {
-      data.refreshCounter = {};
-      data.counterGeneration = currentGeneration;
-    }
 
     const currentCount = data.refreshCounter[card.name] ?? 0;
     if (currentCount >= 2) return;

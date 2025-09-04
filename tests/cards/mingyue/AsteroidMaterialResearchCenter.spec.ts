@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {TestPlayer} from '../../TestPlayer';
-import {testGame, runAllActions, fakeCard} from '../../TestingUtils';
+import {testGame, runAllActions, fakeCard, finishGeneration} from '../../TestingUtils';
 import {Tag} from '../../../src/common/cards/Tag';
 import {IGame} from '../../../src/server/IGame';
 import {CardName} from '../../../src/common/cards/CardName';
@@ -14,6 +14,7 @@ import {AsteroidHollowing} from '../../../src/server/cards/promo/AsteroidHollowi
 import {DirectedImpactors} from '../../../src/server/cards/promo/DirectedImpactors';
 import {IcyImpactors} from '../../../src/server/cards/promo/IcyImpactors';
 import {RotatorImpacts} from '../../../src/server/cards/venusNext/RotatorImpacts';
+import {getAsteroidMaterialResearchCenterData} from '../../../src/server/mingyue/MingYueData';
 
 /**
  * 蓝卡联合研究中心测试（表驱动）
@@ -180,5 +181,30 @@ describe('AsteroidMaterialResearchCenter + Blue Cards', () => {
         verify(card, tc, false);
       });
     });
+  });
+
+  it('reset refresh counter after generation', () => {
+    const center = new AsteroidMaterialResearchCenter();
+    const blueCard = new CometAiming();
+    player.playedCards = [center, blueCard];
+
+    player.titanium = 1;
+    blueCard.resourceCount = 0;
+
+    // 执行蓝卡行动，触发刷新
+    player.playActionCard().cb([blueCard]);
+    runAllActions(game);
+
+    // 校验刷新计数器
+    const data = getAsteroidMaterialResearchCenterData(game);
+    expect(data.refreshCounter[blueCard.name]).eq(1);
+    expect(blueCard.resourceCount).eq(1);
+    expect(player.actionsThisGeneration.has(blueCard.name)).to.be.false; // 已刷新
+
+    // 过时代
+    finishGeneration(game);
+
+    // 校验计数器清空
+    expect(data.refreshCounter).to.deep.eq({});
   });
 });

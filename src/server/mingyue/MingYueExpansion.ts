@@ -18,7 +18,6 @@ export class MingYueExpansion {
         lastSetCount: 0,
       },
       asteroidMaterialResearchCenter: {
-        counterGeneration: -1,
         refreshCounter: {},
       },
       abnormalTitan: {

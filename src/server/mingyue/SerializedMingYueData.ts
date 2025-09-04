@@ -11,7 +11,6 @@ export interface SerializedMingYueData {
     lastSetCount: number;
   };
   asteroidMaterialResearchCenter?: {
-    counterGeneration?: number;
     refreshCounter?: { [cardName: string]: number };
   };
   abnormalTitan?: {
