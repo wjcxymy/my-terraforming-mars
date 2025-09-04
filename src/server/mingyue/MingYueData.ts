@@ -14,7 +14,6 @@ export interface MingYueData {
     lastSetCount: number;
   };
   asteroidMaterialResearchCenter?: {
-    counterGeneration: number;
     refreshCounter: {[cardName: string]: number};
   };
   abnormalTitan?: {
@@ -47,7 +46,6 @@ export namespace MingYueData {
       }),
       ...(data.asteroidMaterialResearchCenter !== undefined && {
         asteroidMaterialResearchCenter: {
-          counterGeneration: data.asteroidMaterialResearchCenter.counterGeneration,
           refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter,
         },
       }),
@@ -79,7 +77,6 @@ export namespace MingYueData {
         } : undefined,
       asteroidMaterialResearchCenter: data.asteroidMaterialResearchCenter ?
         {
-          counterGeneration: data.asteroidMaterialResearchCenter.counterGeneration ?? -1,
           refreshCounter: data.asteroidMaterialResearchCenter.refreshCounter ?? {},
         } : undefined,
       abnormalTitan: data.abnormalTitan ?
@@ -121,7 +118,6 @@ export function getTrisynInstituteData(game: IGame) {
 export function getAsteroidMaterialResearchCenterData(game: IGame) {
   game.mingyueData ??= {};
   game.mingyueData.asteroidMaterialResearchCenter ??= {
-    counterGeneration: -1,
     refreshCounter: {},
   };
   return game.mingyueData.asteroidMaterialResearchCenter;
