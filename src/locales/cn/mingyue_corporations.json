@@ -81,7 +81,7 @@
   "Flowing Cloud": "流云",
   "FLOWING CLOUD": "流云",
   "You start with 48 M€. As your first action, draw a floater card.": "起始获得48M€。作为第一个行动，抽一张云载体牌。",
-  "Action: Move any number of floater resources from one floater card to another.": "行动：将任意数量的云从一张云载体牌移动到另一张云载体牌上。",
+  "Action: Move up to half of the floater resources from one floater card to another.": "行动：将至多一半的云从一张云载体牌移动到另一张云载体牌上。",
   "If the two cards have the same number of floater resources after moving, place 1 floater resource on each of these two cards.": "如果移动后两张牌上的云数量相同，则在这两张牌上各放置1个云。",
   "equal": "相等",
 

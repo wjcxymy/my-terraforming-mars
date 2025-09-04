@@ -30,9 +30,10 @@ export class FlowingCloud extends CorporationCard {
           b.megacredits(48).nbsp.cards(1, {secondaryTag: AltSecondaryTag.FLOATER});
           b.corpBox('action', (cb) => {
             cb.vSpace(Size.MEDIUM);
-            cb.action('Move any number of floater resources from one floater card to another.',
+            // 修改点 1：更新行动描述
+            cb.action('Move up to half of the floater resources from one floater card to another.',
               (eb) => {
-                eb.minus().text('x').resource(CardResource.FLOATER).startAction.plus().text('x').resource(CardResource.FLOATER);
+                eb.minus().text('x').resource(CardResource.FLOATER).asterix().startAction.plus().text('x').resource(CardResource.FLOATER);
               },
             );
             cb.plainEffect('If the two cards have the same number of floater resources after moving, place 1 floater resource on each of these two cards.',
@@ -51,17 +52,19 @@ export class FlowingCloud extends CorporationCard {
     if (floaterCards.length < 2) {
       return false; // 不够 2 张云载体，不能行动
     }
-    // 至少有一张云载体含有云资源即可
-    return floaterCards.some((card) => card.resourceCount > 0);
+    // 至少有一张云载体含有至少2个云资源即可
+    return floaterCards.some((card) => card.resourceCount >= 2);
   }
 
   public action(player: IPlayer) {
     const floaterCards = player.tableau.filter((card) => card.resourceType === CardResource.FLOATER);
-    const sourceCandidates = floaterCards.filter((card) => card.resourceCount > 0);
+    // 修改点 2：来源卡至少需要有2个云资源
+    const sourceCandidates = floaterCards.filter((card) => card.resourceCount >= 2);
 
-    return new SelectCard('选择来源云载体（含云资源）', '选择', sourceCandidates, {min: 1, max: 1}).andThen(
+    return new SelectCard('选择来源云载体（至少含2个云资源）', '选择', sourceCandidates, {min: 1, max: 1}).andThen(
       ([sourceCard]) => {
-        const maxMove = sourceCard.resourceCount;
+        // 修改点 3：最大移动数量为资源数的一半（向下取整）
+        const maxMove = Math.floor(sourceCard.resourceCount / 2);
         return new SelectAmount(`选择移动的云资源数量（最多 ${maxMove}）`, '确定', 1, maxMove).andThen(
           (amount) => {
             const targetCandidates = floaterCards.filter((card) => card !== sourceCard);
