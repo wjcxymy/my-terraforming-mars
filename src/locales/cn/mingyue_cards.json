@@ -14,9 +14,8 @@
   "Reveal 2 cards. Keep one and give the other to another player.": "展示两张牌，保留一张，将另一张交给任意其他玩家。",
 
   "Infinite Monkey Theorem": "无限猴子定理",
-  "Action: Reveal the top card of the deck and place it sideways on this card. For each new tag gained this way, place 1 animal here.": "行动：展示牌堆顶的一张牌，并将其横置于此卡上。每当你因此获得一个新标志，便在此卡上放置1个动物资源。",
-  "Then gain 1M€ per animal here.": "然后你获得等同于此卡上动物数量的 M€。",
-  "Cannot gain animals by other means.": "不能通过其他方式获得动物资源。",
+  "Action: Reveal the top card of the deck and place it sideways on this card. For each new tag gained this way, place 1 typewriter here.": "行动：展示牌堆顶的一张牌，并将其横置于此卡上。每当你因此获得一个新标志，便在此卡上放置1个打字机资源。",
+  "Then gain 1M€ per typewriter here.": "然后你获得等同于此卡上打字机数量的 M€。",
 
   "Floral Bloom Surge": "卉植繁茂",
   "Requires 2 plant tags.": "需要2个植物标志。",
