@@ -47,7 +47,7 @@ export class SpaceDebrisCleaningOperation extends Card implements IProjectCard {
         {
           count: 1,
           filter: (card: ICard) => {
-            return card.resourceType !== undefined && card.resourceType !== CardResource.SCIENCE && !card.tags.includes(Tag.ANIMAL);
+            return card.resourceType !== undefined && card.resourceType !== CardResource.SCIENCE && card.resourceType !== CardResource.ANIMAL;
           },
         },
       ));
