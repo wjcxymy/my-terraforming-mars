@@ -12,6 +12,7 @@ import {MoonExpansion} from '../../moon/MoonExpansion';
 import {all} from '../Options';
 import {SpecialDesignProxy} from './SpecialDesignProxy';
 import {inplaceRemove} from '../../../common/utils/utils';
+import {TrisynInstitute} from '../mingyue/corporations/TrisynInstitute';
 
 export class Playwrights extends CorporationCard {
   constructor() {
@@ -64,6 +65,13 @@ export class Playwrights extends CorporationCard {
             const card = p.getPlayedCard(selectedCard.name);
             if (card !== undefined) {
               inplaceRemove(p.playedCards, card);
+
+              // 检查卡牌的原拥有者('p')是否为三重协同公司。
+              const trisynInstitute = p.getCorporation(CardName.TRISYN_INSTITUTE);
+              if (trisynInstitute instanceof TrisynInstitute) {
+                // 如果是，则立即更新其项目卡套数，因为移除事件牌可能导致套数减少。
+                trisynInstitute.updateTrisynInstituteSetCount(p);
+              }
             }
           });
 
