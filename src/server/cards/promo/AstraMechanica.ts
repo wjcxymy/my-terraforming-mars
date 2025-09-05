@@ -76,10 +76,11 @@ export class AstraMechanica extends Card implements IProjectCard {
             player.game.log('${0} returned ${1} to their hand', (b) => b.player(player).card(card));
           }
 
-          // 若玩家为三重协同公司，更新当前项目卡套数。
+          // 检查玩家是否为三重协同公司。
           const trisynInstitute = player.getCorporation(CardName.TRISYN_INSTITUTE);
           if (trisynInstitute instanceof TrisynInstitute) {
-            trisynInstitute.updateTrisynSetCount(player);
+            // 如果是，则立即更新其项目卡套数，因为星械会回收2张事件牌可能导致套数减少。
+            trisynInstitute.updateTrisynInstituteSetCount(player);
           }
           return undefined;
         });
