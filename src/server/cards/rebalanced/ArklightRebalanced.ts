@@ -32,7 +32,7 @@ export class ArklightRebalanced extends Arklight {
   }
 
   public onResourceAdded(player: IPlayer, card: ICard, count: number) {
-    if (card.resourceType === CardResource.ANIMAL || card.resourceType === CardResource.MONKEY) {
+    if (card.resourceType === CardResource.ANIMAL) {
       player.stock.add(Resource.MEGACREDITS, count, {log: true});
     }
   }

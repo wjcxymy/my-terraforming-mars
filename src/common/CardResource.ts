@@ -48,6 +48,6 @@ export enum CardResource {
   SUPPLY_CHAIN = 'Supply Chain',
 
   // MingYue
-  MONKEY = 'Monkey',
-  BELLS = 'bells',
+  TYPEWRITER = 'Typewriter',
+  BELLS = 'Bells',
 }
