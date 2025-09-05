@@ -29,9 +29,9 @@ export class DataCommunicationCenter extends CorporationCard {
           b.corpBox('effect', (cb) => {
             cb.vSpace(Size.MEDIUM);
             cb.effect(
-              `Whenever your energy production increases or you spend energy, add 1 data to this card.`,
+              `Whenever your energy production changes (increases or decreases) or you spend energy, add 1 data to this card.`,
               (eb) => {
-                eb.plus().production((pb) => pb.energy(1))
+                eb.text('±').production((pb) => pb.energy(1))
                   .slash()
                   .minus().energy(1)
                   .startEffect.resource(CardResource.DATA);
@@ -51,9 +51,9 @@ export class DataCommunicationCenter extends CorporationCard {
     });
   }
 
-  // 当电力产能上升时会添加数据
+  // 当电力产能变化（包括上升和下降）时会添加数据
   public onProductionGain(player: IPlayer, resource: Resource, amount: number) {
-    if (resource === Resource.ENERGY && amount > 0) {
+    if (resource === Resource.ENERGY && amount !== 0) {
       player.addResourceTo(this, {qty: 1, log: true});
     }
   }
