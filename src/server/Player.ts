@@ -858,8 +858,9 @@ export class Player implements IPlayer {
     }
   }
 
-  public playCard(selectedCard: IProjectCard, payment?: Payment, cardAction: CardAction = 'add'): void {
-    if (payment !== undefined) {
+  public playCard(selectedCard: IProjectCard, payment?: Payment, cardAction: CardAction = 'add', options?: {skipPaymentProcessing?: boolean}): void {
+    // 只有在 payment 存在，并且没有收到“跳过支付”信号时，才执行支付。
+    if (payment !== undefined && !options?.skipPaymentProcessing) {
       this.pay(payment);
     }
 

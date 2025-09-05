@@ -69,8 +69,8 @@ export class Playwrights extends CorporationCard {
 
           const cost = player.getCardCost(selectedCard);
           player.game.defer(new SelectPaymentDeferred(player, cost, {title: 'Select how to pay to replay the event'}))
-            .andThen(() => {
-              player.playCard(selectedCard, undefined, 'nothing'); // Play the card but don't add it to played cards
+            .andThen((payment) => {
+              player.playCard(selectedCard, payment, 'nothing', {skipPaymentProcessing: true}); // Play the card but don't add it to played cards
               player.removedFromPlayCards.push(selectedCard); // Remove card from the game
               if (selectedCard.name === CardName.SPECIAL_DESIGN) {
                 player.playedCards.push(new SpecialDesignProxy());
