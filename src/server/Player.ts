@@ -84,6 +84,7 @@ import {WorldLineVoyager} from './cards/mingyue/corporations/WorldLineVoyager';
 import {getWorldLineVoyagerData} from './mingyue/MingYueData';
 import {SelectAmount} from './inputs/SelectAmount';
 import {StormcraftIncorporatedRebalanced} from './cards/rebalanced/StormcraftIncorporatedRebalanced';
+import {InventrixRebalanced} from './cards/rebalanced/InventrixRebalanced';
 
 const THROW_STATE_ERRORS = Boolean(process.env.THROW_STATE_ERRORS);
 const DEFAULT_GLOBAL_PARAMETER_STEPS = {
@@ -867,6 +868,13 @@ export class Player implements IPlayer {
     if (selectedCard.type !== CardType.PROXY) {
       this.lastCardPlayed = selectedCard.name;
       this.game.log('${0} played ${1}', (b) => b.player(this).card(selectedCard));
+    }
+
+    // 为 Inventrix Rebalanced 执行事前状态检查。
+    // 其奖励效果需要在卡牌的 .play() 方法生效前，判断全球参数加成是否为必要条件。
+    const corp = this.getCorporation(CardName.INVENTRIX_REBALANCED);
+    if (corp instanceof InventrixRebalanced) {
+      corp.prePlayCardCheck(this, selectedCard);
     }
 
     // Play the card
