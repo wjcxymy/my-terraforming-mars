@@ -100,6 +100,6 @@
   "Data Communication Center": "数据流通中心",
   "DATA COMMUNICATION CENTER": "数据流通中心",
   "You start with 42 M€ and 3 energy.": "起始获得42M€和3个电力资源。",
-  "Effect: Whenever your energy production increases or you spend energy, add 1 data to this card.": "效果：每当你的电力产量增加或你消耗电力时，在此卡上放置1个数据。",
+  "Effect: Whenever your energy production changes (increases or decreases) or you spend energy, add 1 data to this card.": "效果：每当你的电力产量变化（增加或减少）或你消耗电力时，在此卡上放置1个数据。",
   "Effect: Whenever this card has at least 3 data, automatically remove 3 data to draw 1 card.": "效果：当此卡上至少有3个数据时，自动移除3个数据以抽1张牌。"
 }
