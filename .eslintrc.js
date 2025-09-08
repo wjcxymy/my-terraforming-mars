@@ -18,6 +18,7 @@ module.exports = { // eslint-disable-line no-undef
     '@typescript-eslint',
   ],
   'rules': {
+    // --- Your existing rules ---
     'camelcase': 'off',
     'eqeqeq': ['error', 'always'],
     'max-len': 'off',
@@ -30,12 +31,19 @@ module.exports = { // eslint-disable-line no-undef
     'no-extra-semi': 'error',
 
     // Disabled entries from eslint:recommended
+    'object-curly-spacing': ['error', 'never'],
+
+    // --- Added for consistency based on our previous discussion ---
+    'linebreak-style': ['error', 'unix'],
+
+    // --- Disabled entries from eslint:recommended ---
     'no-inner-declarations': 'off',
     'no-case-declarations': 'off',
     'no-redeclare': 'off', // If we stopped using namespaces, this could be enabled.
     'no-prototype-builtins': 'off', // This could be enabled actually; just fix uses of 'hasOwnProperty'
     'valid-jsdoc': 'off', // precise valid jsdoc is in the way of taking advantage of partial jsdoc. A case of the perfecct being the enemy of the good.
 
+    // --- Typescript and Vue specific rules ---
     '@typescript-eslint/prefer-for-of': 'error',
 
     '@typescript-eslint/no-non-null-assertion': 'error',
@@ -65,4 +73,24 @@ module.exports = { // eslint-disable-line no-undef
     }],
     'vue/no-reserved-component-names': 'warn',
   },
+
+  // --- NEW SECTION FOR JSON FILES ---
+  'overrides': [
+    {
+      // Rules in here will only apply to JSON files
+      'files': ['*.json', '*.jsonc', '*.json5'],
+      'parser': 'jsonc-eslint-parser',
+      'extends': [
+        'plugin:jsonc/recommended-with-jsonc',
+      ],
+      'rules': {
+        // This rule fixes multiple empty lines down to a single one,
+        // while leaving single empty lines untouched.
+        'no-multiple-empty-lines': ['error', { 'max': 1 }],
+
+        // Optional: This prevents auto-formatting from messing with your manual line breaks
+        'jsonc/object-curly-newline': 'off',
+      },
+    },
+  ],
 };
