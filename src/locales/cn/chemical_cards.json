@@ -98,6 +98,26 @@
 
   "Martian Research Network": "火星研究网络",
   "Requires ANY 3 Mars tags in play.": "需要游戏中存在3个火星标志。",
-  "Effect: When you play a card, you pay 1 M€ less for it.": "效果：当你打出一张卡时，少支付1 M€。"
+  "Effect: When you play a card, you pay 1 M€ less for it.": "效果：当你打出一张卡时，少支付1 M€。",
 
+  "Titanium Comet": "钛彗星",
+  "Raise the temperature 1 step, place an ocean tile, gain 3 titanium, and remove up to 3 plants from any player.": "提升1级温度，放置1个海洋板块，获得3个钛，并移除任意玩家最多3个植物。",
+
+  "Expedition To Dione": "土卫四远征",
+  "Place an ocean tile and gain 2 steel.": "放置1个海洋板块并获得2个钢。",
+
+  "Instantiated Solar Flare": "人造太阳耀斑",
+  "Requires 3 science tags. Raise the temperature 2 steps and each player loses 2 plants.": "需要3个科学标签。提升2级温度，每位玩家失去2个植物。",
+
+  "Minor Rimpactor": "小型撞击体",
+  "Gain 4 heat and remove up to 2 plants from an opponent.": "获得4点热能，并移除一名对手最多2个植物。",
+
+  "Ecological Shipment": "生态运输船",
+  "Gain 5 plants, add 3 microbes to ANOTHER card, and 3 animals to ANOTHER card.": "获得5个植物，在另一张卡牌上放置3个微生物，并在另一张卡牌上放置3个动物。",
+
+  "Parasitic Plants": "寄生植物",
+  "Requires -14°C or warmer. Increase your plant production 1 step and remove up to 2 plants from an opponent.": "需要温度不低于-14℃。提升1级植物产量，并移除一名对手最多2个植物。",
+
+  "Irrigation": "灌溉",
+  "Requires 6 ocean tiles. Place a greenery tile ADJACENT TO AN OCEAN and increase oxygen 1 step.": "需要6个海洋板块。在与一个海洋板块相邻的位置放置一个绿地板块，并提升1级氧气。"
 }

@@ -452,7 +452,7 @@ export class Player implements IPlayer {
   }
 
   public plantsAreProtected(): boolean {
-    return this.hasProtectedHabitats() || this.cardIsInEffect(CardName.ASTEROID_DEFLECTION_SYSTEM);
+    return this.hasProtectedHabitats() || this.cardIsInEffect(CardName.ASTEROID_DEFLECTION_SYSTEM) || this.cardIsInEffect(CardName.ECOSPHERE_GUARDIAN_DRONES);
   }
 
   public alloysAreProtected(): boolean {

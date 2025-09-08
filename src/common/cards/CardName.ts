@@ -622,6 +622,7 @@ export enum CardName {
   OVERTIME = 'Overtime',
   POACHERS = 'Poachers',
   COASTAL_RESORT = 'Coastal Resort',
+  ECOSPHERE_GUARDIAN_DRONES = 'Ecosphere Guardian Drones',
 
   // MingYue corps
   TRISYN_INSTITUTE = 'Trisyn Institute',
@@ -706,6 +707,13 @@ export enum CardName {
   KICKBACKS = 'Kickbacks',
   FIRST_MARTIAN_MEMORIAL = 'First Martian Memorial',
   MARTIAN_RESEARCH_NETWORK = 'Martian Research Network',
+  TITANIUM_COMET = 'Titanium Comet',
+  EXPEDITION_TO_DIONE = 'Expedition To Dione',
+  INSTANTIATED_SOLAR_FLARE = 'Instantiated Solar Flare',
+  MINOR_RIMPACTOR = 'Minor Rimpactor',
+  ECOLOGICAL_SHIPMENT = 'Ecological Shipment',
+  PARASITIC_PLANTS = 'Parasitic Plants',
+  IRRIGATION = 'Irrigation',
 
   // Chemical corps
 
