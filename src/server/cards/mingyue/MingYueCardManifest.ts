@@ -33,6 +33,7 @@ import {FlowingCloud} from './corporations/FlowingCloud';
 import {AbnormalTitan} from './corporations/AbnormalTitan';
 import {Void} from './corporations/Void';
 import {DataCommunicationCenter} from './corporations/DataCommunicationCenter';
+import {EcosphereGuardianDrones} from './EcosphereGuardianDrones';
 
 export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
   module: 'mingyue',
@@ -74,6 +75,7 @@ export const MINGYUE_CARD_MANIFEST = new ModuleManifest({
     [CardName.OVERTIME]: {Factory: Overtime},
     [CardName.POACHERS]: {Factory: Poachers},
     [CardName.COASTAL_RESORT]: {Factory: CoastalResort, compatibility: 'ares'},
+    [CardName.ECOSPHERE_GUARDIAN_DRONES]: {Factory: EcosphereGuardianDrones},
   },
   globalEvents: {
   },

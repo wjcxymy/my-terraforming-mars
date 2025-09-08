@@ -81,5 +81,9 @@
   "Requires 1 ocean tile.": "需要1个海洋板块。",
   "Place this tile adjacent to an ocean tile. This tile grants an ADJACENCY BONUS of 1 M€.": "将此板块放置在海洋板块相邻的位置。此板块的相邻收益为1 M€。",
   "If adjacent to a city tile, a greenery tile, and an ocean tile, gain 2 VP.": "若此板块与城市、绿地和海洋板块相邻，获得 2 VP。",
-  "Select a space adjacent to an ocean tile": "选择一个与海洋板块相邻的位置"
+  "Select a space adjacent to an ocean tile": "选择一个与海洋板块相邻的位置",
+
+  "Ecosphere Guardian Drones": "生态圈监护无人机",
+  "Requires 2 plant tags. Decrease your energy production 1 step and increase your plant production 2 steps.": "需要2个植物标签。降低1级电力产量并提升2级植物产量。",
+  "Opponents may not remove your plants.": "对手不能移除你的植物。"
 }

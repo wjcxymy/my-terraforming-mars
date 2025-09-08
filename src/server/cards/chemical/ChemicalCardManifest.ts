@@ -6,21 +6,27 @@ import {CallistoOperations} from './CallistoOperations';
 import {ConstructionCenter} from './ConstructionCenter';
 import {Crowdfunding} from './Crowdfunding';
 import {DataCenter} from './DataCenter';
+import {EcologicalShipment} from './EcologicalShipment';
 import {EfficientBatteries} from './EfficientBatteries';
+import {ExpeditionToDione} from './ExpeditionToDione';
 import {FirstMartianMemorial} from './FirstMartianMemorial';
 import {FuelCellProduction} from './FuelCellProduction';
 import {GalileanGovernor} from './GalileanGovernor';
 import {GrandStadium} from './GrandStadium';
 import {HighSpeedComet} from './HighSpeedComet';
+import {InstantiatedSolarFlare} from './InstantiatedSolarFlare';
+import {Irrigation} from './Irrigation';
 import {Kickbacks} from './Kickbacks';
 import {KugelblitzEngine} from './KugelblitzEngine';
 import {LargePowerPlant} from './LargePowerPlant';
 import {LaserDrillMining} from './LaserDrillMining';
 import {MartianResearchNetwork} from './MartianResearchNetwork';
+import {MinorRimpactor} from './MinorRimpactor';
 import {Mixotrophs} from './Mixotrophs';
 import {NearMissRotaryAsteroid} from './NearMissRotaryAsteroid';
 import {NovaFoundry} from './NovaFoundry';
 import {Parasite} from './Parasite';
+import {ParasiticPlants} from './ParasiticPlants';
 import {PerfluorocarbonProduction} from './PerfluorocarbonProduction';
 import {PortOfElysium} from './PortOfElysium';
 import {PowerFailure} from './PowerFailure';
@@ -29,6 +35,7 @@ import {SmallSupplyDrop} from './SmallSupplyDrop';
 import {SolarStation} from './SolarStation';
 import {SpeciesCryopreservation} from './SpeciesCryopreservation';
 import {SponsoredResearchFirm} from './SponsoredResearchFirm';
+import {TitaniumComet} from './TitaniumComet';
 import {WaypointColony} from './WaypointColony';
 import {WorkerDrones} from './WorkerDrones';
 
@@ -70,6 +77,13 @@ export const CHEMICAL_CARD_MANIFEST = new ModuleManifest({
     [CardName.KICKBACKS]: {Factory: Kickbacks, compatibility: 'turmoil'},
     [CardName.FIRST_MARTIAN_MEMORIAL]: {Factory: FirstMartianMemorial, compatibility: 'turmoil'},
     [CardName.MARTIAN_RESEARCH_NETWORK]: {Factory: MartianResearchNetwork},
+    [CardName.TITANIUM_COMET]: {Factory: TitaniumComet},
+    [CardName.EXPEDITION_TO_DIONE]: {Factory: ExpeditionToDione},
+    [CardName.INSTANTIATED_SOLAR_FLARE]: {Factory: InstantiatedSolarFlare},
+    [CardName.MINOR_RIMPACTOR]: {Factory: MinorRimpactor},
+    [CardName.ECOLOGICAL_SHIPMENT]: {Factory: EcologicalShipment},
+    [CardName.PARASITIC_PLANTS]: {Factory: ParasiticPlants},
+    [CardName.IRRIGATION]: {Factory: Irrigation},
   },
   globalEvents: {
   },
