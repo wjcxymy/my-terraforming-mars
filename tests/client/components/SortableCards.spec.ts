@@ -34,11 +34,17 @@ describe('SortableCards', () => {
     expect(cards).has.length(2);
     expect(cards.at(0).props().card.name).to.eq(CardName.ANTS);
     expect(cards.at(1).props().card.name).to.eq(CardName.CARTEL);
-    const draggers = sortable.findAllComponents({
+
+    // --- 修正点 1 ---
+    // 从 findAllComponents 改为 findAll 来选择 ref="draggers" 的 DOM 元素
+    const draggers = sortable.findAll({
       ref: 'draggers',
     });
     await draggers.at(1).trigger('dragstart');
-    const droppers = sortable.findAllComponents({
+
+    // --- 修正点 2 ---
+    // 从 findAllComponents 改为 findAll 来选择 ref="droppers" 的 DOM 元素
+    const droppers = sortable.findAll({
       ref: 'droppers',
     });
     await droppers.at(0).trigger('dragover');
@@ -81,11 +87,17 @@ describe('SortableCards', () => {
     expect(cards.at(0).props().card.name).to.eq(CardName.CARTEL);
     expect(cards.at(1).props().card.name).to.eq(CardName.ANTS);
     expect(cards.at(2).props().card.name).to.eq(CardName.BIRDS);
-    const draggers = sortable.findAllComponents({
+
+    // --- 修正点 3 ---
+    // 从 findAllComponents 改为 findAll 来选择 ref="draggers" 的 DOM 元素
+    const draggers = sortable.findAll({
       ref: 'draggers',
     });
     await draggers.at(0).trigger('dragstart');
-    const droppers = sortable.findAllComponents({
+
+    // --- 修正点 4 ---
+    // 从 findAllComponents 改为 findAll 来选择 ref="droppers" 的 DOM 元素
+    const droppers = sortable.findAll({
       ref: 'droppers',
     });
     await droppers.at(2).trigger('dragover');
