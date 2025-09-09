@@ -30,7 +30,7 @@ export class PathfindersExpansion {
 
   public static initialize(game: IGame): PathfindersData {
     return {
-      venus: game.gameOptions.venusNextExtension ? 0 : -1,
+      venus: game.tags.includes(Tag.VENUS) ? 0 : -1,
       earth: 0,
       mars: 0,
       jovian: 0,
