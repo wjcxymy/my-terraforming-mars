@@ -11,7 +11,7 @@ export class MarsMonument extends Card implements IProjectCard {
     super({
       type: CardType.AUTOMATED,
       name: CardName.MARS_MONUMENT,
-      tags: [Tag.BUILDING],
+      tags: [Tag.BUILDING, Tag.MARS],
       cost: 20,
       requirements: {tr: 35},
       victoryPoints: 5,

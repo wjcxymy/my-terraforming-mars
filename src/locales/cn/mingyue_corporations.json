@@ -1,11 +1,12 @@
 {
-  "You start with 48 M€.": "起始获得48M€。",
+  "You start with 45 M€.": "起始获得45M€。",
   "Effect: After you play a project card, if this completes a new set of red, green, and blue project cards, draw 1 card.": "效果：当你打出项目卡后，若因此新凑齐一套红/绿/蓝项目卡，抽1张牌。",
   "Action: Reveal and discard 2 cards from your hand, then draw 1 card of a color not present among the discarded cards.": "行动：从你的手牌中展示并弃置2张牌，然后抽1张颜色不同于弃置牌的牌。",
   "${0} collected ${1} red-green-blue sets, drew 1 card due to ${2} effect.": "${0} 收集了 ${1} 套红绿蓝，因 ${2} 效果摸了 1 张牌。",
   "${0}'s red-green-blue set count decreased to ${1}.": "${0} 的红绿蓝套数减少到了 ${1}。",
 
   "Luna Chain": "连月",
+  "You start with 48 M€.": "起始获得48M€。",
   "Effect: After you play a project card, if the final M€ paid differs from the previous card by X (absolute value and X ≤ 2), gain (3 - X) M€.": "效果：当你打出项目卡后，若其最终支付的M€与上一张卡的差额为X（取绝对值且X ≤ 2），则获得(3-X) M€。",
   "${0} gained ${1} M€ due to ${2} effect.": "${0} 因 ${2} 效果，获得了 ${1} M€。",
   "${0} has accumulated ${1} M€, averaging ${2} M€ per project card (LunaChain God 🌙)": "${0} 累计获得了 ${1} M€，平均每张项目卡获得 ${2} M€ (连月之神 🌙)",
