@@ -22,13 +22,13 @@ export class TrisynInstitute extends CorporationCard {
     super({
       name: CardName.TRISYN_INSTITUTE,
       tags: [Tag.SCIENCE],
-      startingMegaCredits: 48,
+      startingMegaCredits: 45,
 
       metadata: {
         cardNumber: 'MY-CORP-01',
-        description: 'You start with 48 M€.',
+        description: 'You start with 45 M€.',
         renderData: CardRenderer.builder((b) => {
-          b.megacredits(48);
+          b.megacredits(45);
           b.corpBox('action', (cb) => {
             cb.vSpace(Size.LARGE);
             cb.action('Reveal and discard 2 cards from your hand, then draw 1 card of a color not present among the discarded cards.', (eb) => {

@@ -12,21 +12,28 @@ import {Resource} from '../../../common/Resource';
 import {message} from '../../logs/MessageBuilder';
 import {SelectCard} from '../../inputs/SelectCard';
 import {IActionCard} from '../ICard';
+import {CardType} from '../../../common/cards/CardType';
+import {AltSecondaryTag} from '../../../common/cards/render/AltSecondaryTag';
 
 export class StormcraftIncorporatedRebalanced extends CorporationCard implements IActionCard {
   constructor() {
     super({
       name: CardName.STORMCRAFT_INCORPORATED_REBALANCED,
       tags: [Tag.JOVIAN],
-      startingMegaCredits: 48,
+      startingMegaCredits: 45,
       resourceType: CardResource.FLOATER,
+
+      firstAction: {
+        text: 'Draw a floater card',
+        drawCard: {count: 1, type: CardType.ACTIVE, resource: CardResource.FLOATER},
+      },
 
       metadata: {
         cardNumber: 'RB-CORP-18',
-        description: 'You start with 48 M€.',
+        description: 'You start with 45 M€. As your first action, draw a floater card.',
         renderData: CardRenderer.builder((b) => {
           b.br.br.br;
-          b.megacredits(48);
+          b.megacredits(45).nbsp.cards(1, {secondaryTag: AltSecondaryTag.FLOATER});
           b.corpBox('action', (ce) => {
             ce.vSpace(Size.LARGE);
             ce.action('Add a floater each to 1 or 2 different cards.', (eb) => {

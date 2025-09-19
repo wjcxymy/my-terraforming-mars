@@ -10,9 +10,9 @@ export class DataCenter extends Card implements IProjectCard {
   constructor() {
     super({
       name: CardName.DATA_CENTER,
-      cost: 9,
+      cost: 10,
       type: CardType.AUTOMATED,
-      tags: [Tag.EARTH],
+      tags: [Tag.EARTH, Tag.MARS],
 
       behavior: {
         addResourcesToAnyCard: {
