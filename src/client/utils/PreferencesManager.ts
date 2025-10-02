@@ -19,6 +19,7 @@ export type Preferences = {
   debug_view: boolean,
   symbol_overlay: boolean,
   experimental_ui: boolean,
+  quick_actions: boolean,
   lang: string,
 }
 
@@ -49,6 +50,7 @@ const defaults: Preferences = {
 
   experimental_ui: false,
   debug_view: false,
+  quick_actions: false,
 };
 
 export class PreferencesManager {

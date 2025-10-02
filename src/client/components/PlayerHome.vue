@@ -311,6 +311,11 @@ import {sortActiveCards} from '@/client/utils/ActiveCardsSortingOrder';
 import {CardModel} from '@/common/models/CardModel';
 import {getCardOrThrow} from '../cards/ClientCardManifest';
 
+import {TMEnhancement} from '@/client/components/TMEnhancement';
+
+// 创建一个在模块作用域内持久存在的单例变量
+let tmEnhancementInstance: TMEnhancement | null = null;
+
 export interface PlayerHomeModel {
   showHand: boolean;
   showActiveCards: boolean;
@@ -526,6 +531,21 @@ export default Vue.extend({
       alert('Mars is Terraformed!');
       // Avoids repeated calls.
       TerraformedAlertDialog.shouldAlert = false;
+    }
+
+    // 管理单例的生命周期
+    if (getPreferences().quick_actions) {
+      if (!tmEnhancementInstance) {
+        tmEnhancementInstance = new TMEnhancement();
+        tmEnhancementInstance.start(); // start() 只在首次创建时调用
+      }
+      // 每次组件挂载（包括刷新后），都调用 reattach
+      tmEnhancementInstance.reattach();
+    } else {
+      if (tmEnhancementInstance) {
+        tmEnhancementInstance.destroy();
+        tmEnhancementInstance = null;
+      }
     }
   },
 });
