@@ -89,6 +89,16 @@
         </label>
       </div>
 
+      <div class="preferences_panel_item">
+        <label class="form-switch">
+          <input type="checkbox" v-on:change="updatePreferences" v-model="prefs.quick_actions" data-test="quick_actions">
+          <i class="form-icon"></i>
+          <span v-i18n>Quick Actions (req. refresh)</span>
+          <span class="tooltip tooltip-left"
+                :data-tooltip="$t('Enable a powerful UI enhancement sidebar for quick access to common actions (e.g., placing forests, raising temperature), significantly reducing clicks and speeding up your gameplay.')">&#9432;</span>
+        </label>
+      </div>
+
       <div class="preferences_panel_actions">
         <button class="btn btn-lg btn-primary" v-on:click="okClicked" v-i18n>Ok</button>
         <button class="btn btn-lg btn-primary" v-on:click="$refs.bugDialog.show();" v-i18n>Report a bug</button>
