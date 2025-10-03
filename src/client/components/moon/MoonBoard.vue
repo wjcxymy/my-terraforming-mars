@@ -4,8 +4,7 @@
     <svg id="moon_board_legend" height="550" width="630" class="board-legend">
       <g id="mare_imbrium" transform="translate(250, 40)">
         <text class="board-caption">
-          <tspan dy="15">Mare</tspan>
-          <tspan x="12" dy="12">Imbrium</tspan>
+          <tspan dx="5" dy="27">{{ $t('Mare Imbrium Mine') }}</tspan>
         </text>
         <line x1="24" y1="34" x2="33" y2="105" class="board-line"></line>
         <text x="30" y="107" class="board-caption board_caption--black">●</text>
@@ -13,8 +12,7 @@
 
       <g id="mare_sereitatis" transform="translate(485, 140)">
         <text class="board-caption">
-            <tspan dy="15">Mare</tspan>
-            <tspan x="4" dy="12">Serenitatis</tspan>
+            <tspan dx="3" dy="23">{{ $t('Mare Serenitatis Mine') }}</tspan>
         </text>
         <line x1="0" y1="25" x2="-120" y2="50" class="board-line"></line>
         <text x="-122" y="53" class="board-caption board_caption--black">●</text>
@@ -23,8 +21,7 @@
 
       <g id="mare_nubium" transform="translate(195, 350)">
         <text class="board-caption">
-          <tspan dy="15">Mare</tspan>
-          <tspan x="-2" dy="12">Nubium</tspan>
+          <tspan dy="17">{{ $t('Mare Nubium Mine') }}</tspan>
         </text>
         <line x1="29" y1="14" x2="115" y2="-64" class="board-line"></line>
         <text x="113" y="-62" class="board-caption board_caption--black">●</text>
@@ -32,8 +29,7 @@
 
       <g id="mare_nectaris" transform="translate(450, 300)">
         <text class="board-caption" dx="47">
-          <tspan dy="15">Mare</tspan>
-          <tspan dy="12" x="48">Nectaris</tspan>
+          <tspan dy="17">{{ $t('Mare Nectaris Mine') }}</tspan>
         </text>
         <line x1="-39" y1="-12" x2="45" y2="15" class="board-line"></line>
         <text x="-39" y="-9" class="board-caption board_caption--black">&#x25cf;</text>
