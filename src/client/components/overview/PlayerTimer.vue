@@ -24,6 +24,18 @@ export default Vue.extend({
     live: {
       type: Boolean,
     },
+    isCountdown: {
+      type: Boolean,
+    },
+    countdownThresholdMinutes: {
+      type: Number,
+    },
+    countdownBonusSeconds: {
+      type: Number,
+    },
+    playerActions: {
+      type: Number,
+    },
   },
   data() {
     return {
@@ -46,7 +58,32 @@ export default Vue.extend({
   },
   methods: {
     updateTimer() {
-      this.timerText = Timer.toString(this.timer);
+      if (this.isCountdown) {
+        const baseSeconds = this.countdownThresholdMinutes * 60;
+        const bonusSeconds = this.playerActions * this.countdownBonusSeconds;
+        const totalAvailableSeconds = baseSeconds + bonusSeconds;
+        const elapsedSeconds = Timer.getElapsedSeconds(this.timer);
+        const remainingSeconds = totalAvailableSeconds - elapsedSeconds;
+        this.timerText = this.formatTimeFromSeconds(remainingSeconds);
+      } else {
+        this.timerText = Timer.toString(this.timer);
+      }
+    },
+    formatTimeFromSeconds(totalSeconds: number): string {
+      const prefix = totalSeconds < 0 ? '-' : '';
+      const absoluteSeconds = Math.abs(totalSeconds);
+
+      const hours = Math.floor(absoluteSeconds / 3600);
+      const minutes = Math.floor((absoluteSeconds % 3600) / 60);
+      const seconds = Math.floor(absoluteSeconds % 60);
+
+      const paddedMinutes = String(minutes).padStart(2, '0');
+      const paddedSeconds = String(seconds).padStart(2, '0');
+
+      if (hours > 0) {
+        return `${prefix}${hours}:${paddedMinutes}:${paddedSeconds}`;
+      }
+      return `${prefix}${minutes}:${paddedSeconds}`;
     },
     hasHours() {
       if (this.timerText.split(':').length > 2) {
