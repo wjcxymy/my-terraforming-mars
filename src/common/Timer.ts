@@ -127,6 +127,17 @@ export class Timer {
   }
 
   /**
+   * Calculates the total elapsed seconds from a serialized timer object.
+   */
+  public static getElapsedSeconds(d: SerializedTimer, clock: Clock = REAL_CLOCK): number {
+    if (!d) {
+      return 0;
+    }
+    const elapsed = d.sumElapsed + (d.running ? clock.now() - d.startedAt : 0);
+    return Math.floor(elapsed / 1000);
+  }
+
+  /**
    * Converts a serialized version of this timer to [hhh:]mm:ss format based on current time.
    *
    * Used to display the timer.

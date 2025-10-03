@@ -3,7 +3,16 @@
         <div class="player-status-bottom">
           <div :class="getLabelAndTimerClasses()">
             <div :class="getActionStatusClasses()"><span v-i18n>{{ actionLabel }}</span></div>
-            <div class="player-status-timer" v-if="showTimer"><player-timer :timer="timer" :live="liveTimer"/></div>
+            <div class="player-status-timer" v-if="showTimer">
+              <player-timer
+                :timer="timer"
+                :live="liveTimer"
+                :is-countdown="isCountdownEnabled"
+                :countdown-threshold-minutes="countdownThreshold"
+                :countdown-bonus-seconds="countdownBonus"
+                :player-actions="playerActions"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -15,6 +24,7 @@ import Vue from 'vue';
 import {ActionLabel} from '@/client/components/overview/ActionLabel';
 import PlayerTimer from '@/client/components/overview/PlayerTimer.vue';
 import {TimerModel} from '@/common/models/TimerModel';
+import {GameOptionsModel} from '@/common/models/GameOptionsModel';
 
 export default Vue.extend({
   name: 'player-status',
@@ -31,9 +41,26 @@ export default Vue.extend({
     liveTimer: {
       type: Boolean,
     },
+    gameOptions: {
+      type: Object as () => GameOptionsModel,
+    },
+    playerActions: {
+      type: Number,
+    },
   },
   components: {
     PlayerTimer,
+  },
+  computed: {
+    isCountdownEnabled(): boolean {
+      return this.gameOptions?.escapeVelocityMode;
+    },
+    countdownThreshold(): number {
+      return this.gameOptions?.escapeVelocityThreshold ?? 0;
+    },
+    countdownBonus(): number {
+      return this.gameOptions?.escapeVelocityBonusSeconds ?? 0;
+    },
   },
   methods: {
     getLabelAndTimerClasses(): string {
